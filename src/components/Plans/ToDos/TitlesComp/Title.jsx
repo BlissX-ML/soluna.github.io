@@ -1,0 +1,16 @@
+import { ICONS } from "../../../../Data/icons.js";
+import classes from './Title.module.css'
+
+export default function Title({ onClick, active, children }) {
+    const Hint = ICONS.hint;
+
+    return (
+        <div
+            className={`${classes.choice} ${active}`}
+            onClick={onClick}
+        >
+            <span>{children}</span>
+            <Hint />
+        </div>
+    )
+}

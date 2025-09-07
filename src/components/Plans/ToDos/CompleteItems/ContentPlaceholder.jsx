@@ -1,4 +1,4 @@
-export function Loading({ progress, state }) {
+export function ContentPlaceholder({ progress, state }) {
     return (
         <div>
             {!state && <p>请点击左侧的选项</p>}
@@ -10,8 +10,6 @@ export function Loading({ progress, state }) {
                     <span>{progress}%</span>
                 </>
             }
-
-
         </div>
     )
 }

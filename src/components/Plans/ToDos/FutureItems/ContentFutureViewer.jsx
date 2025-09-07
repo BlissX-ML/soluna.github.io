@@ -1,18 +1,18 @@
 import { useContext } from "react";
 
-import classes from './FutureItems.module.css'
+import classes from './ContentFutureViewer.module.css'
 
-import FutureItemsIntro from "./FutureItemsIntro";
+import ContentPlaceholder from "./ContentPlaceholder";
 import { TodosContext } from "../../../../store/TodosManagaeContext.jsx";
 
-export default function FutureItems({ slot }) {
+export default function ContentFutureViewer({ slot }) {
     const ctx = useContext(TodosContext);
     const section = slot === 'future' ? ctx.future : ctx.done;
     // console.log(ctx.activeContent)
 
     return (
         <div className={classes.todoContent}>
-            {section.active ? section.content : <FutureItemsIntro />}
+            {section.active ? section.content : <ContentPlaceholder />}
         </div>
     )
 }

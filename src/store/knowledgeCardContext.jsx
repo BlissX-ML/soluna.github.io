@@ -12,7 +12,7 @@ export function KnowledgeCardContext({ children }) {
     const [visibility, setVisibility] = useState(false);
 
     const Icon = useMemo(
-        () => (visibility ? ICONS.eyeOpen : ICONS.eyeClose),
+        () => (visibility ? ICONS.OpenEye : ICONS.CloseEye),
         [visibility]
     );
 

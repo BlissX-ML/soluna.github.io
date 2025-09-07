@@ -3,7 +3,7 @@ import classes from './DropArrow.module.css'
 
 
 export default function DropArrow({ drop, onChange }) {
-    const Icon = drop ? ICONS.arrowUp : ICONS.arrowDown;
+    const Icon = drop ? ICONS.DropList : ICONS.LiftList;
 
     return (
         <div className={classes.nav}>

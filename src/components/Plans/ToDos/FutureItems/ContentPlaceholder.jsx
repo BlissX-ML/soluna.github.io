@@ -1,6 +1,6 @@
-import classes from './FutureItemsIntro.module.css'
+import classes from './ContentPlaceholder.module.css'
 
-export default function FutureItemsIntro() {
+export default function ContentPlaceholder() {
     return (
         <div className={classes.intro}>
             <h3>此处显示详细信息</h3>
