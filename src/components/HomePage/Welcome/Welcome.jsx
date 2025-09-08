@@ -17,7 +17,8 @@ export default function Welcome() {
                 </p>
                 <div className={classes.btns}>
                     <Buttons src='/plans'>计划表查阅</Buttons>
-                    <Buttons src='/recap'>笔记查阅</Buttons>
+                    <Buttons src='/interview-handbook'>面试手册查阅</Buttons>
+                    <Buttons src='/recap'>知识库查阅</Buttons>
                     <Buttons src='/footprint'>足迹查阅</Buttons>
                 </div>
             </div>

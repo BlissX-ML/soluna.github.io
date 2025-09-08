@@ -26,23 +26,31 @@ export default function Navigation() {
                     </li>
 
                     <li>
-                        <NavItems path='/plans'>计划</NavItems>
+                        <NavItems path='/plans'>未来目标</NavItems>
+                    </li>
+
+                    <li>
+                        <NavItems path='/interview-handbook'>面试手册</NavItems>
                     </li>
 
                     <li className={classes.recap} onMouseEnter={ctx.openDrop} onMouseLeave={ctx.closeDrop}>
-                        <NotionNav />
+                        <NotionNav navTitle='知识库' />
                     </li>
 
                     <li>
-                        <NavItems path='footprint'>足迹</NavItems>
+                        <NavItems path='footprint'>我的旅程</NavItems>
                     </li>
 
-                    <li>
+                    {/* <li>
                         <NavItems path='projects'>项目</NavItems>
+                    </li> */}
+
+                    <li>
+                        <NavItems path='resources'>资源共享</NavItems>
                     </li>
 
                     <li>
-                        <NavItems path='about'>关于我</NavItems>
+                        <NavItems path='about'>自我介绍</NavItems>
                     </li>
                 </ul>
 

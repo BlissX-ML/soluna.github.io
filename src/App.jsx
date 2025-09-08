@@ -13,6 +13,10 @@ import Loading from './pages/LoadingState/Loading.jsx'
 import RecapAside from './pages/Recap/RecapAside.jsx'
 import Introduction from './pages/Index/Introduction.jsx'
 import Plan from './pages/TodoPlans/Plan.jsx'
+import Handbook from './pages/Interview-handbook/Handbook.jsx'
+import Resources from './pages/Resources/Resources.jsx'
+import HandbookItems from './components/Interview-handbook/ContentDynamicRoute/HandbookItems.jsx'
+import HandbookMainNav from './pages/Interview-handbook/HandbookMainNav.jsx'
 
 
 const Homepage = lazy(() => import('./pages/Homepage/Homepage.jsx'))
@@ -31,6 +35,14 @@ const router = createHashRouter([
         element: <Plan />,
       },
       {
+        path: '/interview-handbook',
+        element: <HandbookMainNav />,
+        children: [
+          { index: true, element: <Handbook /> },
+          { path: ':handbookId', element: <HandbookItems /> }
+        ]
+      },
+      {
         path: '/recap',
         element: <RecapAside />,
         children: [
@@ -42,9 +54,13 @@ const router = createHashRouter([
         path: '/footprint',
         element: <Footprint />
       },
+      // {
+      //   path: '/projects',
+      //   element: <Projects />
+      // },
       {
-        path: '/projects',
-        element: <Projects />
+        path: '/resources',
+        element: <Resources />
       },
       {
         path: '/about',

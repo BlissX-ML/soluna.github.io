@@ -1,30 +1,29 @@
 .nav {
     background-color: #FAFAFA;
-    display: flex;
-    gap: 1em;
-    height: 100%;
+    display: grid;
+    /* 固定两侧的宽度 */
+    grid-template-columns: 15rem 1fr 15rem;
     justify-content: center;
     align-items: center;
+    gap: 5em;
+    height: 100%;
     border-bottom: 1px solid #DDDDDD;
 }
 
 .logo {
     align-items: center;
     overflow: hidden;
-    width: 10rem;
-    height: auto;
+    width: 80%;
     text-align: center;
     background-size: contain;
 }
 
 /* 导航部分 */
 .ul {
-    flex: 1;
-    gap: 2em;
-    display: flex;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* gap: 1.5em; */
     align-items: center;
-    flex-direction: row;
     justify-content: center;
     list-style: none;
 }

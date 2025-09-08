@@ -16,16 +16,28 @@ import PrevPage from '@/icons/changePage/PrevPage.svg?react'
 
 import Cancel from '@/icons/cancel/cancel.svg?react'
 
+import CloseAside from '@/icons/control-aside/close-aside.svg?react'
+import OpenAside from '@/icons/control-aside/open-aside.svg?react'
+
 export const ICONS = {
     logo: Logo,
+
     OpenEye: OpenEye,
     CloseEye: CloseEye,
+
     DropList: ArrowUp,
     LiftList: ArrowDown,
+
     arrowRightDark: ArrowRightDark,
     arrowRightLight: ArrowRightLight,
+
     hint: Hint,
+
     NextPage: NextPage,
     PrevPage: PrevPage,
+
     cancel: Cancel,
+
+    CloseAside: CloseAside,
+    OpenAside: OpenAside
 }
