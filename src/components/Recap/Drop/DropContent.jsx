@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import classes from './DropContent.module.css'
 
 import { recapAsideContext } from '../../../store/RecapAsideManageContext.jsx';
-import { RECAP_NAV } from '../../../Data/recap.js';
+import { RECAP_NAV } from '../../../data/recap/recap.js';
 import DropContentItems from './DropContentItems.jsx';
 
 

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import classes from './About.module.css'
 
-import { INTRODUCTION } from '../Data/about.js';
-import { ICONS } from '../Data/icons.js';
-import { PROFILE_ABOUT } from '../Data/profile.js';
+import { INTRODUCTION } from '../../data/about/about.js';
+import { ICONS } from '../../data/icons/icons.js';
+import { PROFILE_ABOUT } from '../../data/about/profile.js';
 
-import ResumeViewer from '../components/About/ResumeViewer.jsx';
+import ResumeViewer from '../../components/About/ResumeViewer.jsx';
 
 
 export default function About() {

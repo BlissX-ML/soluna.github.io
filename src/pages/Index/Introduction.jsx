@@ -1,8 +1,8 @@
 import classes from './Introduction.module.css'
 
-import { INDEX_IMAGES } from '../Data/indexPage.js'
-import Button from '../components/Index/Button.jsx';
-import Table from '../components/Index/Table.jsx'
+import { INDEX_IMAGES } from '../../data/index/indexPage.js'
+import Button from '../../components/Index/Button.jsx';
+import Table from '../../components/Index/Table.jsx'
 
 const imageURL = INDEX_IMAGES[0].webp;
 

@@ -1,4 +1,4 @@
-import { SCROLL_IMAGES } from "../../../Data/homePage";
+import { SCROLL_IMAGES } from "../../../data/homepage/homePage";
 
 const extendedImages = [...SCROLL_IMAGES, SCROLL_IMAGES[0]];
 

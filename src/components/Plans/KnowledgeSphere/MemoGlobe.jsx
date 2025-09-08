@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from './MemoGlobe.module.css'
 
-import { RECAP_NAV } from "../../../Data/recap.js";
+import { RECAP_NAV } from "../../../data/recap/recap.js";
 import Glob from "./Glob.jsx";
 import { recapAsideContext } from "../../../store/RecapAsideManageContext.jsx";
 

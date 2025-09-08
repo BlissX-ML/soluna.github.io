@@ -1,13 +1,13 @@
 // import CarouselImages from "../components/HomePage/Carousel/CarouselImages.jsx";
 import classes from './Plan.module.css';
 
-import { KnowledgeCardContext } from "../store/knowledgeCardContext.jsx";
+import { KnowledgeCardContext } from "../../store/knowledgeCardContext.jsx";
 
-import KnowledgeCard from "../components/Plans/KnowledgeCard/KnowledgeCard.jsx";
-import MemoGlobe from "../components/Plans/KnowledgeSphere/MemoGlobe.jsx";
+import KnowledgeCard from "../../components/Plans/KnowledgeCard/KnowledgeCard.jsx";
+import MemoGlobe from "../../components/Plans/KnowledgeSphere/MemoGlobe.jsx";
 
-import { TodosManagaeContext } from '../store/TodosManagaeContext.jsx';
-import TodosItems from '../components/Plans/ToDos/ToDos/TodosItems.jsx';
+import { TodosManagaeContext } from '../../store/TodosManagaeContext.jsx';
+import TodosItems from '../../components/Plans/ToDos/ToDos/TodosItems.jsx';
 
 export default function Plan() {
     return (

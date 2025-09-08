@@ -5,6 +5,12 @@
         "checkJs": true,
         "jsx": "react-jsx",
         "moduleResolution": "node",
+        "baseUrl": "/",
+        "paths": {
+            "@/*": [
+                "src/assets/*"
+            ]
+        },
         "types": [
             "vite/client"
         ]

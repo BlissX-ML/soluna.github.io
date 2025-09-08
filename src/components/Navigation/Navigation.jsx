@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from './Navigation.module.css';
 
-import { ICONS } from "../../Data/icons.js";
+import { ICONS } from "../../data/icons/icons.js";
 import { recapAsideContext } from "../../store/RecapAsideManageContext.jsx";
 
 import NavItems from "./NavItems.jsx";

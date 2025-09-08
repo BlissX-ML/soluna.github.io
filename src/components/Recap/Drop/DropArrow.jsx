@@ -1,4 +1,4 @@
-import { ICONS } from '../../../Data/icons.js';
+import { ICONS } from '../../../data/icons/icons.js';
 import classes from './DropArrow.module.css'
 
 

@@ -32,6 +32,12 @@ export default defineConfig(() => ({
       }
     }),
   ],
+  resolve: {
+    alias: {
+      '@': '/src/assets',
+      '#': '/src/Articles'
+    },
+  },
   base: './',
   // base: mode === 'production' ? `/${repoName}/` : '/',
   test: {

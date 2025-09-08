@@ -8,8 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "convert:webp": "node src/Data/convert-to-webp.js",
-    "convert:pdfToImage": "node src/Data/convert-pdf-to-image.js"
+    "convert:webp": "node src/data/method/convert-to-webp.js",
+    "convert:pdfToImage": "node src/data/method/convert-pdf-to-image.js"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.1",

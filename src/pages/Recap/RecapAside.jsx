@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import classes from './RecapAside.module.css';
 
-import RecapNav from "../components/Recap/Navigation/RecapNav.jsx";
+import RecapNav from "../../components/Recap/Navigation/RecapNav.jsx";
 
 export default function RecapAside() {
     return (

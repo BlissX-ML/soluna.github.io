@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { RECAP_NAV } from "../../../Data/recap.js";
+import { RECAP_NAV } from "../../../data/recap/recap.js";
 import classes from './CategoryTitle.module.css'
 
 import { recapAsideContext } from "../../../store/RecapAsideManageContext.jsx";

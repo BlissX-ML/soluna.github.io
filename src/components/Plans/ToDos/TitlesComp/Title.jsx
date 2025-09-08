@@ -1,4 +1,4 @@
-import { ICONS } from "../../../../Data/icons.js";
+import { ICONS } from "../../../../data/icons/icons.js";
 import classes from './Title.module.css'
 
 export default function Title({ onClick, active, children }) {

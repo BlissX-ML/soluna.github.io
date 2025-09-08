@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 
 import classes from './RecapContent.module.css'
-import RecapSubNav from '../components/Recap/Navigation/RecapSubNav.jsx';
-import { RECAP_MAIN_KEYS } from '../Data/recap';
+import RecapSubNav from '../../components/Recap/Navigation/RecapSubNav.jsx';
+import { RECAP_MAIN_KEYS } from '../../data/recap/recap';
 
 export default function RecapContent() {
     const { recapId } = useParams();

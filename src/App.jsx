@@ -2,20 +2,20 @@ import './App.css'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 
-import Nav from './pages/Nav.jsx'
+import Nav from './pages/Navigation/Nav.jsx'
 import RecapSubNav from './components/Recap/Navigation/RecapSubNav.jsx'
-import Footprint from './pages/Footprint.jsx'
-import Projects from './pages/Projects.jsx'
-import About from './pages/About.jsx'
-import RecapContent from './pages/RecapContent.jsx'
+import Footprint from './pages/Footprint/Footprint.jsx'
+import Projects from './pages/Project/Projects.jsx'
+import About from './pages/About/About.jsx'
+import RecapContent from './pages/Recap/RecapContent.jsx'
 
-import Loading from './pages/Loading.jsx'
-import RecapAside from './pages/RecapAside.jsx'
-import Introduction from './pages/Introduction.jsx'
-import Plan from './pages/Plan.jsx'
+import Loading from './pages/LoadingState/Loading.jsx'
+import RecapAside from './pages/Recap/RecapAside.jsx'
+import Introduction from './pages/Index/Introduction.jsx'
+import Plan from './pages/TodoPlans/Plan.jsx'
 
 
-const Homepage = lazy(() => import('./pages/Homepage.jsx'))
+const Homepage = lazy(() => import('./pages/Homepage/Homepage.jsx'))
 
 const router = createHashRouter([
   { path: '/', element: <Introduction /> },

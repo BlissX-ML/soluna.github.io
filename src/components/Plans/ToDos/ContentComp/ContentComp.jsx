@@ -1,5 +1,5 @@
-import { COMPLETE_ITEMS } from '../../../../Data/completeItems.js'
-import { TODO_ITEMS } from '../../../../Data/futureItems.js'
+import { COMPLETE_ITEMS } from '../../../../data/todos/completeItems.js'
+import { TODO_ITEMS } from '../../../../data/todos/futureItems.js'
 import Content from './Content.jsx'
 
 import classes from './ContentComp.module.css'

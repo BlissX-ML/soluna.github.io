@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import classes from './CategoryItem.module.css'
 
 import { recapAsideContext } from "../../../store/RecapAsideManageContext.jsx";
-import { RECAP_Detailed_Nav } from "../../../Data/recap.js";
+import { RECAP_Detailed_Nav } from "../../../data/recap/recap.js";
 
 export default function CategoryItem() {
     const ctx = useContext(recapAsideContext);

@@ -1,4 +1,4 @@
-import { RESUME_LATEST } from '../../Data/resume.js';
+import { RESUME_LATEST } from '../../data/about/resume.js';
 import PDFViewer from './PDFViewer.jsx';
 
 export default function ResumeViewer() {
