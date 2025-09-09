@@ -3,7 +3,10 @@ import react from '@vitejs/plugin-react'
 import svgr from 'vite-plugin-svgr';  // 转换 SVG 格式图片为 React 组件
 import mdx from '@mdx-js/rollup';     // 直接渲染 markdown 文件
 import remarkGfm from 'remark-gfm'    // 提高 markdown 渲染的可能性
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';  // 实现图片压缩，静态打包
+import rehypePrism from 'rehype-prism-plus'
 
 // const repoName = 'soluna.github.io'
 
@@ -14,7 +17,11 @@ export default defineConfig(() => ({
     svgr(),
     mdx({
       providerImportSource: '@mdx-js/react',
-      remarkPlugins: [remarkGfm]
+      remarkPlugins: [
+        remarkGfm,
+        remarkFrontmatter,
+        [remarkMdxFrontmatter, { name: 'frontmatter' }]],
+      rehypePlugins: [rehypePrism]
     }),
     ViteImageOptimizer({
       png: {
@@ -35,7 +42,7 @@ export default defineConfig(() => ({
   resolve: {
     alias: {
       '@': '/src/assets',
-      '#': '/src/Articles'
+      '#': '/src/articles'
     },
   },
   base: './',
