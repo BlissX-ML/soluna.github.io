@@ -1,4 +1,4 @@
-import { FRONT_END_HANDBOOK } from '../../data/articles/interview-handbook/front-end/front-end'
+import { FRONT_END_HANDBOOK } from '../../data/articles_/interview-handbook/front-end/front-end'
 import classes from './Handbook.module.css'
 // import 'prismjs/themes/prism-okaidia.css'
 import 'prismjs/themes/prism-tomorrow.css'
