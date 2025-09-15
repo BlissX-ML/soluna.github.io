@@ -1,0 +1,84 @@
+.container {
+    flex: 1;
+    text-align: left;
+    line-height: 2;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 20rem;
+    transition: margin-left 0.3s ease;
+}
+
+.container.close {
+    margin-left: 5rem;
+    transition: margin-left 0.3s ease;
+}
+
+.container h2 {
+    margin: 1.5rem 0rem;
+    display: flex;
+    align-items: center;
+    counter-increment: item;
+}
+
+.container h2::before {
+    content: counter(item, upper-alpha)'.';
+    padding-right: 1rem;
+}
+
+.container h4 {
+    margin: 1rem 0rem;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    counter-increment: heading;
+}
+
+.container h4::before {
+    content: counter(heading, lower-roman)'.';
+    padding-right: 1rem;
+    font-size: 1rem;
+    color: rgb(208, 111, 0)
+}
+
+.container h4+ol,
+.container h4+ul {
+    padding-left: 4rem;
+}
+
+.container ol {
+    padding-left: 1.5rem;
+    margin: .5rem 0rem;
+}
+
+
+.container ul {
+    padding-left: 2.5rem;
+}
+
+.container ol li,
+.container ul li {
+    margin: 0.25rem 0;
+}
+
+.container ol {
+    list-style-type: decimal;
+}
+
+.container ul {
+    list-style-type: disc;
+}
+
+/* 二级嵌套优化 */
+.container ol ol,
+.container ul ul {
+    margin-top: 0.25rem 0rem;
+    padding-left: 1.5rem;
+}
+
+.container ul ul {
+    list-style-type: circle;
+}
+
+.container ol ol {
+    list-style-type: lower-alpha;
+}

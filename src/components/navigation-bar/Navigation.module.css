@@ -1,0 +1,86 @@
+.nav {
+    background-color: #FAFAFA;
+    display: grid;
+    /* 固定两侧的宽度 */
+    grid-template-columns: 15rem 1fr 15rem;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    height: 100%;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.logo {
+    align-items: center;
+    overflow: hidden;
+    width: 80%;
+    text-align: center;
+    background-size: contain;
+}
+
+/* 导航部分 */
+.ul {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.ul li {
+    text-align: center;
+    padding: .8rem;
+    font-size: 1.1rem;
+}
+
+.ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.ul .repository {
+    position: relative;
+}
+
+.repository {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.repository a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+}
+
+.repository a::after {
+    display: inline-block;
+    cursor: pointer;
+    content: '';
+    width: .5rem;
+    height: .5rem;
+    border-right: 2px solid #979797;
+    border-bottom: 2px solid #979797;
+    transform: rotate(45deg);
+    transition: transform .25s ease-in-out;
+    transform-origin: center;
+    /* ✅ 设置旋转基点为正中心 */
+}
+
+.repository:hover a::after {
+    transform: rotate(-135deg);
+}
+
+.goBack {
+    width: 10rem
+}
+
+.goBack button {
+    font-size: .9rem;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}

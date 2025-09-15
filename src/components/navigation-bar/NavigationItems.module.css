@@ -1,0 +1,8 @@
+/* 点击后状态保持 */
+.active {
+    font-weight: 600;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg, #ff8800, #ffbca6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

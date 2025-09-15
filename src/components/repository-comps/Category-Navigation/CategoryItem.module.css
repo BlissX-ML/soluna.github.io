@@ -1,0 +1,41 @@
+.content {
+    text-align: left;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.ul {
+    list-style: none;
+    counter-reset: item;
+    padding-left: 0;
+}
+
+.ul li {
+    counter-increment: item;
+    margin: 0.5rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.ul li::before {
+    content: counter(item) ".";
+    position: absolute;
+    left: 0;
+    color: #003366;
+    font-weight: bold;
+    width: 1.5rem;
+    text-align: right;
+}
+
+.ul li a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+
+.ul li a:hover {
+    color: #0077cc;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}

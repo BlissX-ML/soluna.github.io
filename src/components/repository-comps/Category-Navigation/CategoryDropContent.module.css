@@ -1,0 +1,41 @@
+.content {
+    transform: scale(0);
+    /* 隐藏元素 */
+    min-width: 10rem;
+    overflow: hidden;
+    position: absolute;
+    top: calc(100% - 5px);
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: .5rem;
+    transition: all 0.3s ease;
+    transform-origin: top;
+}
+
+.active {
+    transform: scale(1);
+}
+
+.list button {
+    margin: 0;
+    padding: .5rem;
+    font-size: 0.95rem;
+    text-shadow: none;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    background-color: transparent;
+    border: none;
+}
+
+.list a {
+    text-decoration: none;
+}
+
+.list li:hover {
+    background: #f5f7fa;
+    /* hover 时背景浅灰 */
+    color: #0078d7;
+    /* hover 时文字变蓝 */
+}
