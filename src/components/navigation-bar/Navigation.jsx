@@ -18,7 +18,6 @@ export default function Navigation() {
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
-    const { active } = useSelector(state => state.repository)
 
     return (
         <header className='header'>
@@ -34,12 +33,12 @@ export default function Navigation() {
                         <NavigationItems path='/plans'>未来目标</NavigationItems>
                     </li>
 
-                    <li>
+                    <li className={classes['drop-navigation']}>
                         <NavigationItems path='/interview-handbook'>面试手册</NavigationItems>
                     </li>
 
                     <li
-                        className={classes.repository}
+                        className={classes['drop-navigation']}
                         onMouseEnter={() => dispatch(open())}
                         onMouseLeave={() => dispatch(close())}
                     >

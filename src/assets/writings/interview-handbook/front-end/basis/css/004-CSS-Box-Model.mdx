@@ -1,0 +1,30 @@
+---
+titleEn: 'CSS Box Model'
+titleCh: 'CSS盒子模型'
+tags: ['CSS3','CSS']
+---
+
+
+1. **构成部分**
+    - 内容（content）
+    - 内边距（padding）
+    - 边框（border）
+    - 外边距（margin）
+
+2. **两种盒模型**
+    - **标准盒模型（W3C）**
+        - **`width` 只包含 `content`**
+        - 总宽度 = content + padding + border + margin
+    - **怪异盒模型（IE）**
+        - **`width` 包含 content + padding + border**
+        - 总宽度 = width + margin
+    - W3C 和 IE 不是两套标准并存，而是对 width 的定义规则不同。
+
+3. **box-sizing 属性**
+    - `content-box`（默认，标准盒模型 W3C）
+    - `border-box`（IE 盒模型，宽度包含 content + padding + border）
+    - `inherit`（继承父元素设置）
+    
+4. **使用建议**
+    - 常用 `box-sizing: border-box;`（更易于布局计算）
+    - `*, *::before, *::after { box-sizing: border-box; }`

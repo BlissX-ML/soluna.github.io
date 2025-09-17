@@ -42,7 +42,7 @@ export default defineConfig(() => ({
   resolve: {
     alias: {
       '@': '/src/assets',
-      '#': '/src/writings'
+      '#': '/src/assets/writings'
     },
   },
   base: './',

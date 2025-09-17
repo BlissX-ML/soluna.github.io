@@ -5,7 +5,7 @@
     grid-template-columns: 15rem 1fr 15rem;
     justify-content: center;
     align-items: center;
-    gap: 5em;
+    gap: 3em;
     height: 100%;
     border-bottom: 1px solid #DDDDDD;
 }
@@ -30,7 +30,6 @@
 .ul li {
     text-align: center;
     padding: .8rem;
-    font-size: 1.1rem;
 }
 
 .ul li a {
@@ -38,25 +37,23 @@
     color: black;
 }
 
-.ul .repository {
-    position: relative;
-}
 
-.repository {
+.drop-navigation {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-.repository a {
+.drop-navigation a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: .4rem;
 }
 
-.repository a::after {
+.drop-navigation a::after {
     display: inline-block;
     cursor: pointer;
     content: '';
@@ -70,7 +67,7 @@
     /* ✅ 设置旋转基点为正中心 */
 }
 
-.repository:hover a::after {
+.drop-navigation:hover a::after {
     transform: rotate(-135deg);
 }
 

@@ -1,0 +1,32 @@
+---
+titleEn: 'Common CSS Selectors'
+titleCh: '常见的CSS选择器'
+tags: ['CSS3','CSS', 'Selector']
+---
+
+
+1. **基础选择器**
+    - ID 选择器：`#myid`
+    - 类选择器：`.myclass`
+    - 标签选择器：`div, h1, p`
+    - 通配符选择器：
+
+2. **属性选择器**
+    - `[attr]`：含有某属性
+    - `[attr="value"]`：属性值等于 value
+    - `[attr^="val"]`：属性值以 val 开头
+    - `[attr$="val"]`：属性值以 val 结尾
+    - `[attr*="val"]`：属性值包含 val
+
+3. **伪类选择器**
+    - 动态伪类：`:hover`、`:active`、`:focus`
+    - 结构伪类：`:first-child`、`:last-child`、`:nth-child(n)`、`:nth-of-type(n)`
+
+4. **伪元素选择器**
+    - `::before`、`::after`、`::first-letter`、`::first-line`
+
+5. **组合选择器（关系选择器）**
+    - 后代选择器：`li a`（li 内部的所有 a，包括嵌套多层 ）
+    - 子选择器：`ul > li`（ul 的直接子 li，不包括孙子辈 ）
+    - 相邻兄弟选择器：`h1 + p`（选择紧跟在 `h1` 后的第一个 `p` ）
+    - 普通兄弟选择器：`h1 ~ p`（选择与 `h1` 同级、在它后面的所有 `p`）

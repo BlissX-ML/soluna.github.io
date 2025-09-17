@@ -1,0 +1,20 @@
+---
+titleEn: 'What is will-change'
+titleCh: '什么是 will-change'
+tags: ['will-change']
+---
+
+1. **`will-change` 的作用和用法**
+    - **作用**：提前告诉浏览器这个属性将来会发生变化，提前为它做优化（例如单独创建合成层）。
+    - **常见优化属性**：`transform`、`opacity`、`top/left`
+    - **用法示例**：`.box { will-change: transform, opacity; }`
+        - 浏览器提前把 `.box` 元素放到 GPU 的合成层里。
+        - 后续频繁修改 `transform` 或 `opacity` 时，就不会触发重排/重绘。
+
+2. **`will-change` 不能乱用：**
+    - 每用一次都可能创建新合成层，占用额外显存
+    - 滥用会导致内存/性能下降
+
+3. **推荐：**
+    - **短时动画前加上**，动画结束后移除
+    - 不要全局给很多元素加 `will-change`

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { HTML_HANDBOOK } from '../../data/articles/interview-handbook/front-end/html.js'
+import { HTML_HANDBOOK } from '../../data/articles/interview-handbook/front-end/basis/html.js'
 
 import classes from './Handbook.module.css'
 // import 'prismjs/themes/prism-okaidia.css'

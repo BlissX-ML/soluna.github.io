@@ -1,0 +1,27 @@
+---
+titleEn: 'HDistinguishing DoT and DoH'
+titleCh: '区分 DoT 和 DoH'
+tags: ['DNS', 'DoT', 'DoH']
+---
+
+
+1. **相同点**
+    - 都是**加密 DNS** 请求，防止劫持和窃听。
+    - 底层都**基于 TLS**。
+
+2. **不同点**
+    - **DoT (DNS over TLS)**
+        - **协议**：基于 TLS 的**专用 DNS 协议**
+        - **端口**：853
+        - **场景**：系统级 / ISP 常用（操作系统 / 网络运营商）
+        - **特点**：效率高，但容易被识别和屏蔽
+    - **DoH (DNS over HTTPS)**
+        - **协议**：把 DNS 请求**封装在 HTTPS** 里
+        - **端口**：443
+        - **场景**：浏览器 / App 常用
+        - **特点**：**隐蔽**性好，兼容性更强
+
+3. **面试速答**
+    - DoT：DNS over TLS，走 853 端口，系统/ISP 常用。
+    - DoH：DNS over HTTPS，走 443 端口，浏览器/App 常用。
+    - 区别：DoT 专用端口，效率高但容易被识别；DoH 混在 HTTPS 流量里，更隐蔽不容易被屏蔽。
