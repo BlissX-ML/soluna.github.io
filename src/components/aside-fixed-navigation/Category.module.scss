@@ -1,0 +1,37 @@
+/* 第一层的列表  */
+.li {
+    font-size: $font-size-md;
+    box-sizing: $layout-box-model;
+    padding-left: calc($padding-default * 0.5);
+
+    a {
+        @include hyperlink-default; // 默认超链接的样式
+    }
+
+    .title {
+        width: 100%;
+        font-weight: 800;
+        color: $font-highlight-default;
+
+        margin: calc($margin-default * 0.25) calc($margin-default * 0);
+        padding: calc($padding-default * 0.5) 0rem;
+
+        @include flexlayout-space-between; // inline-flex布局
+        @include arrow-drop-animation-default; // 下拉箭头
+
+        &.active {
+            @include active-aside-default
+        }
+    }
+
+
+    // 第二层列表
+    .ul {
+        @include aside-content-fade-out;
+
+        a {
+            @include border-animation-default
+        }
+    }
+
+}

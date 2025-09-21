@@ -1,7 +1,8 @@
 import { useRef } from 'react';
-import CanvasLines from './CanvasLines';
-import classes from './Welcome.module.css';
-import Buttons from './Buttons';
+import CanvasLines from './CanvasLines.jsx';
+import classes from './Welcome.module.scss';
+
+import Buttons from './Buttons.jsx';
 
 export default function Welcome() {
     const container = useRef(null);

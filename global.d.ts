@@ -1,5 +1,6 @@
 declare module '*.module.css';
 declare module '*.module.scss'; // 可选，如果你用 SCSS
+declare module '*.module.sass';
 
 declare module '*.mdx' {
     export const frontmatter: {

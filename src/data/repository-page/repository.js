@@ -2,54 +2,61 @@ const getRandom = () => {
     return (Math.random() * 2 - 1).toFixed(2)
 }
 
-export const RECAP_NAV = [
-    { key: 'Computer-Related', title: 'Computer-Related', dropTitle: 'Computer', delayTime: getRandom() },
-    { key: 'Chemistry-Related', title: 'Chemistry-Related', dropTitle: 'Chemistry', delayTime: getRandom() },
-    { key: 'Language-Related', title: 'Language-Related', dropTitle: 'Language', delayTime: getRandom() },
-    { key: 'Animal-Related', title: 'Animal-Related', dropTitle: 'Animal', delayTime: getRandom() },
+// Repository's category
+export const Repository_Navigate = [
+    {
+        key: 'Computer',
+        title: '计算机相关',
+        delayTime: getRandom(),
+        detailContent: [
+            { key: 'computer_html', title: 'HTML', src: '' },
+            { key: 'computer_css', title: 'CSS', src: '' },
+            { key: 'computer_js', title: 'JavaScript', src: '' },
+            { key: 'computer_react', title: 'React', src: '' },
+            { key: 'computer_408', title: '考研 408 知识点', src: '' },
+        ]
+    },
+
+    {
+        key: 'Chemistry',
+        title: '化学相关',
+        delayTime: getRandom(),
+        detailContent: [
+            { key: 'inorganic-chemistry', title: '无机化学', src: '' },
+            { key: 'organic-chemistry', title: '有机化学', src: '' },
+            { key: 'physical-chemistry', title: '物理化学', src: '' },
+            { key: 'analytical-chemistry', title: '分析化学', src: '' },
+            { key: 'gaussian', title: 'Gaussain计算', src: '' }
+        ]
+    },
+
+    {
+        key: 'Language',
+        title: '语言相关',
+        delayTime: getRandom(),
+        detailContent: [
+            { key: 'english-language', title: '英语 English', src: '' },
+            { key: 'japanese-language', title: '日語 にほんご', src: '' },
+            { key: 'korean-language', title: '韩语 한국어', src: '' },
+        ]
+    },
+
+    {
+        key: 'Animal',
+        title: '动物学相关',
+        delayTime: getRandom(),
+        detailContent: [
+            { key: '', title: '', src: '' },
+        ]
+    },
 ];
 
-export const RECAP_MAIN_KEYS = [...RECAP_NAV].map(el => el.key)
+export const RECAP_MAIN_KEYS = [...Repository_Navigate].map(el => el.key)
 
-export const RECAP_Detailed_Nav = [
-    {
-        key: 'Computer-Related',
-        content: [
-            { key: 'Computer_1', content: 'HTML', path: '' },
-            { key: 'Computer_2', content: 'CSS', path: '' },
-            { key: 'Computer_3', content: 'JavaScript', path: '' },
-            { key: 'Computer_4', content: 'React', path: '' },
-            { key: 'Computer_5', content: 'Postgraduate Entrance Exam -> 408', path: '' },
-        ]
-    },
-    {
-        key: 'Chemistry-Related',
-        content: [
-            { key: 'Chemistry_1', content: '无机化学', path: '' },
-            { key: 'Chemistry_2', content: '有机化学', path: '' },
-            { key: 'Chemistry_3', content: '物理化学', path: '' },
-            { key: 'Chemistry_4', content: '分析化学', path: '' },
-            { key: 'Chemistry_5', content: 'Gaussain计算', path: '' }
-        ]
-    },
-    {
-        key: 'Language-Related',
-        content: [
-            { key: 'Language_1', content: 'English', path: '' },
-            { key: 'Language_2', content: '日本語', path: '' },
-            { key: 'Language_3', content: '한국어', path: '' },
-        ]
-    },
-    {
-        key: 'Animal-Related',
-        content: [
-            { key: '', content: '', path: '' },
-        ]
-    }
-]
 
-export const SUB_TO_MAIN = Object.fromEntries(
-    RECAP_Detailed_Nav.flatMap(group =>
-        group.content.map(item => [item.key, group.key])
-    )
-);
+
+// export const SUB_TO_MAIN = Object.fromEntries(
+//     RECAP_Detailed_Nav.flatMap(group =>
+//         group.content.map(item => [item.key, group.key])
+//     )
+// );

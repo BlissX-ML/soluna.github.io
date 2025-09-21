@@ -1,0 +1,178 @@
+@use './variable' as *;
+
+// 文字内存在线性颜色设计
+@mixin font-linear-default {
+    background: $font-linear-color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+// 链接选中和 hover 悬浮的样式（底边框动画效果滑出）
+@mixin border-animation-default($color: #ff8800, $height: 2px, $duration: 0.3s) {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        height: $height;
+        width: 100%; // 一开始就占满
+        background-color: $color;
+
+        transform: scaleX(0); // 初始缩放为 0
+        transform-origin: left center; // 从左往右展开
+        transition: transform $duration ease;
+    }
+
+    &:hover::after {
+        transform: scaleX(1); // 展开到完整
+    }
+
+    &.active::after {
+        background-color: $color;
+    }
+}
+
+// 超链接 a 的默认样式设置
+@mixin hyperlink-default {
+    color: $font-color-default;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+// 按钮 button 的默认样式设置
+@mixin btns-default {
+    border: none; // 删除按钮的边框
+    background-color: transparent; // 删除按钮的默认背景
+    cursor: pointer; // 点击功能的鼠标样式变化
+}
+
+// 侧边栏标题的点击高光效果
+@mixin active-aside-default($bgclor: #da6900) {
+    &.active {
+        color: $bgclor;
+    }
+}
+
+// 箭头的雏形，可以复用（为元素）
+@mixin arrow-default($border: 2px solid #979797, $size: .5rem, ) {
+    content: '';
+    width: $size;
+    height: $size;
+    border-right: $border;
+    border-bottom: $border;
+    cursor: pointer;
+    transform-origin: center; // 旋转中心
+}
+
+// 总标题的下拉箭头的动画效果(带有内置的超链接 a)
+@mixin active-navigation-default($duration: 0.25s) {
+    a::after {
+        @include arrow-default;
+        transform: rotate(45deg);
+        transition: transform $duration ease-in-out;
+    }
+
+    &:hover a::after {
+        transform: rotate(-135deg);
+    }
+}
+
+// 侧边栏的下拉箭头的动画效果
+@mixin arrow-drop-animation-default($duration: 0.3s, $margin: 1rem, ) {
+    cursor: pointer;
+
+    &::after {
+        @include arrow-default;
+        margin-right: $margin;
+
+        transform: rotate(45deg);
+        transition: transform $duration ease-in-out;
+    }
+
+    &:hover::after,
+    &.active::after {
+        transform: rotate(-135deg);
+    }
+}
+
+// 总标题下文字框的动画效果
+@mixin navigation-content-fade-out {
+    overflow: hidden;
+    transform: scale(0);
+    transition: all 0.3s ease;
+    transform-origin: top;
+
+    &.active {
+        transform: scale(1);
+    }
+}
+
+// 文字框从上到下慢慢那淡出的效果（测边框）
+@mixin aside-content-fade-out() {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-.5rem);
+    transition:
+        max-height 0.35s ease,
+        opacity 0.35s ease,
+        transform 0.35s ease;
+
+    li {
+        padding: .5rem 0rem;
+    }
+
+    &.active {
+        opacity: 1;
+        max-height: 30rem;
+        transform: translateY(0);
+    }
+}
+
+
+
+// 定义可以复用的滚动条块
+@mixin scrollbar-styling {
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: #ffecd8 transparent;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}
+
+
+// 弹性计数的方式去添加列表的序号
+@mixin list-number-counter-default {
+    counter-reset: item;
+
+    li {
+        counter-increment: item;
+        margin: 0.5rem 0;
+    }
+
+    li::before {
+        content: counter(item) ".";
+        position: absolute;
+        left: 0;
+        color: #003366;
+        font-weight: bold;
+        width: 1.5rem;
+        text-align: right;
+    }
+}

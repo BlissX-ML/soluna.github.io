@@ -1,15 +1,15 @@
-import IELTS from '#/Plans/IELTSTest.mdx';
-import JLPTN1 from '#/Plans/JLPTN1Test.mdx';
-import TOPIK from '#/Plans/TOPIKTest.mdx';
-import SoftwareDesigner from '#/Plans/SoftwareDesigner.mdx';
-import Nodejs from '#/Plans/Nodejs.mdx';
-import Nextjs from '#/Plans/Nextjs.mdx';
-import ReactNative from '#/Plans/ReactNative.mdx';
-import UniApp from '#/Plans/UniApp.mdx';
-import Vue from '#/Plans/Vue.mdx';
-import Python from '#/Plans/Python.mdx';
-import Basis408 from '#/Plans/Basis408.mdx';
-import DataScience from '#/Plans/DataScience.mdx';
+import IELTS from '#/_plans/IELTSTest.mdx';
+import JLPTN1 from '#/_plans/JLPTN1Test.mdx';
+import TOPIK from '#/_plans/TOPIKTest.mdx';
+import SoftwareDesigner from '#/_plans/SoftwareDesigner.mdx';
+import Nodejs from '#/_plans/Nodejs.mdx';
+import Nextjs from '#/_plans/Nextjs.mdx';
+import ReactNative from '#/_plans/ReactNative.mdx';
+import UniApp from '#/_plans/UniApp.mdx';
+import Vue from '#/_plans/Vue.mdx';
+import Python from '#/_plans/Python.mdx';
+import Basis408 from '#/_plans/Basis408.mdx';
+import DataScience from '#/_plans/DataScience.mdx';
 
 
 export const TODO_ITEMS = [

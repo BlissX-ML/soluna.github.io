@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { close, open } from "../../store/reducer/repository.js";
 
-import classes from './Navigation.module.css';
+import classes from './Navigation.module.scss';
 
 import NavigationItems from "./NavigationItems.jsx";
 import CategoryDropContent from "../repository-comps/Category-Navigation/CategoryDropContent.jsx";

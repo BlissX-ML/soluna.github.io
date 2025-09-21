@@ -1,0 +1,38 @@
+/* 整个侧边栏 */
+.aside {
+    position: fixed;
+    min-height: 100vh;
+    min-width: $aside-width-default; // 最后留一部分位置给侧边栏开关按钮
+    width: $aside-width-max-default;
+
+    background-color: $aside-background-color;
+    border-right: $border-split-module;
+    box-shadow: $box-shadow-split-module;
+    transition: width $transition-default;
+
+    @include flexlayout-default;
+
+
+    /* 实际目录部分 */
+    .category {
+        flex: 1;
+        overflow: hidden;
+        text-align: left;
+        padding: $padding-default calc($padding-default * 0.5);
+        line-height: $line-height-default;
+
+        display: inline-block;
+    }
+
+    button {
+        @include btns-default;
+        background-color: #c5690021;
+
+        width: $aside-width-default;
+        transition: $transition-default;
+    }
+
+    &.close {
+        width: 0rem;
+    }
+}

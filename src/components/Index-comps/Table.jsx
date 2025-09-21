@@ -1,4 +1,4 @@
-import classes from './Table.module.css'
+import classes from './Table.module.scss'
 
 export default function Table({ th, td }) {
     return (

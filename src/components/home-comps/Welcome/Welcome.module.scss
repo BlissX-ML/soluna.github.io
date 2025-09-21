@@ -1,0 +1,48 @@
+// 仅限当前组件的变量
+$priority: 1;
+
+.welcome {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 5rem);
+    margin: 0 auto;
+
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: $priority;
+    }
+}
+
+.recommend {
+    width: 80%;
+    height: 80%;
+    backdrop-filter: blur(15px);
+
+    @include position-absolute-layout;
+
+    @include flexlayout-default-column;
+    @include flexlayout-center;
+    gap: calc($flex-gap-default * 2);
+
+    z-index: calc($priority + 1);
+
+    h2 {
+        font-size: calc($font-size-md*4.5);
+    }
+
+    p {
+        font-size: $font-size-bg;
+
+        @include flexlayout-default-column;
+        gap: $flex-gap-default;
+    }
+}
+
+.btns {
+    @include flexlayout-default;
+    gap: calc($flex-gap-default * 1.5);
+}

@@ -1,0 +1,55 @@
+.nav {
+    height: 100%; // 撑满 header 的整个高度
+    background-color: $navigate-background-color;
+    border-bottom: $border-split-module;
+
+    @include navigation-grid-default;
+}
+
+.logo {
+    overflow: hidden;
+    width: $width-default*2;
+}
+
+
+/* 导航部分 */
+.ul {
+    @include navigation-grid-category-dedfault;
+
+    li {
+        padding: $padding-default $padding-default*1.1;
+
+        a {
+            @include hyperlink-default;
+            color: $font-color-default;
+        }
+    }
+}
+
+.goBack {
+    width: $width-default*2;
+
+    button {
+        @include btns-default;
+        font-size: $font-size-sm;
+    }
+}
+
+.drop-navigation {
+    position: relative;
+
+    @include inline-flexlayout-default;
+    @include flexlayout-center;
+
+    a {
+        @include inline-flexlayout-default;
+        @include flexlayout-center;
+        gap: $flex-gap-default*0.4;
+    }
+
+    a::after {
+        display: inline-block;
+    }
+
+    @include active-navigation-default;
+}

@@ -1,0 +1,30 @@
+.btn {
+    @include btns-default;
+    color: $font-color-default;
+
+    padding: calc($padding-default*1.2) calc($padding-default*1.6);
+    border-radius: $border-radius-default;
+
+    @include flexlayout-default;
+    @include flexlayout-center;
+    gap: .2rem;
+
+    p {
+        font-weight: 800;
+        font-size: $font-size-md;
+    }
+
+    &:hover {
+        color: #ececec;
+        transform: scale(1.2rem);
+        background-color: $dark-background-default;
+    }
+
+    .arrow {
+        width: calc($height-default * 0.2);
+        height: calc($height-default * 0.2);
+        max-height: calc($height-default * 0.2);
+        max-width: calc($height-default * 0.2);
+        margin-top: 1.2px;
+    }
+}

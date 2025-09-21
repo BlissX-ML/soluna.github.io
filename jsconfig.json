@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "ESNext",
         "module": "ESNext",
-        "checkJs": false,
+        "checkJs": true,
         "jsx": "react-jsx",
         "moduleResolution": "node",
         "baseUrl": "/",

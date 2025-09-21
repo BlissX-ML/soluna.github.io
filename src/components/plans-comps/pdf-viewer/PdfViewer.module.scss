@@ -1,0 +1,6 @@
+.fileContainer {
+    width: 100%;
+    height: 32.5rem; // 固定的哦，更匹配 meta 证书的高度
+    background-color: $content-background-color;
+    border-radius: $border-radius-default*1.5;
+}

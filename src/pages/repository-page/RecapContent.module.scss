@@ -1,0 +1,11 @@
+.content {
+    line-height: 1.5;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    // margin-left: calc($aside-width-max-default + $margin-default);
+}
+
+.content.close {
+    margin-left: 5rem;
+    transition: margin-left 0.3s ease;
+}

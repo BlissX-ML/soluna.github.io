@@ -1,0 +1,17 @@
+.ul li {
+    color: #111;
+    padding-right: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    gap: .2rem;
+    align-items: baseline;
+}
+
+.ul li:hover {
+    font-weight: 600;
+}
+
+.active {
+    text-shadow: 1px 1px 1px rgba(255, 0, 0, 0.3);
+    transform: scale(1.02);
+}

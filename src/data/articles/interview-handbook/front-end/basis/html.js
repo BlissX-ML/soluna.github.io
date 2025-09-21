@@ -1,5 +1,5 @@
 const modules = import.meta.glob(
-    '/src/assets/writings/interview-handbook/front-end/basis/html/*.mdx',
+    '/src/assets/_writings/_interview-handbook/front-end/basis/html/*.mdx',
     { eager: true }     // 立即引入，不用再手动 await
 );
 

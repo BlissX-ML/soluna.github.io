@@ -1,17 +1,18 @@
 import { useParams } from 'react-router-dom';
 
-import classes from './RecapContent.module.css'
-import RecapSubNav from '../../components/repository-comps/Category-Navigation/CategoryItem.jsx';
-import { RECAP_MAIN_KEYS } from '../../data/repository-page/repository';
+import classes from './RecapContent.module.scss'
+
+import { useAppSelector } from '../../store/reducer/hooks.js';
 
 export default function RecapContent() {
+    const { isOpen } = useAppSelector(state => state?.asideToggle)
     const { recapId } = useParams();
 
     return (
-        <div className={classes.content}>
-            {RECAP_MAIN_KEYS.includes(recapId) && <RecapSubNav />}
+        <main className={`${classes.content} ${isOpen ? '' : classes.close}`}>
 
-            {!RECAP_MAIN_KEYS.includes(recapId) && <p>这里是 {recapId} 的正文</p>}
-        </div>
+            <p>这里是 {recapId} 的正文</p>
+
+        </main>
     )
 }

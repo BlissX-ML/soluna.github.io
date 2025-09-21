@@ -1,0 +1,19 @@
+.btn {
+    @include btns-default;
+
+    font-size: $font-size-sm;
+    color: $font-light-color-default;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    border-radius: $border-radius-default*0.5;
+
+    background-color: $index-dark-color-default;
+    padding: calc($padding-default * 0.8) $padding-default;
+    margin-right: $margin-default*0.5;
+
+    &:hover {
+        color: $index-dark-color-default;
+        background-color: $index-light-color-default;
+    }
+}

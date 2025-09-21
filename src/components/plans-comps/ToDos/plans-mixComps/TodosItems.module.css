@@ -1,0 +1,26 @@
+.container {
+    min-height: 37.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    box-sizing: inherit;
+    margin: 0 auto;
+    margin-top: 2rem;
+    overflow-y: auto;
+    scrollbar-width: 1px;
+
+}
+
+.itemsSelect {
+    width: 35rem;
+    min-width: 35rem;
+    max-width: 35rem;
+    border-radius: .5rem;
+    border: .12rem solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.results {
+    width: 42.0625rem;
+    min-width: 42.0625rem;
+}

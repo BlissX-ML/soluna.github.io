@@ -34,19 +34,28 @@ export default defineConfig(() => ({
         lossless: false,
         quality: 75
       },
-      avif: {
-        cqLevel: 33
-      }
     }),
   ],
   resolve: {
     alias: {
       '@': '/src/assets',
-      '#': '/src/assets/writings'
+      '#': '/src/assets/_writings',
     },
   },
   base: './',
   // base: mode === 'production' ? `/${repoName}/` : '/',
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @use "@/_scss/variable.scss" as *; 
+          @use "@/_scss/layout.scss" as *; 
+          @use "@/_scss/functions.scss" as *;
+        `,
+        javascriptEnabled: true
+      }
+    }
+  },
   test: {
     globals: true,
     environment: 'jsdom',

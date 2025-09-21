@@ -1,0 +1,60 @@
+// --------- Flex 布局的相关设置 ---------
+//  flex 布局设置(方向为 row )
+@mixin flexlayout-default {
+    display: flex;
+}
+
+@mixin inline-flexlayout-default {
+    display: inline-flex;
+}
+
+//  flex 布局设置(方向为 column )
+@mixin flexlayout-default-column {
+    @include flexlayout-default;
+    flex-direction: column;
+}
+
+//  flex 布局的水平垂直 居中 设置
+@mixin flexlayout-center {
+    align-items: center;
+    justify-content: center;
+}
+
+// flex 布局的行内显示 + space-between布局
+@mixin flexlayout-space-between {
+    @include inline-flexlayout-default;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+// --------- position 布局的相关设置 ---------
+@mixin position-fixed-layout {
+    position: fixed;
+}
+
+@mixin position-absolute-default {
+    position: absolute;
+}
+
+// position - absolute 布局，同时满足居中
+@mixin position-absolute-layout {
+    @include position-absolute-default;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+// ----- grid(导航栏)布局 -----
+@mixin navigation-grid-default {
+    display: grid;
+    grid-template-columns: 10rem 1fr 15rem;
+    place-items: center;
+}
+
+@mixin navigation-grid-category-dedfault {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    place-self: center;
+}

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import classes from './NavigationItems.module.css'
+import classes from './NavigationItems.module.scss'
 
 export default function NavigationItems({ path, children }) {
     return (
