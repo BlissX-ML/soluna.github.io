@@ -14,6 +14,7 @@
 
 /* 导航部分 */
 .ul {
+    @include list-default;
     @include navigation-grid-category-dedfault;
 
     li {
@@ -40,6 +41,7 @@
 
     @include inline-flexlayout-default;
     @include flexlayout-center;
+
 
     a {
         @include inline-flexlayout-default;

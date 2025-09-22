@@ -73,6 +73,7 @@ const router = createHashRouter([
 function App() {
   return (
     <Suspense fallback={<Loading />}>
+
       <RouterProvider router={router} />
     </Suspense>
   )

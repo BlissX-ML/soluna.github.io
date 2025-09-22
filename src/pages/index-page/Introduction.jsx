@@ -1,4 +1,4 @@
-import classes from './Introduction.module.css'
+import classes from './Introduction.module.scss'
 
 import { INDEX_IMAGES } from '../../data/index-page/indexPage.js'
 import Button from '../../components/Index-comps/Button.jsx';

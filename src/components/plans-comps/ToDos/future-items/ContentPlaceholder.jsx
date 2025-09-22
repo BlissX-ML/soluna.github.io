@@ -1,4 +1,4 @@
-import classes from './ContentPlaceholder.module.css'
+import classes from './ContentPlaceholder.module.scss'
 
 export default function ContentPlaceholder() {
     return (

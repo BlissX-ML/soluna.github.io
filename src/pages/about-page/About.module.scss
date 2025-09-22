@@ -1,12 +1,8 @@
 .about {
-    height: auto;
-    min-height: auto;
-    box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     text-align: left;
-    align-items: left;
     font-size: 1.1rem;
 }
 
@@ -30,6 +26,7 @@
 
 .intro div li {
     line-height: 1.8;
+    @include list-default;
 }
 
 .intro div li::before {
@@ -46,7 +43,6 @@
     gap: 1rem;
     align-items: center;
     margin-top: 2rem;
-    /* justify-content: center; */
 }
 
 .btns img {
@@ -80,7 +76,7 @@
     box-sizing: inherit;
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
-    z-index: 101;
+    // z-index: 101;
 }
 
 .resume main {

@@ -8,15 +8,17 @@
 
 .intro {
     text-align: left;
-    margin-left: 1rem;
-    display: inline-flex;
-    gap: 1.5rem;
-    flex-direction: column;
-    position: absolute;
+    margin-left: $margin-default*0.5;
+    color: $main-background-color;
     backdrop-filter: blur(2px);
+
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    position: absolute;
     top: 20%;
     right: 10%;
-    color: #FFFFFF
 }
 
 .table {
@@ -25,13 +27,12 @@
 }
 
 .para {
-    display: flex;
-    flex-direction: column;
+    @include flexlayout-default-column;
     gap: .8rem;
 }
 
 .active {
     font-weight: bold;
-    color: rgb(31, 86, 120);
-    background-color: rgb(201, 235, 255);
+    color: $index-dark-color-default;
+    background-color: $index-light-color-default;
 }

@@ -9,29 +9,36 @@ $font-size-bg: 18px;
 $main-background-color: #ffffff; // 整个项目的背景颜色
 $content-background-color: #EFEFEF; // 除了导航栏之外的主体部分的背景颜色
 $navigate-background-color: #FAFAFA; // 上部导航栏的背景颜色
-$aside-background-color: #f4f5f7; // 侧边栏的背景颜色
-$dark-background-default: rgba(0, 0, 0, 0.85);
+
+$aside-background-color: #ffffff; // 侧边栏的背景颜色
+
+$dark-background-default: rgba(0, 0, 0, 0.5);
 
 $font-color-default: #333333;
 $font-light-color-default: #f8f8f8;
 $font-highlight-default: rgba(255, 111, 0, 0.7);
 $font-linear-color: linear-gradient(90deg, #ff8800, #ffbca6);
 
-$border-split-module: 1px solid #e0e0e0; // 分离各个组件的边框
+$border-split-module: 1.5px solid #e0e0e0; // 分离各个组件的边框
 $box-shadow-split-module: 2px 0 5px rgba(0, 0, 0, 0.05); // 分离各个组件的阴影效果
 $box-shadow-navigation-content: 0 4px 12px rgba(0, 0, 0, 0.1); // 导航栏下面的下拉文本框
 
 $index-dark-color-default: #205373; // index页的主题颜色
 $index-light-color-default: #c9ebff;
 
+
+
 // 布局设置
 $website-min-width: 47.5rem; // 当前浏览器最小的宽度
 
 $aside-width-default: 1rem; // 侧边栏最小的宽度
-$aside-width-max-default: 20rem; // 侧边栏最小的宽度
+$aside-width-max-default: 17rem; // 侧边栏最大的宽度
 
 $width-default: 5rem;
 $height-default: 5rem;
+$plans-weight-default: 35rem;
+$plans-height-default: 37.5rem;
+
 
 $margin-default: 2rem; // 默认的 margin 布局设置
 
@@ -44,6 +51,9 @@ $border-radius-default: 10px;
 
 $flex-gap-default: 1rem;
 
+$z-index-sidebar: 1000;
+$z-index-overlay: 999;
+$z-index-toggle: 1001;
 
 // 动画效果
 $transition-default: 0.3s ease-in-out; // 默认的转移动画效果

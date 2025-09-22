@@ -1,5 +1,5 @@
 import Content from './Content.jsx'
-import classes from './ContentComp.module.css'
+import classes from './ContentComp.module.scss'
 
 import { COMPLETE_ITEMS } from '../../../../data/plans-page/done-awards/done-items.js'
 import { TODO_ITEMS } from '../../../../data/plans-page/future-todos/future-items.js'
@@ -15,7 +15,11 @@ export default function ContentComp({ state }) {
                         slot='future'
                         style={`${classes.future}`}
                     /> :
-                    <Content items={COMPLETE_ITEMS} slot='done' style={`${classes.complete}`} />
+                    <Content
+                        items={COMPLETE_ITEMS}
+                        slot='done'
+                        style={`${classes.complete}`}
+                    />
             }
         </div>
     )

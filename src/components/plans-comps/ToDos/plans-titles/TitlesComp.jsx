@@ -1,5 +1,5 @@
 import Title from './Title.jsx'
-import classes from './TitlesComp.module.css'
+import classes from './TitlesComp.module.scss'
 
 export default function TitlesComp({ state, changeState }) {
 

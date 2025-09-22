@@ -1,4 +1,4 @@
-import classes from './Plan.module.css';
+import classes from './Plan.module.scss';
 
 import { KnowledgeCardContext } from "../../store/context/knowledgeCardContext.jsx";
 
@@ -9,7 +9,7 @@ import TodosItems from '../../components/plans-comps/ToDos/plans-mixComps/TodosI
 
 export default function Plan() {
     return (
-        <section className={classes.plans}>
+        <section id='main-content' className={classes.plans}>
             <TodosItems />
 
             <KnowledgeCardContext>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import classes from './TodosItems.module.css'
+import classes from './TodosItems.module.scss'
 import TitlesComp from '../plans-titles/TitlesComp.jsx'
 import ContentComp from '../plans-contents/ContentComp.jsx'
 import ContentFutureViewer from '../future-items/ContentFutureViewer';
@@ -12,7 +12,6 @@ export default function TodosItems() {
     const [selectTitle, setSelectTitle] = useState('future');
 
     return (
-
         <main className={classes.container}>
             <div className={classes.itemsSelect}>
                 <TitlesComp state={selectTitle} changeState={setSelectTitle} />

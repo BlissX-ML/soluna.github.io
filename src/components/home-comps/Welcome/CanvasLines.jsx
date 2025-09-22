@@ -114,5 +114,5 @@ export default function CanvasLines({ containerRef }) {
         };
     }, [containerRef]);
 
-    return <canvas ref={canvasRef} style={{ display: "block" }} />;
+    return <canvas ref={canvasRef} />;
 }

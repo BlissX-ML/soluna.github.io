@@ -6,6 +6,7 @@ import 'prismjs/themes/prism-tomorrow.css'
 
 import { HandbookContext } from '../../store/context/HandbookAsideContext.jsx';
 import { useAppSelector } from '../../store/reducer/hooks.js';
+import MainContent from '../../components/aside-fixed-navigation/MainContent.jsx';
 
 
 export default function Handbook() {
@@ -14,10 +15,9 @@ export default function Handbook() {
     const Content = HTML_HANDBOOK[0].content;
 
     return (
-        <main className={`${classes.container} ${isOpen ? '' : classes.close}`}>
+        <MainContent>
             <h2>{HTML_HANDBOOK[0].titleCh}</h2>
-
             <Content />
-        </main>
+        </MainContent>
     )
 }

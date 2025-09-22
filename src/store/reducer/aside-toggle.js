@@ -10,8 +10,9 @@ const asideSlice = createSlice({
     initialState,
 
     reducers: {
-        toggleAside(state) {
-            state.isOpen = !state.isOpen
+        // 根据提供的参数确定是 true 还是 false
+        changeAside(state, action) {
+            state.isOpen = action.payload
         },
 
         resetOpen(state) {
@@ -20,5 +21,5 @@ const asideSlice = createSlice({
     }
 })
 
-export const { toggleAside, resetOpen } = asideSlice.actions;
+export const { changeAside, resetOpen } = asideSlice.actions;
 export default asideSlice.reducer;    // 用于 store 里注册用的函数

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { useAppSelector } from '../../../../store/reducer/hooks.js';
 
-import classes from './ContentDoneViewer.module.css'
+import classes from './ContentDoneViewer.module.scss'
 import PdfViewer from '../../pdf-viewer/PdfViewer.jsx';
 
 

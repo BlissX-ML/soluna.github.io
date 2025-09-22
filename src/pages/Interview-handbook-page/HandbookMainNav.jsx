@@ -1,14 +1,22 @@
+import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom'
 import classes from './HandbookMainNav.module.scss'
 
-import HandbookAsideContext from '../../store/context/HandbookAsideContext.jsx'
-import MainAside from '../../components/Interview-handbook-comps/main-aside/MainAside'
+import { useAppDispatch } from '../../store/reducer/hooks.js';
+import { resetOpen } from '../../store/reducer/aside-toggle.js';
+
+import AsideNavigate from '../../components/aside-fixed-navigation/AsideNavigate.jsx';
 
 export default function HandbookMainNav() {
+    const dispatch = useAppDispatch();
+
+    // 因为是同时控制所有的侧边栏，所以先初始化设置
+    useEffect(() => { dispatch(resetOpen()) }, []);
+
     return (
-        <section className={classes.container}>
+        <section id='main-content' className={classes.container}>
             {/* 实际导航栏设置 */}
-            <MainAside />
+            <AsideNavigate categories={['前端八股文']} />
             <Outlet />
         </section>
     )

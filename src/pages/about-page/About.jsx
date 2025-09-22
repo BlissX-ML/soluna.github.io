@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import classes from './About.module.css'
+import classes from './About.module.scss'
 
 import { INTRODUCTION } from '../../data/about-page/about.js';
 import { ICONS } from '../../data/icons/icons.js';
@@ -17,7 +17,7 @@ export default function About() {
     }
 
     return (
-        <section className={classes.about}>
+        <section id='main-content' className={classes.about} >
             <main className={classes.intro}>
                 {INTRODUCTION.map(items => (
                     <div key={items.key}>
@@ -52,6 +52,6 @@ export default function About() {
                     </button>
                 </main>
             </dialog>
-        </section>
+        </section >
     )
 }

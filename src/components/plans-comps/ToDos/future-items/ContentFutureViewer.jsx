@@ -2,18 +2,14 @@
 
 import { useContext, useMemo } from "react";
 
-import classes from './ContentFutureViewer.module.css'
+import classes from './ContentFutureViewer.module.scss'
 
-import ContentPlaceholder from "./ContentPlaceholder";
+import ContentPlaceholder from "./ContentPlaceholder.jsx";
 import { TodosContext } from "../../../../store/context/TodosManagaeContext.jsx";
 import { useSelector } from "react-redux";
-import mdxWrapper from "../../../../mdxWrapper";
+import mdxWrapper from "../../../../mdxWrapper.jsx";
 
 export default function ContentFutureViewer({ slot, items }) {
-    // const ctx = useContext(TodosContext);
-    // const section = slot === 'future' ? ctx.future : ctx.done;
-    // console.log(ctx.activeContent)
-
     const { activeKey, isActive } = useSelector(state => state?.plans[slot])
 
     // 建 key -> 组件 的本地映射（不会进 Redux）
@@ -27,9 +23,12 @@ export default function ContentFutureViewer({ slot, items }) {
     return (
         <div className={classes.todoContent}>
             {
-                isActive && Comp ?
-                    <Comp components={{ wrapper: mdxWrapper }} /> :
-                    <ContentPlaceholder />}
+                isActive && Comp
+                    ?
+                    <Comp components={{ wrapper: mdxWrapper }} />
+                    :
+                    <ContentPlaceholder />
+            }
         </div>
     )
 }

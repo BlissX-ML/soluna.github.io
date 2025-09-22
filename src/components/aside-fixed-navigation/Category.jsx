@@ -16,6 +16,12 @@ export default function Category({ categories }) {
 
     const handleClick = (key) => {
         dispatch(setCurItem(key))
+
+        // 已经在 repository 下，不强制跳（很重要的交互效果）
+        if (location.pathname.startsWith('/repository')) {
+            return
+        }
+
         if (location.pathname !== '/repository') navigate('/repository')
     }
 
