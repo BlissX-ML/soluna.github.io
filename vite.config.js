@@ -42,7 +42,7 @@ export default defineConfig(() => ({
       '#': '/src/assets/_writings',
     },
   },
-  base: './',
+  base: '/',
   // base: mode === 'production' ? `/${repoName}/` : '/',
   css: {
     preprocessorOptions: {
