@@ -1,13 +1,11 @@
+import metaUrl from '@/_documents/meta/meta.pdf?url'
+
 const AWARDS_IMAGES = {
     cet4: '/images/webp/awards/english/cet4.webp',
     cet6: '/images/webp/awards/english/cet6.webp',
     n2: '/images/webp/awards/japanese/n2.webp',
     lc_75: '/images/webp/awards/leetcode/leetcode-75.webp',
     lc_js_30_day: '/images/webp/awards/leetcode/JavaScript-30-day.webp',
-}
-
-const AWARDS_PDF = {
-    meta: '/documents/meta/meta.pdf'
 }
 
 
@@ -30,7 +28,7 @@ export const COMPLETE_ITEMS = [
     {
         key: 'meta',
         title: 'Meta Front-end Developer 系列课程（共计 9 节）',
-        srcs: AWARDS_PDF.meta
+        srcs: metaUrl
     },
     {
         key: 'lt75',

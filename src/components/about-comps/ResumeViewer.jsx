@@ -1,8 +1,10 @@
-import { RESUME_LATEST } from '../../data/about-page/resume.js';
+import { useMemo } from 'react';
 import PDFViewer from './PDFViewer.jsx';
 
+import resumeUrl from '@/_documents/resume/resume.pdf?url';
+
 export default function ResumeViewer() {
-    const file = RESUME_LATEST[0].src;
+    const file = useMemo(() => resumeUrl, []);
 
     return (
         <PDFViewer
