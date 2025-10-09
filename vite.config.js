@@ -38,8 +38,8 @@ export default defineConfig(() => ({
   ],
   resolve: {
     alias: {
-      '@': '/src/assets',
-      '#': '/src/assets/_writings',
+      '@': '/src/_assets',
+      '#': '/src/_assets/_writings',
     },
   },
   base: '/',

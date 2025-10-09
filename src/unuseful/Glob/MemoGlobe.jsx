@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from './MemoGlobe.module.css'
 
-import { Repository_Navigate } from "../../data/repository-page/repository.js";
+import { Repository_Navigate } from "../../_data/repository-page/repository.js";
 import Glob from "./Glob.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurItem } from "../../store/reducer/repository";

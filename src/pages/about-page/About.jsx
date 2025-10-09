@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import classes from './About.module.scss'
 
-import { INTRODUCTION } from '../../data/about-page/about.js';
-import { ICONS } from '../../data/icons/icons.js';
-import { PROFILE_ABOUT } from '../../data/about-page/profile.js';
+import { INTRODUCTION } from '../../_data/about-page/about.js';
+import { ICONS } from '../../_data/icons/icons.js';
+import { PROFILE_ABOUT } from '../../_data/about-page/profile.js';
 
 import ResumeViewer from '../../components/about-comps/ResumeViewer.jsx';
 

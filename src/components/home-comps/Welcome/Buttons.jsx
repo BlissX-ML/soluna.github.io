@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import classes from './Buttons.module.scss'
-import { ICONS } from '../../../data/icons/icons.js';
+import { ICONS } from '../../../_data/icons/icons.js';
 
 
 export default function Buttons({ src, children }) {

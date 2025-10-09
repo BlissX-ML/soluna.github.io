@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Repository_Navigate } from "../../data/repository-page/repository";
+import { Repository_Navigate } from "../../_data/repository-page/repository";
 
 const initialState = {
     active: false,                                   // 下拉列表选项的点击状态

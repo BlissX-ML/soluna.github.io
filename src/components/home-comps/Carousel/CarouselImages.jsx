@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import classes from './CarouselImages.module.css';
-import { SCROLL_IMAGES } from '../../../data/home-page/homePage.js';
+import { SCROLL_IMAGES } from '../../../_data/home-page/homePage.js';
 import OptimizedImages from './OptimizedImages';
 
 export default function CarouselImages() {

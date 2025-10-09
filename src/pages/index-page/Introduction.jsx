@@ -1,6 +1,6 @@
 import classes from './Introduction.module.scss'
 
-import { INDEX_IMAGES } from '../../data/index-page/indexPage.js'
+import { INDEX_IMAGES } from '../../_data/index-page/indexPage.js'
 import Button from '../../components/Index-comps/Button.jsx';
 import Table from '../../components/Index-comps/Table.jsx'
 

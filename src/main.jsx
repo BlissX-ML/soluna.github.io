@@ -5,7 +5,7 @@ import App from './App.jsx'
 import { Provider } from 'react-redux'
 import { store } from './store/reducer/store.js'
 
-import './data/pdf/pdf-worder.js'
+import './_data/pdf/pdf-worder.js'
 
 const components = {
     a: (props) => (

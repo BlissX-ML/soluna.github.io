@@ -7,7 +7,7 @@ import { setCurItem, toggle, updateItemContent } from '../../../store/reducer/re
 
 import classes from './CategoryDropContent.module.scss'
 
-import { Repository_Navigate } from '../../../data/repository-page/repository.js';
+import { Repository_Navigate } from '../../../_data/repository-page/repository.js';
 import { changeAside, resetOpen } from '../../../store/reducer/aside-toggle.js';
 
 export default function CategoryDropContent() {

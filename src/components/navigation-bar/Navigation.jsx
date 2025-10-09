@@ -9,7 +9,7 @@ import classes from './Navigation.module.scss';
 
 import NavigationItems from "./NavigationItems.jsx";
 import CategoryDropContent from "../repository-comps/Category-Navigation/CategoryDropContent.jsx";
-import { ICONS } from "../../data/icons/icons.js";
+import { ICONS } from "../../_data/icons/icons.js";
 
 
 const Logo = ICONS.logo;

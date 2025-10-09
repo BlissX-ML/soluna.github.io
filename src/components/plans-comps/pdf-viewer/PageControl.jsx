@@ -1,4 +1,4 @@
-import { ICONS } from '../../../data/icons/icons'
+import { ICONS } from '../../../_data/icons/icons'
 import classes from './PageControl.module.scss'
 
 export default function PageControl({ pageNumber, numPages, prevPage, nextPage }) {

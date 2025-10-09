@@ -1,8 +1,8 @@
 import Content from './Content.jsx'
 import classes from './ContentComp.module.scss'
 
-import { COMPLETE_ITEMS } from '../../../../data/plans-page/done-awards/done-items.js'
-import { TODO_ITEMS } from '../../../../data/plans-page/future-todos/future-items.js'
+import { COMPLETE_ITEMS } from '../../../../_data/plans-page/done-awards/done-items.js'
+import { TODO_ITEMS } from '../../../../_data/plans-page/future-todos/future-items.js'
 
 
 export default function ContentComp({ state }) {

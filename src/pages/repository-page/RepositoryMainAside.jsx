@@ -6,7 +6,7 @@ import { useAppDispatch } from "../../store/reducer/hooks.js";
 import { resetOpen } from "../../store/reducer/aside-toggle.js";
 
 import AsideNavigate from "../../components/aside-fixed-navigation/AsideNavigate.jsx";
-import { Repository_Navigate } from "../../data/repository-page/repository.js";
+import { Repository_Navigate } from "../../_data/repository-page/repository.js";
 
 
 export default function RepositoryMainAside() {
