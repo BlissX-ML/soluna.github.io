@@ -2,26 +2,25 @@ import './App.scss'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 
-import NavigationPage from './pages/navigation-bar/NavigationPage.jsx'
+import NavigationPage from './pages/nav-bar/NavigationPage.jsx'
 import Footprint from './pages/footprint-page/Footprint.jsx'
-import Projects from './pages/project-page/Projects.jsx'
-import About from './pages/about-page/About.jsx'
+import About from './pages/about-page/about-page.jsx'
 import RecapContent from './pages/repository-page/RecapContent.jsx'
 
 import Loading from './pages/loading-page/Loading.jsx'
 import RepositoryMainAside from './pages/repository-page/RepositoryMainAside'
-import Introduction from './pages/index-page/Introduction.jsx'
-import Plan from './pages/plans-page/Plan.jsx'
-import Handbook from './pages/Interview-handbook-page/Handbook.jsx'
+import Indexpage from './layouts/index-page/index-layout.jsx'
+import Plan from './pages/plans-page/plan-page.jsx'
+import Handbook from './pages/memo-page/Handbook.jsx'
 import Resources from './pages/resource-share-page/Resources.jsx'
 import HandbookItems from './components/Interview-handbook-comps/ContentDynamicRoute/HandbookItems.jsx'
-import HandbookMainNav from './pages/Interview-handbook-page/HandbookMainNav.jsx'
+import HandbookMainNav from './pages/memo-page/HandbookMainNav.jsx'
 
 
-const Homepage = lazy(() => import('./pages/home-page/Homepage.jsx'))
+const Homepage = lazy(() => import('./pages/home-page/home-page.jsx'))
 
 const router = createHashRouter([
-  { path: '/', element: <Introduction /> },
+  { path: '/', element: <Indexpage /> },
   {
     element: <NavigationPage />,
     children: [
@@ -34,7 +33,7 @@ const router = createHashRouter([
         element: <Plan />,
       },
       {
-        path: '/interview-handbook',
+        path: '/memo',
         element: <HandbookMainNav />,
         children: [
           { index: true, element: <Handbook /> },

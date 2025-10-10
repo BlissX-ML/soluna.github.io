@@ -1,0 +1,12 @@
+.nav {
+    height: 100%; // 撑满 header 的整个高度
+    background-color: $navigate-background-color;
+    border-bottom: $border-split-module;
+
+    @include navigation-grid-default;
+}
+
+.logo {
+    overflow: hidden;
+    width: $width-default*2;
+}

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 
-export default function HandbookItems() {
+export default function HandbookItem() {
     const params = useParams();
 
     return (

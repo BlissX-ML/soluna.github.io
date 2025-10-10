@@ -1,0 +1,34 @@
+/* 导航部分 */
+.ul {
+    @include list-default;
+    @include navigation-grid-category-dedfault;
+
+    li {
+        padding: $padding-default $padding-default*1.1;
+
+        a {
+            @include hyperlink-default;
+            color: $font-color-default;
+        }
+    }
+}
+
+.drop-navigation {
+    position: relative;
+
+    @include inline-flexlayout-default;
+    @include flexlayout-center;
+
+
+    a {
+        @include inline-flexlayout-default;
+        @include flexlayout-center;
+        gap: $flex-gap-default*0.4;
+    }
+
+    a::after {
+        display: inline-block;
+    }
+
+    @include active-navigation-default;
+}

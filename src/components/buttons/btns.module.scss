@@ -1,0 +1,13 @@
+.default {
+    @include btns-default; // 不涉及背景颜色
+    // @include btns-bg-default; //修改背景颜色为透明（选择性添加）
+
+    font-weight: 600;
+
+    border-radius: $border-radius-default;
+
+    // flex布局
+    @include flexlayout-default;
+    @include flexlayout-center;
+    gap: .2rem;
+}

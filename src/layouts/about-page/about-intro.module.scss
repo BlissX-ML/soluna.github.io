@@ -1,0 +1,30 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: unset;
+    margin: 2rem 0rem 0rem 3rem;
+}
+
+.intro div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.intro div p {
+    padding-left: 2rem;
+}
+
+.intro div li {
+    line-height: 1.8;
+    @include list-default;
+}
+
+.intro div li::before {
+    content: '◇';
+    padding-right: .5rem;
+    width: 1rem;
+    height: 1rem;
+    font-size: 1.2rem;
+}

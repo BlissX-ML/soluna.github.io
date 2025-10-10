@@ -1,0 +1,14 @@
+.btn {
+    font-size: $font-size-sm;
+    letter-spacing: 1px;
+
+    color: $font-light-color-default;
+    background-color: $index-dark-color-default;
+
+    padding: calc($padding-default * 0.8) $padding-default;
+
+    &:hover {
+        color: $index-dark-color-default;
+        background-color: $index-light-color-default;
+    }
+}

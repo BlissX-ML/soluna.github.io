@@ -1,0 +1,43 @@
+.indexPage {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+}
+
+.intro {
+    text-align: left;
+    margin-left: $margin-default*0.5;
+    color: $main-background-color;
+    backdrop-filter: blur(2px);
+
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    position: absolute;
+    top: 20%;
+    right: 10%;
+}
+
+.btns {
+    @include flexlayout-default;
+    gap: calc($flex-gap-default * 1.5);
+}
+
+.table {
+    width: fit-content;
+    text-align: left;
+}
+
+.para {
+    @include flexlayout-default-column;
+    gap: .8rem;
+}
+
+.active {
+    font-weight: bold;
+    color: $index-dark-color-default;
+    background-color: $index-light-color-default;
+}

@@ -46,8 +46,11 @@
 // 按钮 button 的默认样式设置
 @mixin btns-default {
     border: none; // 删除按钮的边框
-    background-color: transparent; // 删除按钮的默认背景
     cursor: pointer; // 点击功能的鼠标样式变化
+}
+
+@mixin btns-bg-default {
+    background-color: transparent; // 删除按钮的默认背景
 }
 
 @mixin list-default {
