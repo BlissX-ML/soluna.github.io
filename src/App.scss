@@ -17,10 +17,12 @@
 
 #main-content {
   width: 99%;
-  min-height: calc(100vh - $height-default);
+  height: calc(100vh - #{$height-default});
   margin: 0 auto;
   margin-top: $height-default;
   background-color: $content-background-color;
+
+  overflow: hidden;
 }
 
 

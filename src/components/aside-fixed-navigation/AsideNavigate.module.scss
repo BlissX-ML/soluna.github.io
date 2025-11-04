@@ -25,18 +25,19 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: calc(100vh -#{$height-default});
     width: $aside-width-max-default;
 
     background-color: $aside-background-color;
     border-right: $border-split-module;
     box-shadow: $box-shadow-split-module;
 
+    overflow-y: auto;
+
     transition:
         transform $transition-default,
         width $transition-default;
 
-    // z-index: $z-index-sidebar;
 
     @include flexlayout-default-column;
 
@@ -76,7 +77,7 @@
 /* 目录部分 */
 .category {
     flex: 1;
-    overflow-y: auto;
+    // overflow-y: auto;
     overflow-x: hidden;
     text-align: left;
     padding: $padding-default calc($padding-default * 0.5);

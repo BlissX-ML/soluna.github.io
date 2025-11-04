@@ -3,6 +3,8 @@
     // margin-left: calc($aside-width-max-default + $margin-default*2);
     margin-left: $margin-default;
 
+    overflow-y: auto;
+
     line-height: 2;
     margin-top: 1rem;
     margin-bottom: 1rem;
