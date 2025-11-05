@@ -16,6 +16,7 @@ export function formatToday(locale = 'zh-CN', timeZone = 'Asia/Shanghai') {
 
 
 
+
 // 2) 监听跨天更新：每分钟检查一次是否进入新的一天
 // onChange: (str) => {...} 用来把新日期渲染到 UI,对应 useState 内的 setToday 
 export function startDateWatcher(onChange) {
@@ -32,4 +33,24 @@ export function startDateWatcher(onChange) {
 
     // 返回停止函数，组件卸载时调用以清理定时器
     return () => clearInterval(id);
+}
+
+
+// 3) 计划可选范围：返回今天与+30天后的“最大日期”
+export function todosDateScale(days = 30, locale = 'en-CA', timeZone = 'Asia/Shanghai') {
+    const now = new Date();
+    const max = new Date(now);
+    max.setDate(max.getDate() + days); // 自动处理跨月/跨年/闰年
+
+    const fmt = new Intl.DateTimeFormat(locale, {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        timeZone
+    });
+
+    return {
+        today: fmt.format(now),
+        max: fmt.format(max),
+    };
 }

@@ -81,7 +81,7 @@ export default function Plan() {
             {
                 addNewTodos
                 &&
-                <AddNewTodos />
+                <AddNewTodos onAddControl={setAddNewTodos} />
             }
 
             {/* 未来计划目标 + 已完成内容部分 */}
