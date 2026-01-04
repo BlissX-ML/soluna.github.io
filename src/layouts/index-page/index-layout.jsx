@@ -1,8 +1,8 @@
 import classes from './index-layout.module.scss'
 
-import { INDEX_IMAGES } from '../../_data/index-page/indexPage.js'
-import Select from '../../features/index-page/Select.jsx';
-import Table from '../../features/index-page/Table.jsx'
+import { INDEX_IMAGES, INTENDED_WORK_INTRODUCTION } from '../../_data/index-page/indexPage.js'
+import Select from '../../features/index-page/select-btns.jsx';
+import Table from '../../components/tables/Table.jsx'
 
 const imageURL = INDEX_IMAGES[0].webp;
 
@@ -13,10 +13,9 @@ export default function IndexLayout() {
                 <h1>欢迎访问我的网站💕</h1>
                 <table className={classes.table}>
                     <tbody>
-                        <Table th='学位' td='硕士学位' />
-                        <Table th='到岗时间' td='月内到岗' />
-                        <Table th='当前求职岗位' td='前端工程师' />
-                        <Table th='当前就业状态' td='离职待就业' />
+                        {INTENDED_WORK_INTRODUCTION.map((el) => (
+                            <Table th={el.title} td={el.content} key={el.id} />
+                        ))}
                     </tbody>
                 </table>
                 <p className={classes.para}>

@@ -1,34 +1,32 @@
 /* 导航部分 */
 .ul {
     @include list-default;
-    @include navigation-grid-category-dedfault;
-
-    li {
-        padding: $padding-default $padding-default*1.1;
-
-        a {
-            @include hyperlink-default;
-            color: $font-color-default;
-        }
-    }
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    justify-content: space-around;
 }
 
 .drop-navigation {
-    position: relative;
-
-    @include inline-flexlayout-default;
-    @include flexlayout-center;
-
-
-    a {
-        @include inline-flexlayout-default;
-        @include flexlayout-center;
-        gap: $flex-gap-default*0.4;
-    }
-
+    // 箭头
     a::after {
         display: inline-block;
     }
+    @include active-arrow-navigation-default;
 
-    @include active-navigation-default;
+    // 是否显示 dropdown-list
+    .dropdown-visibility {
+        top: calc(100% - 5px);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: all 0.3s ease;
+    }
+
+    a:hover + .dropdown-visibility,
+    .dropdown-visibility:hover {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 }

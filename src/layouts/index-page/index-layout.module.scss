@@ -8,7 +8,7 @@
 
 .intro {
     text-align: left;
-    margin-left: $margin-default*0.5;
+    margin-left: $margin-default * 0.5;
     color: $main-background-color;
     backdrop-filter: blur(2px);
 
@@ -33,11 +33,11 @@
 
 .para {
     @include flexlayout-default-column;
-    gap: .8rem;
+    gap: 0.8rem;
 }
 
 .active {
     font-weight: bold;
-    color: $index-dark-color-default;
-    background-color: $index-light-color-default;
+    color: #205373;
+    background-color: #c9ebff;
 }

@@ -1,16 +1,17 @@
 // 字体样式设置
-$font-family-styles: "PingFang SC", "Microsoft YaHei", "Heiti SC", "Noto Sans SC", "Segoe UI", "Roboto", "Helvetica Neue";
+$font-family-styles:
+    "PingFang SC", "Microsoft YaHei", "Heiti SC", "Noto Sans SC", "Segoe UI",
+    "Roboto", "Helvetica Neue";
 $font-size-sm: 14px;
 $font-size-md: 16px;
 $font-size-bg: 18px;
 
-
 // 颜色设置
 $main-background-color: #ffffff; // 整个项目的背景颜色
-$content-background-color: #EFEFEF; // 除了导航栏之外的主体部分的背景颜色
-$navigate-background-color: #FAFAFA; // 上部导航栏的背景颜色
-
+$content-background-color: #efefef; // 除了导航栏之外的主体部分的背景颜色
+$navigate-background-color: #fafafa; // 上部导航栏的背景颜色
 $aside-background-color: #ffffff; // 侧边栏的背景颜色
+$dropdown-menu-background-color: #f5f5f5; // 下拉列表的背景颜色
 
 $dark-background-default: rgba(0, 0, 0, 0.8);
 
@@ -23,11 +24,6 @@ $border-split-module: 1.5px solid #e0e0e0; // 分离各个组件的边框
 $box-shadow-split-module: 2px 0 5px rgba(0, 0, 0, 0.05); // 分离各个组件的阴影效果
 $box-shadow-navigation-content: 0 4px 12px rgba(0, 0, 0, 0.1); // 导航栏下面的下拉文本框
 
-$index-dark-color-default: #205373; // index页的主题颜色
-$index-light-color-default: #c9ebff;
-
-
-
 // 布局设置
 $website-min-width: 47.5rem; // 当前浏览器最小的宽度
 
@@ -38,7 +34,6 @@ $width-default: 5rem;
 $height-default: 5rem;
 $plans-weight-default: 35rem;
 $plans-height-default: 37.5rem;
-
 
 $margin-default: 2rem; // 默认的 margin 布局设置
 

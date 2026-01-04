@@ -1,7 +1,0 @@
-.default button {
-    @include btns-default; // 不涉及背景颜色
-    @include btns-bg-default; //修改背景颜色为透明（选择性添加）
-
-    border-radius: $border-radius-default;
-
-}

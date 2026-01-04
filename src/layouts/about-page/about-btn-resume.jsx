@@ -2,12 +2,12 @@ import { useState } from 'react';
 import classes from './about-btn-resume.module.scss';
 
 import { ICONS } from '../../_data/icons/icons.js';
-import { PROFILE_ABOUT } from '../../_data/about-page/profile.js';
 
 import ResumeViewer from '../../features/about-page/resume-viewer.jsx';
+import { PROFILE_IMAGE_ABOUT } from '../../_data/about-page/about-content.js';
 
 export default function AboutBtnResume() {
-    const profile = PROFILE_ABOUT[0]
+    const profile = PROFILE_IMAGE_ABOUT[0]
     const [isOpen, setIsOpen] = useState(false);
 
     function handleClick() { setIsOpen(prev => !prev) }

@@ -1,47 +1,76 @@
-import classes from './main-navigation.module.scss';
+import { useAppDispatch, useAppSelector } from "../../store/reducer/hooks.js";
+import { setCurItem } from "../../store/reducer/repository.js";
+import classes from "./main-navigation.module.scss";
 
-import { useDispatch } from 'react-redux';
-import { close, open } from '../../store/reducer/repository';
-import DropItems from '../repository-page/drop-items';
-import NavItems from './nav-items';
+import RedirectItemPage from "../../components/links/redirect-page.jsx";
+import DropMenuRedirectAsideMenu from "../repository-page/drop-menu-redirect.jsx";
 
 export default function MainNavigation() {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
+    const { initialItem } = useAppSelector((state) => state.repository);
 
     return (
         <ul className={classes.ul}>
-            <li>
-                <NavItems path='/home'>首页</NavItems>
-            </li>
-
-            <li>
-                <NavItems path='/plans'>未来目标</NavItems>
-            </li>
-
-            <li className={classes['drop-navigation']}>
-                <NavItems path='/memo'>面试手册</NavItems>
-            </li>
-
-            <li
-                className={classes['drop-navigation']}
-                onMouseEnter={() => dispatch(open())}
-                onMouseLeave={() => dispatch(close())}
+            <RedirectItemPage
+                path="/home"
+                listStyle=""
+                extraContentInList={null}
             >
-                <NavItems path='/repository'>知识库</NavItems>
-                <DropItems />
-            </li>
+                首页
+            </RedirectItemPage>
 
-            <li>
-                <NavItems path='footprint'>我的旅程</NavItems>
-            </li>
+            <RedirectItemPage
+                path="/plans"
+                listStyle=""
+                extraContentInList={null}
+            >
+                未来目标
+            </RedirectItemPage>
 
-            <li>
-                <NavItems path='resources'>资源共享</NavItems>
-            </li>
+            <RedirectItemPage
+                path="/memo"
+                listStyle={classes["drop-navigation"]}
+                extraContentInList={null}
+            >
+                面试手册
+            </RedirectItemPage>
 
-            <li>
-                <NavItems path='about'>自我介绍</NavItems>
-            </li>
+            <RedirectItemPage
+                path="/repository"
+                listStyle={classes["drop-navigation"]}
+                onClick={() => dispatch(setCurItem(initialItem))}
+                extraContentInList={
+                    <DropMenuRedirectAsideMenu
+                        displayStyle={classes["dropdown-visibility"]}
+                    />
+                }
+            >
+                知识库
+            </RedirectItemPage>
+
+            <RedirectItemPage
+                path="footprint"
+                listStyle=""
+                extraContentInList={null}
+            >
+                我的旅程
+            </RedirectItemPage>
+
+            <RedirectItemPage
+                path="resources"
+                listStyle=""
+                extraContentInList={null}
+            >
+                资源共享
+            </RedirectItemPage>
+
+            <RedirectItemPage
+                path="about"
+                listStyle=""
+                extraContentInList={null}
+            >
+                自我介绍
+            </RedirectItemPage>
         </ul>
-    )
+    );
 }

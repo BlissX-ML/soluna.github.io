@@ -1,0 +1,14 @@
+.index-btn {
+    color: #c9ebff;
+    font-size: $font-size-sm;
+    letter-spacing: 1px;
+
+    background-color: #205373;
+
+    padding: calc($padding-default * 0.8) $padding-default;
+
+    &:hover {
+        color: #205373;
+        background-color: #c9ebff;
+    }
+}

@@ -1,10 +1,10 @@
-import { INTRODUCTION } from '../../_data/about-page/about.js';
+import { ABOUT_ME_INTRODUCTION } from '../../_data/about-page/about-content.js';
 import classes from './about-intro.module.scss';
 
 export default function AboutIntro() {
     return (
         <main className={classes.intro}>
-            {INTRODUCTION.map(items => (
+            {ABOUT_ME_INTRODUCTION.map(items => (
                 <div key={items.key}>
                     <h3>{items.title}</h3>
                     <p>

@@ -1,4 +1,4 @@
-@use './variable' as *;
+@use "./variable" as *;
 
 // 文字内存在线性颜色设计
 @mixin font-linear-default {
@@ -7,14 +7,17 @@
     -webkit-text-fill-color: transparent;
 }
 
-
 // 链接选中和 hover 悬浮的样式（底边框动画效果滑出）
-@mixin border-animation-default($color: #ff8800, $height: 2px, $duration: 0.3s) {
+@mixin border-animation-default(
+    $color: #ff8800,
+    $height: 2px,
+    $duration: 0.3s
+) {
     position: relative;
     display: inline-block;
 
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -2px;
         left: 0;
@@ -66,8 +69,8 @@
 }
 
 // 箭头的雏形，可以复用（为元素）
-@mixin arrow-default($border: 2px solid #979797, $size: .5rem, ) {
-    content: '';
+@mixin arrow-default($border: 2px solid #979797, $size: 0.5rem) {
+    content: "";
     width: $size;
     height: $size;
     border-right: $border;
@@ -77,20 +80,21 @@
 }
 
 // 总标题的下拉箭头的动画效果(带有内置的超链接 a)
-@mixin active-navigation-default($duration: 0.25s) {
+@mixin active-arrow-navigation-default($duration: 0.25s) {
     a::after {
         @include arrow-default;
+        margin-left: 10px;
         transform: rotate(45deg);
         transition: transform $duration ease-in-out;
     }
 
-    &:hover a::after {
+    a:hover::after {
         transform: rotate(-135deg);
     }
 }
 
 // 侧边栏的下拉箭头的动画效果
-@mixin arrow-drop-animation-default($duration: 0.3s, $margin: 1rem, ) {
+@mixin arrow-drop-animation-default($duration: 0.3s, $margin: 1rem) {
     cursor: pointer;
 
     &::after {
@@ -121,7 +125,7 @@
 
 // 可以复用的方块（伪元素）
 @mixin square-default($border-color) {
-    content: '';
+    content: "";
     color: $border-color;
     width: 1rem;
     height: 1rem;
@@ -132,11 +136,11 @@
 
 // 可以复用的特殊序号（伪元素）
 @mixin special-serial-number-default {
-    content: '▶';
+    content: "▶";
     width: 1rem;
     height: 1rem;
     font-size: 0.5rem;
-    margin-right: .6rem;
+    margin-right: 0.6rem;
 }
 
 // 文字框从上到下慢慢那淡出的效果（测边框）
@@ -144,14 +148,14 @@
     overflow: hidden;
     max-height: 0;
     opacity: 0;
-    transform: translateY(-.5rem);
+    transform: translateY(-0.5rem);
     transition:
         max-height 0.35s ease,
         opacity 0.35s ease,
         transform 0.35s ease;
 
     li {
-        padding: .5rem 0rem;
+        padding: 0.5rem 0rem;
     }
 
     &.active {
@@ -160,8 +164,6 @@
         transform: translateY(0);
     }
 }
-
-
 
 // 定义可以复用的滚动条块
 @mixin scrollbar-styling {
@@ -187,7 +189,6 @@
         background: transparent;
     }
 }
-
 
 // 弹性计数的方式去添加列表的序号
 @mixin list-number-counter-default {
