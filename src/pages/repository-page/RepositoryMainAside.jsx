@@ -7,6 +7,7 @@ import { resetOpen } from "../../store/reducer/aside-toggle.js";
 
 import AsideNavigate from "../../features/aside-fixed-navigation/AsideNavigate.jsx";
 import { Repository_Navigate } from "../../_data/repository-page/repository.js";
+import SidebarNavigate from "../../features/sidebar-navigate";
 
 export default function RepositoryMainAside() {
     const dispatch = useAppDispatch();
@@ -17,7 +18,7 @@ export default function RepositoryMainAside() {
 
     return (
         <section id="main-content" className={classes.container}>
-            <AsideNavigate categories={Repository_Navigate} />
+            <SidebarNavigate CATEGORY={Repository_Navigate} />
             <Outlet />
         </section>
     );

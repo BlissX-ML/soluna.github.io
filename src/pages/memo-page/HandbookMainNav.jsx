@@ -6,6 +6,7 @@ import { useAppDispatch } from "../../store/reducer/hooks.js";
 import { resetOpen } from "../../store/reducer/aside-toggle.js";
 
 import AsideNavigate from "../../features/aside-fixed-navigation/AsideNavigate.jsx";
+import SidebarNavigate from "../../features/sidebar-navigate";
 
 export default function HandbookMainNav() {
     const dispatch = useAppDispatch();
@@ -18,7 +19,7 @@ export default function HandbookMainNav() {
     return (
         <section id="main-content" className={classes.container}>
             {/* 实际导航栏设置 */}
-            <AsideNavigate categories={["前端八股文"]} />
+            <SidebarNavigate CATEGORY={["前端八股文"]} />
             <Outlet />
         </section>
     );
