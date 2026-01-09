@@ -6,7 +6,7 @@ import "prismjs/themes/prism-tomorrow.css";
 
 import { HandbookContext } from "../../store/context/HandbookAsideContext.jsx";
 import { useAppSelector } from "../../store/reducer/hooks.js";
-import MainContent from "../../features/aside-fixed-navigation/MainContent.jsx";
+import MainContent from "../../features/sidebar-navigation/MainContent.jsx";
 
 export default function Handbook() {
     const { isOpen } = useAppSelector((state) => state?.asideToggle);

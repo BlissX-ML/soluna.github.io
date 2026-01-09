@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 // useAppDispatch 分派函数（动作）以改变这些变量
 import { useAppDispatch } from "../../store/reducer/hooks";
 import {
+    openSecondaryItems,
     setCurItem,
     updateItemContent,
 } from "../../store/reducer/repository.js";
@@ -24,6 +25,7 @@ export default function DropMenuRedirectAsideMenu({ displayStyle }) {
     function handleReduxState(item) {
         dispatch(setCurItem(item)); // 修改为当前选中的 item
         dispatch(updateItemContent(item)); // 修改二级标题
+        dispatch(openSecondaryItems()); // 联动 sidebar-nav, 控制 sidebar 的二级标题展开状态
         dispatch(resetOpen()); // 重置左侧导航栏状态
     }
 

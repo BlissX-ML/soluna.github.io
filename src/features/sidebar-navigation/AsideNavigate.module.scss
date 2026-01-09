@@ -26,7 +26,7 @@
     top: 0;
     left: 0;
     height: calc(100vh -#{$height-default});
-    width: $aside-width-max-default;
+    // width: $aside-width-max-default;
 
     background-color: $aside-background-color;
     border-right: $border-split-module;
@@ -38,18 +38,17 @@
         transform $transition-default,
         width $transition-default;
 
-
     @include flexlayout-default-column;
 
     /* 桌面端样式 */
     &.desktop {
         position: relative; // 保持相对定位
         transition: width $transition-default; // 只过渡宽度
-        width: $aside-width-max-default;
+        // width: $aside-width-max-default;
 
         // 默认为开启状态
         &.open {
-            width: $aside-width-max-default;
+            // width: $aside-width-max-default;
         }
 
         &.close {
@@ -72,7 +71,6 @@
         }
     }
 }
-
 
 /* 目录部分 */
 .category {
@@ -103,8 +101,10 @@
 
     /* 桌面端按钮位置 */
     @media (min-width: 1024px) {
-        left: $aside-width-max-default; // 默认打开侧边栏
-        transition: left $transition-default, transform 0.2s ease;
+        // left: $aside-width-max-default; // 默认打开侧边栏
+        transition:
+            left $transition-default,
+            transform 0.2s ease;
 
         &.closed {
             left: 0; // 关闭状态
@@ -120,7 +120,7 @@
         left: 0; // 默认在最左侧折叠起来
 
         &.opened {
-            left: $aside-width-max-default; // 打开侧边栏
+            // left: $aside-width-max-default; // 打开侧边栏
             transition: left $transition-default;
         }
 
@@ -144,10 +144,10 @@
     .aside.desktop {
         /* 强制移动端样式 */
         position: fixed;
-        width: $aside-width-max-default;
+        // width: $aside-width-max-default;
 
         &.close {
-            width: $aside-width-max-default;
+            // width: $aside-width-max-default;
             transform: translateX(-100%);
             overflow: visible;
             border-right: $border-split-module;

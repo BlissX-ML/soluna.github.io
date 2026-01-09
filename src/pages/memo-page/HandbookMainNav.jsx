@@ -5,8 +5,8 @@ import classes from "./HandbookMainNav.module.scss";
 import { useAppDispatch } from "../../store/reducer/hooks.js";
 import { resetOpen } from "../../store/reducer/aside-toggle.js";
 
-import AsideNavigate from "../../features/aside-fixed-navigation/AsideNavigate.jsx";
-import SidebarNavigate from "../../features/sidebar-navigate";
+import AsideNavigate from "../../features/sidebar-navigation/AsideNavigate.jsx";
+import SidebarNavigate from "../../features/sidebar-navigation/sidebar-navigate";
 
 export default function HandbookMainNav() {
     const dispatch = useAppDispatch();

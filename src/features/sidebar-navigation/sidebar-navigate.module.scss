@@ -1,5 +1,5 @@
 .sidebar {
-    width: 15rem;
+    width: $sidebar-max-width;
     height: 100vh; // 让侧边栏保证占满高度
     background-color: $aside-background-color;
     overflow: scroll;
@@ -82,4 +82,11 @@
             }
         }
     }
+}
+
+.sidebar-container {
+    position: absolute;
+    left: $sidebar-max-width;
+    width: 2rem;
+    height: 2rem;
 }

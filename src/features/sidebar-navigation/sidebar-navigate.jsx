@@ -1,23 +1,39 @@
-import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import classes from "./sidebar-navigate.module.scss";
+import { useAppDispatch, useAppSelector } from "../../store/reducer/hooks.js";
+
+import {
+    openSecondaryItems,
+    setCurItem,
+    toggleOpenSecondaryItems,
+} from "../../store/reducer/repository.js";
 
 export default function SidebarNavigate({ CATEGORY }) {
-    const [curSelectedItem, setCurSelectedItem] = useState(null);
-    const [openSecondaryItems, setOpenSecondaryItems] = useState(false);
+    // 和下拉列表联动
+    const dispatch = useAppDispatch();
 
-    function expandSecondaryItems(item) {
-        setCurSelectedItem(item);
-        if (curSelectedItem !== item) {
-            setOpenSecondaryItems(true);
+    // 选中知识库页面的state
+    const { curItem, secondaryItemsState } = useAppSelector(
+        (state) => state.repository,
+    );
+
+    const location = useLocation();
+
+    function updateSecondaryItems(item) {
+        if (curItem === item) {
+            dispatch(toggleOpenSecondaryItems());
+        } else {
+            dispatch(setCurItem(item));
+            dispatch(openSecondaryItems());
+        }
+
+        if (location.pathname.startsWith("/repository")) {
             return;
         }
-        setOpenSecondaryItems((state) => !state);
     }
 
     function activeClass(item) {
-        return curSelectedItem === item && openSecondaryItems
-            ? classes.active
-            : "";
+        return curItem === item && secondaryItemsState ? classes.active : ""; //
     }
 
     return (
@@ -25,13 +41,14 @@ export default function SidebarNavigate({ CATEGORY }) {
             {/* 放侧边栏 */}
             <aside className={classes["sidebar"]}>
                 <ul className={classes["first-ul"]}>
-                    {CATEGORY.map((firstLevel, ind) => (
+                    {CATEGORY.map((firstLevel) => (
                         <>
                             <li
                                 onClick={() =>
-                                    expandSecondaryItems(firstLevel.key)
+                                    updateSecondaryItems(firstLevel.key)
                                 }
                                 className={`${classes["first-li"]} ${activeClass(firstLevel.key)}`}
+                                key={firstLevel.key}
                             >
                                 <div className={classes["title"]}>
                                     {firstLevel.title}
@@ -44,6 +61,7 @@ export default function SidebarNavigate({ CATEGORY }) {
                                         (secondaryLevel) => (
                                             <li
                                                 className={classes["second-li"]}
+                                                key={secondaryLevel.key}
                                             >
                                                 {secondaryLevel?.title}
                                             </li>

@@ -8,6 +8,9 @@ const initialState = {
     // active: false,
     initialItem: initialItem,
 
+    // 默认不开启侧边栏的二级标题
+    secondaryItemsState: false,
+
     // 当前被选中的选项（默认情况下是列表的第一个）
     curItem: initialItem,
 
@@ -33,6 +36,15 @@ const repositorySlice = createSlice({
                 Repository_Navigate?.[action.payload]?.detail_content;
         },
 
+        // 更新侧边栏二级标题的显示状态，实现 dropdown-list 与 sidebar-nav 之间的联动
+        toggleOpenSecondaryItems(state) {
+            state.secondaryItemsState = !state.secondaryItemsState;
+        },
+
+        openSecondaryItems(state) {
+            state.secondaryItemsState = true;
+        },
+
         // 更新下拉列表的显示为 true
         // open(state) { state.active = true; },
         // close(state) { state.active = false;},
@@ -40,5 +52,10 @@ const repositorySlice = createSlice({
     },
 });
 
-export const { setCurItem, updateItemContent } = repositorySlice.actions;
+export const {
+    setCurItem,
+    updateItemContent,
+    toggleOpenSecondaryItems,
+    openSecondaryItems,
+} = repositorySlice.actions;
 export default repositorySlice.reducer; // 用于 store 里注册用的函数
