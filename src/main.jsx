@@ -1,11 +1,11 @@
-import { createRoot } from 'react-dom/client'
-import { MDXProvider } from '@mdx-js/react'
-import './main.scss'
-import App from './App.jsx'
-import { Provider } from 'react-redux'
-import { store } from './store/reducer/store.js'
+import { createRoot } from "react-dom/client";
+import { MDXProvider } from "@mdx-js/react";
+import "./main.scss";
+import App from "./App.jsx";
+import { Provider } from "react-redux";
+import { store } from "./store/reducer/store.js";
 
-import './_data/pdf/pdf-worder.js'
+import "./_data/pdf/pdf-worder.js";
 
 const components = {
     a: (props) => (
@@ -13,16 +13,15 @@ const components = {
             {props.children}
         </a>
     ),
-}
+};
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
     <MDXProvider components={components}>
         <Provider store={store}>
             <App />
         </Provider>
-    </MDXProvider>
-)
-
+    </MDXProvider>,
+);
 
 // import { Provider } from 'react-redux'
 // import store from './components/HomePage/Caroudel-noSlick/store'
