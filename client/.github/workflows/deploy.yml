@@ -26,7 +26,7 @@ jobs:
               run: npm run build
 
             - name: Add CNAME # ✅ 确保 CNAME 在 dist 内
-              run: echo "blissxml.cn" > client/dist/CNAME
+              run: echo "blissxml.cn" > ./client/dist/CNAME
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
