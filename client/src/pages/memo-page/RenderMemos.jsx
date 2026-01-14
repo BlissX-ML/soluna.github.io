@@ -1,5 +1,4 @@
 import classes from "./RenderMemos.module.scss";
-import "prismjs/themes/prism-tomorrow.css";
 
 import { MEMOS } from "../../_data/memo-page/memo.js";
 
