@@ -1,48 +1,50 @@
 name: Deploy React App to Pages
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
+        steps:
+            - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
 
-      - name: Install dependencies
-        run: npm ci
+            - name: Install dependencies
+              working-directory: client
+              run: npm ci
 
-      - name: Build project
-        run: npm run build
+            - name: Build project
+              working-directory: client
+              run: npm run build
 
-      - name: Add CNAME   # ✅ 确保 CNAME 在 dist 内
-        run: echo "blissxml.cn" > ./dist/CNAME
+            - name: Add CNAME # ✅ 确保 CNAME 在 dist 内
+              run: echo "blissxml.cn" > client/dist/CNAME
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: client/dist
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        permissions:
+            pages: write
+            id-token: write
 
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
 
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
