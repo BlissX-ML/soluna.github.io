@@ -1,0 +1,30 @@
+html {
+    @include scrollbar-styling;
+}
+
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: $font-family-styles;
+
+    &::before,
+    &::after {
+        box-sizing: $layout-box-model !important;
+    }
+}
+
+button {
+    @include btns-default; // 导入复用组件
+}

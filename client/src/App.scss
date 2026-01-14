@@ -1,0 +1,31 @@
+#root {
+    text-align: center;
+    min-width: $website-min-width;
+    color: $font-color-default;
+    background-color: $main-background-color;
+
+    @include flexlayout-default-column; // flex布局 + 修改默认方向
+}
+
+#root > .header {
+    position: fixed;
+    width: 100%;
+    height: $height-default;
+    z-index: 100; // 这个是保证下拉列表不会到首页页面下的关键
+    flex: $height-default;
+}
+
+#main-content {
+    width: 99%;
+    height: calc(100vh - #{$height-default});
+    margin: 0 auto;
+    margin-top: $height-default;
+    background-color: $content-background-color;
+
+    overflow: hidden;
+}
+
+#root > footer {
+    width: 100%;
+    max-height: calc($height-default * 2);
+}

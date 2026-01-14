@@ -1,0 +1,15 @@
+---
+titleEn: "Box Model and Positioning"
+titleCh: "盒子模型与定位"
+tags: ["CSS"]
+---
+
+1. **盒子模型 (Box Model)**
+    - 控制的是元素 **尺寸的构成**
+    - 四层结构：content → padding → border → margin
+2. **定位 (Position)**
+    - 控制的是元素 **在页面中的位置**
+3. **关系**
+    - 盒子模型决定 **盒子有多大**
+    - 定位模型决定 **盒子在哪**
+    - 二者独立但配合使用

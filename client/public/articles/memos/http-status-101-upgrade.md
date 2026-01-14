@@ -1,0 +1,27 @@
+---
+titleEn: "HTTP Status Code Protocol Upgrade"
+titleCh: "HTTP 状态码协议升级"
+tags: ["engineering"]
+---
+
+
+1. **常见场景**
+    - 浏览器先通过 **HTTP 请求**向服务器发起升级。
+    - 请求头里带 `Upgrade: websocket` 和 `Connection: Upgrade`
+    - 服务器同意后返回 `101 Switching Protocols`，后续通信改用 **WebSocket 协议**。
+    - 例子：先打电话（HTTP），觉得不够方便，就转成视频通话（WebSocket）。
+2. 协议升级需要前后端配合
+    - 前端示例：
+        
+        ```jsx
+        const socket = new WebSocket("wss://example.com/socket");
+        
+        socket.onopen = () => console.log("连接已建立");
+        socket.onmessage = (msg) => console.log("收到消息:", msg.data);
+        socket.onerror = (err) => console.error("连接出错:", err);
+        socket.onclose = () => console.log("连接已关闭");
+        ```
+        
+    - 说明：
+        - `ws://` 表示普通 WebSocket，`wss://` 表示加密 WebSocket。
+        - WebSocket 一旦建立，可以实现浏览器和服务器之间的 **双向实时通信**。

@@ -1,0 +1,38 @@
+---
+titleEn: "The 8 Data Types in JavaScript"
+titleCh: "JavaScript 的 8 种数据类型"
+tags: ["JavaScript"]
+---
+
+1. **Number**
+    - 表示数值，包括整数、浮点数、NaN、Infinity。
+    - 特点：**精度有限**（遵循 IEEE 754 双精度浮点数标准，`0.1 + 0.2 !== 0.3`）。
+    - `NaN` 不是一种新的数据类型，是 **Number 类型** 的一个特殊值
+2. **String**
+    - 表示文本数据，用单引号 `' '`、双引号 `" "` 或反引号 `` `` 定义。
+    - 特点：**不可变**，每次修改都会新建字符串。
+3. **Boolean**
+    - 表示逻辑值：`true` 或 `false`。
+    - 常用于条件判断。
+4. **Undefined**
+    - 只有一个值：`undefined`。
+    - 含义：**变量声明了但没有赋值** → 默认值为 `undefined`。
+5. **Null**
+    - 只有一个值：`null`。
+    - 含义：人为设置为空，**表示“无对象”**。
+    - 特点：历史遗留 bug → **`typeof null === "object"`**。
+6. **Symbol**（ES6 新增）
+    - 表示**独一无二**的值，主要用于对象的属性键。
+    - 特点：唯一性，**避免属性名冲突**。
+    - 示例：`const id = Symbol('id');`
+7. **BigInt**（ES10 新增）
+    - 用于表示超过 `Number` 最大安全整数 (`2^53 - 1`) 的大整数。
+    - 特点：可以安全存储和操作任意精度的整数。
+    - 示例：`const big = 9007199254740993n;`
+8. **Object**
+    - 引用类型，包含数组、函数、正则、日期等。
+    - 特点：可存放复杂数据和键值对。
+9. **总结**：
+	1. **7种基本类型**：`number / bigint / string / boolean / null / undefined / symbol`
+	2. **1种引用类型**：`object`
+
