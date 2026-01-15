@@ -1,4 +1,4 @@
-import classes from "./general-btns.module.scss";
+import classes from "./GeneralBtns.module.scss";
 
 export default function GeneralBtns({
     style,

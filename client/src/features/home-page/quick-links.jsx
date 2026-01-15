@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import classes from "./quick-links.module.scss";
 import { ICONS } from "../../_data/icons/icons.js";
-import GeneralBtns from "../../components/buttons/general-btns";
+import GeneralBtns from "../../components/buttons/GeneralBtns";
 
 export default function Select({ src, children }) {
     const ArrowDark = ICONS.arrowRightDark;

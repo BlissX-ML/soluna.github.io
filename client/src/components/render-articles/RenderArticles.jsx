@@ -6,7 +6,7 @@ import rehypePrism from "rehype-prism-plus"; // 连接 ReactMarkdown 和 PrismJS
 
 import RenderMarkdown from "../markdown/RenderMarkdown.jsx";
 
-export default function RenderArticles({ articles, ind }) {
+export default function RenderArticles({ articles }) {
     const [content, setContent] = useState("");
     const path = articles?.path;
 

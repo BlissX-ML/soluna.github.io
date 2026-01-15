@@ -1,4 +1,4 @@
-import classes from "./nav-menu-btns.module.scss";
+import classes from "./NavMenuBtns.module.scss";
 
 export default function NavMenuBtns({ handleClick, children }) {
     return (

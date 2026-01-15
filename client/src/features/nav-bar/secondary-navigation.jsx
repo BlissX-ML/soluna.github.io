@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import NavMenuBtns from "../../components/buttons/nav-menu-btns.jsx";
+import NavMenuBtns from "../../components/buttons/NavMenuBtns.jsx";
 
 export default function SecondaryNavigation() {
     const navigate = useNavigate();

@@ -1,7 +1,7 @@
 // ?.() 是「可选链」的语法
 // 相当于 if (onItemClick) {onItemClick(els.key)}
 
-import classes from "./dropdown-menu-btns.module.scss";
+import classes from "./DropdownMenuBtns.module.scss";
 
 export default function DropdownMenuBtns({ CATEGORY, onItemClick }) {
     return (

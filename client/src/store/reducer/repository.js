@@ -4,8 +4,9 @@ import { Repository_Navigate } from "../../_data/repository-page/repository";
 const initialItem = Repository_Navigate?.[0]?.key ?? ""; // 默认选中的项目
 
 const initialState = {
-    // 下拉列表选项的点击状态（📢 直接通过 :hover 控制显示状态）
-    // active: false,
+    // 用这个控制侧边栏要不要打开，默认是打开的
+    asidebarActive: true,
+
     initialItem: initialItem,
 
     // 默认不开启侧边栏的二级标题
@@ -25,6 +26,11 @@ const repositorySlice = createSlice({
     name: "repository",
     initialState,
     reducers: {
+        // 更新侧边栏的开放状态
+        setAsidebarActive(state) {
+            state.asidebarActive = !state.asidebarActive;
+        },
+
         // 更新当前选中的下拉列表的 item
         setCurItem(state, action) {
             state.curItem = action.payload;
@@ -53,6 +59,7 @@ const repositorySlice = createSlice({
 });
 
 export const {
+    setAsidebarActive,
     setCurItem,
     updateItemContent,
     toggleOpenSecondaryItems,

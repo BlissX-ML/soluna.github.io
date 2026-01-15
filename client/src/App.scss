@@ -9,7 +9,9 @@
 
 #root > .header {
     position: fixed;
-    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0; // 让它严格贴合视口宽度（不要靠 width:100% + min-width 撑）
     height: $height-default;
     z-index: 100; // 这个是保证下拉列表不会到首页页面下的关键
     flex: $height-default;

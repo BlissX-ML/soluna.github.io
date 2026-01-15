@@ -13,7 +13,7 @@ import { resetOpen } from "../../store/reducer/aside-toggle.js";
 import classes from "./drop-menu-redirect.module.scss";
 
 import { Repository_Navigate } from "../../_data/repository-page/repository.js";
-import DropdownMenuBtns from "../../components/buttons/dropdown-menu-btns.jsx";
+import DropdownMenuBtns from "../../components/buttons/DropdownMenuBtns.jsx";
 
 // displayStyle 用来控制下拉列表的隐藏与显示
 export default function DropMenuRedirectAsideMenu({ displayStyle }) {

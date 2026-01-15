@@ -1,0 +1,21 @@
+.sidebar-toggle-container {
+    position: relative;
+    padding: 1.5rem 1rem 1rem 1rem;
+    box-shadow: 0 2px 4px 0 rgba(255, 159, 28, 0.3);
+
+    p {
+        display: flex;
+        gap: 3px;
+        align-items: baseline;
+        span {
+            font-family: "Lilex", monospace;
+            font-weight: 900;
+            font-style: normal;
+            font-size: 0.9rem;
+
+            &:nth-child(1) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import classes from "./select-btns.module.scss";
 
-import GeneralBtns from "../../components/buttons/general-btns";
+import GeneralBtns from "../../components/buttons/GeneralBtns";
 
 export default function Select({ src, children }) {
     const navigate = useNavigate();

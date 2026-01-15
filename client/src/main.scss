@@ -1,14 +1,16 @@
 html {
     @include scrollbar-styling;
+    min-width: 1260px;
+    overflow-x: auto;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1259px) {
     html {
         font-size: 14px;
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1260px) {
     html {
         font-size: 16px;
     }
