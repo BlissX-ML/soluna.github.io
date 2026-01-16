@@ -5,5 +5,10 @@
     overflow-y: auto;
 
     line-height: 2;
-    transition: margin-left 0.3s ease;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in;
+
+    &.close {
+        transform: translateX(-$sidebar-max-width * 0.667);
+    }
 }

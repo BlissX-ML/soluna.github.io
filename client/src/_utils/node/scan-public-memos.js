@@ -3,6 +3,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 import matter from "gray-matter";
 
+const getRandom = () => {
+    return (Math.random() * 2 - 1).toFixed(2);
+};
+
 // 通过 import.meta.url 转换得到当前文件所在目录
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -50,16 +54,44 @@ function scanDirectory(dir, baseUrl = "/articles/memos") {
 }
 
 // 扫描得到所有文件相对路径
-const fileList = scanDirectory(publicDir);
+const files = scanDirectory(publicDir);
+
+function sortFiles() {
+    const fileTypes = new Set();
+    const sortFile = new Map();
+
+    files.forEach((file) => {
+        const tag = file?.frontmatter?.tags?.[0];
+        if (!fileTypes.has(tag)) fileTypes.add(tag);
+        if (!sortFile.has(tag)) sortFile.set(tag, []);
+        sortFile.get(tag).push(file);
+    });
+
+    const MEMOS_SORTED = Array.from(sortFile.values()).flat(1);
+
+    // 直接生成需要的类似于 repository_navigate 的文件样式
+    const MEMOS_TYPES = [...fileTypes].map((type) => ({
+        key: type,
+        title: type,
+        level: 1,
+        delayTime: getRandom(),
+    }));
+
+    return [MEMOS_TYPES, MEMOS_SORTED];
+}
+
+const [types, filesList] = sortFiles();
 
 // 生成到 src 下的 JS 文件内容
 // 使用 JSON.stringify 将数组转换为可写入的格式，因为 `writeFileSync` 写入字符串或者Buff
 const content = `// Auto-generated file (DO NOT EDIT MANUALLY)
-export const MEMOS = ${JSON.stringify(fileList, null, 2)};
+export const MEMOS_TYPES = ${JSON.stringify(types, null, 2)};
+
+export const MEMOS = ${JSON.stringify(filesList, null, 2)};
 `;
 
 // 确保目录存在
-const configDir = path.resolve(__dirname, "../memo-page");
+const configDir = path.resolve(__dirname, "../../_data/memo-page");
 if (!fs.existsSync(configDir)) {
     fs.mkdirSync(configDir, { recursive: true });
 }
@@ -67,4 +99,6 @@ if (!fs.existsSync(configDir)) {
 // 写入目标文件
 fs.writeFileSync(path.resolve(configDir, "./memo.js"), content, "utf-8");
 
-console.log(`✅ Generated ${fileList.length} file paths`);
+console.log(
+    `✅ Generated ${filesList.length} file paths and ${types.length} categories.`,
+);

@@ -1,19 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit"; // 切片，之后 合并切片可以共同管理状态
 import { Repository_Navigate } from "../../_data/repository-page/repository";
 
-const initialItem = Repository_Navigate?.[0]?.key ?? ""; // 默认选中的项目
-
 const initialState = {
     // 用这个控制侧边栏要不要打开，默认是打开的
     asidebarActive: true,
-
-    initialItem: initialItem,
 
     // 默认不开启侧边栏的二级标题
     secondaryItemsState: false,
 
     // 当前被选中的选项（默认情况下是列表的第一个）
-    curItem: initialItem,
+    curItem: null,
 
     // 当前选中大类下的小分类的内容
     content: "",
@@ -22,13 +18,18 @@ const initialState = {
 // state：当前这片 slice 的状态
 // action：触发时传过来的对象，里面最常用的是 action.payload（ payload 就是 dispatch 时传的参数 ）
 
-const repositorySlice = createSlice({
+const dropdownSidebarSlice = createSlice({
     name: "repository",
     initialState,
     reducers: {
         // 更新侧边栏的开放状态
         setAsidebarActive(state) {
             state.asidebarActive = !state.asidebarActive;
+        },
+
+        // 由于使用同一个reducer控制下拉列表和侧边栏，在页面跳转的时候，更新侧边栏的状态
+        setAsidebarActiveOpen(state) {
+            state.asidebarActive = true;
         },
 
         // 更新当前选中的下拉列表的 item
@@ -50,19 +51,15 @@ const repositorySlice = createSlice({
         openSecondaryItems(state) {
             state.secondaryItemsState = true;
         },
-
-        // 更新下拉列表的显示为 true
-        // open(state) { state.active = true; },
-        // close(state) { state.active = false;},
-        // toggle(state) {state.active = !state.active;},
     },
 });
 
 export const {
     setAsidebarActive,
+    setAsidebarActiveOpen,
     setCurItem,
     updateItemContent,
     toggleOpenSecondaryItems,
     openSecondaryItems,
-} = repositorySlice.actions;
-export default repositorySlice.reducer; // 用于 store 里注册用的函数
+} = dropdownSidebarSlice.actions;
+export default dropdownSidebarSlice.reducer; // 用于 store 里注册用的函数

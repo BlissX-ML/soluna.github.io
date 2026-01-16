@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import classes from "./sidebar-navigate.module.scss";
+import classes from "./SidebarNavigateMemo.module.scss";
 import { useAppDispatch, useAppSelector } from "../../store/reducer/hooks.js";
 
 import {
@@ -7,13 +7,13 @@ import {
     setAsidebarActive,
     setCurItem,
     toggleOpenSecondaryItems,
-} from "../../store/reducer/repository.js";
+} from "../../store/reducer/dropdownSidebar.js";
 
 import AsidebarToggleBtns from "../../components/buttons/AsidebarToggleBtns";
 import AsidebarList from "../../components/aside-bar-list/AsidebarList";
 import AsidebarCatalogs from "../../components/aside-bar-catalogs/AsidebarCatalogs";
 
-export default function SidebarNavigate({ CATEGORY }) {
+export default function SidebarNavigateMemo({ CATEGORY }) {
     // 和下拉列表联动
     const dispatch = useAppDispatch();
 

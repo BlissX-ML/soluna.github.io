@@ -13,8 +13,9 @@ import Indexpage from "./layouts/index-page/index-layout.jsx";
 import Plan from "./pages/plan-page/plan-page.jsx";
 import Resources from "./pages/resource-share-page/Resources.jsx";
 import HandbookItems from "./components/Interview-handbook-comps/ContentDynamicRoute/HandbookItems.jsx";
-import MemoSidebarNavigate from "./pages/memo-page/MemoSidebarNavigate.jsx";
+
 import RenderMemos from "./pages/memo-page/RenderMemos.jsx";
+import MemoSidebarNavigate from "./pages/memo-page/MemoSidebarNavigate";
 
 const Homepage = lazy(() => import("./pages/home-page/home-page.jsx"));
 

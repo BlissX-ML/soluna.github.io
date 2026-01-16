@@ -1,4 +1,31 @@
 // Auto-generated file (DO NOT EDIT MANUALLY)
+export const MEMOS_TYPES = [
+    {
+        key: "JavaScript",
+        title: "JavaScript",
+        level: 1,
+        delayTime: "-0.27",
+    },
+    {
+        key: "CSS",
+        title: "CSS",
+        level: 1,
+        delayTime: "-0.17",
+    },
+    {
+        key: "engineering",
+        title: "engineering",
+        level: 1,
+        delayTime: "0.28",
+    },
+    {
+        key: "HTML",
+        title: "HTML",
+        level: 1,
+        delayTime: "-0.31",
+    },
+];
+
 export const MEMOS = [
     {
         key: "/articles/memos/0.1-plus-0.2-issue.md",
@@ -73,75 +100,12 @@ export const MEMOS = [
         },
     },
     {
-        key: "/articles/memos/bfc-border-overlap.md",
-        path: "/articles/memos/bfc-border-overlap.md",
-        frontmatter: {
-            titleEn: "Can BFC solve border overlap issues?",
-            titleCh: "BFC 能解决 border 重叠问题么",
-            tags: ["CSS"],
-        },
-    },
-    {
-        key: "/articles/memos/bfc-related-concepts.md",
-        path: "/articles/memos/bfc-related-concepts.md",
-        frontmatter: {
-            titleEn: "BFC-related concepts",
-            titleCh: "BFC相关概念",
-            tags: ["CSS"],
-        },
-    },
-    {
         key: "/articles/memos/binary-decimal-conversion.md",
         path: "/articles/memos/binary-decimal-conversion.md",
         frontmatter: {
             titleEn: "Binary and Decimal Conversion",
             titleCh: "二进制与十进制相互转换",
             tags: ["JavaScript"],
-        },
-    },
-    {
-        key: "/articles/memos/box-model-positioning.md",
-        path: "/articles/memos/box-model-positioning.md",
-        frontmatter: {
-            titleEn: "Box Model and Positioning",
-            titleCh: "盒子模型与定位",
-            tags: ["CSS"],
-        },
-    },
-    {
-        key: "/articles/memos/box-sizing-values.md",
-        path: "/articles/memos/box-sizing-values.md",
-        frontmatter: {
-            titleEn: "Values for box-sizing",
-            titleCh: "box-sizing 的取值",
-            tags: ["CSS"],
-        },
-    },
-    {
-        key: "/articles/memos/browser-back-refresh.md",
-        path: "/articles/memos/browser-back-refresh.md",
-        frontmatter: {
-            titleEn: "Browser Back and Refresh",
-            titleCh: "浏览器的回退和刷新",
-            tags: ["engineering"],
-        },
-    },
-    {
-        key: "/articles/memos/browser-caching.md",
-        path: "/articles/memos/browser-caching.md",
-        frontmatter: {
-            titleEn: "Browser Caching Mechanism",
-            titleCh: "浏览器缓存机制",
-            tags: ["engineering"],
-        },
-    },
-    {
-        key: "/articles/memos/browser-rendering.md",
-        path: "/articles/memos/browser-rendering.md",
-        frontmatter: {
-            titleEn: "How browsers render the UI",
-            titleCh: "浏览器如何渲染 UI",
-            tags: ["engineering"],
         },
     },
     {
@@ -154,66 +118,12 @@ export const MEMOS = [
         },
     },
     {
-        key: "/articles/memos/cdn.md",
-        path: "/articles/memos/cdn.md",
-        frontmatter: {
-            titleEn: "What is CDN",
-            titleCh: "什么是CDN",
-            tags: ["engineering"],
-        },
-    },
-    {
         key: "/articles/memos/closure.md",
         path: "/articles/memos/closure.md",
         frontmatter: {
             titleEn: "Closure",
             titleCh: "闭包",
             tags: ["JavaScript"],
-        },
-    },
-    {
-        key: "/articles/memos/css-box-model.md",
-        path: "/articles/memos/css-box-model.md",
-        frontmatter: {
-            titleEn: "CSS Box Model",
-            titleCh: "CSS盒子模型",
-            tags: ["CSS"],
-        },
-    },
-    {
-        key: "/articles/memos/css-length-units.md",
-        path: "/articles/memos/css-length-units.md",
-        frontmatter: {
-            titleEn: "CSS Length Unit Comparison",
-            titleCh: "CSS 长度单位对比",
-            tags: ["CSS"],
-        },
-    },
-    {
-        key: "/articles/memos/css-preprocessor.md",
-        path: "/articles/memos/css-preprocessor.md",
-        frontmatter: {
-            titleEn: "CSS Preprocessor",
-            titleCh: "CSS 预处理器",
-            tags: ["CSS"],
-        },
-    },
-    {
-        key: "/articles/memos/css-selectors.md",
-        path: "/articles/memos/css-selectors.md",
-        frontmatter: {
-            titleEn: "CSS Selectors",
-            titleCh: "CSS选择器",
-            tags: ["CSS"],
-        },
-    },
-    {
-        key: "/articles/memos/css3-features.md",
-        path: "/articles/memos/css3-features.md",
-        frontmatter: {
-            titleEn: "CSS3 New Features",
-            titleCh: "CSS3 新特性",
-            tags: ["CSS"],
         },
     },
     {
@@ -235,75 +145,12 @@ export const MEMOS = [
         },
     },
     {
-        key: "/articles/memos/digital-signature.md",
-        path: "/articles/memos/digital-signature.md",
-        frontmatter: {
-            titleEn: "What is a digital signature?",
-            titleCh: "数字签名是什么",
-            tags: ["engineering"],
-        },
-    },
-    {
-        key: "/articles/memos/dns-protocol.md",
-        path: "/articles/memos/dns-protocol.md",
-        frontmatter: {
-            titleEn: "DNS Protocol",
-            titleCh: "DNS 协议",
-            tags: ["engineering"],
-        },
-    },
-    {
-        key: "/articles/memos/dns-resolution.md",
-        path: "/articles/memos/dns-resolution.md",
-        frontmatter: {
-            titleEn: "DNS Resolution Process",
-            titleCh: "DNS解析过程",
-            tags: ["engineering"],
-        },
-    },
-    {
         key: "/articles/memos/dom-events.md",
         path: "/articles/memos/dom-events.md",
         frontmatter: {
             titleEn: "Event in DOM",
             titleCh: "Dom 中的 event 事件",
             tags: ["JavaScript"],
-        },
-    },
-    {
-        key: "/articles/memos/domain-hijacking-solutions.md",
-        path: "/articles/memos/domain-hijacking-solutions.md",
-        frontmatter: {
-            titleEn: "Domain Hijacking Solutions",
-            titleCh: "域名劫持解决方法",
-            tags: ["engineering"],
-        },
-    },
-    {
-        key: "/articles/memos/dot-doh-diff.md",
-        path: "/articles/memos/dot-doh-diff.md",
-        frontmatter: {
-            titleEn: "Distinguishing DoT and DoH",
-            titleCh: "区分 DoT 和 DoH",
-            tags: ["engineering"],
-        },
-    },
-    {
-        key: "/articles/memos/element-centering.md",
-        path: "/articles/memos/element-centering.md",
-        frontmatter: {
-            titleEn: "Element horizontally and vertically centered",
-            titleCh: "元素水平垂直居中",
-            tags: ["CSS"],
-        },
-    },
-    {
-        key: "/articles/memos/encryption-algorithm.md",
-        path: "/articles/memos/encryption-algorithm.md",
-        frontmatter: {
-            titleEn: "Encryption algorithm",
-            titleCh: "加密算法",
-            tags: ["engineering"],
         },
     },
     {
@@ -344,93 +191,12 @@ export const MEMOS = [
         },
     },
     {
-        key: "/articles/memos/flexbox-layout.md",
-        path: "/articles/memos/flexbox-layout.md",
-        frontmatter: {
-            titleEn: "Flexbox Layout",
-            titleCh: "Flex布局",
-            tags: ["CSS"],
-        },
-    },
-    {
-        key: "/articles/memos/float-flexbox-diff.md",
-        path: "/articles/memos/float-flexbox-diff.md",
-        frontmatter: {
-            titleEn: "What's the difference between float and flexbox?",
-            titleCh: "float浮动与flex布局的区别？",
-            tags: ["CSS"],
-        },
-    },
-    {
-        key: "/articles/memos/floating-layout.md",
-        path: "/articles/memos/floating-layout.md",
-        frontmatter: {
-            titleEn: "Floating Layout",
-            titleCh: "浮动布局（Float）",
-            tags: ["CSS"],
-        },
-    },
-    {
-        key: "/articles/memos/frontend-performance.md",
-        path: "/articles/memos/frontend-performance.md",
-        frontmatter: {
-            titleEn: "Front-end Performance Optimization",
-            titleCh: "前端性能优化",
-            tags: ["engineering"],
-        },
-    },
-    {
-        key: "/articles/memos/gc-mechanism.md",
-        path: "/articles/memos/gc-mechanism.md",
-        frontmatter: {
-            titleEn: "GC Garbage Collection Mechanism",
-            titleCh: "GC 垃圾回收机制",
-            tags: ["engineering"],
-        },
-    },
-    {
         key: "/articles/memos/get-post-diff.md",
         path: "/articles/memos/get-post-diff.md",
         frontmatter: {
             titleEn: "Differences Between GET and POST",
             titleCh: "GET 与 POST 的区别",
             tags: ["JavaScript"],
-        },
-    },
-    {
-        key: "/articles/memos/http-status-101-upgrade.md",
-        path: "/articles/memos/http-status-101-upgrade.md",
-        frontmatter: {
-            titleEn: "HTTP Status Code Protocol Upgrade",
-            titleCh: "HTTP 状态码协议升级",
-            tags: ["engineering"],
-        },
-    },
-    {
-        key: "/articles/memos/http-status-codes.md",
-        path: "/articles/memos/http-status-codes.md",
-        frontmatter: {
-            titleEn: "HTTP Status Codes",
-            titleCh: "HTTP 状态码",
-            tags: ["engineering"],
-        },
-    },
-    {
-        key: "/articles/memos/http1-http2-http3-diff.md",
-        path: "/articles/memos/http1-http2-http3-diff.md",
-        frontmatter: {
-            titleEn: "Differences Between HTTP/1, HTTP/2, and HTTP/3",
-            titleCh: "HTTP1、HTTP2、HTTP3 的区别",
-            tags: ["engineering"],
-        },
-    },
-    {
-        key: "/articles/memos/inline-block-empty-elements.md",
-        path: "/articles/memos/inline-block-empty-elements.md",
-        frontmatter: {
-            titleEn: "Inline-Level, Block-Level, and Empty Elements",
-            titleCh: "行内元素、块级元素与空元素",
-            tags: ["CSS"],
         },
     },
     {
@@ -525,15 +291,6 @@ export const MEMOS = [
         },
     },
     {
-        key: "/articles/memos/meta-tags.md",
-        path: "/articles/memos/meta-tags.md",
-        frontmatter: {
-            titleEn: "meta tags",
-            titleCh: "meta 标签",
-            tags: ["HTML"],
-        },
-    },
-    {
         key: "/articles/memos/object-creation-methods.md",
         path: "/articles/memos/object-creation-methods.md",
         frontmatter: {
@@ -550,33 +307,6 @@ export const MEMOS = [
                 "Distinguishing Primitive Data Types from Reference Data Types",
             titleCh: "区分原始数据类型与引用数据类型",
             tags: ["JavaScript"],
-        },
-    },
-    {
-        key: "/articles/memos/private-public-keys.md",
-        path: "/articles/memos/private-public-keys.md",
-        frontmatter: {
-            titleEn: "How to Use Private and Public Keys",
-            titleCh: "如何使用私钥和公钥",
-            tags: ["engineering"],
-        },
-    },
-    {
-        key: "/articles/memos/sass-Less-diff.md",
-        path: "/articles/memos/sass-Less-diff.md",
-        frontmatter: {
-            titleEn: "The Difference Between Sass and Less",
-            titleCh: "Sass 和 Less 的区别",
-            tags: ["CSS"],
-        },
-    },
-    {
-        key: "/articles/memos/tcp-handshake.md",
-        path: "/articles/memos/tcp-handshake.md",
-        frontmatter: {
-            titleEn: "Three-Way Handshake and Four-Way Handshake",
-            titleCh: "三次握手和四次挥手是什么",
-            tags: ["engineering"],
         },
     },
     {
@@ -598,6 +328,312 @@ export const MEMOS = [
         },
     },
     {
+        key: "/articles/memos/xhr-fetch-api-diff.md",
+        path: "/articles/memos/xhr-fetch-api-diff.md",
+        frontmatter: {
+            titleEn: "The Difference Between XHR and the Fetch API",
+            titleCh: "XHR 和 Fetch API 的区别",
+            tags: ["JavaScript"],
+        },
+    },
+    {
+        key: "/articles/memos/xmr-basic-process.md",
+        path: "/articles/memos/xmr-basic-process.md",
+        frontmatter: {
+            titleEn: "The Basic Process of XMR",
+            titleCh: "XMR 的基本流程",
+            tags: ["JavaScript"],
+        },
+    },
+    {
+        key: "/articles/memos/bfc-border-overlap.md",
+        path: "/articles/memos/bfc-border-overlap.md",
+        frontmatter: {
+            titleEn: "Can BFC solve border overlap issues?",
+            titleCh: "BFC 能解决 border 重叠问题么",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/bfc-related-concepts.md",
+        path: "/articles/memos/bfc-related-concepts.md",
+        frontmatter: {
+            titleEn: "BFC-related concepts",
+            titleCh: "BFC相关概念",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/box-model-positioning.md",
+        path: "/articles/memos/box-model-positioning.md",
+        frontmatter: {
+            titleEn: "Box Model and Positioning",
+            titleCh: "盒子模型与定位",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/box-sizing-values.md",
+        path: "/articles/memos/box-sizing-values.md",
+        frontmatter: {
+            titleEn: "Values for box-sizing",
+            titleCh: "box-sizing 的取值",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/css-box-model.md",
+        path: "/articles/memos/css-box-model.md",
+        frontmatter: {
+            titleEn: "CSS Box Model",
+            titleCh: "CSS盒子模型",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/css-length-units.md",
+        path: "/articles/memos/css-length-units.md",
+        frontmatter: {
+            titleEn: "CSS Length Unit Comparison",
+            titleCh: "CSS 长度单位对比",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/css-preprocessor.md",
+        path: "/articles/memos/css-preprocessor.md",
+        frontmatter: {
+            titleEn: "CSS Preprocessor",
+            titleCh: "CSS 预处理器",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/css-selectors.md",
+        path: "/articles/memos/css-selectors.md",
+        frontmatter: {
+            titleEn: "CSS Selectors",
+            titleCh: "CSS选择器",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/css3-features.md",
+        path: "/articles/memos/css3-features.md",
+        frontmatter: {
+            titleEn: "CSS3 New Features",
+            titleCh: "CSS3 新特性",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/element-centering.md",
+        path: "/articles/memos/element-centering.md",
+        frontmatter: {
+            titleEn: "Element horizontally and vertically centered",
+            titleCh: "元素水平垂直居中",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/flexbox-layout.md",
+        path: "/articles/memos/flexbox-layout.md",
+        frontmatter: {
+            titleEn: "Flexbox Layout",
+            titleCh: "Flex布局",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/float-flexbox-diff.md",
+        path: "/articles/memos/float-flexbox-diff.md",
+        frontmatter: {
+            titleEn: "What's the difference between float and flexbox?",
+            titleCh: "float浮动与flex布局的区别？",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/floating-layout.md",
+        path: "/articles/memos/floating-layout.md",
+        frontmatter: {
+            titleEn: "Floating Layout",
+            titleCh: "浮动布局（Float）",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/inline-block-empty-elements.md",
+        path: "/articles/memos/inline-block-empty-elements.md",
+        frontmatter: {
+            titleEn: "Inline-Level, Block-Level, and Empty Elements",
+            titleCh: "行内元素、块级元素与空元素",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/sass-Less-diff.md",
+        path: "/articles/memos/sass-Less-diff.md",
+        frontmatter: {
+            titleEn: "The Difference Between Sass and Less",
+            titleCh: "Sass 和 Less 的区别",
+            tags: ["CSS"],
+        },
+    },
+    {
+        key: "/articles/memos/browser-back-refresh.md",
+        path: "/articles/memos/browser-back-refresh.md",
+        frontmatter: {
+            titleEn: "Browser Back and Refresh",
+            titleCh: "浏览器的回退和刷新",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/browser-caching.md",
+        path: "/articles/memos/browser-caching.md",
+        frontmatter: {
+            titleEn: "Browser Caching Mechanism",
+            titleCh: "浏览器缓存机制",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/browser-rendering.md",
+        path: "/articles/memos/browser-rendering.md",
+        frontmatter: {
+            titleEn: "How browsers render the UI",
+            titleCh: "浏览器如何渲染 UI",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/cdn.md",
+        path: "/articles/memos/cdn.md",
+        frontmatter: {
+            titleEn: "What is CDN",
+            titleCh: "什么是CDN",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/digital-signature.md",
+        path: "/articles/memos/digital-signature.md",
+        frontmatter: {
+            titleEn: "What is a digital signature?",
+            titleCh: "数字签名是什么",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/dns-protocol.md",
+        path: "/articles/memos/dns-protocol.md",
+        frontmatter: {
+            titleEn: "DNS Protocol",
+            titleCh: "DNS 协议",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/dns-resolution.md",
+        path: "/articles/memos/dns-resolution.md",
+        frontmatter: {
+            titleEn: "DNS Resolution Process",
+            titleCh: "DNS解析过程",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/domain-hijacking-solutions.md",
+        path: "/articles/memos/domain-hijacking-solutions.md",
+        frontmatter: {
+            titleEn: "Domain Hijacking Solutions",
+            titleCh: "域名劫持解决方法",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/dot-doh-diff.md",
+        path: "/articles/memos/dot-doh-diff.md",
+        frontmatter: {
+            titleEn: "Distinguishing DoT and DoH",
+            titleCh: "区分 DoT 和 DoH",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/encryption-algorithm.md",
+        path: "/articles/memos/encryption-algorithm.md",
+        frontmatter: {
+            titleEn: "Encryption algorithm",
+            titleCh: "加密算法",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/frontend-performance.md",
+        path: "/articles/memos/frontend-performance.md",
+        frontmatter: {
+            titleEn: "Front-end Performance Optimization",
+            titleCh: "前端性能优化",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/gc-mechanism.md",
+        path: "/articles/memos/gc-mechanism.md",
+        frontmatter: {
+            titleEn: "GC Garbage Collection Mechanism",
+            titleCh: "GC 垃圾回收机制",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/http-status-101-upgrade.md",
+        path: "/articles/memos/http-status-101-upgrade.md",
+        frontmatter: {
+            titleEn: "HTTP Status Code Protocol Upgrade",
+            titleCh: "HTTP 状态码协议升级",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/http-status-codes.md",
+        path: "/articles/memos/http-status-codes.md",
+        frontmatter: {
+            titleEn: "HTTP Status Codes",
+            titleCh: "HTTP 状态码",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/http1-http2-http3-diff.md",
+        path: "/articles/memos/http1-http2-http3-diff.md",
+        frontmatter: {
+            titleEn: "Differences Between HTTP/1, HTTP/2, and HTTP/3",
+            titleCh: "HTTP1、HTTP2、HTTP3 的区别",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/private-public-keys.md",
+        path: "/articles/memos/private-public-keys.md",
+        frontmatter: {
+            titleEn: "How to Use Private and Public Keys",
+            titleCh: "如何使用私钥和公钥",
+            tags: ["engineering"],
+        },
+    },
+    {
+        key: "/articles/memos/tcp-handshake.md",
+        path: "/articles/memos/tcp-handshake.md",
+        frontmatter: {
+            titleEn: "Three-Way Handshake and Four-Way Handshake",
+            titleCh: "三次握手和四次挥手是什么",
+            tags: ["engineering"],
+        },
+    },
+    {
         key: "/articles/memos/web-security-attacks.md",
         path: "/articles/memos/web-security-attacks.md",
         frontmatter: {
@@ -616,21 +652,12 @@ export const MEMOS = [
         },
     },
     {
-        key: "/articles/memos/xhr-fetch-api-diff.md",
-        path: "/articles/memos/xhr-fetch-api-diff.md",
+        key: "/articles/memos/meta-tags.md",
+        path: "/articles/memos/meta-tags.md",
         frontmatter: {
-            titleEn: "The Difference Between XHR and the Fetch API",
-            titleCh: "XHR 和 Fetch API 的区别",
-            tags: ["JavaScript"],
-        },
-    },
-    {
-        key: "/articles/memos/xmr-basic-process.md",
-        path: "/articles/memos/xmr-basic-process.md",
-        frontmatter: {
-            titleEn: "The Basic Process of XMR",
-            titleCh: "XMR 的基本流程",
-            tags: ["JavaScript"],
+            titleEn: "meta tags",
+            titleCh: "meta 标签",
+            tags: ["HTML"],
         },
     },
 ];

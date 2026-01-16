@@ -1,9 +1,10 @@
 import { useAppDispatch, useAppSelector } from "../../store/reducer/hooks.js";
-import { setCurItem } from "../../store/reducer/repository.js";
+import { setCurItem } from "../../store/reducer/dropdownSidebar.js";
 import classes from "./main-navigation.module.scss";
 
 import RedirectItemPage from "../../components/links/redirect-page.jsx";
-import DropMenuRedirectAsideMenu from "../repository-page/drop-menu-redirect.jsx";
+import DropMenuRedirectAsideMenuRepository from "../repository-page/DropMenuRedirectAsideMenuRepository.jsx";
+import DropMenuRedirectAsideMenuMemo from "../memo-page/DropMenuRedirectAsideMenuMemo.jsx";
 
 export default function MainNavigation() {
     const dispatch = useAppDispatch();
@@ -30,7 +31,11 @@ export default function MainNavigation() {
             <RedirectItemPage
                 path="/memo"
                 listStyle={classes["drop-navigation"]}
-                extraContentInList={null}
+                extraContentInList={
+                    <DropMenuRedirectAsideMenuMemo
+                        style={classes["dropdown-visibility"]}
+                    />
+                }
             >
                 面试手册
             </RedirectItemPage>
@@ -40,8 +45,8 @@ export default function MainNavigation() {
                 listStyle={classes["drop-navigation"]}
                 onClick={() => dispatch(setCurItem(initialItem))}
                 extraContentInList={
-                    <DropMenuRedirectAsideMenu
-                        displayStyle={classes["dropdown-visibility"]}
+                    <DropMenuRedirectAsideMenuRepository
+                        style={classes["dropdown-visibility"]}
                     />
                 }
             >
