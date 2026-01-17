@@ -14,7 +14,7 @@ tags: ["JavaScript"]
     1. 发送请求数据
     2. **GET 无参数**：`xhr.send();`
     3. **POST 可附带请求体**：
-        - `xhr.**setRequestHeader**("Content-Type", "application/json");`
+        - `xhr.setRequestHeader("Content-Type", "application/json");`
         - `xhr.send(JSON.stringify({ username: "Tom", password: "123456" }));`
 4. **监听 `onreadystatechange`**
     1. 根据 `xhr.readyState (0-4)` 和 `xhr.status` 判断是否成功

@@ -35,11 +35,11 @@ tags: ["JavaScript"]
 5. **JS 类型转换的三大方向**
     - **to Boolean**
         - 只要**不是空**的东西，几乎都是真（true）
-        - 常见为 `false` 的只有 7 个：`false` / `0` / `NaN` / `""` / `null` / `undefined` / `document.all`
+        - 常见为 `false` 的只有 7 个：`false / 0 / NaN / "" / null / undefined / document.all`
     - **to Number**
         - 能转成数字的字符串，获得对应的数值。如 `"123"` → 123
         - 空字符串获得`0`，如 `"" → 0`
-        - 不能转数字的东西，转换为 `NaN`，如**`"abc" / {} / fn` → `NaN`**
+        - 不能转数字的东西，转换为 `NaN`，如 **`"abc" / {} / fn → NaN`**
         - **特殊**：`true → 1`，`false → 0`
     - **to String**
         - 所有值都能变成字符串（最稳定）

@@ -6,7 +6,7 @@ tags: ["JavaScript"]
 
 1. `typeof`
     1. **原理**：返回一个**字符串**，表示基本类型或 object。
-    2. **优点**：可判断基本类型（`string/number/boolean/undefined/symbol/bigint/**function**`）
+    2. **优点**：可判断基本类型（`string/number/boolean/undefined/symbol/bigint/function`）
     3. **缺点**：
         - `null` 会被判断为 `"object"`（历史 bug）
         - `object` 细分不出来（Array、Date 等分不清）

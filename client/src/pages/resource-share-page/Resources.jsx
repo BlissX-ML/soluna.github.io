@@ -1,7 +1,3 @@
 export default function Resources() {
-    return (
-        <section>
-            1
-        </section>
-    )
+    return <section id="main-content">123</section>;
 }

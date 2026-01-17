@@ -1,18 +1,18 @@
-ul li {
-    @include list-default;
-}
-
 // 最外层的 ul 标签
 .first-ul {
     margin: 1rem 0.5rem 0rem 0rem; // 内部列表与外部 `aside` 的间距
     text-align: left;
+    flex: 1; /* 占据剩余空间 */
+    overflow-y: scroll; /* 添加垂直滚动 */
+    overflow-x: hidden;
+    scrollbar-width: thin;
 
     li,
     .title {
         // 让 li 占据所有该占据的空间
-        display: inline-block;
+        display: block;
         width: 100%;
-        height: 100%;
+        // height: 100%;  // 避免让 .title 占据全部高度，造成空白
         padding: $padding-default;
         box-sizing: border-box;
         cursor: pointer;
@@ -48,8 +48,9 @@ ul li {
         // 二级标题
         .second-ul {
             padding-left: $padding-default; // 为了让二级标题看的明显一些
+            font-size: 0.9rem; // 缩小二级标题的字体，防止标题溢出
 
-            overflow: hidden;
+            overflow: hidden; // 默认情况下要隐藏，避免留白
             max-height: 0;
             opacity: 0;
             transform: translateY(-0.5rem);
@@ -57,9 +58,19 @@ ul li {
 
             // 二级标题的 active 状态
             &.active {
-                max-height: 30rem;
+                max-height: 150rem;
                 opacity: 1;
                 transform: translateY(0);
+            }
+
+            li {
+                &:hover {
+                    color: #257000;
+                    background-color: #f6fbf1;
+                    font-weight: 600;
+                    transform: translateX(4px);
+                    transition: all 0.5s ease;
+                }
             }
         }
     }

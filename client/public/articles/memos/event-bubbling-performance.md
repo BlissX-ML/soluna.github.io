@@ -20,7 +20,7 @@ tags: ["JavaScript"]
 <script>
   const list = document.getElementById("list");
 
-  **// 只在父元素上绑定一次监听器**
+  // 只在父元素上绑定一次监听器 ✨
   list.addEventListener("click", function (e) {
     if (e.target.tagName.toLowerCase() === "li") {
       console.log("你点到了 id =", e.target.dataset.id, "的元素");

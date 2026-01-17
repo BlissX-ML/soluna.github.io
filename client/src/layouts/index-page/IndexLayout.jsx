@@ -1,14 +1,21 @@
-import classes from './index-layout.module.scss'
+import classes from "./IndexLayout.module.scss";
 
-import { INDEX_IMAGES, INTENDED_WORK_INTRODUCTION } from '../../_data/index-page/indexPage.js'
-import Select from '../../features/index-page/select-btns.jsx';
-import Table from '../../components/tables/Table.jsx'
+import {
+    INDEX_IMAGES,
+    INTENDED_WORK_INTRODUCTION,
+} from "../../_data/index-page/indexPage.js";
+
+import Table from "../../components/tables/Table.jsx";
+import IndexBtnRedirct from "../../features/index-page/IndexBtnRedirct.jsx";
 
 const imageURL = INDEX_IMAGES[0].webp;
 
 export default function IndexLayout() {
     return (
-        <div className={classes.indexPage} style={{ backgroundImage: `url(${imageURL})`, }}>
+        <div
+            className={classes.indexPage}
+            style={{ backgroundImage: `url(${imageURL})` }}
+        >
             <main className={classes.intro}>
                 <h1>欢迎访问我的网站💕</h1>
                 <table className={classes.table}>
@@ -24,14 +31,13 @@ export default function IndexLayout() {
                 </p>
 
                 <div className={classes.btns}>
-                    <Select src='/home'>进入首页</Select>
-                    <Select src='/about'>联系邮箱</Select>
+                    <IndexBtnRedirct src="/home">进入首页</IndexBtnRedirct>
+                    <IndexBtnRedirct src="/about">联系邮箱</IndexBtnRedirct>
                 </div>
             </main>
         </div>
-    )
+    );
 }
-
 
 // {/* <Table th='Degree' td='Master&apos;s degree' /> */ }
 // {/* <Table th='Start date' td='Start date within this month' /> */ }

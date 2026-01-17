@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "../../store/reducer/hooks.js";
 import { setCurItem } from "../../store/reducer/dropdownSidebar.js";
 import classes from "./main-navigation.module.scss";
 
-import RedirectItemPage from "../../components/links/redirect-page.jsx";
+import RedirectItemPage from "../../components/links/RedirectItemPage.jsx";
 import DropMenuRedirectAsideMenuRepository from "../repository-page/DropMenuRedirectAsideMenuRepository.jsx";
 import DropMenuRedirectAsideMenuMemo from "../memo-page/DropMenuRedirectAsideMenuMemo.jsx";
 

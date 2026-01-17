@@ -21,7 +21,7 @@ tags: ["CSS"]
     - **示例**：
         
         ```css
-        **@keyframes** move {
+        @keyframes move {
           from { left: 0; }
           to   { left: 200px; }
         }

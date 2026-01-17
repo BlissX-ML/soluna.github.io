@@ -9,7 +9,7 @@ import RecapContent from "./pages/repository-page/RecapContent.jsx";
 
 import Loading from "./pages/loading-page/Loading.jsx";
 import RepositorySidebarNavigate from "./pages/repository-page/RepositorySidebarNavigate.jsx";
-import Indexpage from "./layouts/index-page/index-layout.jsx";
+import Indexpage from "./layouts/index-page/IndexLayout.jsx";
 import Plan from "./pages/plan-page/plan-page.jsx";
 import Resources from "./pages/resource-share-page/Resources.jsx";
 import HandbookItems from "./components/Interview-handbook-comps/ContentDynamicRoute/HandbookItems.jsx";

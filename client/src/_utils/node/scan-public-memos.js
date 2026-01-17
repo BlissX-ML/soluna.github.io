@@ -40,11 +40,12 @@ function scanDirectory(dir, baseUrl = "/articles/memos") {
         // ✅ 普通文件：记录相对路径
         if (stat.isFile()) {
             const fileContent = fs.readFileSync(fullPath, "utf-8"); // 读取文件内容
-            const { data: frontmatter, content } = matter(fileContent); // 解析 frontmatter
+            const { data: frontmatter } = matter(fileContent); // 解析 frontmatter
             const filePath = baseUrl ? `${baseUrl}/${item}` : item; // 检查当前递归层有无父路径
             files.push({
                 key: filePath,
                 path: filePath,
+                fileName: item.split(".")[0],
                 frontmatter,
             });
         }
@@ -57,14 +58,24 @@ function scanDirectory(dir, baseUrl = "/articles/memos") {
 const files = scanDirectory(publicDir);
 
 function sortFiles() {
-    const fileTypes = new Set();
-    const sortFile = new Map();
+    const fileTypes = new Set(); // 收集 memo 页文件中 Tags 类型的，即侧边栏大标题
+    const nestedFile = new Map(); // 收集每一个 Tags 对应的文章，即侧边栏小标题
+    const sortFile = new Map(); // 收集侧边主体文件内容
 
     files.forEach((file) => {
         const tag = file?.frontmatter?.tags?.[0];
         if (!fileTypes.has(tag)) fileTypes.add(tag);
-        if (!sortFile.has(tag)) sortFile.set(tag, []);
+        if (!sortFile.has(tag)) {
+            sortFile.set(tag, []);
+            nestedFile.set(tag, []);
+        }
         sortFile.get(tag).push(file);
+        nestedFile.get(tag).push({
+            key: file?.key,
+            title: file?.frontmatter?.titleCh,
+            src: file?.path,
+            fileName: file?.fileName,
+        });
     });
 
     const MEMOS_SORTED = Array.from(sortFile.values()).flat(1);
@@ -75,6 +86,10 @@ function sortFiles() {
         title: type,
         level: 1,
         delayTime: getRandom(),
+        detail: {
+            level: 2,
+            data: nestedFile.get(type),
+        },
     }));
 
     return [MEMOS_TYPES, MEMOS_SORTED];

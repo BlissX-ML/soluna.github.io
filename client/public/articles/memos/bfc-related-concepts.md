@@ -14,10 +14,10 @@ tags: ["CSS"]
     - 两个元素在**同一个 BFC 内会重叠**，但如果它们分别在**不同的 BFC 内，就不会重叠**。
 3. **如何触发 BFC**
     - 根元素 `<html>` 自带 BFC
-    - 设置 **`float**: left / right`
-    - 设置 **`position**: absolute / fixed`
-    - 设置 **`display**: inline-block / table-cell / table-caption`
-    - 设置 **`overflow**: hidden / auto / scroll`，不为 `visible`
+    - 设置 **`float: left / right`**
+    - 设置 **`position: absolute / fixed`**
+    - 设置 **`display: inline-block / table-cell / table-caption`**
+    - 设置 **`overflow: hidden / auto / scroll`，不为 `visible`**
     - **触发 BFC 不需要同时写多个，只要满足一种条件即可**。实际项目里最常用的是 `overflow: hidden`
 4. **常见使用场景**
     - **解决 margin 重叠**：相邻块级元素上下 margin 会合并，触发 BFC 可以避免。

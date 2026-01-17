@@ -13,7 +13,7 @@ tags: ["CSS"]
 
 1. **块级元素（Block Elements）**
     - **独占**一行，宽度默认撑满父容器，可以设置宽高。
-    - 常见块级元素：`div / p / h1~h6 / **列表** / **table** / **form** / section / article / header / footer`
+    - 常见块级元素：`div / p / h1~h6 / 列表 / table / form / section / article / header / footer`
 2. **行内元素（Inline Elements）**
     - 与文字排在同一行，宽高**由内容撑开**，不能设置宽高。
     - 常见行内元素：`span / a / em / strong / i / u / b / sub / sup / label`

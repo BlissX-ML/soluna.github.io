@@ -1,3 +1,4 @@
+import scrollToItem from "../../_utils/browser/scroll-into-view";
 import classes from "./AsidebarList.module.scss";
 
 export default function AsidebarList({
@@ -11,11 +12,25 @@ export default function AsidebarList({
         return curItem === item && secondaryItemsState ? classes.active : "";
     }
 
+    // 处理一级标题点击
+    const handleFirstLevelClick = (item) => {
+        handleUpdateItem(item?.key);
+
+        // 平滑移动，默认返回顶部，itemId 固定为数组第一个元素
+        scrollToItem(item?.detail?.data?.[0]?.fileName);
+    };
+
+    // 处理二级标题点击
+    const handleSecondaryClick = (e, item) => {
+        e.stopPropagation(); // 阻止事件冒泡
+        scrollToItem(item?.fileName);
+    };
+
     return (
         <ul className={classes["first-ul"]}>
             {ITEMS.map((firstLevel) => (
                 <li
-                    onClick={() => handleUpdateItem(firstLevel.key)}
+                    onClick={() => handleFirstLevelClick(firstLevel)}
                     className={`${classes["first-li"]} ${activeClass(firstLevel.key)}`}
                     key={firstLevel.key}
                 >
@@ -27,7 +42,10 @@ export default function AsidebarList({
                         {firstLevel?.detail?.data.map((secondaryLevel) => (
                             <li
                                 className={classes["second-li"]}
-                                key={secondaryLevel.key}
+                                key={secondaryLevel?.key}
+                                onClick={(e) =>
+                                    handleSecondaryClick(e, secondaryLevel)
+                                }
                             >
                                 {secondaryLevel?.title}
                             </li>

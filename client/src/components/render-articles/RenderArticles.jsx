@@ -3,12 +3,14 @@ import fetchContent from "../../_data/memo-page/fetch-content";
 import ReactMarkdown from "react-markdown";
 import remarkFrontmatter from "remark-frontmatter";
 import rehypePrism from "rehype-prism-plus"; // 连接 ReactMarkdown 和 PrismJS 的桥梁
+import remarkGfm from "remark-gfm";
 
 import RenderMarkdown from "../markdown/RenderMarkdown.jsx";
 
 export default function RenderArticles({ articles }) {
     const [content, setContent] = useState("");
     const path = articles?.path;
+    const anchor = articles?.fileName; // 用来涉及锚点，实现点击跳转的
 
     useEffect(() => {
         const loadMarkdown = async () => {
@@ -25,10 +27,10 @@ export default function RenderArticles({ articles }) {
     }, [path]);
 
     return (
-        <RenderMarkdown>
+        <RenderMarkdown anchor={anchor}>
             <h2>{articles?.frontmatter?.titleCh}</h2>
             <ReactMarkdown
-                remarkPlugins={[remarkFrontmatter]}
+                remarkPlugins={[remarkFrontmatter, remarkGfm]}
                 rehypePlugins={[rehypePrism]}
             >
                 {content}

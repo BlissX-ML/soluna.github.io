@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import classes from "./redirect-page.module.scss";
+import classes from "./RedirectItemPage.module.scss";
 
 export default function RedirectItemPage({
     path,

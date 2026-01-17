@@ -2,8 +2,11 @@
     position: relative;
 
     width: $sidebar-max-width;
-    height: 100vh; // 让侧边栏保证占满高度
+    max-height: calc(100vh - $height-default); // 让侧边栏保证占满高度
     background-color: $aside-background-color;
+
+    display: flex;
+    flex-direction: column; //控制目录标题和列表的布局的
 
     overflow: visible; // 水平溢出可见（按钮用）
     scrollbar-width: thin;

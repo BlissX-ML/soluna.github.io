@@ -27,6 +27,7 @@ pre[class*="language-"] {
     box-sizing: content-box;
     line-height: 1.8;
     padding-bottom: 2rem;
+    scroll-margin-top: 15px; // 用于 scrollIntoView，让其自动计算偏移量
 
     h2 {
         text-indent: 5%;
@@ -35,47 +36,139 @@ pre[class*="language-"] {
 
     ul,
     ol {
-        padding-left: 0.5rem;
+        padding-left: 0; // 排除设置
         margin: 0.3rem 0rem;
-        list-style-position: outside;
+        list-style: none; // 移除默认标记
+        counter-reset: list-counter; // ⭐ 初始化计数器
 
         li {
             padding: 0.25rem 0rem;
-            padding-left: 5px; // 控制标记与文本的间距
-        }
+            padding-left: 1.5rem;
+            position: relative;
 
-        // 第一层：数字
-        & {
-            list-style-type: decimal;
+            &::before {
+                content: counter(list-counter) ".";
+                counter-increment: list-counter;
+                position: absolute;
+                left: 0;
+                text-align: left;
+            }
         }
 
         /* 第二层：字母 */
         ul,
         ol {
-            list-style-type: lower-alpha;
+            list-style: none;
             margin: 0.2rem 0rem;
-            padding-left: 1.5rem;
+            counter-reset: list-counter;
+
+            li {
+                padding-left: 1.5rem;
+                position: relative;
+
+                &::before {
+                    content: counter(list-counter, lower-alpha) ".";
+                    counter-increment: list-counter;
+                    position: absolute;
+                    left: 0;
+                    text-align: left;
+                }
+            }
 
             /* 第三层：实心圆 */
             ul,
             ol {
-                list-style-type: disc;
-                padding-left: 1.5rem;
+                list-style-type: none;
+                margin: 0.2rem 0rem;
+
+                li {
+                    padding-left: 1.5rem;
+                    position: relative;
+
+                    &::before {
+                        content: "●";
+                        position: absolute;
+                        left: 0;
+                        text-align: left;
+                    }
+                }
 
                 /* 第四层：空心圆 */
                 ul,
                 ol {
-                    list-style-type: circle;
-                    padding-left: 1.5rem;
+                    list-style-type: none;
+                    margin: 0.2rem 0rem;
+
+                    li {
+                        padding-left: 1.5rem;
+                        position: relative;
+
+                        &::before {
+                            content: "○";
+                            position: absolute;
+                            left: 0;
+                            text-align: left;
+                        }
+                    }
 
                     /* 第五层：方块 */
                     ul,
                     ol {
-                        list-style-type: square;
-                        padding-left: 1.5rem;
+                        list-style-type: none;
+                        margin: 0.2rem 0rem;
+
+                        li {
+                            padding-left: 1.5rem;
+                            position: relative;
+
+                            &::before {
+                                content: "■";
+                                position: absolute;
+                                left: 0;
+                                text-align: left;
+                            }
+                        }
                     }
                 }
             }
+        }
+    }
+
+    // ⭐ 添加表格样式
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 1rem 0;
+        font-size: 0.9em;
+
+        thead {
+            background-color: #fff7ec;
+
+            th {
+                padding: 0.75rem 1rem;
+                text-align: left;
+                font-weight: 600;
+                color: #24292f;
+            }
+        }
+
+        tbody {
+            tr {
+                &:hover {
+                    background-color: #f6f8fa;
+                }
+            }
+
+            td {
+                padding: 0.75rem 1rem;
+                color: #57606a;
+            }
+        }
+
+        // 确保表格单元格边框
+        th,
+        td {
+            border: 1px solid #d0d7de;
         }
     }
 
