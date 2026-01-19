@@ -39,8 +39,8 @@ const dropdownSidebarSlice = createSlice({
 
         // 更新当前选中的 item 的二级标题 (HTML, CSS等等)
         updateItemContent(state, action) {
-            state.content =
-                Repository_Navigate?.[action.payload]?.detail_content;
+            // 取消原有固定的数据，使用`{}`占位
+            state.content = {}?.[action.payload]?.detail_content;
         },
 
         // 更新侧边栏二级标题的显示状态，实现 dropdown-list 与 sidebar-nav 之间的联动

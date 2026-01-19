@@ -1,0 +1,28 @@
+---
+titleEn: "Relationship Between HTTP, WebSocket, and TCP"
+titleCh: "HTTP / WebSocket / TCP 的关系"
+tags: ["engineering"]
+---
+
+1. **TCP**
+    - **传输层协议，提供可靠的双向字节流**
+    - 所有应用层协议（HTTP、FTP、SMTP、WebSocket 等）都可以基于 TCP
+2. **HTTP 1.0 / 1.1 / 2.0**
+    - **应用层**协议，运行在 TCP 之上
+    - 特点：**请求-响应模式**，客户端主动请求，服务端被动响应
+    - 发展：
+        - HTTP/1.0：短连接，每次请求都要重新建立 TCP
+        - HTTP/1.1：默认长连接（keep-alive），支持流水线（pipelining）
+        - HTTP/2：多路复用、头部压缩、更高效
+3. **WebSocket**
+    - **应用层**协议，同样基于 TCP
+    - **握手阶段用 HTTP**：客户端发送一个特殊的 HTTP 请求（带 `Upgrade: websocket` 头），告诉服务端要升级协议
+    - 握手完成 → 切换协议：后续通信不再用 HTTP，而是直接走 TCP 上的 **WebSocket 协议格式（frame 帧）**
+    - 特点：全双工，客户端和服务端都能主动发消息
+4. **关系总结**
+    - **TCP 是地基**
+    - HTTP 和 WebSocket 都是盖在 TCP 上的“房子”，但用途不同：
+        - HTTP：单向请求-响应（客户端驱动）
+        - WebSocket：双向通信（任意一方可发消息）
+    - WebSocket 借用 HTTP 只是为了 **握手和兼容性**，真正通信和 HTTP 已经无关
+    - **HTTP 和 WebSocket 都是基于 TCP 的应用层协议，区别在于通信模式：HTTP 是单向的请求-响应，WebSocket 握手后进入全双工模式**。

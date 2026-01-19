@@ -26,7 +26,7 @@ export default defineConfig(() => ({
     resolve: {
         alias: {
             "@": "/src/_assets",
-            "#": "/src/_assets/_writings",
+            "#": "/public",
         },
     },
     base: "/",
@@ -35,9 +35,10 @@ export default defineConfig(() => ({
         preprocessorOptions: {
             scss: {
                 additionalData: `
-          @use "@/_scss/variable.scss" as *; 
-          @use "@/_scss/layout.scss" as *; 
-          @use "@/_scss/functions.scss" as *;
+          @use "@/_scss/_variable.scss" as *; 
+          @use "@/_scss/_layout.scss" as *; 
+          @use "@/_scss/_functions.scss" as *;
+          @use "@/_scss/_fonts.scss" as *;
         `,
                 javascriptEnabled: true,
             },

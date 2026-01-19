@@ -1,0 +1,9 @@
+---
+titleEn: "Network Protocol Layers"
+titleCh: "网络协议分层"
+tags: ["engineering"]
+---
+
+1. **网络层（IP）**：负责寻址 → 找到哪台机器。 
+2. **传输层（TCP/UDP）**：负责传输 → 数据怎么可靠送到。 
+3. **应用层（HTTP、WebSocket、FTP…）**：负责应用语义 → 数据要怎么用。

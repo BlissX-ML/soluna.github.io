@@ -10,8 +10,8 @@ import {
 } from "../../store/reducer/dropdownSidebar.js";
 
 import AsidebarToggleBtns from "../../components/buttons/AsidebarToggleBtns";
-import AsidebarList from "../../components/aside-bar-list/AsidebarList";
-import AsidebarCatalogs from "../../components/aside-bar-catalogs/AsidebarCatalogs";
+import AsidebarList from "../../components/aside-bar/AsidebarList";
+import AsidebarCatalogs from "../../components/aside-bar/AsidebarCatalogs";
 
 export default function SidebarNavigateRepository({ CATEGORY }) {
     // 和下拉列表联动

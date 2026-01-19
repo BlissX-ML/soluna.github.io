@@ -7,7 +7,7 @@ import Footprint from "./pages/footprint-page/Footprint.jsx";
 import About from "./pages/about-page/about-page.jsx";
 import RecapContent from "./pages/repository-page/RecapContent.jsx";
 
-import Loading from "./pages/loading-page/Loading.jsx";
+import Loading from "./pages/feedback-content/Loading.jsx";
 import RepositorySidebarNavigate from "./pages/repository-page/RepositorySidebarNavigate.jsx";
 import Indexpage from "./layouts/index-page/IndexLayout.jsx";
 import Plan from "./pages/plan-page/plan-page.jsx";

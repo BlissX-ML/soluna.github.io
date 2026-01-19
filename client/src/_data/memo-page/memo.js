@@ -4,7 +4,7 @@ export const MEMOS_TYPES = [
     "key": "JavaScript",
     "title": "JavaScript",
     "level": 1,
-    "delayTime": "-0.69",
+    "delayTime": "0.58",
     "detail": {
       "level": 2,
       "data": [
@@ -27,10 +27,28 @@ export const MEMOS_TYPES = [
           "fileName": "ajax-react-spa-diff"
         },
         {
+          "key": "/articles/memos/anti-shake-throttling.md",
+          "title": "实现防抖和节流",
+          "src": "/articles/memos/anti-shake-throttling.md",
+          "fileName": "anti-shake-throttling"
+        },
+        {
+          "key": "/articles/memos/array-like-conversion.md",
+          "title": "类数组的转化方式",
+          "src": "/articles/memos/array-like-conversion.md",
+          "fileName": "array-like-conversion"
+        },
+        {
           "key": "/articles/memos/array-methods-common.md",
           "title": "数组常用方法",
           "src": "/articles/memos/array-methods-common.md",
           "fileName": "array-methods-common"
+        },
+        {
+          "key": "/articles/memos/arrow-functions-features.md",
+          "title": "箭头函数的特点",
+          "src": "/articles/memos/arrow-functions-features.md",
+          "fileName": "arrow-functions-features"
         },
         {
           "key": "/articles/memos/async-await-application.md",
@@ -69,6 +87,12 @@ export const MEMOS_TYPES = [
           "fileName": "call-apply-bind-diff"
         },
         {
+          "key": "/articles/memos/call-apply-bind.md",
+          "title": "区分 call, apply, bind",
+          "src": "/articles/memos/call-apply-bind.md",
+          "fileName": "call-apply-bind"
+        },
+        {
           "key": "/articles/memos/closure.md",
           "title": "闭包",
           "src": "/articles/memos/closure.md",
@@ -79,6 +103,18 @@ export const MEMOS_TYPES = [
           "title": "什么是柯里化？",
           "src": "/articles/memos/currying.md",
           "fileName": "currying"
+        },
+        {
+          "key": "/articles/memos/data-type-determine.md",
+          "title": "判断数据类型",
+          "src": "/articles/memos/data-type-determine.md",
+          "fileName": "data-type-determine"
+        },
+        {
+          "key": "/articles/memos/deep-shallow-copies.md",
+          "title": "实现深拷贝和浅拷贝",
+          "src": "/articles/memos/deep-shallow-copies.md",
+          "fileName": "deep-shallow-copies"
         },
         {
           "key": "/articles/memos/deep-shallow-copy.md",
@@ -99,6 +135,12 @@ export const MEMOS_TYPES = [
           "fileName": "equality-operators-diff"
         },
         {
+          "key": "/articles/memos/es6-new-features.md",
+          "title": "ES6 的新特性",
+          "src": "/articles/memos/es6-new-features.md",
+          "fileName": "es6-new-features"
+        },
+        {
           "key": "/articles/memos/event-bubbling-performance.md",
           "title": "事件冒泡是否影响性能",
           "src": "/articles/memos/event-bubbling-performance.md",
@@ -111,16 +153,82 @@ export const MEMOS_TYPES = [
           "fileName": "event-bubbling"
         },
         {
+          "key": "/articles/memos/event-loop-execution-order.md",
+          "title": "Event Loop 的执行顺序",
+          "src": "/articles/memos/event-loop-execution-order.md",
+          "fileName": "event-loop-execution-order"
+        },
+        {
+          "key": "/articles/memos/execution-context.md",
+          "title": "执行上下文",
+          "src": "/articles/memos/execution-context.md",
+          "fileName": "execution-context"
+        },
+        {
           "key": "/articles/memos/fetch-implementation.md",
           "title": "Fetch的实现流程",
           "src": "/articles/memos/fetch-implementation.md",
           "fileName": "fetch-implementation"
         },
         {
+          "key": "/articles/memos/form-elements-access.md",
+          "title": "获取表单元素的方式",
+          "src": "/articles/memos/form-elements-access.md",
+          "fileName": "form-elements-access"
+        },
+        {
+          "key": "/articles/memos/form-event-listener.md",
+          "title": "事件监听表单",
+          "src": "/articles/memos/form-event-listener.md",
+          "fileName": "form-event-listener"
+        },
+        {
+          "key": "/articles/memos/form-events.md",
+          "title": "常见表单事件",
+          "src": "/articles/memos/form-events.md",
+          "fileName": "form-events"
+        },
+        {
+          "key": "/articles/memos/generators-concept .md",
+          "title": "生成器的概念",
+          "src": "/articles/memos/generators-concept .md",
+          "fileName": "generators-concept "
+        },
+        {
           "key": "/articles/memos/get-post-diff.md",
           "title": "GET 与 POST 的区别",
           "src": "/articles/memos/get-post-diff.md",
           "fileName": "get-post-diff"
+        },
+        {
+          "key": "/articles/memos/iife-property.md",
+          "title": "立即调用函数表达式（IIFE）的特点",
+          "src": "/articles/memos/iife-property.md",
+          "fileName": "iife-property"
+        },
+        {
+          "key": "/articles/memos/inheritance-comparison.md",
+          "title": "对比各种继承",
+          "src": "/articles/memos/inheritance-comparison.md",
+          "fileName": "inheritance-comparison"
+        },
+        {
+          "key": "/articles/memos/inheritance-prototype-chain.md",
+          "title": "继承和原型链",
+          "src": "/articles/memos/inheritance-prototype-chain.md",
+          "fileName": "inheritance-prototype-chain"
+        },
+        {
+          "key": "/articles/memos/inheritance-types.md",
+          "title": "继承的类型",
+          "src": "/articles/memos/inheritance-types.md",
+          "fileName": "inheritance-types"
+        },
+        {
+          "key": "/articles/memos/iterators-iterables-in-es6.md",
+          "title": "ES6 中的 Iterator 和 Iterable",
+          "src": "/articles/memos/iterators-iterables-in-es6.md",
+          "fileName": "iterators-iterables-in-es6"
         },
         {
           "key": "/articles/memos/js-8-data-types.md",
@@ -172,9 +280,15 @@ export const MEMOS_TYPES = [
         },
         {
           "key": "/articles/memos/json-stringify-parse.md",
-          "title": "`JSON.stringify` 和 `JSON.parse` 区别",
+          "title": "区分 JSON.stringify 和 JSON.parse",
           "src": "/articles/memos/json-stringify-parse.md",
           "fileName": "json-stringify-parse"
+        },
+        {
+          "key": "/articles/memos/large-file-uploads.md",
+          "title": "实现大文件上传",
+          "src": "/articles/memos/large-file-uploads.md",
+          "fileName": "large-file-uploads"
         },
         {
           "key": "/articles/memos/logical-assignment-operators.md",
@@ -183,16 +297,112 @@ export const MEMOS_TYPES = [
           "fileName": "logical-assignment-operators"
         },
         {
+          "key": "/articles/memos/map-weakmap-diff.md",
+          "title": "区分 Map 和 WeakMap",
+          "src": "/articles/memos/map-weakmap-diff.md",
+          "fileName": "map-weakmap-diff"
+        },
+        {
+          "key": "/articles/memos/modular-development-timeline.md",
+          "title": "模块化发展历程",
+          "src": "/articles/memos/modular-development-timeline.md",
+          "fileName": "modular-development-timeline"
+        },
+        {
+          "key": "/articles/memos/nullish-logical-nullish-assign-diff.md",
+          "title": "区分 ??，||, ??=",
+          "src": "/articles/memos/nullish-logical-nullish-assign-diff.md",
+          "fileName": "nullish-logical-nullish-assign-diff"
+        },
+        {
           "key": "/articles/memos/object-creation-methods.md",
           "title": "对象的创建方法",
           "src": "/articles/memos/object-creation-methods.md",
           "fileName": "object-creation-methods"
         },
         {
+          "key": "/articles/memos/optional-chain.md",
+          "title": "可选链 ?.",
+          "src": "/articles/memos/optional-chain.md",
+          "fileName": "optional-chain"
+        },
+        {
           "key": "/articles/memos/primitive-reference-types.md",
           "title": "区分原始数据类型与引用数据类型",
           "src": "/articles/memos/primitive-reference-types.md",
           "fileName": "primitive-reference-types"
+        },
+        {
+          "key": "/articles/memos/promise-object.md",
+          "title": "Promise对象",
+          "src": "/articles/memos/promise-object.md",
+          "fileName": "promise-object"
+        },
+        {
+          "key": "/articles/memos/prototype-prototype-chain.md",
+          "title": "原型与原型链",
+          "src": "/articles/memos/prototype-prototype-chain.md",
+          "fileName": "prototype-prototype-chain"
+        },
+        {
+          "key": "/articles/memos/proxy-defineProperty-diff.md",
+          "title": "区分 Object.defineProperty 与 Proxy",
+          "src": "/articles/memos/proxy-defineProperty-diff.md",
+          "fileName": "proxy-defineProperty-diff"
+        },
+        {
+          "key": "/articles/memos/reflect-usage.md",
+          "title": "Reflect 的用处",
+          "src": "/articles/memos/reflect-usage.md",
+          "fileName": "reflect-usage"
+        },
+        {
+          "key": "/articles/memos/regular-expression.md",
+          "title": "正则表达式",
+          "src": "/articles/memos/regular-expression.md",
+          "fileName": "regular-expression"
+        },
+        {
+          "key": "/articles/memos/scope-scope-chain.md",
+          "title": "作用域与作用域链",
+          "src": "/articles/memos/scope-scope-chain.md",
+          "fileName": "scope-scope-chain"
+        },
+        {
+          "key": "/articles/memos/script-runtime-environment.md",
+          "title": "判断脚本运行环境",
+          "src": "/articles/memos/script-runtime-environment.md",
+          "fileName": "script-runtime-environment"
+        },
+        {
+          "key": "/articles/memos/script-tag-configuration.md",
+          "title": "script标签的设置",
+          "src": "/articles/memos/script-tag-configuration.md",
+          "fileName": "script-tag-configuration"
+        },
+        {
+          "key": "/articles/memos/this-in-JavaScript.md",
+          "title": "JS 中 this 的用法",
+          "src": "/articles/memos/this-in-JavaScript.md",
+          "fileName": "this-in-JavaScript"
+        },
+        {
+          "key": "/articles/memos/traffic-light-effect.md",
+          "title": "红绿灯效果",
+          "src": "/articles/memos/traffic-light-effect.md",
+          "fileName": "traffic-light-effect"
+        },
+        {
+          "key": "/articles/memos/typeof-null.md",
+          "title": "typeof null 的输出",
+          "src": "/articles/memos/typeof-null.md",
+          "fileName": "typeof-null"
+        },
+        {
+          "key": "/articles/memos/undefined-null-diff.md",
+          "title": "区分 undefined 和 null",
+          "src": "/articles/memos/undefined-null-diff.md",
+          "fileName": "undefined-null-diff"
         },
         {
           "key": "/articles/memos/var-let-const-diff.md",
@@ -225,7 +435,7 @@ export const MEMOS_TYPES = [
     "key": "CSS",
     "title": "CSS",
     "level": 1,
-    "delayTime": "0.31",
+    "delayTime": "-0.38",
     "detail": {
       "level": 2,
       "data": [
@@ -252,6 +462,12 @@ export const MEMOS_TYPES = [
           "title": "box-sizing 的取值",
           "src": "/articles/memos/box-sizing-values.md",
           "fileName": "box-sizing-values"
+        },
+        {
+          "key": "/articles/memos/clear-floats.md",
+          "title": "清除浮动的方法",
+          "src": "/articles/memos/clear-floats.md",
+          "fileName": "clear-floats"
         },
         {
           "key": "/articles/memos/css-box-model.md",
@@ -284,6 +500,12 @@ export const MEMOS_TYPES = [
           "fileName": "css3-features"
         },
         {
+          "key": "/articles/memos/document-flow.md",
+          "title": "文档流的概念",
+          "src": "/articles/memos/document-flow.md",
+          "fileName": "document-flow"
+        },
+        {
           "key": "/articles/memos/element-centering.md",
           "title": "元素水平垂直居中",
           "src": "/articles/memos/element-centering.md",
@@ -308,16 +530,76 @@ export const MEMOS_TYPES = [
           "fileName": "floating-layout"
         },
         {
+          "key": "/articles/memos/height-collapse-solution.md",
+          "title": "解决父元素高度塌陷",
+          "src": "/articles/memos/height-collapse-solution.md",
+          "fileName": "height-collapse-solution"
+        },
+        {
+          "key": "/articles/memos/hide-elements.md",
+          "title": "隐藏页面元素的方法",
+          "src": "/articles/memos/hide-elements.md",
+          "fileName": "hide-elements"
+        },
+        {
           "key": "/articles/memos/inline-block-empty-elements.md",
           "title": "行内元素、块级元素与空元素",
           "src": "/articles/memos/inline-block-empty-elements.md",
           "fileName": "inline-block-empty-elements"
         },
         {
+          "key": "/articles/memos/length-units.md",
+          "title": "CSS长度单位",
+          "src": "/articles/memos/length-units.md",
+          "fileName": "length-units"
+        },
+        {
+          "key": "/articles/memos/mobile-device-adaptation.md",
+          "title": "移动端适配方式",
+          "src": "/articles/memos/mobile-device-adaptation.md",
+          "fileName": "mobile-device-adaptation"
+        },
+        {
+          "key": "/articles/memos/percentage-layout.md",
+          "title": "百分比布局",
+          "src": "/articles/memos/percentage-layout.md",
+          "fileName": "percentage-layout"
+        },
+        {
+          "key": "/articles/memos/position-property.md",
+          "title": "CSS position 属性",
+          "src": "/articles/memos/position-property.md",
+          "fileName": "position-property"
+        },
+        {
+          "key": "/articles/memos/pseudo-elements-classes.md",
+          "title": "伪元素与伪类",
+          "src": "/articles/memos/pseudo-elements-classes.md",
+          "fileName": "pseudo-elements-classes"
+        },
+        {
+          "key": "/articles/memos/rem-em-diff.md",
+          "title": "区别 rem 和 em",
+          "src": "/articles/memos/rem-em-diff.md",
+          "fileName": "rem-em-diff"
+        },
+        {
+          "key": "/articles/memos/rem-layout.md",
+          "title": "Rem 布局",
+          "src": "/articles/memos/rem-layout.md",
+          "fileName": "rem-layout"
+        },
+        {
           "key": "/articles/memos/sass-Less-diff.md",
           "title": "Sass 和 Less 的区别",
           "src": "/articles/memos/sass-Less-diff.md",
           "fileName": "sass-Less-diff"
+        },
+        {
+          "key": "/articles/memos/will-change-property.md",
+          "title": "will-change 属性",
+          "src": "/articles/memos/will-change-property.md",
+          "fileName": "will-change-property"
         }
       ]
     }
@@ -343,16 +625,58 @@ export const MEMOS_TYPES = [
           "fileName": "browser-caching"
         },
         {
+          "key": "/articles/memos/browser-functions.md",
+          "title": "浏览器的主要功能",
+          "src": "/articles/memos/browser-functions.md",
+          "fileName": "browser-functions"
+        },
+        {
           "key": "/articles/memos/browser-rendering.md",
           "title": "浏览器如何渲染 UI",
           "src": "/articles/memos/browser-rendering.md",
           "fileName": "browser-rendering"
         },
         {
+          "key": "/articles/memos/browser-style-compatibility.md",
+          "title": "浏览器样式兼容",
+          "src": "/articles/memos/browser-style-compatibility.md",
+          "fileName": "browser-style-compatibility"
+        },
+        {
+          "key": "/articles/memos/cdn-concepts-principles.md",
+          "title": "CDN 概念与原理",
+          "src": "/articles/memos/cdn-concepts-principles.md",
+          "fileName": "cdn-concepts-principles"
+        },
+        {
           "key": "/articles/memos/cdn.md",
           "title": "什么是CDN",
           "src": "/articles/memos/cdn.md",
           "fileName": "cdn"
+        },
+        {
+          "key": "/articles/memos/common-compatibility-issues.md",
+          "title": "常见的兼容性问题",
+          "src": "/articles/memos/common-compatibility-issues.md",
+          "fileName": "common-compatibility-issues"
+        },
+        {
+          "key": "/articles/memos/cookies-sessionStorage-localStorage-diff.md",
+          "title": "区别 Cookie, sessionStorage, localStorage",
+          "src": "/articles/memos/cookies-sessionStorage-localStorage-diff.md",
+          "fileName": "cookies-sessionStorage-localStorage-diff"
+        },
+        {
+          "key": "/articles/memos/cross-origin.md",
+          "title": "跨域 Cross-Origin",
+          "src": "/articles/memos/cross-origin.md",
+          "fileName": "cross-origin"
+        },
+        {
+          "key": "/articles/memos/custom-webpack-plugins.md",
+          "title": "自定义 webpack 插件",
+          "src": "/articles/memos/custom-webpack-plugins.md",
+          "fileName": "custom-webpack-plugins"
         },
         {
           "key": "/articles/memos/digital-signature.md",
@@ -397,6 +721,12 @@ export const MEMOS_TYPES = [
           "fileName": "frontend-performance"
         },
         {
+          "key": "/articles/memos/garbage-collection-mechanism.md",
+          "title": "垃圾回收机制",
+          "src": "/articles/memos/garbage-collection-mechanism.md",
+          "fileName": "garbage-collection-mechanism"
+        },
+        {
           "key": "/articles/memos/gc-mechanism.md",
           "title": "GC 垃圾回收机制",
           "src": "/articles/memos/gc-mechanism.md",
@@ -415,10 +745,34 @@ export const MEMOS_TYPES = [
           "fileName": "http-status-codes"
         },
         {
+          "key": "/articles/memos/http-websocket-tcp-diff.md",
+          "title": "HTTP / WebSocket / TCP 的关系",
+          "src": "/articles/memos/http-websocket-tcp-diff.md",
+          "fileName": "http-websocket-tcp-diff"
+        },
+        {
           "key": "/articles/memos/http1-http2-http3-diff.md",
           "title": "HTTP1、HTTP2、HTTP3 的区别",
           "src": "/articles/memos/http1-http2-http3-diff.md",
           "fileName": "http1-http2-http3-diff"
+        },
+        {
+          "key": "/articles/memos/import-module-methods.md",
+          "title": "不同的模块导入方式",
+          "src": "/articles/memos/import-module-methods.md",
+          "fileName": "import-module-methods"
+        },
+        {
+          "key": "/articles/memos/local-storage-methods.md",
+          "title": "本地存储的方法",
+          "src": "/articles/memos/local-storage-methods.md",
+          "fileName": "local-storage-methods"
+        },
+        {
+          "key": "/articles/memos/network-protocol-layers.md",
+          "title": "网络协议分层",
+          "src": "/articles/memos/network-protocol-layers.md",
+          "fileName": "network-protocol-layers"
         },
         {
           "key": "/articles/memos/private-public-keys.md",
@@ -427,10 +781,64 @@ export const MEMOS_TYPES = [
           "fileName": "private-public-keys"
         },
         {
+          "key": "/articles/memos/progressive-enhancement-graceful-degradation-diff.md",
+          "title": "渐进增强与优雅降级",
+          "src": "/articles/memos/progressive-enhancement-graceful-degradation-diff.md",
+          "fileName": "progressive-enhancement-graceful-degradation-diff"
+        },
+        {
+          "key": "/articles/memos/reflow-repaint.md",
+          "title": "回流/重排和重绘",
+          "src": "/articles/memos/reflow-repaint.md",
+          "fileName": "reflow-repaint"
+        },
+        {
+          "key": "/articles/memos/socket-connection-steps.md",
+          "title": "Socket 连接的步骤",
+          "src": "/articles/memos/socket-connection-steps.md",
+          "fileName": "socket-connection-steps"
+        },
+        {
+          "key": "/articles/memos/socket-http-diff.md",
+          "title": "区分 Socket 和 HTTP",
+          "src": "/articles/memos/socket-http-diff.md",
+          "fileName": "socket-http-diff"
+        },
+        {
+          "key": "/articles/memos/socket-webSocket-diff.md",
+          "title": "区别 Socket 和 WebSocket",
+          "src": "/articles/memos/socket-webSocket-diff.md",
+          "fileName": "socket-webSocket-diff"
+        },
+        {
+          "key": "/articles/memos/socket.md",
+          "title": "Socket是什么",
+          "src": "/articles/memos/socket.md",
+          "fileName": "socket"
+        },
+        {
+          "key": "/articles/memos/synthetic-layer-transform.md",
+          "title": "什么是合成层变换？",
+          "src": "/articles/memos/synthetic-layer-transform.md",
+          "fileName": "synthetic-layer-transform"
+        },
+        {
           "key": "/articles/memos/tcp-handshake.md",
           "title": "三次握手和四次挥手是什么",
           "src": "/articles/memos/tcp-handshake.md",
           "fileName": "tcp-handshake"
+        },
+        {
+          "key": "/articles/memos/uri-url-diff.md",
+          "title": "URI 和 URL 的区别",
+          "src": "/articles/memos/uri-url-diff.md",
+          "fileName": "uri-url-diff"
+        },
+        {
+          "key": "/articles/memos/url-enter.md",
+          "title": "URL 回车",
+          "src": "/articles/memos/url-enter.md",
+          "fileName": "url-enter"
         },
         {
           "key": "/articles/memos/web-security-attacks.md",
@@ -439,10 +847,22 @@ export const MEMOS_TYPES = [
           "fileName": "web-security-attacks"
         },
         {
+          "key": "/articles/memos/webpack-loaders-plugins-diff.md",
+          "title": "webpack 中 loader 和 plugin 的区别",
+          "src": "/articles/memos/webpack-loaders-plugins-diff.md",
+          "fileName": "webpack-loaders-plugins-diff"
+        },
+        {
           "key": "/articles/memos/websocket-http-relationship.md",
           "title": "WebSocket协议和 HTTP 的关系",
           "src": "/articles/memos/websocket-http-relationship.md",
           "fileName": "websocket-http-relationship"
+        },
+        {
+          "key": "/articles/memos/webSocket.md",
+          "title": "WebSocket",
+          "src": "/articles/memos/webSocket.md",
+          "fileName": "webSocket"
         }
       ]
     }
@@ -451,7 +871,7 @@ export const MEMOS_TYPES = [
     "key": "HTML",
     "title": "HTML",
     "level": 1,
-    "delayTime": "-0.91",
+    "delayTime": "-0.04",
     "detail": {
       "level": 2,
       "data": [
@@ -460,6 +880,18 @@ export const MEMOS_TYPES = [
           "title": "meta 标签",
           "src": "/articles/memos/meta-tags.md",
           "fileName": "meta-tags"
+        },
+        {
+          "key": "/articles/memos/semantic-advantages.md",
+          "title": "语义化优点",
+          "src": "/articles/memos/semantic-advantages.md",
+          "fileName": "semantic-advantages"
+        },
+        {
+          "key": "/articles/memos/seo-definition.md",
+          "title": "SEO定义",
+          "src": "/articles/memos/seo-definition.md",
+          "fileName": "seo-definition"
         }
       ]
     }
@@ -504,12 +936,48 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/anti-shake-throttling.md",
+    "path": "/articles/memos/anti-shake-throttling.md",
+    "fileName": "anti-shake-throttling",
+    "frontmatter": {
+      "titleEn": "Achieve anti-shake and throttling",
+      "titleCh": "实现防抖和节流",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/array-like-conversion.md",
+    "path": "/articles/memos/array-like-conversion.md",
+    "fileName": "array-like-conversion",
+    "frontmatter": {
+      "titleEn": "Methods for Converting Object Arrays",
+      "titleCh": "类数组的转化方式",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/array-methods-common.md",
     "path": "/articles/memos/array-methods-common.md",
     "fileName": "array-methods-common",
     "frontmatter": {
       "titleEn": "Common Array Methods",
       "titleCh": "数组常用方法",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/arrow-functions-features.md",
+    "path": "/articles/memos/arrow-functions-features.md",
+    "fileName": "arrow-functions-features",
+    "frontmatter": {
+      "titleEn": "",
+      "titleCh": "箭头函数的特点",
       "tags": [
         "JavaScript"
       ]
@@ -588,6 +1056,18 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/call-apply-bind.md",
+    "path": "/articles/memos/call-apply-bind.md",
+    "fileName": "call-apply-bind",
+    "frontmatter": {
+      "titleEn": "Distinguishing call, apply, and bind",
+      "titleCh": "区分 call, apply, bind",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/closure.md",
     "path": "/articles/memos/closure.md",
     "fileName": "closure",
@@ -606,6 +1086,30 @@ export const MEMOS = [
     "frontmatter": {
       "titleEn": "What is currying?",
       "titleCh": "什么是柯里化？",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/data-type-determine.md",
+    "path": "/articles/memos/data-type-determine.md",
+    "fileName": "data-type-determine",
+    "frontmatter": {
+      "titleEn": "Determine data type",
+      "titleCh": "判断数据类型",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/deep-shallow-copies.md",
+    "path": "/articles/memos/deep-shallow-copies.md",
+    "fileName": "deep-shallow-copies",
+    "frontmatter": {
+      "titleEn": "Performing deep and shallow copies",
+      "titleCh": "实现深拷贝和浅拷贝",
       "tags": [
         "JavaScript"
       ]
@@ -648,6 +1152,18 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/es6-new-features.md",
+    "path": "/articles/memos/es6-new-features.md",
+    "fileName": "es6-new-features",
+    "frontmatter": {
+      "titleEn": "New features in ES6",
+      "titleCh": "ES6 的新特性",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/event-bubbling-performance.md",
     "path": "/articles/memos/event-bubbling-performance.md",
     "fileName": "event-bubbling-performance",
@@ -672,6 +1188,30 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/event-loop-execution-order.md",
+    "path": "/articles/memos/event-loop-execution-order.md",
+    "fileName": "event-loop-execution-order",
+    "frontmatter": {
+      "titleEn": "Event Loop Execution Order",
+      "titleCh": "Event Loop 的执行顺序",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/execution-context.md",
+    "path": "/articles/memos/execution-context.md",
+    "fileName": "execution-context",
+    "frontmatter": {
+      "titleEn": "Execution context",
+      "titleCh": "执行上下文",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/fetch-implementation.md",
     "path": "/articles/memos/fetch-implementation.md",
     "fileName": "fetch-implementation",
@@ -684,12 +1224,120 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/form-elements-access.md",
+    "path": "/articles/memos/form-elements-access.md",
+    "fileName": "form-elements-access",
+    "frontmatter": {
+      "titleEn": "Methods for obtaining form elements",
+      "titleCh": "获取表单元素的方式",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/form-event-listener.md",
+    "path": "/articles/memos/form-event-listener.md",
+    "fileName": "form-event-listener",
+    "frontmatter": {
+      "titleEn": "Form Event Listener",
+      "titleCh": "事件监听表单",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/form-events.md",
+    "path": "/articles/memos/form-events.md",
+    "fileName": "form-events",
+    "frontmatter": {
+      "titleEn": "Common Form Events",
+      "titleCh": "常见表单事件",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/generators-concept .md",
+    "path": "/articles/memos/generators-concept .md",
+    "fileName": "generators-concept ",
+    "frontmatter": {
+      "titleEn": "The concept of Generators",
+      "titleCh": "生成器的概念",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/get-post-diff.md",
     "path": "/articles/memos/get-post-diff.md",
     "fileName": "get-post-diff",
     "frontmatter": {
       "titleEn": "Differences Between GET and POST",
       "titleCh": "GET 与 POST 的区别",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/iife-property.md",
+    "path": "/articles/memos/iife-property.md",
+    "fileName": "iife-property",
+    "frontmatter": {
+      "titleEn": "Characteristics of IIFE",
+      "titleCh": "立即调用函数表达式（IIFE）的特点",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/inheritance-comparison.md",
+    "path": "/articles/memos/inheritance-comparison.md",
+    "fileName": "inheritance-comparison",
+    "frontmatter": {
+      "titleEn": "Comparing Various Inheritance Methods",
+      "titleCh": "对比各种继承",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/inheritance-prototype-chain.md",
+    "path": "/articles/memos/inheritance-prototype-chain.md",
+    "fileName": "inheritance-prototype-chain",
+    "frontmatter": {
+      "titleEn": "Inheritance and prototype chain",
+      "titleCh": "继承和原型链",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/inheritance-types.md",
+    "path": "/articles/memos/inheritance-types.md",
+    "fileName": "inheritance-types",
+    "frontmatter": {
+      "titleEn": "Types of inheritance",
+      "titleCh": "继承的类型",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/iterators-iterables-in-es6.md",
+    "path": "/articles/memos/iterators-iterables-in-es6.md",
+    "fileName": "iterators-iterables-in-es6",
+    "frontmatter": {
+      "titleEn": "Iterators and iterables in ES6",
+      "titleCh": "ES6 中的 Iterator 和 Iterable",
       "tags": [
         "JavaScript"
       ]
@@ -796,8 +1444,20 @@ export const MEMOS = [
     "path": "/articles/memos/json-stringify-parse.md",
     "fileName": "json-stringify-parse",
     "frontmatter": {
-      "titleEn": "`JSON.stringify` and `JSON.parse`",
-      "titleCh": "`JSON.stringify` 和 `JSON.parse` 区别",
+      "titleEn": "JSON.stringify and JSON.parse",
+      "titleCh": "区分 JSON.stringify 和 JSON.parse",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/large-file-uploads.md",
+    "path": "/articles/memos/large-file-uploads.md",
+    "fileName": "large-file-uploads",
+    "frontmatter": {
+      "titleEn": "Support large file uploads",
+      "titleCh": "实现大文件上传",
       "tags": [
         "JavaScript"
       ]
@@ -816,6 +1476,42 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/map-weakmap-diff.md",
+    "path": "/articles/memos/map-weakmap-diff.md",
+    "fileName": "map-weakmap-diff",
+    "frontmatter": {
+      "titleEn": "Distinguishing between Map and WeakMap",
+      "titleCh": "区分 Map 和 WeakMap",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/modular-development-timeline.md",
+    "path": "/articles/memos/modular-development-timeline.md",
+    "fileName": "modular-development-timeline",
+    "frontmatter": {
+      "titleEn": "Modular development timeline",
+      "titleCh": "模块化发展历程",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/nullish-logical-nullish-assign-diff.md",
+    "path": "/articles/memos/nullish-logical-nullish-assign-diff.md",
+    "fileName": "nullish-logical-nullish-assign-diff",
+    "frontmatter": {
+      "titleEn": "Distinguish between ??, ||, and ??=.",
+      "titleCh": "区分 ??，||, ??=",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/object-creation-methods.md",
     "path": "/articles/memos/object-creation-methods.md",
     "fileName": "object-creation-methods",
@@ -828,12 +1524,168 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/optional-chain.md",
+    "path": "/articles/memos/optional-chain.md",
+    "fileName": "optional-chain",
+    "frontmatter": {
+      "titleEn": "Optional chain ?.",
+      "titleCh": "可选链 ?.",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/primitive-reference-types.md",
     "path": "/articles/memos/primitive-reference-types.md",
     "fileName": "primitive-reference-types",
     "frontmatter": {
       "titleEn": "Distinguishing Primitive Data Types from Reference Data Types",
       "titleCh": "区分原始数据类型与引用数据类型",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/promise-object.md",
+    "path": "/articles/memos/promise-object.md",
+    "fileName": "promise-object",
+    "frontmatter": {
+      "titleEn": "Promise object",
+      "titleCh": "Promise对象",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/prototype-prototype-chain.md",
+    "path": "/articles/memos/prototype-prototype-chain.md",
+    "fileName": "prototype-prototype-chain",
+    "frontmatter": {
+      "titleEn": "Prototype and prototype chain",
+      "titleCh": "原型与原型链",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/proxy-defineProperty-diff.md",
+    "path": "/articles/memos/proxy-defineProperty-diff.md",
+    "fileName": "proxy-defineProperty-diff",
+    "frontmatter": {
+      "titleEn": "Distinguishing Between Object.defineProperty and Proxy",
+      "titleCh": "区分 Object.defineProperty 与 Proxy",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/reflect-usage.md",
+    "path": "/articles/memos/reflect-usage.md",
+    "fileName": "reflect-usage",
+    "frontmatter": {
+      "titleEn": "The purpose of Reflect",
+      "titleCh": "Reflect 的用处",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/regular-expression.md",
+    "path": "/articles/memos/regular-expression.md",
+    "fileName": "regular-expression",
+    "frontmatter": {
+      "titleEn": "Regular expression",
+      "titleCh": "正则表达式",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/scope-scope-chain.md",
+    "path": "/articles/memos/scope-scope-chain.md",
+    "fileName": "scope-scope-chain",
+    "frontmatter": {
+      "titleEn": "Scope and scope chain",
+      "titleCh": "作用域与作用域链",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/script-runtime-environment.md",
+    "path": "/articles/memos/script-runtime-environment.md",
+    "fileName": "script-runtime-environment",
+    "frontmatter": {
+      "titleEn": "Determine the script runtime environment",
+      "titleCh": "判断脚本运行环境",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/script-tag-configuration.md",
+    "path": "/articles/memos/script-tag-configuration.md",
+    "fileName": "script-tag-configuration",
+    "frontmatter": {
+      "titleEn": "Script tag configuration",
+      "titleCh": "script标签的设置",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/this-in-JavaScript.md",
+    "path": "/articles/memos/this-in-JavaScript.md",
+    "fileName": "this-in-JavaScript",
+    "frontmatter": {
+      "titleEn": "this in JavaScript",
+      "titleCh": "JS 中 this 的用法",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/traffic-light-effect.md",
+    "path": "/articles/memos/traffic-light-effect.md",
+    "fileName": "traffic-light-effect",
+    "frontmatter": {
+      "titleEn": "Traffic light effect",
+      "titleCh": "红绿灯效果",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/typeof-null.md",
+    "path": "/articles/memos/typeof-null.md",
+    "fileName": "typeof-null",
+    "frontmatter": {
+      "titleEn": "The result of typeof null",
+      "titleCh": "typeof null 的输出",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/undefined-null-diff.md",
+    "path": "/articles/memos/undefined-null-diff.md",
+    "fileName": "undefined-null-diff",
+    "frontmatter": {
+      "titleEn": "Distinguishing undefined and null",
+      "titleCh": "区分 undefined 和 null",
       "tags": [
         "JavaScript"
       ]
@@ -936,6 +1788,18 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/clear-floats.md",
+    "path": "/articles/memos/clear-floats.md",
+    "fileName": "clear-floats",
+    "frontmatter": {
+      "titleEn": "Methods for Clearing Floats",
+      "titleCh": "清除浮动的方法",
+      "tags": [
+        "CSS"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/css-box-model.md",
     "path": "/articles/memos/css-box-model.md",
     "fileName": "css-box-model",
@@ -996,6 +1860,18 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/document-flow.md",
+    "path": "/articles/memos/document-flow.md",
+    "fileName": "document-flow",
+    "frontmatter": {
+      "titleEn": "The concept of document flow",
+      "titleCh": "文档流的概念",
+      "tags": [
+        "CSS"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/element-centering.md",
     "path": "/articles/memos/element-centering.md",
     "fileName": "element-centering",
@@ -1044,6 +1920,30 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/height-collapse-solution.md",
+    "path": "/articles/memos/height-collapse-solution.md",
+    "fileName": "height-collapse-solution",
+    "frontmatter": {
+      "titleEn": "Resolve parent element height collapse",
+      "titleCh": "解决父元素高度塌陷",
+      "tags": [
+        "CSS"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/hide-elements.md",
+    "path": "/articles/memos/hide-elements.md",
+    "fileName": "hide-elements",
+    "frontmatter": {
+      "titleEn": "Methods for Hiding Page Elements",
+      "titleCh": "隐藏页面元素的方法",
+      "tags": [
+        "CSS"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/inline-block-empty-elements.md",
     "path": "/articles/memos/inline-block-empty-elements.md",
     "fileName": "inline-block-empty-elements",
@@ -1056,12 +1956,108 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/length-units.md",
+    "path": "/articles/memos/length-units.md",
+    "fileName": "length-units",
+    "frontmatter": {
+      "titleEn": "CSS Length Units",
+      "titleCh": "CSS长度单位",
+      "tags": [
+        "CSS"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/mobile-device-adaptation.md",
+    "path": "/articles/memos/mobile-device-adaptation.md",
+    "fileName": "mobile-device-adaptation",
+    "frontmatter": {
+      "titleEn": "Mobile Device Adaptation Methods",
+      "titleCh": "移动端适配方式",
+      "tags": [
+        "CSS"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/percentage-layout.md",
+    "path": "/articles/memos/percentage-layout.md",
+    "fileName": "percentage-layout",
+    "frontmatter": {
+      "titleEn": "Percentage-based Layout",
+      "titleCh": "百分比布局",
+      "tags": [
+        "CSS"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/position-property.md",
+    "path": "/articles/memos/position-property.md",
+    "fileName": "position-property",
+    "frontmatter": {
+      "titleEn": "CSS position property",
+      "titleCh": "CSS position 属性",
+      "tags": [
+        "CSS"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/pseudo-elements-classes.md",
+    "path": "/articles/memos/pseudo-elements-classes.md",
+    "fileName": "pseudo-elements-classes",
+    "frontmatter": {
+      "titleEn": "Pseudo-elements and Pseudo-classes",
+      "titleCh": "伪元素与伪类",
+      "tags": [
+        "CSS"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/rem-em-diff.md",
+    "path": "/articles/memos/rem-em-diff.md",
+    "fileName": "rem-em-diff",
+    "frontmatter": {
+      "titleEn": "Distinguishing Between rem and em",
+      "titleCh": "区别 rem 和 em",
+      "tags": [
+        "CSS"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/rem-layout.md",
+    "path": "/articles/memos/rem-layout.md",
+    "fileName": "rem-layout",
+    "frontmatter": {
+      "titleEn": "Rem Layout",
+      "titleCh": "Rem 布局",
+      "tags": [
+        "CSS"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/sass-Less-diff.md",
     "path": "/articles/memos/sass-Less-diff.md",
     "fileName": "sass-Less-diff",
     "frontmatter": {
       "titleEn": "The Difference Between Sass and Less",
       "titleCh": "Sass 和 Less 的区别",
+      "tags": [
+        "CSS"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/will-change-property.md",
+    "path": "/articles/memos/will-change-property.md",
+    "fileName": "will-change-property",
+    "frontmatter": {
+      "titleEn": "will-change property",
+      "titleCh": "will-change 属性",
       "tags": [
         "CSS"
       ]
@@ -1092,6 +2088,18 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/browser-functions.md",
+    "path": "/articles/memos/browser-functions.md",
+    "fileName": "browser-functions",
+    "frontmatter": {
+      "titleEn": "Primary Functions of a Browser",
+      "titleCh": "浏览器的主要功能",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/browser-rendering.md",
     "path": "/articles/memos/browser-rendering.md",
     "fileName": "browser-rendering",
@@ -1104,12 +2112,84 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/browser-style-compatibility.md",
+    "path": "/articles/memos/browser-style-compatibility.md",
+    "fileName": "browser-style-compatibility",
+    "frontmatter": {
+      "titleEn": "Browser style compatibility",
+      "titleCh": "浏览器样式兼容",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/cdn-concepts-principles.md",
+    "path": "/articles/memos/cdn-concepts-principles.md",
+    "fileName": "cdn-concepts-principles",
+    "frontmatter": {
+      "titleEn": "CDN concepts and principles",
+      "titleCh": "CDN 概念与原理",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/cdn.md",
     "path": "/articles/memos/cdn.md",
     "fileName": "cdn",
     "frontmatter": {
       "titleEn": "What is CDN",
       "titleCh": "什么是CDN",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/common-compatibility-issues.md",
+    "path": "/articles/memos/common-compatibility-issues.md",
+    "fileName": "common-compatibility-issues",
+    "frontmatter": {
+      "titleEn": "Common compatibility issues",
+      "titleCh": "常见的兼容性问题",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/cookies-sessionStorage-localStorage-diff.md",
+    "path": "/articles/memos/cookies-sessionStorage-localStorage-diff.md",
+    "fileName": "cookies-sessionStorage-localStorage-diff",
+    "frontmatter": {
+      "titleEn": "Differences Between Cookies, sessionStorage, and localStorage",
+      "titleCh": "区别 Cookie, sessionStorage, localStorage",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/cross-origin.md",
+    "path": "/articles/memos/cross-origin.md",
+    "fileName": "cross-origin",
+    "frontmatter": {
+      "titleEn": "Cross-Origin",
+      "titleCh": "跨域 Cross-Origin",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/custom-webpack-plugins.md",
+    "path": "/articles/memos/custom-webpack-plugins.md",
+    "fileName": "custom-webpack-plugins",
+    "frontmatter": {
+      "titleEn": "Custom webpack plugins",
+      "titleCh": "自定义 webpack 插件",
       "tags": [
         "engineering"
       ]
@@ -1200,6 +2280,18 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/garbage-collection-mechanism.md",
+    "path": "/articles/memos/garbage-collection-mechanism.md",
+    "fileName": "garbage-collection-mechanism",
+    "frontmatter": {
+      "titleEn": "Garbage collection mechanism",
+      "titleCh": "垃圾回收机制",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/gc-mechanism.md",
     "path": "/articles/memos/gc-mechanism.md",
     "fileName": "gc-mechanism",
@@ -1236,12 +2328,60 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/http-websocket-tcp-diff.md",
+    "path": "/articles/memos/http-websocket-tcp-diff.md",
+    "fileName": "http-websocket-tcp-diff",
+    "frontmatter": {
+      "titleEn": "Relationship Between HTTP, WebSocket, and TCP",
+      "titleCh": "HTTP / WebSocket / TCP 的关系",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/http1-http2-http3-diff.md",
     "path": "/articles/memos/http1-http2-http3-diff.md",
     "fileName": "http1-http2-http3-diff",
     "frontmatter": {
       "titleEn": "Differences Between HTTP/1, HTTP/2, and HTTP/3",
       "titleCh": "HTTP1、HTTP2、HTTP3 的区别",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/import-module-methods.md",
+    "path": "/articles/memos/import-module-methods.md",
+    "fileName": "import-module-methods",
+    "frontmatter": {
+      "titleEn": "Different module import methods",
+      "titleCh": "不同的模块导入方式",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/local-storage-methods.md",
+    "path": "/articles/memos/local-storage-methods.md",
+    "fileName": "local-storage-methods",
+    "frontmatter": {
+      "titleEn": "Local storage methods",
+      "titleCh": "本地存储的方法",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/network-protocol-layers.md",
+    "path": "/articles/memos/network-protocol-layers.md",
+    "fileName": "network-protocol-layers",
+    "frontmatter": {
+      "titleEn": "Network Protocol Layers",
+      "titleCh": "网络协议分层",
       "tags": [
         "engineering"
       ]
@@ -1260,12 +2400,120 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/progressive-enhancement-graceful-degradation-diff.md",
+    "path": "/articles/memos/progressive-enhancement-graceful-degradation-diff.md",
+    "fileName": "progressive-enhancement-graceful-degradation-diff",
+    "frontmatter": {
+      "titleEn": "Progressive enhancement and graceful degradation",
+      "titleCh": "渐进增强与优雅降级",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/reflow-repaint.md",
+    "path": "/articles/memos/reflow-repaint.md",
+    "fileName": "reflow-repaint",
+    "frontmatter": {
+      "titleEn": "Reflow and repaint",
+      "titleCh": "回流/重排和重绘",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/socket-connection-steps.md",
+    "path": "/articles/memos/socket-connection-steps.md",
+    "fileName": "socket-connection-steps",
+    "frontmatter": {
+      "titleEn": "Socket Connection Steps",
+      "titleCh": "Socket 连接的步骤",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/socket-http-diff.md",
+    "path": "/articles/memos/socket-http-diff.md",
+    "fileName": "socket-http-diff",
+    "frontmatter": {
+      "titleEn": "Distinguishing Between Socket and HTTP",
+      "titleCh": "区分 Socket 和 HTTP",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/socket-webSocket-diff.md",
+    "path": "/articles/memos/socket-webSocket-diff.md",
+    "fileName": "socket-webSocket-diff",
+    "frontmatter": {
+      "titleEn": "Distinguishing Socket and WebSocket",
+      "titleCh": "区别 Socket 和 WebSocket",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/socket.md",
+    "path": "/articles/memos/socket.md",
+    "fileName": "socket",
+    "frontmatter": {
+      "titleEn": "What is a socket?",
+      "titleCh": "Socket是什么",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/synthetic-layer-transform.md",
+    "path": "/articles/memos/synthetic-layer-transform.md",
+    "fileName": "synthetic-layer-transform",
+    "frontmatter": {
+      "titleEn": "What is a Synthetic Layer Transformation?",
+      "titleCh": "什么是合成层变换？",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/tcp-handshake.md",
     "path": "/articles/memos/tcp-handshake.md",
     "fileName": "tcp-handshake",
     "frontmatter": {
       "titleEn": "Three-Way Handshake and Four-Way Handshake",
       "titleCh": "三次握手和四次挥手是什么",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/uri-url-diff.md",
+    "path": "/articles/memos/uri-url-diff.md",
+    "fileName": "uri-url-diff",
+    "frontmatter": {
+      "titleEn": "The Difference Between URI and URL",
+      "titleCh": "URI 和 URL 的区别",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/url-enter.md",
+    "path": "/articles/memos/url-enter.md",
+    "fileName": "url-enter",
+    "frontmatter": {
+      "titleEn": "URL Enter",
+      "titleCh": "URL 回车",
       "tags": [
         "engineering"
       ]
@@ -1284,6 +2532,18 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/webpack-loaders-plugins-diff.md",
+    "path": "/articles/memos/webpack-loaders-plugins-diff.md",
+    "fileName": "webpack-loaders-plugins-diff",
+    "frontmatter": {
+      "titleEn": "The Difference Between Loaders and Plugins in Webpack",
+      "titleCh": "webpack 中 loader 和 plugin 的区别",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/websocket-http-relationship.md",
     "path": "/articles/memos/websocket-http-relationship.md",
     "fileName": "websocket-http-relationship",
@@ -1296,12 +2556,48 @@ export const MEMOS = [
     }
   },
   {
+    "key": "/articles/memos/webSocket.md",
+    "path": "/articles/memos/webSocket.md",
+    "fileName": "webSocket",
+    "frontmatter": {
+      "titleEn": "WebSocket",
+      "titleCh": "WebSocket",
+      "tags": [
+        "engineering"
+      ]
+    }
+  },
+  {
     "key": "/articles/memos/meta-tags.md",
     "path": "/articles/memos/meta-tags.md",
     "fileName": "meta-tags",
     "frontmatter": {
       "titleEn": "meta tags",
       "titleCh": "meta 标签",
+      "tags": [
+        "HTML"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/semantic-advantages.md",
+    "path": "/articles/memos/semantic-advantages.md",
+    "fileName": "semantic-advantages",
+    "frontmatter": {
+      "titleEn": "Semantic advantages",
+      "titleCh": "语义化优点",
+      "tags": [
+        "HTML"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/seo-definition.md",
+    "path": "/articles/memos/seo-definition.md",
+    "fileName": "seo-definition",
+    "frontmatter": {
+      "titleEn": "SEO definition",
+      "titleCh": "SEO定义",
       "tags": [
         "HTML"
       ]

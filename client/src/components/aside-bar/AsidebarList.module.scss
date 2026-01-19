@@ -47,13 +47,12 @@
 
         // 二级标题
         .second-ul {
-            padding-left: $padding-default; // 为了让二级标题看的明显一些
+            padding-left: $padding-default * 0.6; // 为了让二级标题看的明显一些
             font-size: 0.9rem; // 缩小二级标题的字体，防止标题溢出
 
             overflow: hidden; // 默认情况下要隐藏，避免留白
             max-height: 0;
             opacity: 0;
-            transform: translateY(-0.5rem);
             transition: all 0.35s ease;
 
             // 二级标题的 active 状态

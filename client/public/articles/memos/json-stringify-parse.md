@@ -1,6 +1,6 @@
 ---
-titleEn: "`JSON.stringify` and `JSON.parse`"
-titleCh: "`JSON.stringify` 和 `JSON.parse` 区别"
+titleEn: "JSON.stringify and JSON.parse"
+titleCh: "区分 JSON.stringify 和 JSON.parse"
 tags: ["JavaScript"]
 ---
 

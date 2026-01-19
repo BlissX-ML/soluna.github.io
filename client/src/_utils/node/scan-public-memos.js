@@ -64,13 +64,16 @@ function sortFiles() {
 
     files.forEach((file) => {
         const tag = file?.frontmatter?.tags?.[0];
-        if (!fileTypes.has(tag)) fileTypes.add(tag);
-        if (!sortFile.has(tag)) {
-            sortFile.set(tag, []);
-            nestedFile.set(tag, []);
+        const tagSm = tag.toLowerCase(); // 都转换成小写的
+
+        if (!fileTypes.has(tagSm)) fileTypes.add(tag);
+        if (!sortFile.has(tagSm)) {
+            sortFile.set(tagSm, []);
+            nestedFile.set(tagSm, []);
         }
-        sortFile.get(tag).push(file);
-        nestedFile.get(tag).push({
+
+        sortFile.get(tagSm).push(file);
+        nestedFile.get(tagSm).push({
             key: file?.key,
             title: file?.frontmatter?.titleCh,
             src: file?.path,
@@ -88,7 +91,7 @@ function sortFiles() {
         delayTime: getRandom(),
         detail: {
             level: 2,
-            data: nestedFile.get(type),
+            data: nestedFile.get(type.toLowerCase()),
         },
     }));
 

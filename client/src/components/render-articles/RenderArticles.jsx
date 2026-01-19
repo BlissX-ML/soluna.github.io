@@ -5,6 +5,8 @@ import remarkFrontmatter from "remark-frontmatter";
 import rehypePrism from "rehype-prism-plus"; // 连接 ReactMarkdown 和 PrismJS 的桥梁
 import remarkGfm from "remark-gfm";
 
+import classes from "./RenderArticles.module.scss";
+
 import RenderMarkdown from "../markdown/RenderMarkdown.jsx";
 
 export default function RenderArticles({ articles }) {
@@ -28,7 +30,7 @@ export default function RenderArticles({ articles }) {
 
     return (
         <RenderMarkdown anchor={anchor}>
-            <h2>{articles?.frontmatter?.titleCh}</h2>
+            <h2 className={classes.h2}>{articles?.frontmatter?.titleCh}</h2>
             <ReactMarkdown
                 remarkPlugins={[remarkFrontmatter, remarkGfm]}
                 rehypePlugins={[rehypePrism]}

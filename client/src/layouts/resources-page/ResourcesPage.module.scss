@@ -1,0 +1,7 @@
+.resource-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    place-items: center;
+    gap: 1.5rem;
+    margin: $margin-default $margin-default * 0.5;
+}
