@@ -19,12 +19,11 @@
 
 #main-content {
     width: 100%;
-    height: calc(100vh - #{$height-default});
+    min-height: calc(100vh - #{$height-default});
     margin: 0 auto;
     margin-top: $height-default;
     background-color: $content-background-color;
-
-    overflow: hidden;
+    // overflow-y: hidden;
 }
 
 #root > footer {

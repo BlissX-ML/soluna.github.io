@@ -1,0 +1,25 @@
+.footprint {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    overflow-y: scroll;
+
+    .map-related {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        padding-bottom: $padding-default;
+        border-bottom: $border-split-module;
+        box-shadow: $box-shadow-split-module;
+
+        .content {
+            margin-left: $margin-default;
+            background-color: crimson;
+        }
+    }
+
+    .tour-memo {
+        width: 500px;
+        height: 500px;
+        background-color: rgb(128, 130, 0);
+    }
+}

@@ -7,9 +7,12 @@ import SidebarNavigate from "../../features/repository-page/SidebarNavigateRepos
 
 export default function RepositorySidebarNavigate() {
     return (
-        <section id="main-content" className={classes.container}>
+        <section className={classes.container}>
             <SidebarNavigate CATEGORY={Repository_Navigate} />
-            <Outlet />
+
+            <section id="main-content" className={classes.contents}>
+                <Outlet />
+            </section>
         </section>
     );
 }

@@ -1,8 +1,9 @@
 .sidebar {
-    position: relative;
+    position: fixed;
+    top: $height-default;
 
     width: $sidebar-max-width * 1.2;
-    max-height: calc(100vh - $height-default); // 让侧边栏保证占满高度
+    min-height: calc(100vh - $height-default); // 让侧边栏保证占满高度
     background-color: $aside-background-color;
 
     display: flex;

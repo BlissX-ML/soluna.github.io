@@ -17,7 +17,7 @@ import HandbookItems from "./components/Interview-handbook-comps/ContentDynamicR
 import RenderMemos from "./pages/memo-page/RenderMemos.jsx";
 import MemoSidebarNavigate from "./pages/memo-page/MemoSidebarNavigate";
 
-const Homepage = lazy(() => import("./pages/home-page/home-page.jsx"));
+const Homepage = lazy(() => import("./pages/home-page/Homepage.jsx"));
 
 const router = createHashRouter([
     { path: "/", element: <Indexpage /> },
