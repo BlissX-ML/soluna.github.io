@@ -1,4 +1,4 @@
-import Hyperlink from "../icons/hyperlink";
+import Hyperlink from "../icons/Hyperlink";
 import classes from "./ResourceLinkList.module.scss";
 
 export default function ResourceLinkList({ resources }) {
