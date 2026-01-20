@@ -7,12 +7,12 @@ import SidebarNavigateMemo from "../../features/memo-page/SidebarNavigateMemo";
 
 export default function MemoSidebarNavigate() {
     return (
-        <section className={classes.container}>
+        <>
             <SidebarNavigateMemo CATEGORY={MEMOS_TYPES} />
 
             <section id="main-content" className={classes.content}>
                 <Outlet />
             </section>
-        </section>
+        </>
     );
 }

@@ -4,16 +4,10 @@ export const MEMOS_TYPES = [
     "key": "JavaScript",
     "title": "JavaScript",
     "level": 1,
-    "delayTime": "0.58",
+    "delayTime": "0.48",
     "detail": {
       "level": 2,
       "data": [
-        {
-          "key": "/articles/memos/0.1-plus-0.2-issue.md",
-          "title": "为什么 0.1 + 0.2 !== 0.3",
-          "src": "/articles/memos/0.1-plus-0.2-issue.md",
-          "fileName": "0"
-        },
         {
           "key": "/articles/memos/ajax-principles.md",
           "title": "AJAX 原理",
@@ -327,6 +321,12 @@ export const MEMOS_TYPES = [
           "fileName": "optional-chain"
         },
         {
+          "key": "/articles/memos/plus-issue.md",
+          "title": "为什么 0.1 + 0.2 !== 0.3",
+          "src": "/articles/memos/plus-issue.md",
+          "fileName": "plus-issue"
+        },
+        {
           "key": "/articles/memos/primitive-reference-types.md",
           "title": "区分原始数据类型与引用数据类型",
           "src": "/articles/memos/primitive-reference-types.md",
@@ -435,7 +435,7 @@ export const MEMOS_TYPES = [
     "key": "CSS",
     "title": "CSS",
     "level": 1,
-    "delayTime": "-0.38",
+    "delayTime": "0.23",
     "detail": {
       "level": 2,
       "data": [
@@ -608,7 +608,7 @@ export const MEMOS_TYPES = [
     "key": "engineering",
     "title": "engineering",
     "level": 1,
-    "delayTime": "-0.28",
+    "delayTime": "-0.14",
     "detail": {
       "level": 2,
       "data": [
@@ -871,7 +871,7 @@ export const MEMOS_TYPES = [
     "key": "HTML",
     "title": "HTML",
     "level": 1,
-    "delayTime": "-0.04",
+    "delayTime": "0.01",
     "detail": {
       "level": 2,
       "data": [
@@ -899,18 +899,6 @@ export const MEMOS_TYPES = [
 ];
 
 export const MEMOS = [
-  {
-    "key": "/articles/memos/0.1-plus-0.2-issue.md",
-    "path": "/articles/memos/0.1-plus-0.2-issue.md",
-    "fileName": "0",
-    "frontmatter": {
-      "titleEn": "Why is 0.1 + 0.2 not equal to 0.3?",
-      "titleCh": "为什么 0.1 + 0.2 !== 0.3",
-      "tags": [
-        "JavaScript"
-      ]
-    }
-  },
   {
     "key": "/articles/memos/ajax-principles.md",
     "path": "/articles/memos/ajax-principles.md",
@@ -1530,6 +1518,18 @@ export const MEMOS = [
     "frontmatter": {
       "titleEn": "Optional chain ?.",
       "titleCh": "可选链 ?.",
+      "tags": [
+        "JavaScript"
+      ]
+    }
+  },
+  {
+    "key": "/articles/memos/plus-issue.md",
+    "path": "/articles/memos/plus-issue.md",
+    "fileName": "plus-issue",
+    "frontmatter": {
+      "titleEn": "Why is 0.1 + 0.2 not equal to 0.3?",
+      "titleCh": "为什么 0.1 + 0.2 !== 0.3",
       "tags": [
         "JavaScript"
       ]

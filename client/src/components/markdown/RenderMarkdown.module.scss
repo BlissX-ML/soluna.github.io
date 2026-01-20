@@ -22,12 +22,11 @@ pre[class*="language-"] {
 }
 
 .markdown {
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
     line-height: 1.8;
-    padding-bottom: 2rem;
-    scroll-margin-top: 15px; // 用于 scrollIntoView，让其自动计算偏移量
+    padding: 2rem 0rem;
+    overflow: auto;
+    // 用于 scrollIntoView，让其自动计算偏移量
+    scroll-margin-top: 5rem;
 
     ul,
     ol {
