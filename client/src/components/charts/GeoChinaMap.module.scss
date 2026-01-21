@@ -1,9 +1,16 @@
 .map {
     width: 54rem;
     height: 40rem;
-}
 
-.province {
-    transform-box: fill-box;
-    transform-origin: center;
+    .tip {
+        position: absolute;
+        padding: $padding-default * 0.5 $padding-default;
+        display: none;
+
+        color: white;
+        border-radius: 5px;
+
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.6);
+    }
 }
