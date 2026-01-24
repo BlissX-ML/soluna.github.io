@@ -5,11 +5,14 @@
 > 并作为长期维护的技术实验与作品展示平台。
 > 同时已完成域名购入、域名解析、ICP备案与公安备案等完整上线部署流程，具备真实生产环境运行条件。
 
+
+
 ## **项目地址**：
 
-1. 国内访问：[solunote.site](solunote.site)
+1. 国内访问：[solunote.site](http://solunote.site)
     - 完成域名购买 - CDN域名解析 - ICP备案 - 轻量服务器部署等流程
-2. 海外访问：[soluna-github-io.vercel.app](soluna-github-io.vercel.app)
+2. 海外访问：[soluna-github-io.vercel.app](http://soluna-github-io.vercel.app)
+
 
 ## **项目亮点**：
 
@@ -19,20 +22,21 @@
 
 2. **前端工程化：自动化处理资源**
     - 图片转码： 为解决静态资源体积过大、首屏加载慢的问题，引入 sharp + WebP 转换脚本并通过 `npm run convert:webp` 命令执行。
-        - 在保证可接受画质的前提下，有效减少图片资源体积。。
+        - 在保证可接受画质的前提下，有效减少图片资源体积。
     - 文件预扫描： 由于是静态网站，通过 `npm run convert:scanPublic` 命令可以自动扫描 public 目录下的 Markdown 文件并生成所需的数组结构。
-        - 将部分运行时处理前移至构建阶段，从而减少页面加载时的运行时开销。。
+        - 将部分运行时处理前移至构建阶段，从而减少页面加载时的运行时开销。
 
 3. **状态管理与代码组织**
-    - 解耦状态： 使用 useContext 处理全局基础配置，用 Redux 接管核心组件的状态，避免出现 Props Drilling 的问题。
-    - 样式模块化： 为每个 .jsx 组件配置独立的 .scss 文件，这样在修改样式时非常直观，也避免了 CSS 样式污染。
+    - 解耦状态： 使用 `useContext` 处理全局基础配置，用 `Redux` 接管核心组件的状态，避免出现 Props Drilling 的问题。
+    - 样式模块化： 为每个 `.jsx` 组件配置独立的 `.scss` 文件，这样在修改样式时非常直观，也避免了 CSS 样式污染。
 
 4. **Markdown 渲染与代码高亮**
     - 构建了基于 Markdown + Front Matter 的轻量内容系统，实现内容与渲染逻辑解耦，并支持自动索引与结构化内容加载。
-    - 基于 react-markdown 库实现 markdown 文件的渲染与显示
+    - 基于 react-markdown 库实现 markdown 文件的渲染与显示。
     - 自定义 markdown 文件中，各个元素的显示样式，并引入 prism-themes 库对多行代码块进行了视觉优化。
 
-### **技术栈清单**：
+
+## **技术栈清单**：
 
 1. 核心： React 19, Vite
 2. 可视化： D3.js
