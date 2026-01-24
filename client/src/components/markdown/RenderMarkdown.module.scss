@@ -24,7 +24,7 @@ pre[class*="language-"] {
 .markdown {
     line-height: 1.8;
     padding: 2rem 0rem;
-    overflow: auto;
+    // overflow: auto;
     // 用于 scrollIntoView，让其自动计算偏移量
     scroll-margin-top: 5rem;
 

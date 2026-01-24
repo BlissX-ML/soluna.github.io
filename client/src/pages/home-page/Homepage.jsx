@@ -1,5 +1,5 @@
 import classes from "./Homepage.module.scss";
-import HomeLayout from "../../layouts/home-page/home-layout";
+import HomeLayout from "../../layouts/home/HomeLayout";
 
 export default function Homepage() {
     return (

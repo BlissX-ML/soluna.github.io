@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import repositoryReducer from "./dropdownSidebar.js";
+import dropdownSidebarReducer from "./dropdownSidebar.js";
 import plansReducer from "./plans.js";
 
 export const store = configureStore({
     reducer: {
-        repository: repositoryReducer, // 控制 repository 页的下拉列表
+        dropdownSidebar: dropdownSidebarReducer, // 控制 repository 页的下拉列表
         plans: plansReducer,
     },
 });

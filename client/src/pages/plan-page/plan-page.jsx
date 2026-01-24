@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import PlanPage from "../../layouts/plans-page/plan-page.jsx";
+import PlanLayout from "../../layouts/plans-page/PlanLayout.jsx";
 import classes from "./plan-page.module.scss";
 import {
     formatToday,

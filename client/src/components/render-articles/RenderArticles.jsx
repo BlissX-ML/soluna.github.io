@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import fetchContent from "../../_data/memo-page/fetch-content";
 import ReactMarkdown from "react-markdown";
 import remarkFrontmatter from "remark-frontmatter";
-import rehypePrism from "rehype-prism-plus"; // 连接 ReactMarkdown 和 PrismJS 的桥梁
+import rehypePrism from "rehype-prism-plus";
 import remarkGfm from "remark-gfm";
 
 import classes from "./RenderArticles.module.scss";

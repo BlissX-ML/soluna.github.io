@@ -1,0 +1,25 @@
+.sidebar {
+    position: fixed; // 不能用sticky，不然滚动时会跟着动，而且右侧的主体部分会留空白 ✅
+    top: $height-default;
+
+    width: $sidebar-max-width * 1.2;
+    height: calc(100vh - $height-default); // 固定高度
+    background-color: $aside-background-color;
+
+    display: flex;
+    flex-direction: column; //控制目录标题和列表的布局的
+    padding-bottom: $padding-default;
+
+    overflow: visible; // 允许下拉菜单溢出，让按钮冒出来的 ✅
+    scrollbar-width: thin;
+
+    transform: translateX(0);
+    transition: all 0.5s ease-in;
+
+    // 关闭侧边栏时的效果
+    &.close {
+        transform: translateX(-100%);
+
+        // .toggle-btn { ... } 详见 AsidebarToggleBtns.module.scss 文件的 .close
+    }
+}

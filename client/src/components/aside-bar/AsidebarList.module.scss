@@ -3,9 +3,10 @@
     margin: 1rem 0.5rem 0rem 0rem; // 内部列表与外部 `aside` 的间距
     text-align: left;
     flex: 1; /* 占据剩余空间 */
-    overflow-y: scroll; /* 添加垂直滚动 */
-    overflow-x: hidden;
+    overflow-y: scroll; /* ✅ 添加垂直滚动，控制侧边栏可以滚动的！！ */
+    // overflow-x: visible;
     scrollbar-width: thin;
+    padding-bottom: $padding-default * 3; // 保证侧边栏不会跟 footer 撞在一起
 
     li,
     .title {

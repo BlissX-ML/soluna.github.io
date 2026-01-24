@@ -1,7 +1,7 @@
 import { createContext, useCallback, useMemo, useState } from "react";
-import mdxWrapper from "../../mdxWrapper.jsx";
+// import mdxWrapper from "../../mdxWrapper.jsx";
 
-export const TodosContext = createContext(null)
+export const TodosContext = createContext(null);
 
 export function TodosManagaeContext({ children }) {
     // 未来计划分片
@@ -17,32 +17,43 @@ export function TodosManagaeContext({ children }) {
     // 两个独立的选择函数（最直观，不用额外参数）
     const handleFutureClick = useCallback((item) => {
         setFutureActive(item);
-        setIsFutureActive(true)
+        setIsFutureActive(true);
         const Comp = item?.learnRoute;
-        setFutureContent(Comp ? <Comp components={{ wrapper: mdxWrapper }} /> : null);
+        // setFutureContent(Comp ? <Comp components={{ wrapper: mdxWrapper }} /> : null);
     }, []);
 
     const handletDoneClick = useCallback((item) => {
         setDoneActive(item);
         setIsDoneActive(true);
-        setDoneAwards(item?.srcs || '');
+        setDoneAwards(item?.srcs || "");
     }, []);
 
-    const ctx = useMemo(() => ({
-        future: {
-            active: isFutureActive,
-            activeItem: futureActive,
-            content: futureContent,
-            click: handleFutureClick,
-        },
-        done: {
-            active: isDoneActive,
-            activeItem: doneActive,
-            content: doneAwards,
-            click: handletDoneClick,
-        },
-    }), [futureActive, futureContent, isFutureActive, doneActive, doneAwards, isDoneActive])
+    const ctx = useMemo(
+        () => ({
+            future: {
+                active: isFutureActive,
+                activeItem: futureActive,
+                content: futureContent,
+                click: handleFutureClick,
+            },
+            done: {
+                active: isDoneActive,
+                activeItem: doneActive,
+                content: doneAwards,
+                click: handletDoneClick,
+            },
+        }),
+        [
+            futureActive,
+            futureContent,
+            isFutureActive,
+            doneActive,
+            doneAwards,
+            isDoneActive,
+        ],
+    );
 
-
-    return <TodosContext.Provider value={ctx}>{children}</TodosContext.Provider>
+    return (
+        <TodosContext.Provider value={ctx}>{children}</TodosContext.Provider>
+    );
 }

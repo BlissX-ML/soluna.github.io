@@ -4,23 +4,25 @@
     color: $font-color-default;
     background-color: $main-background-color;
 
-    @include flexlayout-default-column; // flex布局 + 修改默认方向
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* 导航栏 - 内容栏 - footer 的布局效果 */
+    flex-grow: 0;
+    // min-height: 100vh; /* 确保至少占满屏幕 */
 }
 
 #root > .header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0; // 让它严格贴合视口宽度（不要靠 width:100% + min-width 撑）
     height: $height-default;
     z-index: 100; // 这个是保证下拉列表不会到首页页面下的关键
-    flex: $height-default;
+    // flex: $height-default;
 }
 
 #main-content {
     width: 100%;
     margin: 0 auto;
-    padding-top: $height-default;
     min-height: calc(100vh - #{$height-default});
     background-color: $content-background-color;
 }
