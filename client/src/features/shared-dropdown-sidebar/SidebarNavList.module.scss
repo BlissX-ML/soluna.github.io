@@ -1,0 +1,24 @@
+.active-first-li {
+    & .title,
+    & .title::after {
+        color: $font-highlight-default;
+        border-color: $font-highlight-default; // 箭头变换颜色
+    }
+}
+
+// 二级标题的 active 状态
+.active-second-ul {
+    max-height: 150rem !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+
+    li {
+        &:hover {
+            color: #257000;
+            background-color: #f6fbf1;
+            font-weight: 600;
+            transform: translateX(4px);
+            transition: all 0.5s ease;
+        }
+    }
+}

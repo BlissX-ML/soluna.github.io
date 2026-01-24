@@ -2,14 +2,13 @@ import { Outlet } from "react-router-dom";
 
 import classes from "./MemoSidebarNavigate.module.scss";
 
-import { MEMOS_TYPES } from "../../_data/memo-page/memo.js";
-import SidebarNavigate from "../../features/shared-dropdown-sidebar/SidebarNavigate";
+import { MEMOS_SIDEBAR } from "../../_data/memo-page/memo.js";
+import SidebarNavigation from "../../features/shared-dropdown-sidebar/SidebarNavigation";
 
 export default function MemoSidebarNavigate() {
     return (
         <section id="main-content">
-            <SidebarNavigate catalogs={MEMOS_TYPES} startURL="/memo" />
-
+            <SidebarNavigation catalogs={MEMOS_SIDEBAR} startURL="/memo" />
             <Outlet />
         </section>
     );

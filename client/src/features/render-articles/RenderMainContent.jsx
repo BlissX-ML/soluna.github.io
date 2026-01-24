@@ -6,12 +6,10 @@ import classes from "./RenderMainContent.module.scss";
 
 import RenderArticles from "../../components/render-articles/RenderArticles.jsx";
 
-import { MEMOS_DATA } from "../../_data/memo-page/memosData";
-
 // 这里需要的 data 是以 {key: tags, data: [{符合 tags 的数据}]}
 export default function RenderMainContent({ data }) {
     const { routeId } = useParams();
-    const { asidebarActive } = useAppSelector((state) => state.dropdownSidebar);
+    const { sidebarActive } = useAppSelector((state) => state.dropdownSidebar);
 
     const maxRendered = useRef(0); // 记录曾经渲染过的最大值
     const [visibleCount, setVisibleCount] = useState(10);
@@ -36,7 +34,7 @@ export default function RenderMainContent({ data }) {
 
     return (
         <main
-            className={`${classes.container} ${asidebarActive ? "" : classes.close}`}
+            className={`${classes.container} ${sidebarActive ? "" : classes.close}`}
         >
             {categoriFiles.slice(0, visibleCount).map((file) => (
                 <RenderArticles articles={file} key={file.key}></RenderArticles>

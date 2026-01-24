@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import fetchContent from "../../_data/memo-page/fetch-content";
+
 import ReactMarkdown from "react-markdown";
 import remarkFrontmatter from "remark-frontmatter";
 import rehypePrism from "rehype-prism-plus";
@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 
 import classes from "./RenderArticles.module.scss";
 
+import fetchContent from "../../_utils/browser/fetch-content/fetch-content.js";
 import RenderMarkdown from "../markdown/RenderMarkdown.jsx";
 
 export default function RenderArticles({ articles }) {
@@ -30,7 +31,7 @@ export default function RenderArticles({ articles }) {
 
     return (
         <RenderMarkdown anchor={anchor}>
-            <h2 className={classes.h2}>{articles?.frontmatter?.titleCh}</h2>
+            <h2 className={classes.h2}>{articles?.titleCh}</h2>
             <ReactMarkdown
                 remarkPlugins={[remarkFrontmatter, remarkGfm]}
                 rehypePlugins={[rehypePrism]}

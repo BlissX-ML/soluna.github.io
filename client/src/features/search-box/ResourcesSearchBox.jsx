@@ -1,8 +1,10 @@
-import classes from "./ResourcesSearchBox.module.scss";
-import SearchMagnifiers from "../../components/icons/SearchMagnifiers";
 import { useContext } from "react";
-import { ResourcesContext } from "../../store/context/ResourcesContext";
+import classes from "./ResourcesSearchBox.module.scss";
 
+import { ResourcesContext } from "../../store/context/ResourcesContext";
+import SearchMagnifiers from "../../components/icons/SearchMagnifiers.jsx";
+
+// 资源搜索框
 export default function ResourcesSearchBox({ categories }) {
     const {
         inputItem,

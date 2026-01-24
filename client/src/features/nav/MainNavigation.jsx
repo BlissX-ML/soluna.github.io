@@ -1,11 +1,13 @@
-import { useAppDispatch, useAppSelector } from "../../store/reducer/hooks.js";
-import { setCurItem } from "../../store/reducer/dropdownSidebar.js";
 import classes from "./MainNavigation.module.scss";
+import { setCurItem } from "../../store/reducer/dropdownSidebar.js";
+import { useAppDispatch, useAppSelector } from "../../store/reducer/hooks.js";
+
+import { Repository_Navigate } from "../../_data/repository-page/repository.js";
 
 import RedirectItemPage from "../../components/links/RedirectItemPage.jsx";
 import DropMenuRedirectAsideMenu from "../shared-dropdown-sidebar/DropMenuRedirectAside.jsx";
-import { MEMOS_TYPES } from "../../_data/memo-page/memo.js";
-import { Repository_Navigate } from "../../_data/repository-page/repository.js";
+
+import { MEMOS_SIDEBAR } from "../../_data/memo-page/memo";
 
 export default function MainNavigation() {
     const dispatch = useAppDispatch();
@@ -35,7 +37,7 @@ export default function MainNavigation() {
                 extraContentInList={
                     <DropMenuRedirectAsideMenu
                         style={classes["dropdown-visibility"]}
-                        catalogs={MEMOS_TYPES}
+                        catalogs={MEMOS_SIDEBAR}
                         startUrl="/memo"
                     />
                 }

@@ -1,6 +1,6 @@
-import classes from "./AsidebarCatalogs.module.scss";
+import classes from "./SidebarCatalogs.module.scss";
 
-export default function AsidebarCatalogs() {
+export default function SidebarCatalogs() {
     return (
         <div className={classes["sidebar-toggle-container"]}>
             <p>

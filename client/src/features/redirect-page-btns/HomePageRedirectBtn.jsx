@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import classes from "./HomePageRedirectBtn.module.scss";
-import GeneralBtns from "../../components/buttons/GeneralBtns";
-import ArrowRightRedirectPage from "../../components/icons/ArrowRightRedirectPage";
+
+import GeneralBtns from "../../components/buttons/GeneralBtns.jsx";
+import ArrowRightRedirectPage from "../../components/icons/ArrowRightRedirectPage.jsx";
 
 export default function RedirctHomePage({ src, children }) {
     const navigate = useNavigate();

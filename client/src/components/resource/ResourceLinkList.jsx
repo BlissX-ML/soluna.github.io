@@ -1,5 +1,5 @@
-import Hyperlink from "../icons/Hyperlink";
 import classes from "./ResourceLinkList.module.scss";
+import Hyperlink from "../icons/Hyperlink.jsx";
 
 export default function ResourceLinkList({ resources }) {
     return (

@@ -15,11 +15,11 @@ import Resources from "./pages/resource-share-page/Resources.jsx";
 import MemoSidebarNavigate from "./pages/memo-page/MemoSidebarNavigate";
 
 import RenderInitialContent from "./features/render-articles/RenderInitialContent";
-import { MEMOS } from "./_data/memo-page/memo";
+import { MEMOS, MEMOS_ROUTE } from "./_data/memo-page/memo";
 import RenderMainContent from "./features/render-articles/RenderMainContent";
-import { MEMOS_DATA } from "./_data/memo-page/memosData";
-import RepositorySidebarNavigate from "./pages/repository-page/RepositorySidebarNavigate";
+
 import AppLayout from "./layouts/app-layout/AppLayout";
+import RepositorySidebarNavigate from "./pages/repository-page/RepositorySidebarNavigate";
 
 const Homepage = lazy(() => import("./pages/home-page/Homepage.jsx"));
 
@@ -46,7 +46,7 @@ const router = createHashRouter([
                     },
                     {
                         path: ":routeId",
-                        element: <RenderMainContent data={MEMOS_DATA} />,
+                        element: <RenderMainContent data={MEMOS_ROUTE} />,
                     },
                 ],
             },
@@ -55,7 +55,7 @@ const router = createHashRouter([
                 element: <RepositorySidebarNavigate />,
                 children: [
                     // { index: true, element: <RecapSubNav />, },
-                    { path: ":recapId", element: <RecapContent /> },
+                    { path: ":routeId", element: <RecapContent /> },
                 ],
             },
             {

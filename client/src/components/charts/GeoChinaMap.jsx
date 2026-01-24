@@ -1,7 +1,7 @@
 import * as d3 from "d3";
-
 import { useRef, useEffect } from "react";
 import classes from "./GeoChinaMap.module.scss";
+
 import {
     bindMapEvents,
     createMapPaths,

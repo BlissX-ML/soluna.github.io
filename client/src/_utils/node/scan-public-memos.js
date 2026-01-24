@@ -3,10 +3,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import matter from "gray-matter";
 
-const getRandom = () => {
-    return (Math.random() * 2 - 1).toFixed(2);
-};
-
 // 通过 import.meta.url 转换得到当前文件所在目录
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -42,11 +38,19 @@ function scanDirectory(dir, baseUrl = "/articles/memos") {
             const fileContent = fs.readFileSync(fullPath, "utf-8"); // 读取文件内容
             const { data: frontmatter } = matter(fileContent); // 解析 frontmatter
             const filePath = baseUrl ? `${baseUrl}/${item}` : item; // 检查当前递归层有无父路径
+
+            const titleEn = frontmatter?.titleEn;
+            const titleCh = frontmatter?.titleCh;
+            const tags = frontmatter?.tags;
+
             files.push({
                 key: filePath,
                 path: filePath,
                 fileName: item.split(".")[0],
-                frontmatter,
+                category: tags?.[0] || "Uncategorized",
+                titleEn,
+                titleCh,
+                tags
             });
         }
     }
@@ -57,55 +61,12 @@ function scanDirectory(dir, baseUrl = "/articles/memos") {
 // 扫描得到所有文件相对路径
 const files = scanDirectory(publicDir);
 
-function sortFiles() {
-    const fileTypes = new Set(); // 收集 memo 页文件中 Tags 类型的，即侧边栏大标题
-    const nestedFile = new Map(); // 收集每一个 Tags 对应的文章，即侧边栏小标题
-    const sortFile = new Map(); // 收集侧边主体文件内容
-
-    files.forEach((file) => {
-        const tag = file?.frontmatter?.tags?.[0];
-        const tagSm = tag.toLowerCase(); // 都转换成小写的
-
-        if (!fileTypes.has(tagSm)) fileTypes.add(tag);
-        if (!sortFile.has(tagSm)) {
-            sortFile.set(tagSm, []);
-            nestedFile.set(tagSm, []);
-        }
-
-        sortFile.get(tagSm).push(file);
-        nestedFile.get(tagSm).push({
-            key: file?.key,
-            title: file?.frontmatter?.titleCh,
-            src: file?.path,
-            fileName: file?.fileName,
-        });
-    });
-
-    const MEMOS_SORTED = Array.from(sortFile.values()).flat(1);
-
-    // 直接生成需要的类似于 repository_navigate 的文件样式
-    const MEMOS_TYPES = [...fileTypes].map((type) => ({
-        key: type,
-        title: type,
-        level: 1,
-        delayTime: getRandom(),
-        detail: {
-            level: 2,
-            data: nestedFile.get(type.toLowerCase()),
-        },
-    }));
-
-    return [MEMOS_TYPES, MEMOS_SORTED];
-}
-
-const [types, filesList] = sortFiles();
 
 // 生成到 src 下的 JS 文件内容
 // 使用 JSON.stringify 将数组转换为可写入的格式，因为 `writeFileSync` 写入字符串或者Buff
-const content = `// Auto-generated file (DO NOT EDIT MANUALLY)
-export const MEMOS_TYPES = ${JSON.stringify(types, null, 2)};
 
-export const MEMOS = ${JSON.stringify(filesList, null, 2)};
+const content = `// Auto-generated file (DO NOT EDIT MANUALLY)
+export const MEMOS = ${JSON.stringify(files, null, 2)};
 `;
 
 // 确保目录存在
@@ -115,8 +76,8 @@ if (!fs.existsSync(configDir)) {
 }
 
 // 写入目标文件
-fs.writeFileSync(path.resolve(configDir, "./memo.js"), content, "utf-8");
+fs.writeFileSync(path.resolve(configDir, "./memo-raw.js"), content, "utf-8");
 
 console.log(
-    `✅ Generated ${filesList.length} file paths and ${types.length} categories.`,
+    `✅ Generated ${files.length} file paths.`,
 );

@@ -1,18 +1,17 @@
 import { Outlet } from "react-router-dom";
-
 import classes from "./RepositorySidebarNavigate.module.scss";
 
-import SidebarNavigate from "../../features/shared-dropdown-sidebar/SidebarNavigate";
-import { Repository_Navigate } from "../../_data/repository-page/repository";
+import { Repository_Navigate } from "../../_data/repository-page/repository.js";
+import SidebarNavigation from "../../features/shared-dropdown-sidebar/SidebarNavigation.jsx";
 
 export default function RepositorySidebarNavigate() {
     return (
-        <>
-            <SidebarNavigate catalogs={Repository_Navigate} startURL="/memo" />
-
-            <section id="main-content" className={classes.content}>
-                <Outlet />
-            </section>
-        </>
+        <section id="main-content">
+            <SidebarNavigation
+                catalogs={Repository_Navigate}
+                startURL="/repository"
+            />
+            <Outlet />
+        </section>
     );
 }

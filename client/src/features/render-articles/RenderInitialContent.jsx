@@ -1,11 +1,11 @@
 import { useMemo } from "react";
-import { MEMOS } from "../../_data/memo-page/memo";
-import { useAppSelector } from "../../store/reducer/hooks";
 import classes from "./RenderInitialContent.module.scss";
+
+import { useAppSelector } from "../../store/reducer/hooks.js";
 
 // 这里的 files 是要能够返回文件数量的数据
 export default function RenderInitialContent({ files }) {
-    const { asidebarActive } = useAppSelector((state) => state.dropdownSidebar);
+    const { sidebarActive } = useAppSelector((state) => state.dropdownSidebar);
 
     const fileNumber = useMemo(() => files.length, [files]);
 
@@ -17,7 +17,7 @@ export default function RenderInitialContent({ files }) {
 
     return (
         <main
-            className={`${classes.container} ${asidebarActive ? "" : classes.close}`}
+            className={`${classes.container} ${sidebarActive ? "" : classes.close}`}
         >
             <div className={classes.content}>
                 <h2>八股文整理</h2>

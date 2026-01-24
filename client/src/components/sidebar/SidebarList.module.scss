@@ -1,0 +1,54 @@
+// 最外层的 ul 标签
+.first-ul {
+    margin: 1rem 0.5rem 0rem 0.5rem; // 内部列表与外部 `aside` 的间距
+    text-align: left;
+    flex: 1; // 占据剩余空间  // ✅ 保证侧边栏可以撑满高度
+
+    overflow-y: scroll; // ✅ 添加垂直滚动，控制侧边栏可以滚动的！！
+    // overflow-x: visible;
+    scrollbar-width: thin;
+
+    padding-bottom: $padding-default * 3; // ✅ 保证侧边栏不会跟 footer 撞在一起
+
+    // 一级标题和二级标题的公共样式，.first-li也设置的话会撑大高度
+    .title,
+    .second-ul li {
+        display: block;
+        width: 100%;
+        padding: $padding-default;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+}
+
+// 一级标题，放在外面是为了避免权重过高，以免 .active 无法覆盖
+.first-li {
+    padding: 0; // 避免 pading 撑大过大
+
+    .title {
+        width: 100%;
+        font-weight: 600;
+
+        // 实现箭头与文字内容各占两边
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        &::after {
+            display: inline-block;
+        }
+
+        @include arrow-drop-animation-default;
+    }
+}
+
+// 二级标题，放在外面是为了避免权重过高，以免 .active 无法覆盖
+.second-ul {
+    font-size: 0.9rem; // 缩小二级标题的字体，防止标题溢出
+    padding-left: $padding-default * 0.6; // 为了让二级标题看的明显一些
+
+    overflow: hidden; // 默认情况下要隐藏，避免留白
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.35s ease;
+}

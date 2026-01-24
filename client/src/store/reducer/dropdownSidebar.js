@@ -3,7 +3,7 @@ import { Repository_Navigate } from "../../_data/repository-page/repository";
 
 const initialState = {
     // 用这个控制侧边栏要不要打开，默认是打开的
-    asidebarActive: true,
+    sidebarActive: true,
 
     // 默认不开启侧边栏的二级标题
     secondaryItemsState: false,
@@ -23,13 +23,13 @@ const dropdownSidebarSlice = createSlice({
     initialState,
     reducers: {
         // 更新侧边栏的开放状态
-        setAsidebarActive(state) {
-            state.asidebarActive = !state.asidebarActive;
+        setSidebarActive(state) {
+            state.sidebarActive = !state.sidebarActive;
         },
 
         // 由于使用同一个reducer控制下拉列表和侧边栏，在页面跳转的时候，更新侧边栏的状态
-        setAsidebarActiveOpen(state) {
-            state.asidebarActive = true;
+        setSidebarActiveOpen(state) {
+            state.sidebarActive = true;
         },
 
         // 更新当前选中的下拉列表的 item
@@ -55,8 +55,8 @@ const dropdownSidebarSlice = createSlice({
 });
 
 export const {
-    setAsidebarActive,
-    setAsidebarActiveOpen,
+    setSidebarActive,
+    setSidebarActiveOpen,
     setCurItem,
     updateItemContent,
     toggleOpenSecondaryItems,
