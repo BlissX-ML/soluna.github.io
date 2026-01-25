@@ -1,9 +1,9 @@
-import classes from "./ResourceLinkList.module.scss";
+import classes from "./ResourceCardLinkList.module.scss";
 import Hyperlink from "../icons/Hyperlink.jsx";
 
-export default function ResourceLinkList({ resources }) {
+export default function ResourceCardLinkList({ resources }) {
     return (
-        <div className={classes["conetnt"]}>
+        <div className={classes["content"]}>
             {resources?.websites.map((resource) => (
                 <a
                     className={classes["link"]}

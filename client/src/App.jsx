@@ -20,6 +20,7 @@ import RenderMainContent from "./features/render-articles/RenderMainContent";
 
 import AppLayout from "./layouts/app-layout/AppLayout";
 import RepositorySidebarNavigate from "./pages/repository-page/RepositorySidebarNavigate";
+import Dashboard from "./pages/dashboard-page/Dashboard";
 
 const Homepage = lazy(() => import("./pages/home-page/Homepage.jsx"));
 
@@ -33,8 +34,8 @@ const router = createHashRouter([
                 element: <Homepage />,
             },
             {
-                path: "/plans",
-                element: <Plan />,
+                path: "/dashboard",
+                element: <Dashboard />,
             },
             {
                 path: "/memo",
@@ -62,10 +63,6 @@ const router = createHashRouter([
                 path: "/footprint",
                 element: <Footprint />,
             },
-            // {
-            //   path: '/projects',
-            //   element: <Projects />
-            // },
             {
                 path: "/resources",
                 element: <Resources />,

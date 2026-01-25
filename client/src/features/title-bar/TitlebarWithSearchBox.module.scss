@@ -1,7 +1,7 @@
-.nav-container {
+.container {
     padding: 2.5rem 0rem;
     box-sizing: content-box;
-    background: linear-gradient(to bottom, #fffdfb, #fff1e9, #fffdfb);
+    background: linear-gradient(to bottom, #fffdfb, #fdf2eb, #fffdfb);
     border-bottom: $border-split-module;
 
     display: flex;
@@ -9,9 +9,13 @@
     gap: 3rem;
 
     .desc-container {
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 0.4rem;
+        }
         p {
-            padding-top: 0.7rem;
-            font-size: 1.1rem;
+            padding-top: 0.2rem;
+            font-size: 0.9rem;
             color: rgb(107, 107, 107);
         }
     }

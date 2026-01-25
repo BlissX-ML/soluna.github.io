@@ -1,6 +1,6 @@
-import classes from "./ResourceTagList.module.scss";
+import classes from "./ResourceCardTagList.module.scss";
 
-export default function ResourceTagList({ resources }) {
+export default function ResourceCardTagList({ resources }) {
     return (
         <div className={classes["tags"]}>
             {resources?.tags.map((tag) => (

@@ -25,6 +25,7 @@
     margin: 0 auto;
     min-height: calc(100vh - #{$height-default});
     background-color: $content-background-color;
+    box-sizing: border-box;
 }
 
 #root > footer {

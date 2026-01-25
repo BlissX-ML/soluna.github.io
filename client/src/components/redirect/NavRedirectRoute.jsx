@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import classes from "./RedirectItemPage.module.scss";
+import classes from "./NavRedirectRoute.module.scss";
 
-export default function RedirectItemPage({
+export default function NavRedirectRoute({
     path,
     listStyle,
     extraContentInList,

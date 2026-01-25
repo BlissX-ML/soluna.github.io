@@ -7,7 +7,8 @@
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended"
+        "plugin:jsx-a11y/recommended",
+        "prettier" // ✅ 放最后
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -16,19 +17,20 @@
             "jsx": true
         }
     },
-    "plugins": [
-        "react"
-    ],
+    "plugins": ["react", "react-hooks", "jsx-a11y"],
+    "settings": {
+        "react": {
+            "version": "detect" // 自动检测 React 版本
+        }
+    },
     "rules": {
-        "react/react-in-jsx-scope": "off",
+        "react/react-in-jsx-scope": "off", // React 17+ 不需要导入 React
         "no-unused-vars": "warn",
         "react/prop-types": "warn"
     },
     "overrides": [
         {
-            "files": [
-                "public/pdfjs/**"
-            ],
+            "files": ["public/pdfjs/**"],
             "rules": {
                 "no-undef": "off"
             }

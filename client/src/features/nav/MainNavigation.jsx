@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../store/reducer/hooks.js";
 
 import { Repository_Navigate } from "../../_data/repository-page/repository.js";
 
-import RedirectItemPage from "../../components/links/RedirectItemPage.jsx";
+import NavRedirectRoute from "../../components/redirect/NavRedirectRoute.jsx";
 import DropMenuRedirectAsideMenu from "../shared-dropdown-sidebar/DropMenuRedirectAside.jsx";
 
 import { MEMOS_SIDEBAR } from "../../_data/memo-page/memo";
@@ -15,23 +15,23 @@ export default function MainNavigation() {
 
     return (
         <ul className={classes.ul}>
-            <RedirectItemPage
+            <NavRedirectRoute
                 path="/home"
                 listStyle=""
                 extraContentInList={null}
             >
                 首页
-            </RedirectItemPage>
+            </NavRedirectRoute>
 
-            <RedirectItemPage
-                path="/plans"
+            <NavRedirectRoute
+                path="/dashboard"
                 listStyle=""
                 extraContentInList={null}
             >
-                未来目标
-            </RedirectItemPage>
+                生活面板
+            </NavRedirectRoute>
 
-            <RedirectItemPage
+            <NavRedirectRoute
                 path="/memo"
                 listStyle={classes["drop-navigation"]}
                 extraContentInList={
@@ -43,9 +43,9 @@ export default function MainNavigation() {
                 }
             >
                 面试手册
-            </RedirectItemPage>
+            </NavRedirectRoute>
 
-            <RedirectItemPage
+            <NavRedirectRoute
                 path="/repository"
                 listStyle={classes["drop-navigation"]}
                 onClick={() => dispatch(setCurItem(initialItem))}
@@ -58,31 +58,31 @@ export default function MainNavigation() {
                 }
             >
                 知识库
-            </RedirectItemPage>
+            </NavRedirectRoute>
 
-            <RedirectItemPage
+            <NavRedirectRoute
                 path="footprint"
                 listStyle=""
                 extraContentInList={null}
             >
                 我的旅程
-            </RedirectItemPage>
+            </NavRedirectRoute>
 
-            <RedirectItemPage
+            <NavRedirectRoute
                 path="resources"
                 listStyle=""
                 extraContentInList={null}
             >
                 资源共享
-            </RedirectItemPage>
+            </NavRedirectRoute>
 
-            <RedirectItemPage
+            <NavRedirectRoute
                 path="about"
                 listStyle=""
                 extraContentInList={null}
             >
                 自我介绍
-            </RedirectItemPage>
+            </NavRedirectRoute>
         </ul>
     );
 }

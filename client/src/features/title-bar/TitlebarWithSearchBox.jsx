@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import classes from "./ResourcesSearchBox.module.scss";
+import classes from "./TitlebarWithSearchBox.module.scss";
 
 import { ResourcesContext } from "../../store/context/ResourcesContext";
 import SearchMagnifiers from "../../components/icons/SearchMagnifiers.jsx";
 
 // 资源搜索框
-export default function ResourcesSearchBox({ categories }) {
+export default function TitlebarWithSearchBox({ categories }) {
     const {
         inputItem,
         selectedCategory,
@@ -14,7 +14,7 @@ export default function ResourcesSearchBox({ categories }) {
     } = useContext(ResourcesContext);
 
     return (
-        <main className={classes["nav-container"]}>
+        <main className={classes["container"]}>
             <div className={classes["desc-container"]}>
                 <h1>学习资源分享</h1>
                 <p>集中整理常用的学习网站，实现快速访问与高效跳转</p>
