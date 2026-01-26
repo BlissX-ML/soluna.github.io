@@ -21,8 +21,8 @@ export default function Logo() {
                 x2="177.5"
                 y2="73.5"
                 stroke="#7B3500"
-                stroke-width="3"
-                stroke-linecap="round"
+                strokeWidth="3"
+                strokeLinecap="round"
             />
             <line
                 x1="120.5"
@@ -30,8 +30,8 @@ export default function Logo() {
                 x2="177.5"
                 y2="93.5"
                 stroke="#7B3500"
-                stroke-width="3"
-                stroke-linecap="round"
+                strokeWidth="3"
+                strokeLinecap="round"
             />
             <line
                 x1="70.5"
@@ -39,8 +39,8 @@ export default function Logo() {
                 x2="177.5"
                 y2="83.5"
                 stroke="#7B3500"
-                stroke-width="3"
-                stroke-linecap="round"
+                strokeWidth="3"
+                strokeLinecap="round"
             />
         </svg>
     );

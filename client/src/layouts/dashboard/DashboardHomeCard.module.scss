@@ -1,0 +1,20 @@
+.content-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 1fr); // 确保占据整行
+    gap: 2rem;
+    margin: $margin-default $margin-default * 2;
+
+    main {
+        // width: 500px;
+        // height: 500px;
+        background-color: blanchedalmond;
+
+        &:nth-child(odd) {
+            border-left: 10px solid #bf6600;
+        }
+
+        &:nth-child(even) {
+            border-right: 10px solid #bf6600;
+        }
+    }
+}

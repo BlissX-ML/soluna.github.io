@@ -1,78 +1,81 @@
-import "./App.scss";
-import { createHashRouter, RouterProvider } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import './App.scss';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 
-import Footprint from "./pages/footprint-page/Footprint.jsx";
-import About from "./pages/about-page/AboutPage.jsx";
-import RecapContent from "./pages/repository-page/RecapContent.jsx";
+import Footprint from './pages/footprint-page/Footprint.jsx';
+import About from './pages/about-page/AboutPage.jsx';
+import RecapContent from './pages/repository-page/RecapContent.jsx';
 
-import Loading from "./components/feedback/Loading.jsx";
+import Loading from './components/feedback/Loading.jsx';
 
-import Indexpage from "./layouts/index/IndexLayout.jsx";
-import Plan from "./pages/plan-page/plan-page.jsx";
-import Resources from "./pages/resource-share-page/Resources.jsx";
+import Indexpage from './layouts/index/IndexLayout.jsx';
+import Resources from './pages/resource-share-page/Resources.jsx';
 
-import MemoSidebarNavigate from "./pages/memo-page/MemoSidebarNavigate";
+import MemoSidebarNavigate from './pages/memo-page/MemoSidebarNavigate';
 
-import RenderInitialContent from "./features/render-articles/RenderInitialContent";
-import { MEMOS, MEMOS_ROUTE } from "./_data/memo-page/memo";
-import RenderMainContent from "./features/render-articles/RenderMainContent";
+import RenderInitialContent from './features/render-articles/RenderInitialContent';
+import { MEMOS, MEMOS_ROUTE } from './_data/memo-page/memo';
+import RenderMainContent from './features/render-articles/RenderMainContent';
 
-import AppLayout from "./layouts/app-layout/AppLayout";
-import RepositorySidebarNavigate from "./pages/repository-page/RepositorySidebarNavigate";
-import Dashboard from "./pages/dashboard-page/Dashboard";
+import AppLayout from './layouts/app-layout/AppLayout';
+import RepositorySidebarNavigate from './pages/repository-page/RepositorySidebarNavigate';
+import Dashboard from './pages/dashboard-page/Dashboard';
+import DashboardChartLayout from './layouts/dashboard/DashboardChartLayout';
 
-const Homepage = lazy(() => import("./pages/home-page/Homepage.jsx"));
+const Homepage = lazy(() => import('./pages/home-page/Homepage.jsx'));
 
 const router = createHashRouter([
-    { path: "/", element: <Indexpage /> },
+    { path: '/', element: <Indexpage /> },
     {
         element: <AppLayout />,
         children: [
             {
-                path: "/home",
-                element: <Homepage />,
+                path: '/home',
+                element: <Homepage />
             },
             {
-                path: "/dashboard",
-                element: <Dashboard />,
+                path: '/dashboard',
+                children: [
+                    { index: true, element: <Dashboard /> },
+                    { path: ':dashboardId', element: <DashboardChartLayout /> }
+                ]
             },
             {
-                path: "/memo",
+                path: '/memo',
                 element: <MemoSidebarNavigate />,
                 children: [
                     {
                         index: true,
-                        element: <RenderInitialContent files={MEMOS} />,
+                        element: <RenderInitialContent files={MEMOS} />
                     },
                     {
-                        path: ":routeId",
-                        element: <RenderMainContent data={MEMOS_ROUTE} />,
-                    },
-                ],
+                        path: ':routeId',
+                        element: <RenderMainContent data={MEMOS_ROUTE} />
+                    }
+                ]
             },
             {
-                path: "/repository",
+                path: '/repository',
                 element: <RepositorySidebarNavigate />,
                 children: [
                     // { index: true, element: <RecapSubNav />, },
-                    { path: ":routeId", element: <RecapContent /> },
-                ],
+                    { path: ':routeId', element: <RecapContent /> }
+                ]
             },
             {
-                path: "/footprint",
-                element: <Footprint />,
+                path: '/footprint',
+                element: <Footprint />
             },
             {
-                path: "/resources",
-                element: <Resources />,
+                path: '/resources',
+                element: <Resources />
             },
             {
-                path: "/about",
-                element: <About />,
-            },
-        ],
-    },
+                path: '/about',
+                element: <About />
+            }
+        ]
+    }
 ]);
 
 function App() {

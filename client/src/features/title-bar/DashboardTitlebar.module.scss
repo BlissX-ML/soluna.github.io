@@ -1,0 +1,54 @@
+.heading-container {
+    position: relative;
+    padding: 3rem 0rem;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #fffdfb, #fdf2eb, #fffdfb);
+    border-bottom: $border-split-module;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    .date {
+        position: absolute;
+        bottom: 0.5rem;
+        left: 0.5rem;
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 0.5rem;
+
+        font-size: 0.85rem;
+
+        svg {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+
+    .heading {
+        width: 30rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 0.6rem;
+
+        h1 {
+            font-size: 3.2rem;
+        }
+
+        p {
+            font-size: 0.8rem;
+        }
+    }
+
+    .countdown {
+        flex: 1;
+        display: flex;
+        gap: 1.5rem; // 多个倒计时之间的间距
+        align-items: center;
+        justify-content: center;
+    }
+}

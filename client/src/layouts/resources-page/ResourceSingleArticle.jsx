@@ -1,8 +1,8 @@
-import classes from "./ResourceSingleArticle.module.scss";
+import classes from './ResourceSingleArticle.module.scss';
 
-import ResourceCardHeader from "../../components/resource/ResourceCardHeader";
-import ResourceCardLinkList from "../../components/resource/ResourceCardLinkList";
-import ResourceCardTagList from "../../components/resource/ResourceCardTagList";
+import ResourceCardHeader from '../../components/card-resource/ResourceCardHeader';
+import ResourceCardLinkList from '../../components/card-resource/ResourceCardLinkList';
+import ResourceCardTagList from '../../components/card-resource/ResourceCardTagList';
 
 export default function ResourceSingleArticle({ resources }) {
     return (
