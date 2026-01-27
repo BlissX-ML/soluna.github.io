@@ -14,13 +14,13 @@ import Resources from './pages/resource-share-page/Resources.jsx';
 import MemoSidebarNavigate from './pages/memo-page/MemoSidebarNavigate';
 
 import RenderInitialContent from './features/render-articles/RenderInitialContent';
-import { MEMOS, MEMOS_ROUTE } from './_data/memo-page/memo';
+import { MEMOS, MEMOS_ROUTE } from './_data/memo/memo';
 import RenderMainContent from './features/render-articles/RenderMainContent';
 
 import AppLayout from './layouts/app-layout/AppLayout';
 import RepositorySidebarNavigate from './pages/repository-page/RepositorySidebarNavigate';
 import Dashboard from './pages/dashboard-page/Dashboard';
-import DashboardChartLayout from './layouts/dashboard/DashboardChartLayout';
+import DashboardChartLayout from './layouts/dashboard-nested/DashboardChartLayout';
 
 const Homepage = lazy(() => import('./pages/home-page/Homepage.jsx'));
 

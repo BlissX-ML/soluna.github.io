@@ -1,26 +1,30 @@
-import { useRef } from "react";
-import classes from "./HomeLayout.module.scss";
+import { useRef } from 'react';
+import classes from './HomeLayout.module.scss';
 
-import CanvasLines from "./CanvasLines.jsx";
-import HomePageRedirectBtn from "../../features/redirect-page-btns/HomePageRedirectBtn.jsx";
+import CanvasLines from './CanvasLines.jsx';
+import HomePageRedirectBtn from '../../features/redirect-page-btns/HomePageRedirectBtn.jsx';
 
 const redirctHomePageBtns = [
-    { id: "schedule-viewing-lookup-btn", title: "计划表查阅", url: "/plans" },
     {
-        id: "interview-handbook-reference-btn",
-        title: "面试手册查阅",
-        url: "/memo",
+        id: 'schedule-viewing-lookup-btn',
+        title: '计划表查阅',
+        url: '/dashboard'
     },
     {
-        id: "knowledge-base-lookup-btn",
-        title: "知识库查阅",
-        url: "/repository",
+        id: 'interview-handbook-reference-btn',
+        title: '面试手册查阅',
+        url: '/memo'
     },
     {
-        id: "travel-footprints-lookup-btn",
-        title: "旅行足迹查阅",
-        url: "/footprint",
+        id: 'knowledge-base-lookup-btn',
+        title: '知识库查阅',
+        url: '/repository'
     },
+    {
+        id: 'travel-footprints-lookup-btn',
+        title: '旅行足迹查阅',
+        url: '/footprint'
+    }
 ];
 
 export default function HomeLayout() {
@@ -41,7 +45,7 @@ export default function HomeLayout() {
                 </p>
 
                 <div className={classes.btns}>
-                    {redirctHomePageBtns.map((el) => (
+                    {redirctHomePageBtns.map(el => (
                         <HomePageRedirectBtn src={el.url} key={el.id}>
                             {el.title}
                         </HomePageRedirectBtn>

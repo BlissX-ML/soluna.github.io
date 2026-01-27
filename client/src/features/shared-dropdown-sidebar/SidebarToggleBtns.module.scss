@@ -13,10 +13,6 @@
     svg {
         width: 100%;
         height: 100%;
-
-        path {
-            fill: #8f8f8f;
-        }
     }
 }
 
@@ -27,8 +23,9 @@
     transition: right 0.3s ease 0.5s;
 
     svg {
+        rect,
         path {
-            fill: rgba(250, 120, 21, 0.895);
+            stroke: rgba(250, 120, 21, 0.895);
         }
     }
 }

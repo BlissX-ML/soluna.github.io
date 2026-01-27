@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import classes from "./HomePageRedirectBtn.module.scss";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import classes from './HomePageRedirectBtn.module.scss';
 
-import GeneralBtns from "../../components/buttons/GeneralBtns.jsx";
-import ArrowRightRedirectPage from "../../components/icons/ArrowRightRedirectPage.jsx";
+import GeneralBtns from '../../components/buttons/GeneralBtns.jsx';
+import ArrowRightRedirectPage from '../../components/icons/ArrowRightRedirectPage.jsx';
 
 export default function RedirctHomePage({ src, children }) {
     const navigate = useNavigate();
@@ -20,9 +20,9 @@ export default function RedirctHomePage({ src, children }) {
             <p>{children}</p>
 
             {lightArrowColor ? (
-                <ArrowRightRedirectPage fill="#ececec" />
+                <ArrowRightRedirectPage stroke="#ececec" />
             ) : (
-                <ArrowRightRedirectPage fill="black" />
+                <ArrowRightRedirectPage stroke="black" />
             )}
         </GeneralBtns>
     );

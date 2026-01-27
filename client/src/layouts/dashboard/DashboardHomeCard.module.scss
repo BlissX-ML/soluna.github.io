@@ -1,20 +1,21 @@
 .content-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 1fr); // 确保占据整行
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     gap: 2rem;
     margin: $margin-default $margin-default * 2;
+}
 
-    main {
-        // width: 500px;
-        // height: 500px;
-        background-color: blanchedalmond;
+.singleContent {
+    position: relative;
+    padding: 1.5rem 0rem 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
 
-        &:nth-child(odd) {
-            border-left: 10px solid #bf6600;
-        }
+    padding-left: $padding-default;
 
-        &:nth-child(even) {
-            border-right: 10px solid #bf6600;
-        }
-    }
+    border-radius: 15px;
+    background-color: #fff5ee;
+    box-shadow: 1px 4px 12px rgba(0, 0, 0, 0.2);
 }

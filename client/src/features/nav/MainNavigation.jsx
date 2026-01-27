@@ -1,17 +1,17 @@
-import classes from "./MainNavigation.module.scss";
-import { setCurItem } from "../../store/reducer/dropdownSidebar.js";
-import { useAppDispatch, useAppSelector } from "../../store/reducer/hooks.js";
+import classes from './MainNavigation.module.scss';
+import { setCurItem } from '../../store/reducer/dropdownSidebar.js';
+import { useAppDispatch, useAppSelector } from '../../store/reducer/hooks.js';
 
-import { Repository_Navigate } from "../../_data/repository-page/repository.js";
+import { Repository_Navigate } from '../../_data/repository-page/repository.js';
 
-import NavRedirectRoute from "../../components/redirect/NavRedirectRoute.jsx";
-import DropMenuRedirectAsideMenu from "../shared-dropdown-sidebar/DropMenuRedirectAside.jsx";
+import NavRedirectRoute from '../../components/redirect/NavRedirectRoute.jsx';
+import DropMenuRedirectAsideMenu from '../shared-dropdown-sidebar/DropMenuRedirectAside.jsx';
 
-import { MEMOS_SIDEBAR } from "../../_data/memo-page/memo";
+import { MEMOS_SIDEBAR } from '../../_data/memo/memo';
 
 export default function MainNavigation() {
     const dispatch = useAppDispatch();
-    const { initialItem } = useAppSelector((state) => state.dropdownSidebar);
+    const { initialItem } = useAppSelector(state => state.dropdownSidebar);
 
     return (
         <ul className={classes.ul}>
@@ -33,10 +33,10 @@ export default function MainNavigation() {
 
             <NavRedirectRoute
                 path="/memo"
-                listStyle={classes["drop-navigation"]}
+                listStyle={classes['drop-navigation']}
                 extraContentInList={
                     <DropMenuRedirectAsideMenu
-                        style={classes["dropdown-visibility"]}
+                        style={classes['dropdown-visibility']}
                         catalogs={MEMOS_SIDEBAR}
                         startUrl="/memo"
                     />
@@ -47,11 +47,11 @@ export default function MainNavigation() {
 
             <NavRedirectRoute
                 path="/repository"
-                listStyle={classes["drop-navigation"]}
+                listStyle={classes['drop-navigation']}
                 onClick={() => dispatch(setCurItem(initialItem))}
                 extraContentInList={
                     <DropMenuRedirectAsideMenu
-                        style={classes["dropdown-visibility"]}
+                        style={classes['dropdown-visibility']}
                         catalogs={Repository_Navigate}
                         startUrl="/repository"
                     />

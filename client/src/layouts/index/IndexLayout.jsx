@@ -1,12 +1,12 @@
-import classes from "./IndexLayout.module.scss";
+import classes from './IndexLayout.module.scss';
 
 import {
     INDEX_IMAGES,
-    INTENDED_WORK_INTRODUCTION,
-} from "../../_data/index-page/indexPage.js";
+    INTENDED_WORK_INTRODUCTION
+} from '../../_data/index/indexPage.js';
 
-import Table from "../../components/tables/Table.jsx";
-import IndexPageRedirectBtn from "../../features/redirect-page-btns/IndexPageRedirectBtn.jsx";
+import Table from '../../components/tables/Table.jsx';
+import IndexPageRedirectBtn from '../../features/redirect-page-btns/IndexPageRedirectBtn.jsx';
 
 const imageURL = INDEX_IMAGES[0].webp;
 
@@ -20,7 +20,7 @@ export default function IndexLayout() {
                 <h1>欢迎访问我的网站💕</h1>
                 <table className={classes.table}>
                     <tbody>
-                        {INTENDED_WORK_INTRODUCTION.map((el) => (
+                        {INTENDED_WORK_INTRODUCTION.map(el => (
                             <Table th={el.title} td={el.content} key={el.id} />
                         ))}
                     </tbody>

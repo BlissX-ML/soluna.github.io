@@ -1,6 +1,6 @@
-import * as d3 from "d3";
-import * as turf from "@turf/turf";
-import { colors } from "../../../_data/footprint-page/colors";
+import * as d3 from 'd3';
+import * as turf from '@turf/turf';
+import { colors } from '../../../_data/footprint/colors';
 
 export const getPathGenarator = (center, scale, position) => {
     const projection = d3
@@ -14,12 +14,12 @@ export const getPathGenarator = (center, scale, position) => {
 };
 
 export async function getChinaData() {
-    const data = await d3.json("https://geojson.cn/api/china/1.6.3/china.json");
+    const data = await d3.json('https://geojson.cn/api/china/1.6.3/china.json');
 
     // @ts-ignore - GeoJSON data structure
     data?.features.forEach((feature, ind) => {
         feature.geometry = turf.rewind(feature.geometry, {
-            reverse: true,
+            reverse: true
         });
         feature.colors = colors[ind]; // 直接把颜色添加进去
         feature.visited = false;
@@ -34,7 +34,7 @@ export async function getProvinceData(id) {
     // @ts-ignore - GeoJSON data structure
     data?.features.forEach((feature, ind) => {
         feature.geometry = turf.rewind(feature.geometry, {
-            reverse: true,
+            reverse: true
         });
     });
 
@@ -44,15 +44,15 @@ export async function getProvinceData(id) {
 export function createMapPaths(svg, data, pathGenerator) {
     return (
         svg
-            .selectAll("path")
+            .selectAll('path')
             // @ts-ignore - GeoJSON data structure
             .data(data.features)
-            .join("path")
-            .attr("d", (d) => pathGenerator(d))
-            .attr("fill", "transparent") // 关键，避免覆盖地图背景颜色
-            .attr("stroke", "#000000")
-            .attr("stroke-width", 0.5) // 控制省份之间的分隔线段
-            .attr("cursor", "pointer")
+            .join('path')
+            .attr('d', d => pathGenerator(d))
+            .attr('fill', 'transparent') // 关键，避免覆盖地图背景颜色
+            .attr('stroke', '#000000')
+            .attr('stroke-width', 0.5) // 控制省份之间的分隔线段
+            .attr('cursor', 'pointer')
         // .attr("mask", "url(#mask)")
     );
 }
@@ -60,25 +60,25 @@ export function createMapPaths(svg, data, pathGenerator) {
 export function bindMapEvents() {
     let onMouseEnter, onMouseLeave, onMouseMove, onClick, onDblClick;
 
-    const handleEvents = (paths) => {
+    const handleEvents = paths => {
         if (onMouseEnter) {
-            paths.on("mouseenter", onMouseEnter);
+            paths.on('mouseenter', onMouseEnter);
         }
 
         if (onMouseLeave) {
-            paths.on("mouseleave", onMouseLeave);
+            paths.on('mouseleave', onMouseLeave);
         }
 
         if (onMouseMove) {
-            paths.on("mousemove", onMouseMove);
+            paths.on('mousemove', onMouseMove);
         }
 
         if (onClick) {
-            paths.on("click", onClick);
+            paths.on('click', onClick);
         }
 
         if (onDblClick) {
-            paths.on("dblclick", onDblClick);
+            paths.on('dblclick', onDblClick);
         }
     };
 

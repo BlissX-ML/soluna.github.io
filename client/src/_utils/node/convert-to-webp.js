@@ -3,8 +3,10 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-const inputDir = path.resolve('public/images/png');   // 输入目录
-const outputDir = path.resolve('public/images/webp'); // 输出目录（放到 public 下）
+const inputDir = path.resolve('public/images/png'); // 输入目录
+const outputDir = path.resolve(
+    'public/images/webp/certificate/online-course/coursera-meta'
+); // 输出目录（放到 public 下）
 
 // 确保输出目录存在
 if (!fs.existsSync(outputDir)) {
@@ -21,7 +23,7 @@ fs.readdirSync(inputDir).forEach(file => {
         const outputPath = path.join(outputDir, `${name}.webp`);
 
         sharp(inputPath)
-            .webp({ quality: 75 })   // 设置质量 0-100
+            .webp({ quality: 75 }) // 设置质量 0-100
             .toFile(outputPath)
             .then(() => {
                 console.log(`✅ Converted: ${file} → ${name}.webp`);
