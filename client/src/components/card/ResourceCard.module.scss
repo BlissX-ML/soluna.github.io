@@ -1,0 +1,121 @@
+.article {
+    width: 400px;
+    height: 40rem;
+    max-height: 40rem;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    border-radius: 15px;
+    background-color: #fffdfb;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+
+    margin-bottom: 1rem;
+}
+
+.top {
+    position: relative;
+    padding: 1.5rem 0rem 1.5rem 1rem;
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #fff5ee;
+    border-bottom: 1px solid #ff7300;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+
+        padding-left: $padding-default;
+
+        .desc {
+            font-size: 0.8rem;
+        }
+    }
+
+    .props {
+        position: absolute;
+        right: 10px;
+        top: 39%;
+        transform: translateY(-50%);
+
+        display: inline-flex;
+        align-items: flex-end;
+        gap: 0.4rem;
+
+        span {
+            display: block;
+            font-size: 0.75rem;
+            padding: 5px 10px;
+
+            background: rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            border-radius: 8px;
+            color: #333;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    padding: 1.5rem 0rem;
+
+    overflow-y: scroll;
+    scrollbar-width: thin;
+
+    .link {
+        @include hyperlink-default;
+
+        position: relative;
+        margin: 0rem 1rem;
+
+        display: flex; // <a>默认是 inline-block
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.3rem;
+        padding-left: 2.7rem;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0.5rem;
+        }
+
+        .res-title {
+            font-weight: 800;
+        }
+
+        .res-desc {
+            text-align: left;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.tags {
+    display: flex;
+    gap: 0.4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+
+    padding: 1.5rem 0rem;
+    margin-left: $margin-default * 0.5;
+
+    p {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+        background-color: #fafafa;
+        color: #8b0000;
+        border-radius: 3px;
+    }
+}

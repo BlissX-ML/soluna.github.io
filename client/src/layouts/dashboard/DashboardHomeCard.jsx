@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import classes from './DashboardHomeCard.module.scss';
 
 import { DASHBOARD_TOTAL } from '../../_data/dashboard/dashbord';
-import DashboardRedirectCard from '../../components/card-dashboard/DashboardRedirectCard';
+import DashboardRedirectCard from '../../components/card/DashboardRedirectCard';
 
 export default function DashboardHomeCard() {
     const navigate = useNavigate();

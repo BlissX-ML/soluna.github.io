@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import classes from './DashboardTitlebar.module.scss';
 import { useDateStates } from '../../store/zustand/dateZustand';
 import Timer from '../../components/icons/Time';
-import DashboardCountdownCard from '../../components/card-dashboard/DashboardCountdownCard';
+import DashboardCountdownCard from '../../components/card/DashboardCountdownCard';
 import { COUNTDOWN_ITEMS } from '../../_data/dashboard/countdown-items';
 
 export default function DashboardTitlebar() {

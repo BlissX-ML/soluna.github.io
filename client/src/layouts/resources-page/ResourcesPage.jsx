@@ -5,8 +5,8 @@ import { CATEGORIES } from '../../_data/resources-page/resources.js';
 import Nothing from '../../components/feedback/Nothing.jsx';
 
 import ResourceTitlebar from '../../features/title-bar/ResourceTitlebar.jsx';
-import ResourceSingleArticle from './ResourceSingleArticle';
 import { useResourceStates } from '../../store/zustand/resourcezustand';
+import ResourceCard from '../../components/card/ResourceCard';
 
 export default function ResourcesPage() {
     // const { filteredResources } = useContext(ResourcesContext);
@@ -24,7 +24,7 @@ export default function ResourcesPage() {
                     <Nothing />
                 ) : (
                     filteredResources.map(resources => (
-                        <ResourceSingleArticle
+                        <ResourceCard
                             resources={resources}
                             key={resources?.id}
                         />

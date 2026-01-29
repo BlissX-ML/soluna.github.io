@@ -10,7 +10,8 @@
         "preview": "vite preview",
         "convert:webp": "node src/_utils/node/convert-to-webp.js",
         "convert:pdfToImage": "node src/_utils/node/convert-pdf-to-image.js",
-        "convert:scanPublic": "node  src/_utils/node/scan-public-memos.js"
+        "convert:scanPublic": "node src/_utils/node/scan-public-memos.js",
+        "convert:scanPublicImage": "node src/_utils/node/scan-public-webp-image.js"
     },
     "dependencies": {
         "@reduxjs/toolkit": "^2.8.2",

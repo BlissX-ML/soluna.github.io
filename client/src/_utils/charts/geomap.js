@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 import * as turf from '@turf/turf';
-import { colors } from '../../../_data/footprint/colors';
+import { colors } from '../../_data/footprint/colors';
 
 export const getPathGenarator = (center, scale, position) => {
     const projection = d3
@@ -16,7 +16,6 @@ export const getPathGenarator = (center, scale, position) => {
 export async function getChinaData() {
     const data = await d3.json('https://geojson.cn/api/china/1.6.3/china.json');
 
-    // @ts-ignore - GeoJSON data structure
     data?.features.forEach((feature, ind) => {
         feature.geometry = turf.rewind(feature.geometry, {
             reverse: true
@@ -31,7 +30,6 @@ export async function getChinaData() {
 export async function getProvinceData(id) {
     const data = await d3.json(`https://geojson.cn/api/china/1.6.3/${id}.json`);
 
-    // @ts-ignore - GeoJSON data structure
     data?.features.forEach((feature, ind) => {
         feature.geometry = turf.rewind(feature.geometry, {
             reverse: true
@@ -42,19 +40,16 @@ export async function getProvinceData(id) {
 }
 
 export function createMapPaths(svg, data, pathGenerator) {
-    return (
-        svg
-            .selectAll('path')
-            // @ts-ignore - GeoJSON data structure
-            .data(data.features)
-            .join('path')
-            .attr('d', d => pathGenerator(d))
-            .attr('fill', 'transparent') // 关键，避免覆盖地图背景颜色
-            .attr('stroke', '#000000')
-            .attr('stroke-width', 0.5) // 控制省份之间的分隔线段
-            .attr('cursor', 'pointer')
-        // .attr("mask", "url(#mask)")
-    );
+    return svg
+        .selectAll('path')
+        .data(data.features) // 取数组
+        .join('path')
+        .attr('d', d => pathGenerator(d))
+        .attr('fill', 'transparent') // 关键，避免覆盖地图背景颜色
+        .attr('stroke', '#000000')
+        .attr('stroke-width', 0.5) // 控制省份之间的分隔线段
+        .attr('cursor', 'pointer');
+    // .attr("mask", "url(#mask)")
 }
 
 export function bindMapEvents() {

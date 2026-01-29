@@ -23,3 +23,20 @@
         background-color: rgb(128, 130, 0);
     }
 }
+
+.map {
+    width: 54rem;
+    height: 40rem;
+
+    .tip {
+        position: absolute;
+        padding: $padding-default * 0.5 $padding-default;
+        display: none;
+
+        color: white;
+        border-radius: 5px;
+
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
