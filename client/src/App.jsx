@@ -20,8 +20,9 @@ import RenderMainContent from './features/render-articles/RenderMainContent';
 import AppLayout from './layouts/app-layout/AppLayout';
 import RepositorySidebarNavigate from './pages/repository-page/RepositorySidebarNavigate';
 import Dashboard from './pages/dashboard-page/Dashboard';
-import DashboardChartLayout from './layouts/dashboard-nested/DashboardCertificatesLayout';
-import DashboardCertificatesLayout from './layouts/dashboard-nested/DashboardCertificatesLayout';
+import DashboardChartLayout from './layouts/dashboard/dashboard-certificate/DashboardCertificatesLayout';
+import DashboardCertificatesLayout from './layouts/dashboard/dashboard-certificate/DashboardCertificatesLayout';
+import DashboardNestedLayout from './layouts/dashboard/dashboard-nested-layout/DashboardNestedLayout';
 
 const Homepage = lazy(() => import('./pages/home-page/Homepage.jsx'));
 
@@ -36,11 +37,17 @@ const router = createHashRouter([
             },
             {
                 path: '/dashboard',
+
                 children: [
                     { index: true, element: <Dashboard /> },
                     {
-                        path: 'certificates',
-                        element: <DashboardCertificatesLayout />
+                        element: <DashboardNestedLayout />,
+                        children: [
+                            {
+                                path: 'certificates',
+                                element: <DashboardCertificatesLayout />
+                            }
+                        ]
                     }
                 ]
             },

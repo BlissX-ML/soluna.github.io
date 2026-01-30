@@ -5,11 +5,6 @@ export const useCarouselStates = create(set => ({
     curImageInd: 1, // 当前滑动的图片的索引
     withTrans: true, // 是否添加动态效果
 
-    // moveImage: set(state => ({
-    //     transform: `translateX(-${state.curImageInd * 100}%)`,
-    //     transition: state.withTrans ? 'transform 300ms ease' : 'none'
-    // })),
-
     setCurImageInd: ind => {
         set(state => ({ ...state, curImageInd: ind }));
     },
