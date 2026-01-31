@@ -1,5 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"; // 切片，之后 合并切片可以共同管理状态
-import { Repository_Navigate } from "../../_data/repository-page/repository";
+import { createSlice } from '@reduxjs/toolkit'; // 切片，之后 合并切片可以共同管理状态
 
 const initialState = {
     // 用这个控制侧边栏要不要打开，默认是打开的
@@ -12,14 +11,14 @@ const initialState = {
     curItem: null,
 
     // 当前选中大类下的小分类的内容
-    content: "",
+    content: ''
 };
 
 // state：当前这片 slice 的状态
 // action：触发时传过来的对象，里面最常用的是 action.payload（ payload 就是 dispatch 时传的参数 ）
 
 const dropdownSidebarSlice = createSlice({
-    name: "repository",
+    name: 'repository',
     initialState,
     reducers: {
         // 更新侧边栏的开放状态
@@ -50,8 +49,8 @@ const dropdownSidebarSlice = createSlice({
 
         openSecondaryItems(state) {
             state.secondaryItemsState = true;
-        },
-    },
+        }
+    }
 });
 
 export const {
@@ -60,6 +59,6 @@ export const {
     setCurItem,
     updateItemContent,
     toggleOpenSecondaryItems,
-    openSecondaryItems,
+    openSecondaryItems
 } = dropdownSidebarSlice.actions;
 export default dropdownSidebarSlice.reducer; // 用于 store 里注册用的函数

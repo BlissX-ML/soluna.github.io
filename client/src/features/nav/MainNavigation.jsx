@@ -1,6 +1,4 @@
 import classes from './MainNavigation.module.scss';
-import { setCurItem } from '../../store/reducer/dropdownSidebar.js';
-import { useAppDispatch, useAppSelector } from '../../store/reducer/hooks.js';
 
 import { Repository_Navigate } from '../../_data/repository-page/repository.js';
 
@@ -10,9 +8,6 @@ import DropMenuRedirectAsideMenu from '../shared-dropdown-sidebar/DropMenuRedire
 import { MEMOS_SIDEBAR } from '../../_data/memo/memo';
 
 export default function MainNavigation() {
-    const dispatch = useAppDispatch();
-    const { initialItem } = useAppSelector(state => state.dropdownSidebar);
-
     return (
         <ul className={classes.ul}>
             <NavRedirectRoute
@@ -48,7 +43,6 @@ export default function MainNavigation() {
             <NavRedirectRoute
                 path="/repository"
                 listStyle={classes['drop-navigation']}
-                onClick={() => dispatch(setCurItem(initialItem))}
                 extraContentInList={
                     <DropMenuRedirectAsideMenu
                         style={classes['dropdown-visibility']}
