@@ -5,13 +5,7 @@
         padding: $padding-default * 1.5; // 控制下拉列表内容的间距
         cursor: pointer;
 
-        button {
-            @include btns-default; // 不涉及背景颜色
-            @include btns-bg-default; //修改背景颜色为透明（选择性添加）
-
-            border-radius: $border-radius-default;
-            font-size: 1.04rem;
-        }
+        font-size: 1.04rem;
 
         &:hover {
             background-color: bisque;

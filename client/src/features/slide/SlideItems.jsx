@@ -4,12 +4,11 @@ import ArrowPrevPage from '../../components/icons/ArrowPrevPage';
 import ArrowNextPage from '../../components/icons/ArrowNextPage';
 import { useCarouselStates } from '../../store/zustand/carouselZustand';
 
-export default function SlideItems() {
+export default function SlideItems({ styleLayout }) {
     const {
         slideItems,
         curImageInd,
         withTrans,
-        // moveImage,
         setCurImageInd,
         setWithTrans,
         handlePrevImage,
@@ -52,7 +51,7 @@ export default function SlideItems() {
     return (
         <>
             {Array.isArray(slideItems) && slideItems.length !== 0 && (
-                <div className={classes.carousel}>
+                <div className={`${classes.carousel} ${styleLayout}`}>
                     <div className={classes.inner} style={moveImage}>
                         {slideItems.map((item, ind) => (
                             <div

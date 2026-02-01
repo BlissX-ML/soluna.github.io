@@ -2,9 +2,20 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
+    gap: 1rem;
 
-    gap: 2rem;
     box-sizing: border-box;
+    margin: 0rem 1rem;
+}
+
+.lists {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.slide {
+    grid-column: 2/3;
+    grid-row: 1/3; /* 跨两行 */
 }
 
 .chart {

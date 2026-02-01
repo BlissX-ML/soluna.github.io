@@ -34,7 +34,8 @@ export const useCarouselStates = create(set => ({
                     elements[elements.length - 1],
                     ...elements,
                     elements[0]
-                ]
+                ],
+                curImageInd: 1
             }));
         }
     },

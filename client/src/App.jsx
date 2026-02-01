@@ -21,9 +21,13 @@ import AppLayout from './layouts/app-layout/AppLayout';
 import RepositorySidebarNavigate from './pages/repository-page/RepositorySidebarNavigate';
 import Dashboard from './pages/dashboard-page/Dashboard';
 
-import DashboardNestedLayout from './layouts/dashboard/dashboard-nested-layout/DashboardNestedLayout';
-import CertificatesLayout from './layouts/dashboard/dashboard-certificate/CertificatesLayout';
-import DashboardPersonalPlan from './layouts/dashboard/dashboard-personal-plan/DashboardPersonalPlan';
+import DashboardNestedLayout from './layouts/dashboard/nested-layout/DashboardNestedLayout';
+import CertificatesLayout from './layouts/dashboard/certificate/CertificatesLayout';
+import DashboardPersonalPlan from './layouts/dashboard/personal-plan/DashboardPersonalPlan';
+import DashboardLearnGrowth from './layouts/dashboard/learn-growth/DashboardLearnGrowth';
+import DashboardBodyHealth from './layouts/dashboard/body-health/DashboardBodyHealth';
+import DashboardExpenseStatus from './layouts/dashboard/expense-status/DashboardExpenseStatus';
+import DashboardLifeLogs from './layouts/dashboard/life-logs/DashboardLifeLogs';
 
 const Homepage = lazy(() => import('./pages/home-page/Homepage.jsx'));
 
@@ -51,6 +55,22 @@ const router = createHashRouter([
                             {
                                 path: '/dashboard/certificates',
                                 element: <CertificatesLayout />
+                            },
+                            {
+                                path: '/dashboard/learn-growth',
+                                element: <DashboardLearnGrowth />
+                            },
+                            {
+                                path: '/dashboard/body-health',
+                                element: <DashboardBodyHealth />
+                            },
+                            {
+                                path: '/dashboard/expense-status',
+                                element: <DashboardExpenseStatus />
+                            },
+                            {
+                                path: '/dashboard/life-logs',
+                                element: <DashboardLifeLogs />
                             }
                         ]
                     }

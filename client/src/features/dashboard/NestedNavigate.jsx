@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import classes from './NestedNavigate.module.scss';
 
 import {
@@ -48,7 +48,6 @@ export default function NestedNavigate() {
         }
     }, [location.pathname]);
 
-    console.log(curSecNavItem);
     return (
         <>
             {DASHBOARD_TOTAL.map((el, ind) => (

@@ -15,7 +15,7 @@ export default function BarChart({ className, resources }) {
         let globalDelay = 0; // ← 全局延迟计数器
 
         const { width, height } = container.getBoundingClientRect();
-        const margin = { left: 150, right: 20, top: 10, bottom: 80 };
+        const margin = { left: 100, right: 20, top: 20, bottom: 50 };
 
         if (!container) return;
 
@@ -38,7 +38,7 @@ export default function BarChart({ className, resources }) {
             .scaleBand()
             .domain(resources.map(d => d.title))
             .range([margin.top, height - margin.bottom])
-            .padding(0.3);
+            .padding(0.5);
 
         svg.selectAll('.bar')
             .data(resources)
@@ -51,7 +51,7 @@ export default function BarChart({ className, resources }) {
             .attr('fill', 'none')
             .attr('opacity', 0.3)
             .transition() // ← 开始动画
-            .duration(4000) // ← 2秒动画
+            .duration(1000) // ← 2秒动画
             .delay((d, i) => i * 500); // ← 第二个柱子延迟0.5秒
 
         // 绘制嵌套的详细数据（分段）
@@ -59,19 +59,57 @@ export default function BarChart({ className, resources }) {
             let startX = margin.left; // 每个分段的起始位置
 
             category.details.forEach(detail => {
-                svg.append('rect')
+                const currentStartX = startX;
+
+                const rect = svg
+                    .append('rect')
                     .attr('x', startX) // 从上一段结束的地方开始
                     .attr('y', yScale(category.title))
                     .attr('width', 0) // 初始宽度，这样才有动画效果
                     .attr('height', yScale.bandwidth())
-                    .attr('fill', d3.schemePastel2[globalColorIndex++]) // 不同颜色
+                    .attr('fill', d3.schemePastel2[globalColorIndex]) // 不同颜色
                     .attr('stroke', 'white') // 白色边框分隔
                     .attr('stroke-width', 2)
-                    .transition()
-                    .duration(800) // 每个分段动画0.8秒
+                    .on('mouseenter', function () {
+                        const rectWidth = xScale(detail.number) - margin.left;
+
+                        const moveX = currentStartX + rectWidth / 2;
+                        const moveY =
+                            yScale(category.title) - yScale.bandwidth() / 3;
+
+                        d3.select(this)
+                            .transition()
+                            .duration(50)
+                            .attr('y', yScale(category.title) - 5) // 向上扩展 5px
+                            .attr('height', yScale.bandwidth() + 10); // 总共增加 10px
+
+                        svg.selectAll('.hover-text')
+                            .data([null])
+                            .join('text')
+                            .classed('hover-text', true)
+                            .attr('x', moveX)
+                            .attr('y', moveY)
+                            .attr('text-anchor', 'middle')
+                            .attr('dominant-baseline', 'middle')
+                            .attr('fill', d3.schemePastel2[globalColorIndex])
+                            .attr('stroke-width', 0.1)
+                            .style('font-size', '0.9rem')
+                            .text(detail.title);
+                    })
+                    .on('mouseleave', function () {
+                        d3.select(this)
+                            .attr('y', yScale(category.title)) // 恢复
+                            .attr('height', yScale.bandwidth()); // 恢复
+                        svg.selectAll('.hover-text').remove();
+                    });
+
+                rect.transition()
+                    .duration(500) // 每个分段动画0.8秒
                     .delay(globalDelay) // ← 使用全局延迟
                     .attr('width', xScale(detail.number) - margin.left); // 当前段的宽度
 
+                // 创建文本（独立添加）
+                globalColorIndex++;
                 globalDelay += 400;
                 // 更新下一段的起始位置
                 startX += xScale(detail.number) - margin.left;

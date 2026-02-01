@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react';
 import classes from './CertificatesList.module.scss';
-import { useCarouselStates } from '../../store/zustand/carouselZustand.js';
-import { useLineCubicBezier } from '../../hooks/useLineCubicBezier.jsx';
+import { useCarouselStates } from '../../../store/zustand/carouselZustand.js';
+import { useLineCubicBezier } from '../../../hooks/useLineCubicBezier.jsx';
 
-import ExtendCloseBtn from '../../components/icons/ExtendCloseBtn';
-import ExtendBtn from '../../components/icons/ExtendBtn';
+import ExtendCloseBtn from '../../../components/icons/ExtendCloseBtn';
+import ExtendBtn from '../../../components/icons/ExtendBtn';
 
-export default function CertificatesList({ datas }) {
+export default function CertificatesList({ styleLayout, datas }) {
     const containerRef = useRef(null);
     const firstCategoryRef = useRef(null);
     const secondCategoryRef = useRef({});
@@ -40,7 +40,10 @@ export default function CertificatesList({ datas }) {
 
     return (
         <>
-            <div className={classes.menu} ref={containerRef}>
+            <div
+                className={`${classes.menu} ${styleLayout}`}
+                ref={containerRef}
+            >
                 {/* 线段 */}
                 <svg className={classes.svg}>
                     {lines.map((line, ind) => (
