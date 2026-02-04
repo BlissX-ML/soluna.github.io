@@ -2,23 +2,13 @@
 .first-ul {
     margin: 1rem 0.5rem 0rem 0.5rem; // 内部列表与外部 `aside` 的间距
     text-align: left;
-    flex: 1; // 占据剩余空间  // ✅ 保证侧边栏可以撑满高度
+    flex: 1; // 占据剩余空间，保证侧边栏可以撑满高度
 
     overflow-y: scroll; // ✅ 添加垂直滚动，控制侧边栏可以滚动的！！
     // overflow-x: visible;
     scrollbar-width: thin;
 
     padding-bottom: $padding-default * 3; // ✅ 保证侧边栏不会跟 footer 撞在一起
-
-    // 一级标题和二级标题的公共样式，.first-li也设置的话会撑大高度
-    .title,
-    .second-ul li {
-        display: block;
-        width: 100%;
-        padding: $padding-default;
-        box-sizing: border-box;
-        cursor: pointer;
-    }
 }
 
 // 一级标题，放在外面是为了避免权重过高，以免 .active 无法覆盖
@@ -28,6 +18,9 @@
     .title {
         width: 100%;
         font-weight: 600;
+        padding: $padding-default;
+        box-sizing: border-box;
+        cursor: pointer;
 
         // 实现箭头与文字内容各占两边
         display: inline-flex;
@@ -51,4 +44,23 @@
     max-height: 0;
     opacity: 0;
     transition: all 0.35s ease;
+
+    .second-li {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        button {
+            padding: $padding-default;
+        }
+    }
+}
+
+.btn {
+    @include btns-default;
+    background-color: transparent;
+    text-align: left;
+    display: block;
+    width: 100%;
 }

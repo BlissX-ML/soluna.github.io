@@ -13,8 +13,9 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin-left: 3rem;
+    margin-left: 2rem;
     position: relative; // 添加这个，让 options 相对定位
+    z-index: 3;
 
     .default {
         position: relative;
@@ -119,6 +120,106 @@
             opacity: 1;
             visibility: visible;
             transform: translateY(0.5rem); // 稍微向下移动
+        }
+    }
+}
+
+.each {
+    display: grid;
+    grid-template-rows: 1fr;
+    width: 100%;
+    gap: 2.5rem;
+
+    .title {
+        position: relative;
+
+        p {
+            text-align: left;
+            padding-left: 1rem;
+            font-weight: 800;
+        }
+
+        svg {
+            position: absolute;
+            top: 1.4rem;
+            left: 0rem;
+            width: 10rem;
+            height: 1rem;
+        }
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 100%;
+
+        .lists {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 2rem;
+
+            // 列表文字
+            .text {
+                @include list-default;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 1rem;
+                width: 60%;
+
+                li {
+                    display: grid;
+                    grid-template-columns: auto 1fr auto;
+                    align-items: baseline;
+
+                    button {
+                        @include btns-default;
+                        background-color: transparent;
+                        font-size: 1rem;
+                        padding-left: 1.2rem;
+                        justify-self: start; // 左对齐
+                    }
+
+                    span {
+                        display: block;
+                        justify-self: end; // 右对齐
+                    }
+
+                    svg {
+                        width: 0.9rem;
+                        height: 0.9rem;
+                    }
+
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        width: 1.1rem;
+                        height: 1.1rem;
+                        border: 1px solid black;
+                    }
+
+                    &.listActive {
+                        &::before {
+                            content: '✓';
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 1.1rem;
+                            height: 1.1rem;
+                            color: #f48a20b1;
+                            border: 1px solid #f48a20b1;
+                        }
+                    }
+                }
+            }
+        }
+
+        .chart {
         }
     }
 }

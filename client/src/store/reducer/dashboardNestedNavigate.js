@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'; // 切片，之后 合并切片�
 
 const initialState = {
     // 选中的二级导航栏
-    curSecNavItem: null,
+    curSecNavItem: 'personal-plan',
 
     // 当前选中的二级导航栏的索引
     curSecNavInd: 0

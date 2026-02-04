@@ -4,7 +4,7 @@ import { lazy, Suspense } from 'react';
 
 import Footprint from './pages/footprint-page/Footprint.jsx';
 import About from './pages/about-page/AboutPage.jsx';
-import RecapContent from './pages/repository-page/RecapContent.jsx';
+import RecapContent from './pages/repository-page/RepositoryMianContent.jsx';
 
 import Loading from './components/feedback/Loading.jsx';
 
@@ -28,6 +28,9 @@ import DashboardLearnGrowth from './layouts/dashboard/learn-growth/DashboardLear
 import DashboardBodyHealth from './layouts/dashboard/body-health/DashboardBodyHealth';
 import DashboardExpenseStatus from './layouts/dashboard/expense-status/DashboardExpenseStatus';
 import DashboardLifeLogs from './layouts/dashboard/life-logs/DashboardLifeLogs';
+import { REPOSITORY_SIDEBAR } from './_data/repository/repository';
+import { transformToRouteData } from './_utils/browser/data-transformer/data-transformer';
+import { RESOURCES_SHARE } from './_data/resources-page/resources';
 
 const Homepage = lazy(() => import('./pages/home-page/Homepage.jsx'));
 
@@ -82,11 +85,11 @@ const router = createHashRouter([
                 children: [
                     {
                         index: true,
-                        element: <RenderInitialContent files={MEMOS} />
+                        element: <RenderInitialContent />
                     },
                     {
                         path: ':routeId',
-                        element: <RenderMainContent data={MEMOS_ROUTE} />
+                        element: <RenderMainContent startUrl="/memo" />
                     }
                 ]
             },
@@ -94,8 +97,14 @@ const router = createHashRouter([
                 path: '/repository',
                 element: <RepositorySidebarNavigate />,
                 children: [
-                    // { index: true, element: <RecapSubNav />, },
-                    { path: ':routeId', element: <RecapContent /> }
+                    {
+                        index: true,
+                        element: <RenderInitialContent />
+                    },
+                    {
+                        path: ':routeId',
+                        element: <RenderMainContent startUrl="/repository" />
+                    }
                 ]
             },
             {

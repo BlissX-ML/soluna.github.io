@@ -1,6 +1,6 @@
 import classes from './MainNavigation.module.scss';
 
-import { Repository_Navigate } from '../../_data/repository-page/repository.js';
+import { REPOSITORY_SIDEBAR } from '../../_data/repository/repository.js';
 
 import NavRedirectRoute from '../../components/redirect/NavRedirectRoute.jsx';
 import DropMenuRedirectAsideMenu from '../shared-dropdown-sidebar/DropMenuRedirectAside.jsx';
@@ -46,7 +46,7 @@ export default function MainNavigation() {
                 extraContentInList={
                     <DropMenuRedirectAsideMenu
                         style={classes['dropdown-visibility']}
-                        catalogs={Repository_Navigate}
+                        catalogs={REPOSITORY_SIDEBAR}
                         startUrl="/repository"
                     />
                 }

@@ -2,13 +2,11 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import dropdownSidebarReducer from './dropdownSidebar.js';
 import dashboardNestedNavigateReducer from './dashboardNestedNavigate.js';
-import plansReducer from './plans.js';
 
 export const store = configureStore({
     reducer: {
         dropdownSidebar: dropdownSidebarReducer, // 控制 repository 页的下拉列表
-        dashboardNestedNavigate: dashboardNestedNavigateReducer,
-        plans: plansReducer
+        dashboardNestedNavigate: dashboardNestedNavigateReducer
     }
 });
 

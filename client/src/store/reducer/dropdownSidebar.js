@@ -1,17 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'; // 切片，之后 合并切片可以共同管理状态
 
 const initialState = {
-    // 用这个控制侧边栏要不要打开，默认是打开的
-    sidebarActive: true,
+    sidebarActive: true, // 用这个控制侧边栏要不要打开，默认是打开的
+    secondaryItemsState: false, // 默认不开启侧边栏的二级标题
 
-    // 默认不开启侧边栏的二级标题
-    secondaryItemsState: false,
+    curFirstItem: null, // 当前被选中的选项（一级标题）
 
-    // 当前被选中的选项（默认情况下是列表的第一个）
-    curItem: null,
-
-    // 当前选中大类下的小分类的内容
-    content: ''
+    // curFirstContent: [], // 当前被选中的选项对象（一级标题， memo 使用）
+    secondContent: {
+        originalSecondContent: [], // 原始数据（只初始化一次）
+        curSecondContent: [] // 当前被选中的选项对象（二级标题， repository 使用）
+    }
 };
 
 // state：当前这片 slice 的状态
@@ -33,13 +32,22 @@ const dropdownSidebarSlice = createSlice({
 
         // 更新当前选中的下拉列表的 item
         setCurItem(state, action) {
-            state.curItem = action.payload;
+            state.curFirstItem = action.payload;
         },
 
-        // 更新当前选中的 item 的二级标题 (HTML, CSS等等)
-        updateItemContent(state, action) {
-            // 取消原有固定的数据，使用`{}`占位
-            state.content = {}?.[action.payload]?.detail_content;
+        // 更新当前选中的一级标题（主要用于 memo 页面）
+        // setFirstContent(state, action) {
+        //     state.curFirstContent = action.payload;
+        // },
+
+        // 更新当前选中的二级标题（主要用于 repository 页面）
+        setSecondaryContent(state, action) {
+            state.secondContent.curSecondContent = action.payload;
+        },
+
+        initialSecondaryContent(state) {
+            state.secondContent.curSecondContent =
+                state.secondContent.originalSecondContent;
         },
 
         // 更新侧边栏二级标题的显示状态，实现 dropdown-list 与 sidebar-nav 之间的联动
@@ -57,7 +65,8 @@ export const {
     setSidebarActive,
     setSidebarActiveOpen,
     setCurItem,
-    updateItemContent,
+    setSecondaryContent,
+    initialSecondaryContent,
     toggleOpenSecondaryItems,
     openSecondaryItems
 } = dropdownSidebarSlice.actions;

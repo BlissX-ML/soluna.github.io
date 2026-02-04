@@ -89,8 +89,10 @@ export function useNavCubicBezier(containerRef, elContainerRef, btnInd, data) {
     }, [btnInd, data.length, containerRef, elContainerRef]);
 
     useEffect(() => {
-        recomputeLines();
-    }, [recomputeLines]);
+        if (containerRef.current && elContainerRef.current) {
+            recomputeLines();
+        }
+    }, [recomputeLines, containerRef, elContainerRef]);
 
     useEffect(() => {
         // 窗口尺寸变化时重算

@@ -1,4 +1,4 @@
-import classes from "./SidebarList.module.scss";
+import classes from './SidebarList.module.scss';
 
 export default function SidebarList({
     categories, // 侧边栏数据
@@ -6,30 +6,44 @@ export default function SidebarList({
     handleSecondaryLevelState, // 处理二级列表状态
     handleFirstLevelClick, // 处理一级标题点击
     handleSecondaryLevelClick, // 处理二级标题点击
-    startURL, // 跳转的起始路由
+    startURL // 跳转的起始路由
 }) {
     return (
-        <ul className={classes["first-ul"]}>
-            {categories.map((firstLevel) => (
+        <ul className={classes['first-ul']}>
+            {categories.map(firstLevel => (
                 <li
-                    onClick={() => handleFirstLevelClick(startURL, firstLevel)}
-                    className={`${classes["first-li"]} ${handleFirstLevelState(firstLevel)}`}
                     key={firstLevel.key}
+                    className={`${classes['first-li']} ${handleFirstLevelState(firstLevel)}`}
                 >
-                    <div className={classes["title"]}>{firstLevel.title}</div>
-
-                    <ul
-                        className={`${classes["second-ul"]} ${handleSecondaryLevelState(firstLevel)}`}
+                    <button
+                        className={classes.btn}
+                        onClick={() =>
+                            handleFirstLevelClick(startURL, firstLevel)
+                        }
                     >
-                        {firstLevel?.detail?.data.map((secondaryLevel) => (
+                        <div className={classes['title']}>
+                            {firstLevel.title}
+                        </div>
+                    </button>
+                    <ul
+                        className={`${classes['second-ul']} ${handleSecondaryLevelState(firstLevel)}`}
+                    >
+                        {firstLevel?.detail?.data.map(secondaryLevel => (
                             <li
-                                className={classes["second-li"]}
                                 key={secondaryLevel?.key}
-                                onClick={(e) =>
-                                    handleSecondaryLevelClick(e, secondaryLevel)
-                                }
+                                className={classes['second-li']}
                             >
-                                {secondaryLevel?.title}
+                                <button
+                                    className={classes.btn}
+                                    onClick={e =>
+                                        handleSecondaryLevelClick(
+                                            e,
+                                            secondaryLevel
+                                        )
+                                    }
+                                >
+                                    {secondaryLevel?.title}
+                                </button>
                             </li>
                         ))}
                     </ul>

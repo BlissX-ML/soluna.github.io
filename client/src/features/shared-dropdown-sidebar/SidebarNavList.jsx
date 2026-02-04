@@ -1,15 +1,18 @@
-import { useLocation, useNavigate } from "react-router-dom";
-import classes from "./SidebarNavList.module.scss";
+import { useLocation, useNavigate } from 'react-router-dom';
+import classes from './SidebarNavList.module.scss';
 
-import { useAppDispatch, useAppSelector } from "../../store/reducer/hooks.js";
+import { useAppDispatch, useAppSelector } from '../../store/reducer/hooks.js';
 import {
+    initialSecondaryContent,
     openSecondaryItems,
     setCurItem,
-    toggleOpenSecondaryItems,
-} from "../../store/reducer/dropdownSidebar.js";
+    setSecondaryContent,
+    toggleOpenSecondaryItems
+} from '../../store/reducer/dropdownSidebar.js';
 
-import scrollToItem from "../../_utils/browser/scroll-into-view.js";
-import SidebarList from "../../components/sidebar/SidebarList.jsx";
+import scrollToItem from '../../_utils/browser/scroll-into-view.js';
+import SidebarList from '../../components/sidebar/SidebarList.jsx';
+import { REPOSITORY_SIDEBAR } from '../../_data/repository/repository';
 
 // 侧边栏导航列表（可复用）
 export default function SidebarNavList({ categories, startURL }) {
@@ -17,56 +20,84 @@ export default function SidebarNavList({ categories, startURL }) {
     const location = useLocation(); // 核查当前页面
     const dispatch = useAppDispatch(); // 分派函数（动作）以改变这些变量
 
-    const { curItem, secondaryItemsState } = useAppSelector(
-        (state) => state.dropdownSidebar,
+    const { curFirstItem, secondaryItemsState } = useAppSelector(
+        state => state.dropdownSidebar
     );
 
     // 处理一级列表状态
     function handleFirstLevelState(item) {
-        return curItem === item?.key && secondaryItemsState
-            ? classes["active-first-li"]
-            : "";
+        return curFirstItem === item?.key && secondaryItemsState
+            ? classes['active-first-li']
+            : '';
     }
 
     // 处理二级列表状态
     function handleSecondaryLevelState(item) {
-        return curItem === item?.key && secondaryItemsState
-            ? classes["active-second-ul"]
-            : "";
+        return curFirstItem === item?.key && secondaryItemsState
+            ? classes['active-second-ul']
+            : '';
     }
 
     // 处理一级标题点击
     const handleFirstLevelClick = (startURL, item) => {
         // 控制二级菜单的展开与关闭
-        if (curItem === item?.key) {
+        if (curFirstItem === item?.key) {
             dispatch(toggleOpenSecondaryItems()); // 切换二级菜单展开状态
         } else {
             dispatch(setCurItem(item?.key)); // 设置当前选中项
             dispatch(openSecondaryItems()); // 打开二级菜单
         }
 
+        // 初始化 repository 页面的内容
+        dispatch(initialSecondaryContent());
+
         // 跳转路由
         if (!location.pathname.endsWith(item?.key)) {
             navigate(`${startURL}/${item?.key.toLowerCase()}`);
         }
 
-        // 平滑移动，默认返回顶部，itemId 固定为数组第一个元素
-        scrollToItem(item?.detail?.data?.[0]?.fileName);
+        if (startURL === '/memo') {
+            // 平滑移动，默认返回顶部，itemId 固定为数组第一个元素
+            scrollToItem(item?.detail?.data?.[0]?.fileName);
+        }
     };
 
     // 处理二级标题点击
     const handleSecondaryClick = (e, item) => {
         e.stopPropagation(); // 阻止事件冒泡
-        scrollToItem(item?.fileName);
+
+        if (startURL === '/memo') {
+            // 移动到 `#` 路由上面去
+            const curUrl = `${startURL}/${curFirstItem.toLowerCase()}`;
+            navigate(`${curUrl}#${item?.fileName}`, { replace: true });
+
+            // 移动到对应的文件部分
+            scrollToItem(item?.fileName);
+        }
+
+        if (startURL === '/repository') {
+            const curRepository = REPOSITORY_SIDEBAR.find(
+                els => els?.key === curFirstItem
+            )?.detail?.data.find(el => el?.key === item?.key)?.detail[0]?.data;
+
+            // 移动到 `#` 路由上面去
+            const curUrl = `${startURL}/${curFirstItem.toLowerCase()}`;
+            navigate(`${curUrl}#${item?.key}`, { replace: true });
+
+            // 更新要渲染的文章的数组 (repository 页面)
+            if (curRepository) {
+                dispatch(setSecondaryContent(curRepository));
+            } else {
+                dispatch(initialSecondaryContent());
+            }
+        }
     };
 
     return (
         <SidebarList
             categories={categories}
-            handleFirstLevelState={(item) => handleFirstLevelState(item)}
-            handleSecondaryLevelState={(item) =>
-                handleSecondaryLevelState(item)
-            }
+            handleFirstLevelState={item => handleFirstLevelState(item)}
+            handleSecondaryLevelState={item => handleSecondaryLevelState(item)}
             handleFirstLevelClick={handleFirstLevelClick}
             handleSecondaryLevelClick={handleSecondaryClick}
             startURL={startURL}

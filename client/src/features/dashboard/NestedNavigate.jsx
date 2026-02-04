@@ -46,45 +46,42 @@ export default function NestedNavigate() {
             dispatch(setCurSecNavItem(DASHBOARD_TOTAL[matchedIndex]?.key));
             dispatch(setCurSecNavInd(matchedIndex));
         }
-    }, [location.pathname]);
+    }, [location.pathname, dispatch]);
 
     return (
         <>
             {DASHBOARD_TOTAL.map((el, ind) => (
-                <>
-                    <div
-                        className={classes.container}
-                        ref={curSecNavItem === el?.key ? activeBlockRef : null}
+                <div
+                    key={el?.key}
+                    className={classes.container}
+                    ref={curSecNavItem === el?.key ? activeBlockRef : null}
+                >
+                    {curSecNavItem === el?.key && lines.length > 0 && (
+                        <svg className={classes.svg}>
+                            {lines.map((line, lineInd) => (
+                                <g key={`line-${lineInd}`}>
+                                    <path
+                                        d={line}
+                                        stroke="none"
+                                        strokeWidth="10"
+                                        fill="#E8967D"
+                                        strokeLinejoin="round"
+                                        strokeLinecap="round"
+                                    />
+                                </g>
+                            ))}
+                        </svg>
+                    )}
+                    <NavLink
+                        to={el?.key}
+                        key={el?.key}
+                        className={`${classes['sec-nav-link']} ${curSecNavItem === el?.key ? classes.active : ''}`}
+                        ref={curSecNavItem === el?.key ? activeBtnRef : null}
+                        onClick={e => handleClick(e, el?.key, ind)}
                     >
-                        {curSecNavItem === el?.key && (
-                            <svg className={classes.svg}>
-                                {lines.map((line, ind) => (
-                                    <g key={`line-${ind}`}>
-                                        <path
-                                            d={line}
-                                            stroke="none"
-                                            strokeWidth="10"
-                                            fill="#E8967D"
-                                            strokeLinejoin="round"
-                                            strokeLinecap="round"
-                                        />
-                                    </g>
-                                ))}
-                            </svg>
-                        )}
-                        <NavLink
-                            to={el?.key}
-                            key={el?.key}
-                            className={`${classes['sec-nav-link']} ${curSecNavItem === el?.key ? classes.active : ''}`}
-                            ref={
-                                curSecNavItem === el?.key ? activeBtnRef : null
-                            }
-                            onClick={e => handleClick(e, el?.key, ind)}
-                        >
-                            <span className={classes.text}>{el?.title}</span>
-                        </NavLink>
-                    </div>
-                </>
+                        <span className={classes.text}>{el?.title}</span>
+                    </NavLink>
+                </div>
             ))}
         </>
     );

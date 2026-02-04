@@ -1,4 +1,4 @@
-pre[class*="language-"] {
+pre[class*='language-'] {
     font-size: 0.9rem;
     max-width: 800px; // 限制最大宽度
     margin-left: 0; // 靠左对齐
@@ -6,18 +6,19 @@ pre[class*="language-"] {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 
     &,
-    code[class*="language-"] {
+    code[class*='language-'] {
         background-color: #f7f6f3 !important;
     }
+
     code {
         display: block;
-        padding-right: 1rem; // 右侧留白
+        padding-right: 1rem !important; // 右侧留白
     }
 
     span {
         font-size: 0.9rem;
         line-height: 1.8;
-        font-family: "Monaco", "Menlo", "Consolas", monospace;
+        font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
     }
 }
 
@@ -25,8 +26,8 @@ pre[class*="language-"] {
     line-height: 1.8;
     padding: 2rem 0rem;
     // overflow: auto;
-    // 用于 scrollIntoView，让其自动计算偏移量
-    scroll-margin-top: 5rem;
+
+    scroll-margin-top: 5rem; // 用于 scrollIntoView，让其自动计算偏移量
 
     ul,
     ol {
@@ -41,10 +42,10 @@ pre[class*="language-"] {
             position: relative;
 
             &::before {
-                content: counter(list-counter) ".";
+                content: counter(list-counter) '.';
                 counter-increment: list-counter;
                 position: absolute;
-                left: 0;
+                left: -0.5rem;
                 text-align: left;
             }
         }
@@ -61,7 +62,7 @@ pre[class*="language-"] {
                 position: relative;
 
                 &::before {
-                    content: counter(list-counter, lower-alpha) ".";
+                    content: counter(list-counter, lower-alpha) '.';
                     counter-increment: list-counter;
                     position: absolute;
                     left: 0;
@@ -80,7 +81,7 @@ pre[class*="language-"] {
                     position: relative;
 
                     &::before {
-                        content: "●";
+                        content: '●';
                         position: absolute;
                         left: 0;
                         text-align: left;
@@ -98,7 +99,7 @@ pre[class*="language-"] {
                         position: relative;
 
                         &::before {
-                            content: "○";
+                            content: '○';
                             position: absolute;
                             left: 0;
                             text-align: left;
@@ -116,7 +117,7 @@ pre[class*="language-"] {
                             position: relative;
 
                             &::before {
-                                content: "■";
+                                content: '■';
                                 position: absolute;
                                 left: 0;
                                 text-align: left;
@@ -173,7 +174,7 @@ pre[class*="language-"] {
         padding: 2px 6px;
         border-radius: 4px;
         font-size: 0.9em;
-        font-family: "Monaco", "Menlo", "Consolas", monospace;
+        font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
     }
 
     pre {
