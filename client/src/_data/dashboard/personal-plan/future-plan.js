@@ -1,9 +1,10 @@
 export const FUTURE_PLANS = [
-    { category: 'all', key: 'all', title: '全部' },
+    { category: 'all', key: 'all', title: '全部', canIterate: false },
     {
         category: 'work-related',
         key: 'work-related',
         title: '工作相关',
+        canIterate: true,
         details: [
             {
                 category: 'apply-for-a-job',
@@ -23,12 +24,13 @@ export const FUTURE_PLANS = [
         category: 'self-improvement',
         key: 'self-improvement',
         title: '自我提升',
+        canIterate: true,
         details: [
             {
                 category: 'd3-visualization',
                 key: 'd3-visualization',
                 title: 'D3.js 可视化学习',
-                completionTime: null,
+                completionTime: '2026.01.03',
                 onlineCourse: [
                     {
                         platform: 'Youtube',
@@ -154,6 +156,7 @@ export const FUTURE_PLANS = [
         category: 'travel-relaxation',
         key: 'travel-relaxation',
         title: '旅游放松',
+        canIterate: true,
         details: [
             {
                 category: 'hangzhou',
@@ -185,6 +188,7 @@ export const FUTURE_PLANS = [
         category: 'interest-hobby',
         key: 'interest-hobby',
         title: '兴趣爱好',
+        canIterate: true,
         details: [
             {
                 category: 'sanda',
@@ -236,6 +240,7 @@ export const FUTURE_PLANS = [
         category: 'lifestyle-habit',
         key: 'lifestyle-habit',
         title: '生活习惯',
+        canIterate: true,
         details: [
             {
                 category: 'lose-weight',
@@ -257,4 +262,30 @@ export const FUTURE_PLANS = [
             }
         ]
     }
+];
+
+export const PLAN_COLORS = [
+    { fill: '#F2C6CF', stroke: '#E39AA8' }, // 柔玫粉
+    { fill: '#D6EADF', stroke: '#AFCFC0' }, // 雾薄荷
+    { fill: '#F3D6B8', stroke: '#DDB68E' }, // 奶杏
+    { fill: '#DCE4F2', stroke: '#B3C3E6' }, // 雾蓝
+    { fill: '#E7D9F2', stroke: '#C9B2E0' }, // 淡紫
+
+    { fill: '#EADFCB', stroke: '#D0C2A0' }, // 暖米
+    { fill: '#D8EDF0', stroke: '#ADD7DE' }, // 浅湖蓝
+    { fill: '#F2D0C4', stroke: '#E2A99A' }, // 浅珊瑚
+    { fill: '#E1E8D6', stroke: '#BCCCA4' }, // 灰豆绿
+    { fill: '#E6DCEB', stroke: '#C6B2D6' }, // 雾薰衣
+
+    { fill: '#F0E3E6', stroke: '#D9B8C3' }, // 灰玫瑰
+    { fill: '#D3E6E1', stroke: '#A9CEC5' }, // 冷薄荷
+    { fill: '#F2E1B8', stroke: '#E0C985' }, // 浅秋黄
+    { fill: '#D9E0EF', stroke: '#B1C1E0' }, // 冷灰蓝
+    { fill: '#EAD7E3', stroke: '#D0A9C2' }, // 雾粉紫
+
+    { fill: '#E5E8D8', stroke: '#BEC6A6' }, // 灰草绿
+    { fill: '#F2D6DE', stroke: '#E0A8BA' }, // 浅蔷薇
+    { fill: '#DCE8E6', stroke: '#A9CFCB' }, // 冷青灰
+    { fill: '#EFE1D8', stroke: '#D3B8A6' }, // 杏灰
+    { fill: '#E0D6F0', stroke: '#BFADE0' } // 冷紫
 ];

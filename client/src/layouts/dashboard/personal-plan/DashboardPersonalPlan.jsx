@@ -2,14 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { FUTURE_PLANS } from '../../../_data/dashboard/personal-plan/future-plan';
 import classes from './DashboardPersonalPlan.module.scss';
 import Underline from '../../../components/icons/Underline';
-import Deadline from '../../../components/icons/Deadline';
+import DoubleBarEchart from '../../../components/charts/DoubleBarEchart';
 
 export default function DashboardPersonalPlan() {
     const [isOpen, setIsOpen] = useState(false);
     const [option, setOption] = useState('all');
     const selectRef = useRef(null);
 
-    const [isComplete, setIsComplete] = useState(false); // 任务是否完成
     const [completeItems, setCompleteItems] = useState(new Set());
 
     // 点击外部关闭下拉
@@ -33,8 +32,6 @@ export default function DashboardPersonalPlan() {
     const selectedPlan = FUTURE_PLANS.find(p => p.key === option);
 
     const handlePlanClick = item => {
-        setIsComplete(prev => !prev);
-
         setCompleteItems(prev => {
             const newSet = new Set(prev);
             if (newSet.has(item?.key)) {
@@ -88,36 +85,47 @@ export default function DashboardPersonalPlan() {
             </main>
 
             {/* 包含计划标题，计划内容，图表 */}
-            <main className={classes.each}>
-                <div className={classes.title}>
-                    <p>{FUTURE_PLANS[1].title}</p>
-                    <Underline />
-                </div>
-                <div className={classes.content}>
-                    <div className={classes.lists}>
-                        <ul className={classes.text}>
-                            {FUTURE_PLANS[1]?.details.map(el => (
-                                <li
-                                    key={el?.key}
-                                    className={`${completeItems.has(el?.key) ? classes.listActive : ''}`}
-                                >
-                                    <button onClick={() => handlePlanClick(el)}>
-                                        {el?.title}
-                                    </button>
-
-                                    {el?.completionTime ? (
-                                        <span>{el?.completionTime}</span>
-                                    ) : (
-                                        <Deadline />
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
+            {/* filter 返回数组， find返回对象或 undefined */}
+            {FUTURE_PLANS.filter(els => {
+                // 如果是 'all'，显示所有可遍历的项
+                if (option === 'all') {
+                    return els.canIterate;
+                }
+                // 否则只显示匹配的项
+                return els?.key === option;
+            }).map(els => (
+                <main className={classes.each} key={els?.key}>
+                    <div className={classes.title}>
+                        <p>{els.title}</p>
+                        <Underline />
                     </div>
-                    <div className={classes.chart}>2</div>
-                </div>
-            </main>
-            <main></main>
+                    <div className={classes.content}>
+                        <div className={classes.lists}>
+                            <ul className={classes.text}>
+                                {els?.details.map(el => (
+                                    <li
+                                        key={el?.key}
+                                        className={`${completeItems.has(el?.key) || el?.completionTime ? classes.listActive : ''}`}
+                                    >
+                                        <button
+                                            onClick={() => handlePlanClick(el)}
+                                        >
+                                            {el?.title}
+                                        </button>
+                                        {el?.completionTime && (
+                                            <span>{el?.completionTime}</span>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <DoubleBarEchart
+                            className={classes.chart}
+                            data={els?.details}
+                        />
+                    </div>
+                </main>
+            ))}
         </main>
     );
 }

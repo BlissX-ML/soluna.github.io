@@ -15,11 +15,18 @@ export default function RenderNoneContent({ startURL }) {
                 return els?.key.toLowerCase() === routeId;
             });
 
-            repositories?.detail?.data.forEach(el => {
-                if (el?.detail.length !== 0) {
-                    setHasUpdated(prev => prev.add(el?.title));
-                }
-            });
+            setHasUpdated(new Set()); // 清空状态
+
+            // 等数据准备好再处理
+            if (repositories?.detail?.data) {
+                const updatedSet = new Set();
+                repositories.detail.data.forEach(el => {
+                    if (el?.detail?.length !== 0) {
+                        updatedSet.add(el?.title);
+                    }
+                });
+                setHasUpdated(updatedSet);
+            }
         }
     }, [routeId, startURL]);
 
@@ -29,7 +36,13 @@ export default function RenderNoneContent({ startURL }) {
             <div>
                 <p>这个家伙还没有整理完，没戏了，看看别的吧...</p>
                 <p>
-                    目前只更新了 <b>{[...hasUpdated].join(', ')}</b>
+                    {hasUpdated.size > 0 ? (
+                        <span>
+                            目前更新： <b>{[...hasUpdated].join(', ')}</b>
+                        </span>
+                    ) : (
+                        <span>当前无更新</span>
+                    )}
                 </p>
             </div>
         </div>

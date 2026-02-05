@@ -1,13 +1,28 @@
 import * as d3 from 'd3';
 import * as turf from '@turf/turf';
-import { colors } from '../../_data/footprint/colors';
+import { colors, hasVisitedColors } from '../../_data/footprint/colors';
+import { VISITED_CITIES } from '../../_data/footprint/visit-cities';
 
-export const getPathGenarator = (center, scale, position) => {
-    const projection = d3
-        .geoMercator()
-        .center(center) // 中国的中心经纬度
-        .scale(scale) // 根据容器大小调整缩放
-        .translate(position); // 居中显示
+const hasVisited = new Map();
+VISITED_CITIES.forEach(el => {
+    if (!hasVisited.has('provinces')) hasVisited.set('provinces', []);
+    hasVisited.get('provinces').push(el?.title);
+
+    const nestedCities = el?.detail;
+    for (const cities of nestedCities) {
+        if (!hasVisited.has('cities')) hasVisited.set('cities', []);
+        hasVisited.get('cities').push(cities?.title);
+    }
+});
+
+export const getPathGenarator = (width, height, data) => {
+    const projection = d3.geoMercator().fitExtent(
+        [
+            [0, 0],
+            [width, height]
+        ],
+        data
+    );
 
     const pathGenerator = d3.geoPath().projection(projection);
     return pathGenerator;
@@ -21,7 +36,7 @@ export async function getChinaData() {
             reverse: true
         });
         feature.colors = colors[ind]; // 直接把颜色添加进去
-        feature.visited = false;
+        feature.category = 'provinces';
     });
 
     return data;
@@ -34,6 +49,8 @@ export async function getProvinceData(id) {
         feature.geometry = turf.rewind(feature.geometry, {
             reverse: true
         });
+        feature.colors = d3.schemeCategory10[ind];
+        feature.category = 'cities';
     });
 
     return data;
@@ -45,11 +62,22 @@ export function createMapPaths(svg, data, pathGenerator) {
         .data(data.features) // 取数组
         .join('path')
         .attr('d', d => pathGenerator(d))
-        .attr('fill', 'transparent') // 关键，避免覆盖地图背景颜色
+        .attr('fill', (d, i) => {
+            const visited = hasVisited.get(d?.category);
+
+            if (
+                Array.isArray(visited) &&
+                visited.length > 0 &&
+                visited.includes(d?.properties?.name)
+            ) {
+                return hasVisitedColors[(i * 2) % hasVisitedColors.length];
+            } else {
+                return 'transparent';
+            }
+        })
         .attr('stroke', '#000000')
         .attr('stroke-width', 0.5) // 控制省份之间的分隔线段
         .attr('cursor', 'pointer');
-    // .attr("mask", "url(#mask)")
 }
 
 export function bindMapEvents() {

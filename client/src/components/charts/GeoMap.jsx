@@ -8,6 +8,7 @@ import {
     getPathGenarator,
     getProvinceData
 } from '../../_utils/charts/geomap';
+import { hasVisitedColors } from '../../_data/footprint/colors';
 
 export default function GeoChinaMap({ className, tipClassName }) {
     const containerRef = useRef(null); // React中不能用 querySelector 获取元素
@@ -39,10 +40,7 @@ export default function GeoChinaMap({ className, tipClassName }) {
         const paintMap = async () => {
             const chinaData = await getChinaData();
 
-            const pathGenerator = getPathGenarator([104, 35], width * 0.9, [
-                width * 0.5,
-                height * 0.57
-            ]);
+            const pathGenerator = getPathGenarator(width, height, chinaData);
 
             const paths = createMapPaths(svg, chinaData, pathGenerator);
 
@@ -50,19 +48,38 @@ export default function GeoChinaMap({ className, tipClassName }) {
                 bindMapEvents()
                     .onMouseEnter(function (e, d) {
                         d3.select(this)
-                            .attr('fill', d.colors.fill)
+                            .attr('fill', function () {
+                                const curColor = d3.select(this).attr('fill');
+
+                                if (
+                                    !curColor ||
+                                    hasVisitedColors.includes(curColor)
+                                ) {
+                                    return curColor;
+                                } else {
+                                    return d.colors.fill;
+                                }
+                            })
                             .attr('stroke-width', 1.5)
                             .style('fill-opacity', 0.4);
 
                         tip.style('display', 'block');
                     })
                     .onMouseLeave(function (e, d) {
-                        const el = d3.select(this);
-                        if (el.classed('selected')) return;
-                        el.attr('fill', 'transparent').attr(
-                            'stroke-width',
-                            0.5
-                        );
+                        if (d3.select(this).classed('selected')) return;
+                        d3.select(this)
+                            .attr('fill', function () {
+                                const curColor = d3.select(this).attr('fill');
+                                if (
+                                    !curColor ||
+                                    hasVisitedColors.includes(curColor)
+                                ) {
+                                    return curColor;
+                                } else {
+                                    return 'transparent';
+                                }
+                            })
+                            .attr('stroke-width', 0.5);
                         tip.style('display', 'none');
                     })
                     .onMouseMove(function (e, d) {
@@ -87,15 +104,21 @@ export default function GeoChinaMap({ className, tipClassName }) {
                         const [[x0, y0], [x1, y1]] = bounds;
 
                         const provPathGenerator = getPathGenarator(
-                            [(x0 + x1) / 2, (y0 + y1) / 2],
-                            width * 1.5,
-                            [width / 2, height / 2]
+                            width,
+                            height,
+                            provinceData
                         );
 
                         // 清除原有的 path 元素
                         svg.selectAll('path').remove();
 
-                        createMapPaths(svg, provinceData, provPathGenerator);
+                        const citiesPaths = createMapPaths(
+                            svg,
+                            provinceData,
+                            provPathGenerator
+                        );
+
+                        citiesPaths.on('mouseenter', () => {});
 
                         tip.style('display', 'none');
 
