@@ -1,0 +1,130 @@
+.select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-left: 2rem;
+    position: relative; // 添加这个，让 options 相对定位
+    z-index: 3;
+
+    .default {
+        position: relative;
+        width: 10rem;
+        height: 2.5rem;
+        font-weight: 500; // 字体加粗
+        font-size: 1rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: #fbe8d34d;
+        border: 1px solid #ccc;
+        border-radius: 25px; // 全圆角
+        cursor: pointer;
+
+        transition: all 0.3s ease; // 添加过渡效果
+
+        // hover 效果
+        &:hover,
+        &:focus {
+            border-color: transparent;
+            border-bottom-width: 2px;
+            border-bottom-color: rgb(255, 168, 45);
+
+            .arrow {
+                color: rgb(255, 168, 45);
+                transform: translateY(2px); // 箭头微动效果
+            }
+        }
+
+        .arrow {
+            position: absolute;
+            right: 10px; // 调整右边距
+            font-size: 0.8rem;
+            color: rgb(162, 111, 0);
+            transition: all 0.3s ease;
+
+            svg {
+                width: 0.5rem;
+                height: 0.5rem;
+            }
+
+            &.open {
+                transform-origin: center;
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    // 下拉的列表
+    .options {
+        @include list-default;
+
+        position: absolute; // 改为绝对定位
+        top: 2.5rem;
+        left: 5%;
+        width: 90%; // 与 .default 同宽
+
+        display: flex;
+        flex-direction: column;
+        gap: 2px; // 稍微减小间隙
+
+        background-color: #f5f5f5; // 柔和的背景色
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-1rem);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); // 更流畅的缓动函数
+
+        li {
+            font-size: 0.95rem;
+            color: #333;
+            background: #fcf9f689;
+            cursor: pointer;
+            transition: all 0.2s ease; // 控制 li 背景丝滑变化的
+
+            button {
+                @include btns-default;
+                background-color: transparent;
+                padding: $padding-default $padding-default * 2; // 稍微调整内边距
+                transition: all 0.2s ease; // 控制 button 文字丝滑变化的
+            }
+
+            &:hover {
+                background: linear-gradient(
+                    90deg,
+                    #fff8ed 0%,
+                    rgba(247, 241, 232, 0.3) 100%
+                );
+
+                button {
+                    padding-left: $padding-default * 3; // 左移效果
+                    color: rgba(253, 162, 35, 0.815);
+                    font-weight: 800;
+                }
+            }
+
+            // 第一个和最后一个元素的特殊处理
+            &:first-child {
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+            }
+
+            &:last-child {
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+        }
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0.5rem); // 稍微向下移动
+        }
+    }
+}

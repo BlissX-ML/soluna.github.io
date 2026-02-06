@@ -70,17 +70,20 @@
     | ---------- | ------ | ---------------------------------------- | ------------------------------------------- |
     | d3         | ^7.9.0 | 数据可视化库，用于 SVG / 图表 / 地图渲染 |                                             |
     | @turf/turf | ^7.3.2 | 地理空间计算工具（GeoJSON / 地图分析）   | 用于修正 GeoJSON 数据，避免地图边界计算异常 |
+    | echarts    | ^6.0.0 | 数据可视化库                             |                                             |
 
 5. **Markdown 内容系统**
 
-    | 依赖名称           | 版本号  | 功能说明                           | 实际应用                                    |
-    | ------------------ | ------- | ---------------------------------- | ------------------------------------------- |
-    | react-markdown     | ^10.1.0 | Markdown 内容渲染组件              |                                             |
-    | remark-gfm         | ^4.0.1  | GitHub Flavored Markdown 语法扩展  |                                             |
-    | remark-frontmatter | ^5.0.0  | Markdown Front Matter 元数据解析   |                                             |
-    | gray-matter        | ^4.0.3  | 提取 Markdown 文件中的 YAML 元信息 | 只能用于 node 环境，无法应用在 browser 环境 |
-    | rehype-prism-plus  | ^2.0.1  | Markdown 代码块语法高亮增强        | 连接 ReactMarkdown 和 PrismJS 的桥梁        |
-    | prism-themes       | ^1.9.0  | Prism 代码高亮主题样式             |                                             |
+    | 依赖名称           | 版本号  | 功能说明                                          | 实际应用                                    |
+    | ------------------ | ------- | ------------------------------------------------- | ------------------------------------------- |
+    | react-markdown     | ^10.1.0 | Markdown 内容渲染组件                             |                                             |
+    | remark-gfm         | ^4.0.1  | GitHub Flavored Markdown 语法扩展                 |                                             |
+    | remark-frontmatter | ^5.0.0  | Markdown Front Matter 元数据解析                  |                                             |
+    | gray-matter        | ^4.0.3  | 提取 Markdown 文件中的 YAML 元信息                | 只能用于 node 环境，无法应用在 browser 环境 |
+    | rehype-prism-plus  | ^2.0.1  | Markdown 代码块语法高亮增强                       | 连接 ReactMarkdown 和 PrismJS 的桥梁        |
+    | prism-themes       | ^1.9.0  | Prism 代码高亮主题样式                            |                                             |
+    | rehype-raw         | ^7.0.0  | 允许在 Markdown 中解析并渲染原生 HTML             |                                             |
+    | rehype-sanitize    | ^6.0.0  | 对渲染的 HTML 进行 安全过滤与白名单校验，防止 XSS |                                             |
 
 6. **PDF 渲染与文档查看**
 

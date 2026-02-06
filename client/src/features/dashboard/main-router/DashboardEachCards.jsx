@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom';
-import classes from './DashboardCards.module.scss';
+import classes from './DashboardEachCards.module.scss';
 
-import DashboardRedirectCard from '../../components/card/DashboardRedirectCard';
+import DashboardRedirectCard from '../../../components/card/DashboardRedirectCard';
 import { useDispatch } from 'react-redux';
 import {
     setCurSecNavInd,
     setCurSecNavItem
-} from '../../store/reducer/dashboardNestedNavigate';
+} from '../../../store/reducer/dashboardNestedNavigate';
 
-export default function DashboardCards({ resources }) {
+export default function DashboardEachCards({ resources }) {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 

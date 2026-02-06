@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
 import classes from './CertificatesList.module.scss';
-import { useCarouselStates } from '../../../store/zustand/carouselZustand.js';
-import { useLineCubicBezier } from '../../../hooks/useLineCubicBezier.jsx';
+import { useCarouselStates } from '../../../../store/zustand/carouselZustand.js';
+import { useLineCubicBezier } from '../../../../hooks/useLineCubicBezier.jsx';
 
-import ExtendCloseBtn from '../../../components/icons/ExtendCloseBtn';
-import ExtendBtn from '../../../components/icons/ExtendBtn';
+import ExtendCloseBtn from '../../../../components/icons/ExtendCloseBtn';
+import ExtendBtn from '../../../../components/icons/ExtendBtn';
 
 export default function CertificatesList({ styleLayout, datas }) {
     const containerRef = useRef(null);

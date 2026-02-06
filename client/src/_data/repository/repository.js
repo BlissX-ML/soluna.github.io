@@ -1,5 +1,6 @@
 import { transformToRouteData } from '../../_utils/browser/data-transformer/data-transformer';
 import { D3JS_NOTES } from './d3js-raw';
+import { ECHART_NOTES } from './echart-raw';
 
 const getRandom = () => {
     return (Math.random() * 2 - 1).toFixed(2);
@@ -19,6 +20,11 @@ export const REPOSITORY_SIDEBAR = [
                 { key: 'css', title: 'CSS', detail: [] },
                 { key: 'js', title: 'JavaScript', detail: [] },
                 { key: 'react', title: 'React', detail: [] },
+                {
+                    key: 'echart',
+                    title: 'Echart',
+                    detail: transformToRouteData(ECHART_NOTES)
+                },
                 {
                     key: 'd3js',
                     title: 'D3.js',

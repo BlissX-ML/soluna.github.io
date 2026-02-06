@@ -4,9 +4,7 @@ import path from 'path';
 import sharp from 'sharp';
 
 const inputDir = path.resolve('public/images/png'); // 输入目录
-const outputDir = path.resolve(
-    'public/images/webp/certificate/online-course/coursera-meta'
-); // 输出目录（放到 public 下）
+const outputDir = path.resolve('public/images/webp'); // 输出目录（放到 public 下）
 
 // 确保输出目录存在
 if (!fs.existsSync(outputDir)) {

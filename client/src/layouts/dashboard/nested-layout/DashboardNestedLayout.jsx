@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import DashboardNavigate from '../nav/DashboardNavigate';
 import classes from './DashboardNestedLayout.module.scss';
+
+import DashboardNavigate from '../router/nav/DashboardNavigate';
 
 export default function DashboardNestedLayout() {
     return (

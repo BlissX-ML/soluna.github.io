@@ -5,11 +5,14 @@ import classes from './NestedNavigate.module.scss';
 import {
     setCurSecNavInd,
     setCurSecNavItem
-} from '../../store/reducer/dashboardNestedNavigate.js';
-import { useAppDispatch, useAppSelector } from '../../store/reducer/hooks';
+} from '../../../../store/reducer/dashboardNestedNavigate.js';
+import {
+    useAppDispatch,
+    useAppSelector
+} from '../../../../store/reducer/hooks';
 
-import { useNavCubicBezier } from '../../hooks/useNavCubicBezier.jsx';
-import { DASHBOARD_TOTAL } from '../../_data/dashboard/dashbord.js';
+import { useNavCubicBezier } from '../../../../hooks/useNavCubicBezier.jsx';
+import { DASHBOARD_TOTAL } from '../../../../_data/dashboard/dashbord.js';
 
 export default function NestedNavigate() {
     const activeBlockRef = useRef(null);

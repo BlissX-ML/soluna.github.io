@@ -11,9 +11,5 @@
         },
         "types": ["vite/client"]
     },
-    "include": [
-        "src",
-        "global.d.ts",
-        "src/layouts/dashboard/personal-plan/.jsx"
-    ]
+    "include": ["src", "global.d.ts", "src/layouts/dashboard/router/plan/.jsx"]
 }

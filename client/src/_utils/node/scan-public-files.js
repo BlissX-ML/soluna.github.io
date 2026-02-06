@@ -9,7 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // 确定搜索的 `/public` 公共目录下文件的 URL
 const publicDir = path.resolve(
     __dirname,
-    '../../../public/articles/notes/d3js'
+    '../../../public/articles/notes/echart'
 );
 
 /***********************
@@ -19,7 +19,7 @@ const publicDir = path.resolve(
  * @returns {string[]} - 例如：["a.md", "foo/bar.md"]
  **********************/
 
-function scanDirectory(dir, baseUrl = '/articles/notes/d3js') {
+function scanDirectory(dir, baseUrl = '/articles/notes/echart') {
     const files = [];
 
     // 读取目录内容，`readdirSync`返回该目录下所有文件和文件夹的名称数组
@@ -69,7 +69,7 @@ const files = scanDirectory(publicDir);
 // 使用 JSON.stringify 将数组转换为可写入的格式，因为 `writeFileSync` 写入字符串或者Buff
 
 const content = `// Auto-generated file (DO NOT EDIT MANUALLY)
-export const D3JS_NOTES = ${JSON.stringify(files, null, 2)};
+export const ECHART_NOTES = ${JSON.stringify(files, null, 2)};
 `;
 
 // 确保目录存在
@@ -79,6 +79,6 @@ if (!fs.existsSync(configDir)) {
 }
 
 // 写入目标文件
-fs.writeFileSync(path.resolve(configDir, './d3js-raw.js'), content, 'utf-8');
+fs.writeFileSync(path.resolve(configDir, './echart-raw.js'), content, 'utf-8');
 
 console.log(`✅ Generated ${files.length} file paths.`);

@@ -28,6 +28,6 @@ tags: ["d3.js", "svg", "figma"]
 5. **可参考的数据可视化资源**
     1. 用于理解数据可视化的分类与结构体系
     2. 可作为设计与实现阶段的参考索引
-    3. [https://github.com/datavis-tech/awesome-dataviz-education#data-visualization-taxonomies](https://github.com/datavis-tech/awesome-dataviz-education#data-visualization-taxonomies)
+    3. [data-visualization-taxonomies](https://github.com/datavis-tech/awesome-dataviz-education#data-visualization-taxonomies)
 
-![figma-pseudo-visualizations](./03-figma-pseudo-visualizations.webp)
+![figma-pseudo-visualizations](/images/webp/notes/d3js/03-figma-pseudo-visualizations.webp)

@@ -1,6 +1,5 @@
 import classes from './DashboardNavigate.module.scss';
-
-import NestedNavigate from '../../../features/dashboard/NestedNavigate.jsx';
+import NestedNavigate from '../../../../features/dashboard/router/nav/NestedNavigate';
 
 export default function DashboardNavigate() {
     return (

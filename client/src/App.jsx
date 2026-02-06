@@ -4,7 +4,6 @@ import { lazy, Suspense } from 'react';
 
 import Footprint from './pages/footprint-page/Footprint.jsx';
 import About from './pages/about-page/AboutPage.jsx';
-import RecapContent from './pages/repository-page/RepositoryMianContent.jsx';
 
 import Loading from './components/feedback/Loading.jsx';
 
@@ -14,7 +13,6 @@ import Resources from './pages/resource-share-page/Resources.jsx';
 import MemoSidebarNavigate from './pages/memo-page/MemoSidebarNavigate';
 
 import RenderInitialContent from './features/render-articles/RenderInitialContent';
-import { MEMOS, MEMOS_ROUTE } from './_data/memo/memo';
 import RenderMainContent from './features/render-articles/RenderMainContent';
 
 import AppLayout from './layouts/app-layout/AppLayout';
@@ -22,15 +20,13 @@ import RepositorySidebarNavigate from './pages/repository-page/RepositorySidebar
 import Dashboard from './pages/dashboard-page/Dashboard';
 
 import DashboardNestedLayout from './layouts/dashboard/nested-layout/DashboardNestedLayout';
-import CertificatesLayout from './layouts/dashboard/certificate/CertificatesLayout';
-import DashboardPersonalPlan from './layouts/dashboard/personal-plan/DashboardPersonalPlan';
-import DashboardLearnGrowth from './layouts/dashboard/learn-growth/DashboardLearnGrowth';
-import DashboardBodyHealth from './layouts/dashboard/body-health/DashboardBodyHealth';
-import DashboardExpenseStatus from './layouts/dashboard/expense-status/DashboardExpenseStatus';
-import DashboardLifeLogs from './layouts/dashboard/life-logs/DashboardLifeLogs';
-import { REPOSITORY_SIDEBAR } from './_data/repository/repository';
-import { transformToRouteData } from './_utils/browser/data-transformer/data-transformer';
-import { RESOURCES_SHARE } from './_data/resources-page/resources';
+
+import DashboardPersonalPlan from './layouts/dashboard/router/plan/DashboardPersonalPlan';
+import DashboardLearnGrowth from './layouts/dashboard/router/learn-growth/DashboardLearnGrowth';
+import DashboardBodyHealth from './layouts/dashboard/router/body-health/DashboardBodyHealth';
+import DashboardExpenseStatus from './layouts/dashboard/router/expense-status/DashboardExpenseStatus';
+import DashboardLifeLogs from './layouts/dashboard/router/life-logs/DashboardLifeLogs';
+import CertificatesLayout from './layouts/dashboard/router/certificate/CertificatesLayout';
 
 const Homepage = lazy(() => import('./pages/home-page/Homepage.jsx'));
 

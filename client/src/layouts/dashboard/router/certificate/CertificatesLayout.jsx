@@ -1,11 +1,11 @@
 import classes from './CertificatesLayout.module.scss';
+import BarChart from '../../../../components/charts/BarChart';
 
-import { CERTIFICATE_CHART } from '../../../_data/dashboard/certificates/certificate-chart.js';
-import { OBTAINED_CERTIFICATE } from '../../../_data/dashboard/certificates/obtained-certificate';
+import CertificatesList from '../../../../features/dashboard/router/certificate/CertificatesList';
+import SlideItems from '../../../../features/slide/SlideItems';
 
-import CertificatesList from '../../../features/dashboard/certificate/CertificatesList.jsx';
-import SlideItems from '../../../features/slide/SlideItems.jsx';
-import BarChart from '../../../components/charts/BarChart.jsx';
+import { CERTIFICATE_CHART } from '../../../../_data/dashboard/certificates/certificate-chart';
+import { OBTAINED_CERTIFICATE } from '../../../../_data/dashboard/certificates/obtained-certificate';
 
 export default function CertificatesLayout() {
     return (

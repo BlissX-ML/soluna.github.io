@@ -1,5 +1,5 @@
-import classes from "./RenderMarkdown.module.scss";
-import "prism-themes/themes/prism-one-light.css";
+import classes from './RenderMarkdown.module.scss';
+import 'prism-themes/themes/prism-one-light.css';
 
 export default function RenderMarkdown({ anchor, children, ...props }) {
     return (

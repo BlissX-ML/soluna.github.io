@@ -190,4 +190,19 @@ pre[class*='language-'] {
             font-size: inherit;
         }
     }
+
+    a {
+        @include hyperlink-default;
+        color: #e3754d;
+        font-weight: 800;
+        text-decoration: underline;
+
+        &:visited {
+            color: #7f0f00;
+        }
+    }
+
+    img {
+        width: 75%;
+    }
 }

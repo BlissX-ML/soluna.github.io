@@ -12,11 +12,12 @@ import classes from './RenderArticles.module.scss';
 import fetchContent from '../../_utils/browser/fetch-content/fetch-content.js';
 import RenderMarkdown from '../markdown/RenderMarkdown.jsx';
 
-export default function RenderArticles({ articles }) {
+export default function RenderArticles({ articles, ...props }) {
     const [content, setContent] = useState('');
     const path = articles?.path;
     const anchor = articles?.fileName; // 用来涉及锚点，实现点击跳转的
 
+    console.log(articles);
     const schema = {
         ...defaultSchema,
         tagNames: [
@@ -54,22 +55,37 @@ export default function RenderArticles({ articles }) {
     }, [path]);
 
     return (
-        <RenderMarkdown anchor={anchor}>
-            {content.length !== 0 && (
-                <>
-                    <h2 className={classes.h2}>{articles?.titleCh}</h2>
-                    <ReactMarkdown
-                        remarkPlugins={[remarkFrontmatter, remarkGfm]}
-                        rehypePlugins={[
-                            rehypeRaw,
-                            [rehypeSanitize, schema],
-                            rehypePrism
-                        ]}
-                    >
-                        {content}
-                    </ReactMarkdown>
-                </>
-            )}
-        </RenderMarkdown>
+        <>
+            <RenderMarkdown anchor={anchor}>
+                {content.length !== 0 && (
+                    <>
+                        <h2 className={classes.h2}>{articles?.titleCh}</h2>
+
+                        <ReactMarkdown
+                            components={{
+                                a: ({ href, children, ...props }) => (
+                                    <a
+                                        href={href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        {...props}
+                                    >
+                                        {children}
+                                    </a>
+                                )
+                            }}
+                            remarkPlugins={[remarkFrontmatter, remarkGfm]}
+                            rehypePlugins={[
+                                rehypeRaw,
+                                [rehypeSanitize, schema],
+                                rehypePrism
+                            ]}
+                        >
+                            {content}
+                        </ReactMarkdown>
+                    </>
+                )}
+            </RenderMarkdown>
+        </>
     );
 }

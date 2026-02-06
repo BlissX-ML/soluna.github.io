@@ -6,15 +6,11 @@ import { useAppDispatch } from '../../store/reducer/hooks';
 import {
     openSecondaryItems,
     setSidebarActiveOpen,
-    setCurItem,
-    initialSecondaryContent
-    // setFirstContent
-    // updateItemContent,
+    setCurItem
 } from '../../store/reducer/dropdownSidebar.js';
 
 import scrollToItem from '../../_utils/browser/scroll-into-view.js';
 import DropdownMenuBtns from '../../components/buttons/DropdownMenuBtns.jsx';
-import { MEMOS_ROUTE } from '../../_data/memo/memo';
 
 export default function DropMenuRedirectAsideMenu({
     style,
@@ -39,9 +35,6 @@ export default function DropMenuRedirectAsideMenu({
 
         // 导航到对应 item?.key 的页面
         navigate(`${startUrl}/${item?.key.toLowerCase()}`);
-
-        // 删除 repository 的内容状态
-        dispatch(initialSecondaryContent());
 
         // 导航到每一个路由对应的第一篇文章
         scrollToItem(item?.detail?.data?.[0]?.fileName);

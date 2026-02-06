@@ -4,13 +4,7 @@ const initialState = {
     sidebarActive: true, // 用这个控制侧边栏要不要打开，默认是打开的
     secondaryItemsState: false, // 默认不开启侧边栏的二级标题
 
-    curFirstItem: null, // 当前被选中的选项（一级标题）
-
-    // curFirstContent: [], // 当前被选中的选项对象（一级标题， memo 使用）
-    secondContent: {
-        originalSecondContent: [], // 原始数据（只初始化一次）
-        curSecondContent: [] // 当前被选中的选项对象（二级标题， repository 使用）
-    }
+    curFirstItem: null // 当前被选中的选项（一级标题）
 };
 
 // state：当前这片 slice 的状态
@@ -35,21 +29,6 @@ const dropdownSidebarSlice = createSlice({
             state.curFirstItem = action.payload;
         },
 
-        // 更新当前选中的一级标题（主要用于 memo 页面）
-        // setFirstContent(state, action) {
-        //     state.curFirstContent = action.payload;
-        // },
-
-        // 更新当前选中的二级标题（主要用于 repository 页面）
-        setSecondaryContent(state, action) {
-            state.secondContent.curSecondContent = action.payload;
-        },
-
-        initialSecondaryContent(state) {
-            state.secondContent.curSecondContent =
-                state.secondContent.originalSecondContent;
-        },
-
         // 更新侧边栏二级标题的显示状态，实现 dropdown-list 与 sidebar-nav 之间的联动
         toggleOpenSecondaryItems(state) {
             state.secondaryItemsState = !state.secondaryItemsState;
@@ -65,8 +44,6 @@ export const {
     setSidebarActive,
     setSidebarActiveOpen,
     setCurItem,
-    setSecondaryContent,
-    initialSecondaryContent,
     toggleOpenSecondaryItems,
     openSecondaryItems
 } = dropdownSidebarSlice.actions;

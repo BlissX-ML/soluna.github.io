@@ -3,16 +3,13 @@ import classes from './SidebarNavList.module.scss';
 
 import { useAppDispatch, useAppSelector } from '../../store/reducer/hooks.js';
 import {
-    initialSecondaryContent,
     openSecondaryItems,
     setCurItem,
-    setSecondaryContent,
     toggleOpenSecondaryItems
 } from '../../store/reducer/dropdownSidebar.js';
 
 import scrollToItem from '../../_utils/browser/scroll-into-view.js';
 import SidebarList from '../../components/sidebar/SidebarList.jsx';
-import { REPOSITORY_SIDEBAR } from '../../_data/repository/repository';
 
 // 侧边栏导航列表（可复用）
 export default function SidebarNavList({ categories, startURL }) {
@@ -48,9 +45,6 @@ export default function SidebarNavList({ categories, startURL }) {
             dispatch(openSecondaryItems()); // 打开二级菜单
         }
 
-        // 初始化 repository 页面的内容
-        dispatch(initialSecondaryContent());
-
         // 跳转路由
         if (!location.pathname.endsWith(item?.key)) {
             navigate(`${startURL}/${item?.key.toLowerCase()}`);
@@ -65,31 +59,17 @@ export default function SidebarNavList({ categories, startURL }) {
     // 处理二级标题点击
     const handleSecondaryClick = (e, item) => {
         e.stopPropagation(); // 阻止事件冒泡
-
+        const curUrl = `${startURL}/${curFirstItem.toLowerCase()}`;
         if (startURL === '/memo') {
             // 移动到 `#` 路由上面去
-            const curUrl = `${startURL}/${curFirstItem.toLowerCase()}`;
             navigate(`${curUrl}#${item?.fileName}`, { replace: true });
-
             // 移动到对应的文件部分
             scrollToItem(item?.fileName);
         }
 
         if (startURL === '/repository') {
-            const curRepository = REPOSITORY_SIDEBAR.find(
-                els => els?.key === curFirstItem
-            )?.detail?.data.find(el => el?.key === item?.key)?.detail[0]?.data;
-
             // 移动到 `#` 路由上面去
-            const curUrl = `${startURL}/${curFirstItem.toLowerCase()}`;
             navigate(`${curUrl}#${item?.key}`, { replace: true });
-
-            // 更新要渲染的文章的数组 (repository 页面)
-            if (curRepository) {
-                dispatch(setSecondaryContent(curRepository));
-            } else {
-                dispatch(initialSecondaryContent());
-            }
         }
     };
 
