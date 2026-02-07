@@ -1,0 +1,10 @@
+.select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-left: 2rem;
+    position: relative; // 添加这个，让 options 相对定位
+    z-index: 3;
+}

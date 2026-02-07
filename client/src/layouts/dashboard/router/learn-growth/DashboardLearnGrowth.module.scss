@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+
+    margin: 0rem 2rem;
+}
+
+.each {
+    display: grid;
+    grid-template-rows: 1fr;
+
+    width: 90%; // 增加占据面积
+    gap: 2.5rem;
+    margin: 0 auto; // 居中对齐
+
+    .title {
+        position: relative;
+
+        p {
+            text-align: left;
+            padding-left: 1rem;
+            font-weight: 800;
+        }
+
+        svg {
+            position: absolute;
+            top: 1.4rem;
+            left: 0rem;
+            width: 10rem;
+            height: 1rem;
+        }
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 2fr 1fr; //增加左侧的额占比
+        grid-template-rows: minmax(5rem, 1fr);
+        align-items: start;
+        justify-content: center;
+
+        width: 100%;
+        height: 100%;
+
+        .chart {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &:first-child {
+        margin-top: 3rem;
+    }
+
+    &:last-child {
+        margin-bottom: 3rem;
+    }
+}

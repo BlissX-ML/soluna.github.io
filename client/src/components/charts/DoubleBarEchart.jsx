@@ -1,11 +1,9 @@
 import * as echarts from 'echarts';
 import { useEffect, useRef } from 'react';
-import { PLAN_COLORS } from '../../_data/dashboard/personal-plan/future-plan';
+import { PLAN_COLORS } from '../../_data/dashboard/personal-plan/plans';
 
 export default function DoubleBarEchart({ data, className }) {
     const containerRef = useRef(null);
-
-    useEffect(() => {}, []);
 
     const option = {
         tooltip: {
@@ -38,7 +36,9 @@ export default function DoubleBarEchart({ data, className }) {
                 axisLabel: { color: '#000000' },
                 inverse: true,
                 type: 'category',
-                data: data.map(d => (d.completionTime ? '已完成' : '未完成'))
+                data: data.map(d =>
+                    d.completionTime || d.percent === 100 ? '已完成' : '未完成'
+                )
             }
         ],
         series: [
@@ -75,7 +75,9 @@ export default function DoubleBarEchart({ data, className }) {
                         y: params.rect.y + params.rect.height * 0.5 + 1 // 居中
                     };
                 },
-                data: data.map(d => (d.completionTime ? 1 * 100 : 0 * 100))
+                data: data.map(
+                    d => (d.completionTime ? 1 * 100 : 0 * 100) || d.percent
+                )
             },
             {
                 name: '完成情况',
