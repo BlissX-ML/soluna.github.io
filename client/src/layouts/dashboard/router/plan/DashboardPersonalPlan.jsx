@@ -3,12 +3,12 @@ import { useDashboardPlanStates } from '../../../../store/zustand/dashboard-drop
 import classes from './DashboardPersonalPlan.module.scss';
 
 import Underline from '../../../../components/icons/Underline';
-import DoubleBarEchart from '../../../../components/charts/DoubleBarEchart';
 
 import PlanSelect from '../../../../features/dashboard/router/plan-learn/PlanSelect';
 import PlanListContent from '../../../../features/dashboard/router/plan-learn/PlanListContent';
 
 import { FUTURE_PLANS } from '../../../../_data/dashboard/personal-plan/plans';
+import DoubleBarEchart from '../../../../components/charts/bar/DoubleBarEchart';
 
 export default function DashboardPersonalPlan() {
     const { hasOption } = useDashboardPlanStates();

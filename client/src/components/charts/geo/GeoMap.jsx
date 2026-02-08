@@ -1,14 +1,14 @@
 import * as d3 from 'd3';
 import { useRef, useEffect } from 'react';
 
+import { hasVisitedColors } from '../../../_data/footprint/colors';
 import {
     bindMapEvents,
     createMapPaths,
     getChinaData,
     getPathGenarator,
     getProvinceData
-} from '../../_utils/charts/geomap';
-import { hasVisitedColors } from '../../_data/footprint/colors';
+} from '../../../_utils/charts/geomap';
 
 export default function GeoChinaMap({ className, tipClassName }) {
     const containerRef = useRef(null); // React中不能用 querySelector 获取元素

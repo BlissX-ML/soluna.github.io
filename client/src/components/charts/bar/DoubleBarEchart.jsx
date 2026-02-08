@@ -1,6 +1,6 @@
 import * as echarts from 'echarts';
 import { useEffect, useRef } from 'react';
-import { PLAN_COLORS } from '../../_data/dashboard/personal-plan/plans';
+import { PLAN_COLORS } from '../../../_data/dashboard/personal-plan/plans';
 
 export default function DoubleBarEchart({ data, className }) {
     const containerRef = useRef(null);

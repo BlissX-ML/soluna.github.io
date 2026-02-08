@@ -5,7 +5,7 @@ import { useDashboardPlanStates } from '../../../../store/zustand/dashboard-drop
 import classes from './DashboardLearnGrowth.module.scss';
 import Underline from '../../../../components/icons/Underline';
 import PlanListContent from '../../../../features/dashboard/router/plan-learn/PlanListContent';
-import DoubleBarEchart from '../../../../components/charts/DoubleBarEchart';
+import DoubleBarEchart from '../../../../components/charts/bar/DoubleBarEchart';
 
 export default function DashboardLearnGrowth() {
     const { hasOption } = useDashboardPlanStates();

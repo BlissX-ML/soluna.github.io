@@ -1,5 +1,5 @@
 import classes from './CertificatesLayout.module.scss';
-import BarChart from '../../../../components/charts/BarChart';
+import BarChart from '../../../../components/charts/bar/BarChart';
 
 import CertificatesList from '../../../../features/dashboard/router/certificate/CertificatesList';
 import SlideItems from '../../../../features/slide/SlideItems';

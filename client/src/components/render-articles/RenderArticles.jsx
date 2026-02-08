@@ -17,7 +17,6 @@ export default function RenderArticles({ articles, ...props }) {
     const path = articles?.path;
     const anchor = articles?.fileName; // 用来涉及锚点，实现点击跳转的
 
-    console.log(articles);
     const schema = {
         ...defaultSchema,
         tagNames: [
