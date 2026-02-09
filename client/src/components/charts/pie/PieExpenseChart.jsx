@@ -1,4 +1,5 @@
 import * as echarts from 'echarts';
+
 import { useEffect, useRef } from 'react';
 
 export default function PieExpenseChart({ curMonthData, className }) {
@@ -6,8 +7,6 @@ export default function PieExpenseChart({ curMonthData, className }) {
     const containerRef = useRef(null);
     // 子类别图表容器的引用
     const subContainerRef = useRef(null);
-
-    // console.log(curMonthData);
 
     // 设置图表配置项的函数
     const setOption = (month, sum, data) => {

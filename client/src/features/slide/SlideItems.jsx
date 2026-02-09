@@ -3,6 +3,7 @@ import classes from './SlideItems.module.scss';
 import ArrowPrevPage from '../../components/icons/ArrowPrevPage';
 import ArrowNextPage from '../../components/icons/ArrowNextPage';
 import { useCarouselStates } from '../../store/zustand/carouselZustand';
+import ImagesLoad from '../../components/image/ImagesLoad';
 
 export default function SlideItems({ styleLayout }) {
     const {
@@ -61,7 +62,12 @@ export default function SlideItems({ styleLayout }) {
                                 //     backgroundImage: `url(${url})`
                                 // }}
                             >
-                                <img src={item?.src} alt={item?.title} />
+                                <ImagesLoad
+                                    lowquality={item?.src?.low}
+                                    highquality={item?.src?.high}
+                                    alt={item?.title}
+                                    className=""
+                                />
                             </div>
                         ))}
                     </div>

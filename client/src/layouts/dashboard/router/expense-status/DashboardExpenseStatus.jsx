@@ -1,11 +1,16 @@
-import { useEffect, useState } from 'react';
-import PieExpenseChart from '../../../../components/charts/pie/PieExpenseChart';
+import { useEffect, useState, lazy, Suspense } from 'react';
+// import PieExpenseChart from '../../../../components/charts/pie/PieExpenseChart';
 import classes from './DashboardExpenseStatus.module.scss';
 import fetchExpenseCsv from '../../../../_utils/browser/fetch-content/fetch-expends';
 import { changeExpenseData } from '../../../../_utils/browser/data-transformer/modify-expense-data';
+import Loading from '../../../../components/feedback/Loading';
 
 const url =
     'https://docs.google.com/spreadsheets/d/e/2PACX-1vSJNhppmQv3qIXUxg5m4OEVHPf2O_ubdw9H4pB1Gdw_7azEqiz6LMrq651CFA-nScB1Z7jGUL1gT8OQ/pub?output=csv';
+
+const PieExpenseChart = lazy(
+    () => import('../../../../components/charts/pie/PieExpenseChart')
+);
 
 export default function DashboardExpenseStatus() {
     // 存储费用数据的状态
@@ -31,14 +36,16 @@ export default function DashboardExpenseStatus() {
 
     return (
         <main className={classes.container}>
-            {expenseData &&
-                expenseData.map((data, ind) => (
-                    <PieExpenseChart
-                        className={classes.chart}
-                        key={`花销饼图-${ind}`}
-                        curMonthData={data}
-                    />
-                ))}
+            <Suspense fallback={<Loading />}>
+                {expenseData &&
+                    expenseData.map((data, ind) => (
+                        <PieExpenseChart
+                            className={classes.chart}
+                            key={`花销饼图-${ind}`}
+                            curMonthData={data}
+                        />
+                    ))}
+            </Suspense>
         </main>
     );
 }

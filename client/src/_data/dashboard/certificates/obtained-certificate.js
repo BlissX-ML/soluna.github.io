@@ -1,4 +1,4 @@
-import { AWARDS_IMAGES } from './certificate-images-urls';
+import { AWARDS_IMAGES } from './awards-images-urls';
 
 const awards = new Map(AWARDS_IMAGES.map(els => [els?.key, els?.detail]));
 

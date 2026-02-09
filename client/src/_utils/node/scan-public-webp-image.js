@@ -23,7 +23,7 @@ function scanDirectory(dir, baseUrl = targetDir, category = '') {
         // 如果有嵌套的文件
         if (stat.isDirectory()) {
             const nextBaseUrl = baseUrl ? path.posix.join(baseUrl, item) : item;
-            // const nextCategory = category ? `${category}/${item}` : item;
+
             const nextCategory = item; // 简单化，只用当前层的文件夹名作为category
 
             files.push(...scanDirectory(fullPath, nextBaseUrl, nextCategory));
@@ -31,16 +31,30 @@ function scanDirectory(dir, baseUrl = targetDir, category = '') {
             continue;
         }
 
-        // ✅ 普通文件：记录相对路径
+        // 普通文件：记录相对路径
         if (stat.isFile()) {
-            const url = path.posix.join(baseUrl, item); // 实际路径
+            // 只处理高画质文件（不带 -thumb 或 -medium 后缀的）
+            const fileName = path.parse(item).name;
+            const ext = path.parse(item).ext;
+
+            // 跳过已经是缩略图或中等质量的文件
+            if (fileName.endsWith('-thumb') || fileName.endsWith('-medium')) {
+                continue;
+            }
+
+            const baseName = fileName; // 原始文件名（不带扩展名）
+            const basePath = path.posix.join(baseUrl, baseName);
 
             files.push({
                 category: category,
                 detail: {
-                    key: item.split('.')[0],
-                    title: item.split('.')[0],
-                    src: url
+                    key: baseName,
+                    title: baseName,
+                    src: {
+                        low: `/${basePath}-thumb${ext}`,
+                        medium: `/${basePath}-medium${ext}`,
+                        high: `/${basePath}${ext}`
+                    }
                 }
             });
         }

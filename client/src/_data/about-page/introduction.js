@@ -33,6 +33,10 @@ export const PROFILE_IMAGE_ABOUT = [
     {
         key: 'myProfile',
         alt: 'My Profile',
-        src: '/images/webp/welcome/welcome.webp'
+        src: {
+            low: '/images/webp/profile/profile-thumb.webp',
+            medium: '/images/webp/profile/profile-medium.webp',
+            high: '/images/webp/profile/profile.webp'
+        }
     }
 ];

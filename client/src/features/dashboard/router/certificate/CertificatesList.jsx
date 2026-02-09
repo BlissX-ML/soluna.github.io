@@ -90,19 +90,24 @@ export default function CertificatesList({ styleLayout, datas }) {
                     <ul className={classes['menu-second']}>
                         {datas
                             .find(el => el?.key === openedCategory)
-                            ?.details.map((cert, index) => (
-                                <li
-                                    key={cert?.key}
-                                    className={classes['second-li']}
-                                    ref={el => collectSecondList(el, index)}
-                                >
-                                    <button
-                                        onClick={() => handleCarouselItem(cert)}
+                            ?.details.map((cert, index) => {
+                                console.log(cert);
+                                return (
+                                    <li
+                                        key={cert?.key}
+                                        className={classes['second-li']}
+                                        ref={el => collectSecondList(el, index)}
                                     >
-                                        {cert?.title}
-                                    </button>
-                                </li>
-                            ))}
+                                        <button
+                                            onClick={() =>
+                                                handleCarouselItem(cert)
+                                            }
+                                        >
+                                            {cert?.title}
+                                        </button>
+                                    </li>
+                                );
+                            })}
                     </ul>
                 )}
             </div>
