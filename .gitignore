@@ -7,9 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+
+# 依赖（末尾加斜杠，通配所有子目录）
+**/node_modules/
+
+# 打包结果
+client/dist/
+client/dist-ssr/
 *.local
 
 # Editor directories and files
