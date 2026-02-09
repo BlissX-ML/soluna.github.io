@@ -16,6 +16,10 @@ client/dist/
 client/dist-ssr/
 *.local
 
+deploy/
+deploy.ps1
+deploy.sh
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

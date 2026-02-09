@@ -23,7 +23,7 @@ export default function DashboardExpenseStatus() {
             if (!data) return;
 
             const renderData = changeExpenseData(data);
-            console.log(renderData);
+
             setExpenseData(renderData);
         };
 

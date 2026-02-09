@@ -10,11 +10,6 @@
         padding-bottom: $padding-default;
         border-bottom: $border-split-module;
         box-shadow: $box-shadow-split-module;
-
-        .content {
-            margin-left: $margin-default;
-            background-color: crimson;
-        }
     }
 
     .tour-memo {
@@ -38,5 +33,65 @@
 
         backdrop-filter: blur(10px);
         background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: $margin-default;
+
+    .each-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        * {
+            font-family: serif;
+        }
+
+        .provinces {
+            font-size: 1.1rem;
+            font-weight: 800;
+
+            border-radius: 20px;
+            margin-bottom: 1rem;
+
+            height: 2rem;
+            width: 8rem;
+            max-height: 2rem;
+            max-width: 8rem;
+            line-height: 2rem;
+
+            border: 2px solid antiquewhite; // 先设置好，到时候添加就不会重排了
+            background-color: antiquewhite;
+
+            &:hover {
+                border-bottom: 2px solid rgb(250, 163, 48);
+            }
+        }
+
+        .cities {
+            display: flex;
+            gap: 1.5rem;
+
+            span {
+                display: block;
+                padding: 5px 0px 5px 10px;
+
+                border-left: 2px solid rgb(250, 163, 48);
+                border-top-left-radius: 50%;
+                border-bottom-left-radius: 50%;
+            }
+        }
+
+        &:first-child {
+            margin-top: 2rem;
+        }
+
+        &:last-child {
+            margin-bottom: 2rem;
+        }
     }
 }
