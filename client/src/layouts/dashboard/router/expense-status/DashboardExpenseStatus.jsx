@@ -6,7 +6,7 @@ import { changeExpenseData } from '../../../../_utils/browser/data-transformer/m
 import Loading from '../../../../components/feedback/Loading';
 
 const url =
-    'https://docs.google.com/spreadsheets/d/e/2PACX-1vSJNhppmQv3qIXUxg5m4OEVHPf2O_ubdw9H4pB1Gdw_7azEqiz6LMrq651CFA-nScB1Z7jGUL1gT8OQ/pub?output=csv';
+    'https://raw.githubusercontent.com/BlissX-ML/google-sheets-fetch/refs/heads/main/data.csv';
 
 const PieExpenseChart = lazy(
     () => import('../../../../components/charts/pie/PieExpenseChart')

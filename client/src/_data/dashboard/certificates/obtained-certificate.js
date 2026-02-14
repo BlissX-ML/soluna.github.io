@@ -32,6 +32,12 @@ export const OBTAINED_CERTIFICATE = [
                 key: 'coursera-meta-front-end',
                 title: '<Coursera> meta Front-end Developer 系列课程',
                 details: awards.get('coursera-meta-front-end')
+            },
+            {
+                category: 'learn-typescript',
+                key: 'learn-typescript',
+                title: '<Coursera> Learn Typescript',
+                details: awards.get('learn-typescript')
             }
         ]
     }

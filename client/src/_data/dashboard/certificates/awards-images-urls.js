@@ -131,5 +131,19 @@ export const AWARDS_IMAGES = [
                 }
             }
         ]
+    },
+    {
+        key: 'learn-typescript',
+        detail: [
+            {
+                key: 'learn-typescript',
+                title: 'learn-typescript',
+                src: {
+                    low: '/images/webp/certificate/online-course/learn-typescript/learn-typescript-thumb.webp',
+                    medium: '/images/webp/certificate/online-course/learn-typescript/learn-typescript-medium.webp',
+                    high: '/images/webp/certificate/online-course/learn-typescript/learn-typescript.webp'
+                }
+            }
+        ]
     }
 ];

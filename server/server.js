@@ -15,6 +15,13 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(distPath, 'index.html'));
 });
 
+// 托管 google sheet 的
+app.get('/api/expenses', async (req, res) => {
+    const response = await fetch(GOOGLE_SHEET_URL);
+    const text = await response.text();
+    res.send(text);
+});
+
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`服务器运行在 http://localhost:${PORT}`);
