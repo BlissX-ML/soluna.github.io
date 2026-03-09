@@ -27,7 +27,6 @@ import DashboardBodyHealth from './layouts/dashboard/router/body-health/Dashboar
 import DashboardExpenseStatus from './layouts/dashboard/router/expense-status/DashboardExpenseStatus';
 import DashboardLifeLogs from './layouts/dashboard/router/life-logs/DashboardLifeLogs';
 import CertificatesLayout from './layouts/dashboard/router/certificate/CertificatesLayout';
-import RedirectHashToQuery from './components/redirect/RedirectHashToQuery';
 
 const Homepage = lazy(() => import('./pages/home-page/Homepage.jsx'));
 
@@ -123,10 +122,7 @@ const router = createBrowserRouter([
 function App() {
     return (
         <Suspense fallback={<Loading />}>
-            <RouterProvider router={router}>
-                {/* 让 React 能够识别 # 转换为 ?hash */}
-                <RedirectHashToQuery />
-            </RouterProvider>
+            <RouterProvider router={router} />
         </Suspense>
     );
 }

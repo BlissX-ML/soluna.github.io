@@ -64,20 +64,6 @@ export default function SidebarNavList({ categories, startURL }) {
         // ✨ 重定向
         navigate(`${curUrl}?hash=${item?.key}`, { replace: true });
         scrollToItem(item?.fileName);
-
-        // if (startURL === '/memo') {
-        //     // 移动到 `#` 路由上面去
-        //     // navigate(`${curUrl}#${item?.fileName}`, { replace: true });
-        //     navigate(`${curUrl}/${item?.key}`);
-
-        //     // 移动到对应的文件部分
-        //     scrollToItem(item?.fileName);
-        // }
-
-        // if (startURL === '/repository') {
-        //     // 移动到 `#` 路由上面去
-        //     navigate(`${curUrl}#${item?.key}`, { replace: true });
-        // }
     };
 
     return (
