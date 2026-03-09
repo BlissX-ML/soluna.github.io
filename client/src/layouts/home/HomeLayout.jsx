@@ -7,13 +7,8 @@ import HomePageRedirectBtn from '../../features/redirect-page-btns/HomePageRedir
 const redirctHomePageBtns = [
     {
         id: 'schedule-viewing-lookup-btn',
-        title: '计划表查阅',
+        title: '生活面板查询',
         url: '/dashboard'
-    },
-    {
-        id: 'interview-handbook-reference-btn',
-        title: '面试手册查阅',
-        url: '/memo'
     },
     {
         id: 'knowledge-base-lookup-btn',
@@ -24,6 +19,11 @@ const redirctHomePageBtns = [
         id: 'travel-footprints-lookup-btn',
         title: '旅行足迹查阅',
         url: '/footprint'
+    },
+    {
+        id: 'resources-lookup-btn',
+        title: '资源共享',
+        url: '/resources'
     }
 ];
 

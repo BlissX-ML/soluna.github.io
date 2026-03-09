@@ -5,7 +5,7 @@ import { REPOSITORY_SIDEBAR } from '../../_data/repository/repository.js';
 import NavRedirectRoute from '../../components/redirect/NavRedirectRoute.jsx';
 import DropMenuRedirectAsideMenu from '../shared-dropdown-sidebar/DropMenuRedirectAside.jsx';
 
-import { MEMOS_SIDEBAR } from '../../_data/memo/memo';
+// import { MEMOS_SIDEBAR } from '../../_data/memo/memo';
 
 export default function MainNavigation() {
     return (
@@ -24,20 +24,6 @@ export default function MainNavigation() {
                 extraContentInList={null}
             >
                 生活面板
-            </NavRedirectRoute>
-
-            <NavRedirectRoute
-                path="/memo"
-                listStyle={classes['drop-navigation']}
-                extraContentInList={
-                    <DropMenuRedirectAsideMenu
-                        style={classes['dropdown-visibility']}
-                        catalogs={MEMOS_SIDEBAR}
-                        startUrl="/memo"
-                    />
-                }
-            >
-                面试手册
             </NavRedirectRoute>
 
             <NavRedirectRoute

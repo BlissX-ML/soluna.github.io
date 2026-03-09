@@ -1,55 +1,40 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { useAppSelector } from '../../store/reducer/hooks';
 
 import classes from './RenderMainContent.module.scss';
 
-import RenderArticles from '../../components/render-articles/RenderArticles.jsx';
-import RenderNoneContent from './RenderNoneContent';
+import RenderArticles from '../../components/markdown/RenderArticles.jsx';
 
-import { MEMOS_ROUTE } from '../../_data/memo/memo';
-import { REPOSITORY_SIDEBAR } from '../../_data/repository/repository';
+import { useMdDataApi } from '../../api/useMdDataApi.js';
+import Loading from '../../components/feedback/Loading';
+import RenderInitialContent from './RenderInitialContent';
 
 // 这里需要的 data 是以 {key: tags, data: [{符合 tags 的数据}]}
-export default function RenderMainContent({ startUrl }) {
+export default function RenderMainContent() {
+    const maxRendered = useRef(0); // 记录曾经渲染过的最大值
+    const [visibleCount, setVisibleCount] = useState(10);
+
     const { hash } = useLocation();
     const { routeId } = useParams();
     const { sidebarActive } = useAppSelector(state => state.dropdownSidebar);
 
-    const maxRendered = useRef(0); // 记录曾经渲染过的最大值
-    const [visibleCount, setVisibleCount] = useState(10);
+    const pureHash = hash.replace('#', '').toLowerCase();
+    const { data: fileData, isLoad } = useMdDataApi(routeId, pureHash);
 
-    const categoriFiles = useMemo(() => {
-        if (startUrl === '/memo') {
-            return MEMOS_ROUTE.find(d => d.key.toLowerCase() === routeId)?.data;
-        } else if (startUrl === '/repository') {
-            const category = REPOSITORY_SIDEBAR.find(
-                el => el?.key.toLowerCase() === routeId
-            );
-
-            const chapter = category?.detail?.data.find(
-                d => d.key.toLowerCase() === hash.replace('#', '').toLowerCase()
-            );
-
-            return chapter?.detail[0]?.data || [];
-        }
-    }, [routeId, startUrl, hash]);
-
-    const anchorId = useMemo(() => {
-        if (!hash || startUrl !== '/repository') return null;
-        const id = hash.replace('#', '');
-
-        const section = REPOSITORY_SIDEBAR.find(
-            el => el?.key.toLowerCase() === routeId
-        )?.detail?.data.find(d => d.key === id);
-
-        return section?.fileName || null; // ← 改为返回 fileName
-    }, [hash, routeId, startUrl]);
+    const fileTitleContent = !fileData
+        ? []
+        : fileData.map(f => ({
+              titleCh: f.dataInfo.titleCh,
+              key: f.dataInfo.key,
+              fileName: f.dataInfo.fileName,
+              content: f.content
+          }));
 
     useEffect(() => {
         const timer = setTimeout(() => {
             if (
-                visibleCount < categoriFiles.length &&
+                visibleCount < fileTitleContent.length &&
                 visibleCount >= maxRendered.current
             ) {
                 const newCount = visibleCount + 10;
@@ -59,54 +44,7 @@ export default function RenderMainContent({ startUrl }) {
         }, 100);
 
         return () => clearTimeout(timer);
-    }, [visibleCount, categoriFiles.length]);
-
-    // Memo 页面：预加载目标文章
-    useEffect(() => {
-        if (startUrl === '/memo' && hash && categoriFiles?.length > 0) {
-            const id = hash.replace('#', '');
-
-            const targetIndex = categoriFiles.findIndex(
-                file =>
-                    file.fileName === id ||
-                    file.titleEh === id ||
-                    file.fileName?.toLowerCase() === id ||
-                    file.titleEh?.toLowerCase() === id
-            );
-
-            if (targetIndex !== -1 && targetIndex >= visibleCount) {
-                const newCount = Math.min(
-                    targetIndex + 10,
-                    categoriFiles.length
-                );
-                setVisibleCount(newCount);
-                maxRendered.current = newCount;
-            }
-        }
-    }, [hash, categoriFiles, startUrl, visibleCount]);
-
-    // 在 Memo 预加载逻辑后面添加（约第 81 行）
-    useEffect(() => {
-        if (
-            startUrl === '/repository' &&
-            anchorId &&
-            categoriFiles?.length > 0
-        ) {
-            // 找到目标章节在数据中的索引
-            const targetIndex = categoriFiles.findIndex(
-                file => file.fileName === anchorId
-            );
-
-            if (targetIndex !== -1 && targetIndex >= visibleCount) {
-                const newCount = Math.min(
-                    targetIndex + 10,
-                    categoriFiles.length
-                );
-                setVisibleCount(newCount);
-                maxRendered.current = newCount;
-            }
-        }
-    }, [anchorId, categoriFiles, startUrl, visibleCount]);
+    }, [visibleCount, fileTitleContent.length]);
 
     useEffect(() => {
         if (!hash) return;
@@ -127,12 +65,12 @@ export default function RenderMainContent({ startUrl }) {
 
     return (
         <main
-            id={startUrl === '/repository' ? routeId : undefined}
             className={`${classes.container} ${sidebarActive ? '' : classes.close}`}
         >
-            {Array.isArray(categoriFiles) && categoriFiles.length > 0 ? (
+            {isLoad && <Loading />}
+            {Array.isArray(fileTitleContent) && fileTitleContent.length > 0 ? (
                 <>
-                    {categoriFiles.slice(0, visibleCount).map(file => (
+                    {fileTitleContent.slice(0, visibleCount).map(file => (
                         <RenderArticles
                             articles={file}
                             key={file.key}
@@ -140,7 +78,7 @@ export default function RenderMainContent({ startUrl }) {
                     ))}
                 </>
             ) : (
-                <RenderNoneContent startURL={startUrl} />
+                <RenderInitialContent />
             )}
         </main>
     );

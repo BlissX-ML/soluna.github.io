@@ -1,28 +1,34 @@
 // server/server.js
-const express = require('express');
-const path = require('path');
+import express from 'express';
+import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import mdRoutes from './routes/mdRoutes.js';
+import pdfRouter from './routes/pdfRouter.js';
+import csvRouter from './routes/csvRoutes.js';
+
+dotenv.config(); // 加载 .env 文件
 
 const app = express();
 
 // 静态文件目录
-const distPath = path.join(__dirname, '../client/dist');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// 托管前端静态文件
-app.use(express.static(distPath));
+// 1. API 路由
+app.use('/api/data/md', mdRoutes);
+app.use('/api/data/csv', csvRouter);
+app.use('/api/data/download', pdfRouter);
 
-// 所有请求都返回 index.html
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(distPath, 'index.html'));
+// 2. 托管前端打包出来的静态文件
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// 3. 其他所有路径，都返回 index.html（交给 React 路由处理）
+app.get('/*splat', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-// 托管 google sheet 的
-app.get('/api/expenses', async (req, res) => {
-    const response = await fetch(GOOGLE_SHEET_URL);
-    const text = await response.text();
-    res.send(text);
-});
+const PORT = process.env.PORT || 5000;
 
-const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`服务器运行在 http://localhost:${PORT}`);
 });

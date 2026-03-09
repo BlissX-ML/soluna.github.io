@@ -27,8 +27,6 @@ pre[class*='language-'] {
     padding: 2rem 0rem;
     // overflow: auto;
 
-    scroll-margin-top: 5rem; // 用于 scrollIntoView，让其自动计算偏移量
-
     ul,
     ol {
         padding-left: 0; // 排除设置
@@ -129,10 +127,8 @@ pre[class*='language-'] {
         }
     }
 
-    // ⭐ 添加表格样式
     table {
         border-collapse: collapse;
-        width: 100%;
         margin: 1rem 0;
         font-size: 0.9em;
 

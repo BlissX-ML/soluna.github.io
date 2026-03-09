@@ -20,6 +20,5 @@ export const useDashboardPlanStates = create(set => ({
     handleSelect: key => {
         // 选中当前项目的 key，并在选中后默认关闭选项界面
         set(state => ({ ...state, hasOption: key, isOpen: false }));
-        // console.trace('👉 调用栈');
     }
 }));

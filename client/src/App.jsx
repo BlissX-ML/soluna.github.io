@@ -1,5 +1,9 @@
 import './App.scss';
-import { createHashRouter, RouterProvider } from 'react-router-dom';
+import {
+    createBrowserRouter,
+    createHashRouter,
+    RouterProvider
+} from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
 import Footprint from './pages/footprint-page/Footprint.jsx';
@@ -10,7 +14,7 @@ import Loading from './components/feedback/Loading.jsx';
 import Indexpage from './layouts/index/IndexLayout.jsx';
 import Resources from './pages/resource-share-page/Resources.jsx';
 
-import MemoSidebarNavigate from './pages/memo-page/MemoSidebarNavigate';
+// import MemoSidebarNavigate from './pages/memo-page/MemoSidebarNavigate';
 
 import RenderInitialContent from './features/render-articles/RenderInitialContent';
 import RenderMainContent from './features/render-articles/RenderMainContent';
@@ -30,7 +34,7 @@ import CertificatesLayout from './layouts/dashboard/router/certificate/Certifica
 
 const Homepage = lazy(() => import('./pages/home-page/Homepage.jsx'));
 
-const router = createHashRouter([
+const router = createBrowserRouter([
     { path: '/', element: <Indexpage /> },
     {
         element: <AppLayout />,
@@ -75,20 +79,20 @@ const router = createHashRouter([
                     }
                 ]
             },
-            {
-                path: '/memo',
-                element: <MemoSidebarNavigate />,
-                children: [
-                    {
-                        index: true,
-                        element: <RenderInitialContent />
-                    },
-                    {
-                        path: ':routeId',
-                        element: <RenderMainContent startUrl="/memo" />
-                    }
-                ]
-            },
+            // {
+            //     path: '/memo',
+            //     element: <MemoSidebarNavigate />,
+            //     children: [
+            //         {
+            //             index: true,
+            //             element: <RenderInitialContent />
+            //         },
+            //         {
+            //             path: ':routeId',
+            //             element: <RenderMainContent startUrl="/memo" />
+            //         }
+            //     ]
+            // },
             {
                 path: '/repository',
                 element: <RepositorySidebarNavigate />,
@@ -99,7 +103,7 @@ const router = createHashRouter([
                     },
                     {
                         path: ':routeId',
-                        element: <RenderMainContent startUrl="/repository" />
+                        element: <RenderMainContent />
                     }
                 ]
             },

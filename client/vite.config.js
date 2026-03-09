@@ -1,7 +1,7 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import svgr from "vite-plugin-svgr"; // 转换 SVG 格式图片为 React 组件
-import { ViteImageOptimizer } from "vite-plugin-image-optimizer"; // 实现图片压缩，静态打包
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import svgr from 'vite-plugin-svgr'; // 转换 SVG 格式图片为 React 组件
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'; // 实现图片压缩，静态打包
 
 // const repoName = 'soluna.github.io'
 
@@ -12,24 +12,24 @@ export default defineConfig(() => ({
         svgr(),
         ViteImageOptimizer({
             png: {
-                quality: 80,
+                quality: 80
             },
             jpeg: {
-                quality: 75,
+                quality: 75
             },
             webp: {
                 lossless: false,
-                quality: 75,
-            },
-        }),
+                quality: 75
+            }
+        })
     ],
     resolve: {
         alias: {
-            "@": "/src/_assets",
-            "#": "/public",
-        },
+            '@': '/src/_assets',
+            '#': '/public'
+        }
     },
-    base: "/",
+    base: '/',
     // base: mode === 'production' ? `/${repoName}/` : '/',
     css: {
         preprocessorOptions: {
@@ -40,13 +40,22 @@ export default defineConfig(() => ({
           @use "@/_scss/_functions.scss" as *;
           @use "@/_scss/_fonts.scss" as *;
         `,
-                javascriptEnabled: true,
-            },
-        },
+                javascriptEnabled: true
+            }
+        }
+    },
+    server: {
+        port: 3000, // 前端运行端口：<http://localhost:3000>
+        proxy: {
+            '/api': {
+                target: 'http://localhost:5000',
+                changeOrigin: true // 修改请求头 origin，避免跨域检测
+            }
+        }
     },
     test: {
         globals: true,
-        environment: "jsdom",
-        setupFiles: "./src/setupTests.js",
-    },
+        environment: 'jsdom',
+        setupFiles: './src/setupTests.js'
+    }
 }));

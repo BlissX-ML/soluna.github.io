@@ -7,10 +7,7 @@ import matter from 'gray-matter';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // 确定搜索的 `/public` 公共目录下文件的 URL
-const publicDir = path.resolve(
-    __dirname,
-    '../../../public/articles/notes/echart'
-);
+const publicDir = path.resolve(__dirname, '../../../public/articles/memos');
 
 /***********************
  * 递归扫描目录，返回相对 publicDir 的文件路径列表
@@ -19,7 +16,7 @@ const publicDir = path.resolve(
  * @returns {string[]} - 例如：["a.md", "foo/bar.md"]
  **********************/
 
-function scanDirectory(dir, baseUrl = '/articles/notes/echart') {
+function scanDirectory(dir, baseUrl = '/articles/memos') {
     const files = [];
 
     // 读取目录内容，`readdirSync`返回该目录下所有文件和文件夹的名称数组
@@ -56,6 +53,16 @@ function scanDirectory(dir, baseUrl = '/articles/notes/echart') {
                 titleCh,
                 tags
             });
+
+            // const destDir = path.join(dir, tags?.[0] || 'Uncategorized');
+
+            // // 创建文件夹（如果不存在）
+            // if (!fs.existsSync(destDir)) {
+            //     fs.mkdirSync(destDir, { recursive: true });
+            // }
+
+            // // 复制文件
+            // fs.copyFileSync(fullPath, path.join(destDir, item));
         }
     }
 

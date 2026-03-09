@@ -14,7 +14,7 @@ export default function RenderInitialContent() {
         >
             <div className={classes.content}>
                 <NoContent />
-                <p>点击左侧对应目录，以获取相应的内容</p>
+                <p>这部分暂无内容，整理待更新中...</p>
             </div>
         </main>
     );

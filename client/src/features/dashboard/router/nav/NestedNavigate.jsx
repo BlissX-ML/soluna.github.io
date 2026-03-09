@@ -2,28 +2,18 @@ import { useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import classes from './NestedNavigate.module.scss';
 
-import {
-    setCurSecNavInd,
-    setCurSecNavItem
-} from '../../../../store/reducer/dashboardNestedNavigate.js';
-import {
-    useAppDispatch,
-    useAppSelector
-} from '../../../../store/reducer/hooks';
-
 import { useNavCubicBezier } from '../../../../hooks/useNavCubicBezier.jsx';
 import { DASHBOARD_TOTAL } from '../../../../_data/dashboard/dashbord.js';
+import { useDashboardNestedNavigateStates } from '../../../../store/zustand/dashboard-nested.navigate';
 
 export default function NestedNavigate() {
     const activeBlockRef = useRef(null);
     const activeBtnRef = useRef(null);
 
-    const dispatch = useAppDispatch();
-    const { curSecNavInd, curSecNavItem } = useAppSelector(
-        state => state.dashboardNestedNavigate
-    );
-
     const location = useLocation();
+
+    const { curSecNavItem, curSecNavInd, setCurSecNavItem, setCurSecNavInd } =
+        useDashboardNestedNavigateStates();
 
     const { lines } = useNavCubicBezier(
         activeBlockRef,
@@ -34,8 +24,8 @@ export default function NestedNavigate() {
 
     function handleClick(e, key, ind) {
         e.stopPropagation();
-        dispatch(setCurSecNavItem(key));
-        dispatch(setCurSecNavInd(ind));
+        setCurSecNavItem(key);
+        setCurSecNavInd(ind);
     }
 
     // 当 URL 变化时，同步更新 Redux（供其他组件使用）
@@ -46,10 +36,10 @@ export default function NestedNavigate() {
         );
 
         if (matchedIndex !== -1) {
-            dispatch(setCurSecNavItem(DASHBOARD_TOTAL[matchedIndex]?.key));
-            dispatch(setCurSecNavInd(matchedIndex));
+            setCurSecNavItem(DASHBOARD_TOTAL[matchedIndex]?.key);
+            setCurSecNavInd(matchedIndex);
         }
-    }, [location.pathname, dispatch]);
+    }, [location.pathname, setCurSecNavInd, setCurSecNavItem]);
 
     return (
         <>

@@ -1,6 +1,6 @@
-import { transformToRouteData } from '../../_utils/browser/data-transformer/data-transformer';
-import { D3JS_NOTES } from './d3js-raw';
-import { ECHART_NOTES } from './echart-raw';
+// import { transformToRouteData } from '../../_utils/browser/data-transformer/data-transformer';
+// import { D3JS_NOTES } from './d3js-raw';
+// import { ECHART_NOTES } from './echart-raw';
 
 const getRandom = () => {
     return (Math.random() * 2 - 1).toFixed(2);
@@ -9,7 +9,7 @@ const getRandom = () => {
 // Repository's category
 export const REPOSITORY_SIDEBAR = [
     {
-        key: 'Computer',
+        key: 'computer-related',
         title: '计算机相关',
         level: 1,
         delayTime: getRandom(),
@@ -22,21 +22,36 @@ export const REPOSITORY_SIDEBAR = [
                 { key: 'react', title: 'React', detail: [] },
                 {
                     key: 'echart',
-                    title: 'Echart',
-                    detail: transformToRouteData(ECHART_NOTES)
+                    title: 'Echart'
+                    // detail: transformToRouteData(ECHART_NOTES)
                 },
                 {
                     key: 'd3js',
-                    title: 'D3.js',
-                    detail: transformToRouteData(D3JS_NOTES)
+                    title: 'D3.js'
+                    // detail: transformToRouteData(D3JS_NOTES)
                 },
+
                 { key: '408', title: '考研 408 知识点', detail: [] }
             ]
         }
     },
-
     {
-        key: 'Chemistry',
+        key: 'eight-part-essay',
+        title: '八股文',
+        level: 1,
+        delayTime: getRandom(),
+        detail: {
+            level: 2,
+            data: [
+                { key: 'HTML', title: 'HTML', detail: [] },
+                { key: 'CSS', title: 'CSS', detail: [] },
+                { key: 'JavaScript', title: 'JavaScript', detail: [] },
+                { key: 'Engineering', title: 'Engineering', detail: [] }
+            ]
+        }
+    },
+    {
+        key: 'chemistry-related',
         title: '化学相关',
         level: 1,
         delayTime: getRandom(),
@@ -53,7 +68,7 @@ export const REPOSITORY_SIDEBAR = [
     },
 
     {
-        key: 'Language',
+        key: 'language-related',
         title: '语言相关',
         level: 1,
         delayTime: getRandom(),
@@ -69,13 +84,12 @@ export const REPOSITORY_SIDEBAR = [
                 { key: 'korean-language', title: '韩语 한국어', detail: [] }
             ]
         }
-    },
-
-    {
-        key: 'Animal',
-        title: '动物学相关',
-        level: 1,
-        delayTime: getRandom(),
-        detail: { level: 2, data: [{ key: '', title: '', detail: [] }] }
     }
+    // {
+    //     key: 'animal',
+    //     title: '动物学相关',
+    //     level: 1,
+    //     delayTime: getRandom(),
+    //     detail: { level: 2, data: [{ key: '', title: '', detail: [] }] }
+    // }
 ];

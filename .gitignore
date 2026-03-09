@@ -7,6 +7,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# 隐藏环境变量
+.env
+.env.local
+.env.*.local
 
 # 依赖（末尾加斜杠，通配所有子目录）
 **/node_modules/

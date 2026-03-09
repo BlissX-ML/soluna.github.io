@@ -1,13 +1,13 @@
-import classes from "./AboutPage.module.scss";
+import classes from './AboutPage.module.scss';
 
-import AboutIntro from "../../layouts/about/AboutIntro.jsx";
-import AboutResumeLayout from "../../layouts/about/AboutResumeLayout.jsx";
+import AboutIntro from '../../layouts/about/AboutIntro.jsx';
+import AboutProfileResume from '../../layouts/about/AboutProfileResume.jsx';
 
 export default function About() {
     return (
         <section id="main-content" className={classes.about}>
             <AboutIntro />
-            <AboutResumeLayout />
+            <AboutProfileResume />
         </section>
     );
 }
