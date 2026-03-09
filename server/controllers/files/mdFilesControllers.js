@@ -9,7 +9,6 @@ export const computerController = asyncHandler(async (req, res) => {
     const params = req.query.hash || ''; // 动态路由
 
     const url = 'articles/computer-catalogue-repository/';
-
     const urlFile = !params ? url : url + params + '/';
     const info = await getOssMdFiles(urlFile);
 

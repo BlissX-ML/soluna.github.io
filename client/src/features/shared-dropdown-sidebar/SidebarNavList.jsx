@@ -60,17 +60,22 @@ export default function SidebarNavList({ categories, startURL }) {
     const handleSecondaryClick = (e, item) => {
         e.stopPropagation(); // 阻止事件冒泡
         const curUrl = `${startURL}/${curFirstItem.toLowerCase()}`;
-        if (startURL === '/memo') {
-            // 移动到 `#` 路由上面去
-            navigate(`${curUrl}#${item?.fileName}`, { replace: true });
-            // 移动到对应的文件部分
-            scrollToItem(item?.fileName);
-        }
+        navigate(`${curUrl}?hash=${item?.key}`);
+        scrollToItem(item?.fileName);
 
-        if (startURL === '/repository') {
-            // 移动到 `#` 路由上面去
-            navigate(`${curUrl}#${item?.key}`, { replace: true });
-        }
+        // if (startURL === '/memo') {
+        //     // 移动到 `#` 路由上面去
+        //     // navigate(`${curUrl}#${item?.fileName}`, { replace: true });
+        //     navigate(`${curUrl}/${item?.key}`);
+
+        //     // 移动到对应的文件部分
+        //     scrollToItem(item?.fileName);
+        // }
+
+        // if (startURL === '/repository') {
+        //     // 移动到 `#` 路由上面去
+        //     navigate(`${curUrl}#${item?.key}`, { replace: true });
+        // }
     };
 
     return (
