@@ -60,7 +60,9 @@ export default function SidebarNavList({ categories, startURL }) {
     const handleSecondaryClick = (e, item) => {
         e.stopPropagation(); // 阻止事件冒泡
         const curUrl = `${startURL}/${curFirstItem.toLowerCase()}`;
-        navigate(`${curUrl}?hash=${item?.key}`);
+
+        // ✨ 重定向
+        navigate(`${curUrl}?hash=${item?.key}`, { replace: true });
         scrollToItem(item?.fileName);
 
         // if (startURL === '/memo') {
