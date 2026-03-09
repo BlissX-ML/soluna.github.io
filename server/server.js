@@ -7,7 +7,7 @@ import mdRoutes from './routes/mdRoutes.js';
 import pdfRouter from './routes/pdfRouter.js';
 import csvRouter from './routes/csvRoutes.js';
 
-dotenv.config(); // 加载 .env 文件
+dotenv.config({ path: '.env' }); // 加载 .env 文件
 
 const app = express();
 

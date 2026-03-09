@@ -9,22 +9,26 @@ import {
 export function useMdDataApi(routeId, hash) {
     const { data: computerData, isLoading: computerLoading } =
         useGetComputerFilesQuery(hash, {
-            skip: routeId.toLowerCase() !== 'computer-related'
+            skip: routeId.toLowerCase() !== 'computer-related',
+            refetchOnMountOrArgChange: true
         });
 
     const { data: eightPartData, isLoading: eightPartLoading } =
         useGetEightPartFilesQuery(hash, {
-            skip: routeId.toLowerCase() !== 'eight-part-essay'
+            skip: routeId.toLowerCase() !== 'eight-part-essay',
+            refetchOnMountOrArgChange: true
         });
 
     const { data: chemistryData, isLoading: chemistryLoading } =
         useGetChemistryFilesQuery(hash, {
-            skip: routeId.toLowerCase() !== 'chemistry-related'
+            skip: routeId.toLowerCase() !== 'chemistry-related',
+            refetchOnMountOrArgChange: true
         });
 
     const { data: languageData, isLoading: languageLoading } =
         useGetLanguageFilesQuery(hash, {
-            skip: routeId.toLowerCase() !== 'language-related'
+            skip: routeId.toLowerCase() !== 'language-related',
+            refetchOnMountOrArgChange: true
         });
 
     const d = {

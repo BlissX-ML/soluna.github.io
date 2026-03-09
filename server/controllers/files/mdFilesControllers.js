@@ -1,8 +1,8 @@
 import asyncHandler from 'express-async-handler';
 import { getOssMdFiles } from '../../utils/oss/oss.md.js';
 
-// @desc    Get repository files
-// @route   POST /api/data/md/computer-related
+// @desc    GET repository files
+// @route   GET /api/data/md/computer-related
 // @oss     /articles/computer-catalogue-repository/
 // @access  Public
 export const computerController = asyncHandler(async (req, res) => {
@@ -24,7 +24,7 @@ export const computerController = asyncHandler(async (req, res) => {
     }
 });
 
-// @desc    Get memo files
+// @desc    GET memo files
 // @route   GET /api/data/md/eightpart
 // @oss     /articles/eightpart-essay-catalogue-repository/
 // @access  Public
@@ -49,14 +49,14 @@ export const eightpartController = asyncHandler(async (req, res) => {
 });
 
 // @desc    Get dashboard certificates files
-// @route   POST /api/data/dashboard/certificates
+// @route   GET /api/data/dashboard/certificates
 // @access  Public
 export const certificatesController = asyncHandler(async (req, res) => {
     res.send('dashboard certificates files');
 });
 
 // @desc    Get dashboard expense-status files
-// @route   POST /api/data/dashboard/expense-status
+// @route   GET /api/data/dashboard/expense-status
 // @access  Public
 export const expenseStatusController = asyncHandler(async (req, res) => {
     res.send('dashboard expense-status files');
