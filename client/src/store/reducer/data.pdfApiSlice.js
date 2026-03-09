@@ -1,6 +1,6 @@
 import { pdfApiSlice } from './apiSlice';
 
-const DATA_URL = 'api/data/pdf';
+const DATA_URL = '/data/pdf';
 
 const pdfFileApiSlice = pdfApiSlice.injectEndpoints({
     endpoints: builder => ({

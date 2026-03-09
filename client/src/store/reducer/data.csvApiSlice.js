@@ -1,6 +1,6 @@
 import { csvApiSlice } from './apiSlice.js';
 
-const DATA_URL = '/api/data/csv';
+const DATA_URL = '/data/csv';
 
 const csvFileApiSlice = csvApiSlice.injectEndpoints({
     endpoints: builder => ({

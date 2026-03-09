@@ -1,6 +1,6 @@
 import { mdApiSlice } from './apiSlice.js';
 
-const DATA_URL = '/api/data/md';
+const DATA_URL = '/data/md';
 
 const mdFileApiSlice = mdApiSlice.injectEndpoints({
     endpoints: builder => ({

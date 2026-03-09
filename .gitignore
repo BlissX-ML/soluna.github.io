@@ -20,6 +20,8 @@ client/dist/
 client/dist-ssr/
 *.local
 
+soluna.tar.gz
+
 deploy/
 deploy.ps1
 deploy.sh
