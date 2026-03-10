@@ -23,20 +23,21 @@
             content="个人静态网站，主要用于实践前端工程化、内容渲染系统、数据可视化与交互设计相关能力。"
         />
         <title>Soluna</title>
+      <script type="module" crossorigin src="/assets/index-CzhxaCtT.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-RF50VYc2.css">
     </head>
 
     <body>
         <div id="root"></div>
 
-        <!-- 第一步：单独注入全局环境变量（无 type="module"，优先执行）
+        <!-- 第一步：单独注入全局环境变量（无 type="module"，优先执行） -->
         <script>
             // 生产环境可直接替换为后端地址
             window.__env__ = window.__env__ || {
                 API_BASE_URL: '/api' // 用相对路径，配合 Nginx 反向代理
             };
-        </script> -->
+        </script>
 
         <!-- 第二步：加载主入口文件 -->
-        <script type="module" src="/src/main.jsx"></script>
     </body>
 </html>

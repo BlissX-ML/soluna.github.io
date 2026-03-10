@@ -86,15 +86,14 @@ export default function RenderMainContent() {
         >
             {isLoad && <Loading />}
 
-            {fileTitleContent.length > 0 ? (
+            {!isLoad && fileTitleContent.length === 0 && <RenderNoneContent />}
+
+            {fileTitleContent.length > 0 &&
                 fileTitleContent
                     .slice(0, visibleCount)
                     .map(file => (
                         <RenderArticles key={file.key} articles={file} />
-                    ))
-            ) : (
-                <RenderNoneContent />
-            )}
+                    ))}
 
             {/* Intersection Observer 触发点 */}
             <div id="load-more-sentinel" />

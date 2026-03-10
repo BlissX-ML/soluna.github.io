@@ -1,5 +1,13 @@
-.index-btn {
+.index-link {
+    @include hyperlink-default;
+    @include flexlayout-default;
+    @include flexlayout-center;
+    gap: 0.2rem;
+
+    border-radius: $border-radius-default;
+
     color: #f8f8f8;
+    font-weight: 600;
     font-size: $font-size-sm;
     letter-spacing: 1px;
 

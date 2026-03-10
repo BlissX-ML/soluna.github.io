@@ -6,7 +6,7 @@
     // padding-top: 2rem; // 给 header 腾空间
     // overflow-y: auto;  // 不能设置这个，不然会让第一个article顶出视口
 
-    margin-left: $sidebar-max-width + 2rem;
+    margin-left: $sidebar-max-width * 1.1;
     transition: all 0.5s ease-in;
 
     &.close {

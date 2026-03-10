@@ -9,11 +9,3 @@ createRoot(document.getElementById('root')).render(
         <App />
     </Provider>
 );
-
-// import { Provider } from 'react-redux'
-// import store from './components/HomePage/Caroudel-noSlick/store'
-
-// <Provider store={store}>
-//   <StrictMode>
-// {/* </StrictMode>
-//   </Provider> */}

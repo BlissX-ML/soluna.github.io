@@ -29,8 +29,6 @@ export default defineConfig(() => ({
             '#': '/public'
         }
     },
-    base: '/',
-    // base: mode === 'production' ? `/${repoName}/` : '/',
     css: {
         preprocessorOptions: {
             scss: {
@@ -44,6 +42,20 @@ export default defineConfig(() => ({
             }
         }
     },
+    base: '/', // 部署在域名根目录，必须设为/
+    build: {
+        outDir: 'dist', // 输出目录，保持默认
+        assetsDir: 'assets', // 静态资源目录
+        rollupOptions: {
+            output: {
+                // 确保静态资源路径正确解析
+                assetFileNames: 'assets/[name]-[hash].[ext]',
+                chunkFileNames: 'assets/[name]-[hash].js',
+                entryFileNames: 'assets/[name]-[hash].js'
+            }
+        }
+    },
+    // 开发环境代理（本地调试用，不影响生产）
     server: {
         port: 3000, // 前端运行端口：<http://localhost:3000>
         proxy: {

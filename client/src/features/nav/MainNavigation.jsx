@@ -41,7 +41,7 @@ export default function MainNavigation() {
             </NavRedirectRoute>
 
             <NavRedirectRoute
-                path="footprint"
+                path="/footprint"
                 listStyle=""
                 extraContentInList={null}
             >
@@ -49,7 +49,7 @@ export default function MainNavigation() {
             </NavRedirectRoute>
 
             <NavRedirectRoute
-                path="resources"
+                path="/resources"
                 listStyle=""
                 extraContentInList={null}
             >
@@ -57,7 +57,7 @@ export default function MainNavigation() {
             </NavRedirectRoute>
 
             <NavRedirectRoute
-                path="about"
+                path="/about"
                 listStyle=""
                 extraContentInList={null}
             >

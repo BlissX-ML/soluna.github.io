@@ -36,61 +36,46 @@ const router = createBrowserRouter([
         element: <AppLayout />,
         children: [
             {
-                path: '/home',
+                path: 'home',
                 element: <Homepage />
             },
             {
-                path: '/dashboard',
-
+                path: 'dashboard',
                 children: [
                     { index: true, element: <Dashboard /> },
                     {
                         element: <DashboardNestedLayout />,
                         children: [
                             {
-                                path: '/dashboard/personal-plan',
+                                path: 'personal-plan',
                                 element: <DashboardPersonalPlan />
                             },
                             {
-                                path: '/dashboard/certificates',
+                                path: 'certificates',
                                 element: <CertificatesLayout />
                             },
                             {
-                                path: '/dashboard/learn-growth',
+                                path: 'learn-growth',
                                 element: <DashboardLearnGrowth />
                             },
                             {
-                                path: '/dashboard/body-health',
+                                path: 'body-health',
                                 element: <DashboardBodyHealth />
                             },
                             {
-                                path: '/dashboard/expense-status',
+                                path: 'expense-status',
                                 element: <DashboardExpenseStatus />
                             },
                             {
-                                path: '/dashboard/life-logs',
+                                path: 'life-logs',
                                 element: <DashboardLifeLogs />
                             }
                         ]
                     }
                 ]
             },
-            // {
-            //     path: '/memo',
-            //     element: <MemoSidebarNavigate />,
-            //     children: [
-            //         {
-            //             index: true,
-            //             element: <RenderInitialContent />
-            //         },
-            //         {
-            //             path: ':routeId',
-            //             element: <RenderMainContent startUrl="/memo" />
-            //         }
-            //     ]
-            // },
             {
-                path: '/repository',
+                path: 'repository',
                 element: <RepositorySidebarNavigate />,
                 children: [
                     {
@@ -114,15 +99,15 @@ const router = createBrowserRouter([
                 ]
             },
             {
-                path: '/footprint',
+                path: 'footprint',
                 element: <Footprint />
             },
             {
-                path: '/resources',
+                path: 'resources',
                 element: <Resources />
             },
             {
-                path: '/about',
+                path: 'about',
                 element: <About />
             }
         ]

@@ -12,27 +12,6 @@ const mdFileApiSlice = mdApiSlice.injectEndpoints({
                 };
             }
         })
-
-        // getEightPartFiles: builder.query({
-        //     query: hash => ({
-        //         url: `${DATA_URL}/eightpart`,
-        //         params: { hash }
-        //     })
-        // }),
-
-        // getChemistryFiles: builder.query({
-        //     query: hash => ({
-        //         url: `${DATA_URL}/chemistry-related`,
-        //         params: { hash }
-        //     })
-        // }),
-
-        // getLanguageFiles: builder.query({
-        //     query: hash => ({
-        //         url: `${DATA_URL}/language-related`,
-        //         params: { hash }
-        //     })
-        // })
     })
 });
 
