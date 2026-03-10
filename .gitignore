@@ -25,6 +25,7 @@ soluna.tar.gz
 deploy/
 deploy.ps1
 deploy.sh
+deploy.pm2.sh
 
 # Editor directories and files
 .vscode/*

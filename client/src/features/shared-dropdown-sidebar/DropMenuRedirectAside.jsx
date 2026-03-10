@@ -17,7 +17,6 @@ export default function DropMenuRedirectAsideMenu({
     catalogs,
     startUrl
 }) {
-    const navigate = useNavigate(); // 跳转页面
     const dispatch = useAppDispatch();
 
     function handleReduxState(item) {
@@ -33,9 +32,6 @@ export default function DropMenuRedirectAsideMenu({
         // 保持侧边栏常开
         dispatch(setSidebarActiveOpen());
 
-        // 导航到对应 item?.key 的页面
-        navigate(`${startUrl}/${item?.key.toLowerCase()}`);
-
         // 导航到每一个路由对应的第一篇文章
         scrollToItem(item?.detail?.data?.[0]?.fileName);
     }
@@ -43,6 +39,7 @@ export default function DropMenuRedirectAsideMenu({
     return (
         <div className={`${classes['drop-menu-container']} ${style}`}>
             <DropdownMenuBtns
+                startUrl={startUrl}
                 catalogs={catalogs}
                 handleEachDropdownMenu={handleEachDropdownMenu}
             />
