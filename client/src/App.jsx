@@ -1,5 +1,5 @@
 import './App.scss';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
 import Footprint from './pages/footprint-page/Footprint.jsx';
@@ -99,7 +99,17 @@ const router = createBrowserRouter([
                     },
                     {
                         path: ':routeId',
-                        element: <RenderMainContent />
+                        element: <Outlet />, // 只渲染占位，避免内容叠加
+                        children: [
+                            {
+                                index: true,
+                                element: <RenderInitialContent />
+                            },
+                            {
+                                path: ':secondRouteId',
+                                element: <RenderMainContent />
+                            }
+                        ]
                     }
                 ]
             },

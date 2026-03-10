@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { resumeController } from '../controllers/files/pdfFilesControllers.js';
+import { pdfController } from '../controllers/files/pdfFilesControllers.js';
 
 const router = Router();
 
-router.get('/resume', resumeController);
+router.get('/resume', pdfController);
 
 export default router;

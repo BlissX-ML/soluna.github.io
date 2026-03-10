@@ -1,7 +1,7 @@
 // 字体样式设置
 $font-family-styles:
-    "PingFang SC", "Microsoft YaHei", "Heiti SC", "Noto Sans SC", "Segoe UI",
-    "Roboto", "Helvetica Neue";
+    'PingFang SC', 'Microsoft YaHei', 'Heiti SC', 'Noto Sans SC', 'Segoe UI',
+    'Roboto', 'Helvetica Neue';
 $font-size-sm: 14px;
 $font-size-md: 16px;
 $font-size-bg: 18px;
@@ -28,7 +28,7 @@ $box-shadow-navigation-content: 0 4px 12px rgba(0, 0, 0, 0.1); // 导航栏下�
 $website-min-width: 47.5rem; // 当前浏览器最小的宽度
 
 $sidebar-width-default: 1rem; // 侧边栏最小的宽度
-$sidebar-max-width: 15rem; // 侧边栏最大的宽度
+$sidebar-max-width: 18rem; // 侧边栏最大的宽度
 
 $width-default: 5rem;
 $height-default: 5rem; // 也是导航栏的最大高度

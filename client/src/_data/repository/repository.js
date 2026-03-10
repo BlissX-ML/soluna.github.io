@@ -36,7 +36,7 @@ export const REPOSITORY_SIDEBAR = [
         }
     },
     {
-        key: 'eight-part-essay',
+        key: 'eightpart',
         title: '八股文',
         level: 1,
         delayTime: getRandom(),

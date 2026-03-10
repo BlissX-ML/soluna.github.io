@@ -45,7 +45,7 @@ export default function RenderArticles({ articles }) {
     return (
         <>
             <RenderMarkdown>
-                {content.length !== 0 && (
+                {content ? (
                     <>
                         <h2 className={classes.h2} id={anchor}>
                             {articles?.titleCh}
@@ -86,7 +86,7 @@ export default function RenderArticles({ articles }) {
                             {content}
                         </ReactMarkdown>
                     </>
-                )}
+                ) : null}
             </RenderMarkdown>
         </>
     );

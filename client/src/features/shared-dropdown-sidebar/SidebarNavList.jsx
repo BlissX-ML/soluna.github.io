@@ -13,8 +13,6 @@ import SidebarList from '../../components/sidebar/SidebarList.jsx';
 
 // 侧边栏导航列表（可复用）
 export default function SidebarNavList({ categories, startURL }) {
-    const navigate = useNavigate(); // 跳转到对应的路由
-    const location = useLocation(); // 核查当前页面
     const dispatch = useAppDispatch(); // 分派函数（动作）以改变这些变量
 
     const { curFirstItem, secondaryItemsState } = useAppSelector(
@@ -36,7 +34,7 @@ export default function SidebarNavList({ categories, startURL }) {
     }
 
     // 处理一级标题点击
-    const handleFirstLevelClick = (startURL, item) => {
+    const handleFirstLevelClick = item => {
         // 控制二级菜单的展开与关闭
         if (curFirstItem === item?.key) {
             dispatch(toggleOpenSecondaryItems()); // 切换二级菜单展开状态
@@ -45,24 +43,14 @@ export default function SidebarNavList({ categories, startURL }) {
             dispatch(openSecondaryItems()); // 打开二级菜单
         }
 
-        // 跳转路由
-        if (!location.pathname.endsWith(item?.key)) {
-            navigate(`${startURL}/${item?.key.toLowerCase()}`);
-        }
-
-        if (startURL === '/memo') {
-            // 平滑移动，默认返回顶部，itemId 固定为数组第一个元素
-            scrollToItem(item?.detail?.data?.[0]?.fileName);
-        }
+        // 平滑移动，默认返回顶部，itemId 固定为数组第一个元素
+        scrollToItem(item?.detail?.data?.[0]?.fileName);
     };
 
     // 处理二级标题点击
     const handleSecondaryClick = (e, item) => {
         e.stopPropagation(); // 阻止事件冒泡
-        const curUrl = `${startURL}/${curFirstItem.toLowerCase()}`;
 
-        // ✨ 重定向
-        navigate(`${curUrl}?hash=${item?.key}`, { replace: true });
         scrollToItem(item?.fileName);
     };
 

@@ -6,7 +6,7 @@ import SidebarNavigation from '../../features/shared-dropdown-sidebar/SidebarNav
 
 export default function RepositorySidebarNavigate() {
     return (
-        <section id="main-content">
+        <section id="main-content" className={classes.container}>
             <SidebarNavigation
                 catalogs={REPOSITORY_SIDEBAR}
                 startURL="/repository"

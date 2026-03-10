@@ -2,13 +2,12 @@ import { usePdfDataApis } from '../../api/usePdfDataApis';
 import classes from './AboutProfileResume.module.scss';
 
 import { PROFILE_IMAGE_ABOUT } from '../../_data/about-page/introduction.js';
-import Loading from '../../components/feedback/Loading.jsx';
 import ImagesLoad from '../../components/image/ImagesLoad.jsx';
 
 export default function AboutProfileResume() {
     const profile = PROFILE_IMAGE_ABOUT[0];
 
-    const { resume, handleDownload } = usePdfDataApis();
+    const { handleDownload } = usePdfDataApis();
 
     return (
         <>
@@ -20,9 +19,7 @@ export default function AboutProfileResume() {
                     className=""
                 />
 
-                <button onClick={handleDownload} disabled={resume.isLoad}>
-                    {resume.isLoad ? <Loading /> : '下载简历'}
-                </button>
+                <button onClick={handleDownload}>下载简历</button>
             </div>
         </>
     );

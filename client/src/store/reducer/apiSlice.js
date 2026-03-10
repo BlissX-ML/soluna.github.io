@@ -17,11 +17,3 @@ export const csvApiSlice = createApi({
     tagTypes: ['csv-data'],
     endpoints: builder => ({})
 });
-
-// pdfApiSlice.js
-export const pdfApiSlice = createApi({
-    reducerPath: 'pdfApi', // 必须唯一
-    baseQuery,
-    tagTypes: ['PDF-data'],
-    endpoints: builder => ({})
-});

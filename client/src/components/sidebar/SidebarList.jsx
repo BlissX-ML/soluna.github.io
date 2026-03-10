@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import classes from './SidebarList.module.scss';
 
 export default function SidebarList({
@@ -15,16 +16,16 @@ export default function SidebarList({
                     key={firstLevel.key}
                     className={`${classes['first-li']} ${handleFirstLevelState(firstLevel)}`}
                 >
-                    <button
-                        className={classes.btn}
-                        onClick={() =>
-                            handleFirstLevelClick(startURL, firstLevel)
-                        }
+                    <Link
+                        className={classes.link}
+                        to={`${startURL}/${firstLevel.key.toLowerCase()}`}
+                        onClick={() => handleFirstLevelClick(firstLevel)}
                     >
                         <div className={classes['title']}>
                             {firstLevel.title}
                         </div>
-                    </button>
+                    </Link>
+
                     <ul
                         className={`${classes['second-ul']} ${handleSecondaryLevelState(firstLevel)}`}
                     >
@@ -33,8 +34,9 @@ export default function SidebarList({
                                 key={secondaryLevel?.key}
                                 className={classes['second-li']}
                             >
-                                <button
-                                    className={classes.btn}
+                                <Link
+                                    className={classes.link}
+                                    to={`${startURL}/${firstLevel.key.toLowerCase()}/${secondaryLevel.key}`}
                                     onClick={e =>
                                         handleSecondaryLevelClick(
                                             e,
@@ -43,7 +45,7 @@ export default function SidebarList({
                                     }
                                 >
                                     {secondaryLevel?.title}
-                                </button>
+                                </Link>
                             </li>
                         ))}
                     </ul>

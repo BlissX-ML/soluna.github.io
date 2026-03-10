@@ -1,31 +1,37 @@
-import { useGetResumeFilesQuery } from '../store/reducer/data.pdfApiSlice.js';
-
 export function usePdfDataApis() {
-    const { data: resume, isLoading: resumeLoading } = useGetResumeFilesQuery();
+    async function handleDownload() {
+        const prefix = 'resume'; // 后端真实地址
+        let fileName = 'download.pdf';
 
-    function handleDownload() {
-        if (!resume?.content) return;
+        try {
+            const res = await fetch(`/api/data/pdf/${prefix}`);
 
-        // base64 → Blob → 下载
-        const binary = atob(resume.content);
-        const bytes = new Uint8Array(binary.length);
-        for (let i = 0; i < binary.length; i++) {
-            bytes[i] = binary.charCodeAt(i);
+            if (!res.ok) throw new Error('下载失败');
+
+            // 从 Content-Disposition header 里获取文件名
+            const disposition = res.headers.get('Content-Disposition');
+            if (disposition && disposition.includes('filename*=')) {
+                // RFC5987 编码
+                fileName = decodeURIComponent(
+                    disposition.split('filename*=')[1].trim()
+                );
+            }
+            console.log(disposition);
+
+            // 返回 blob
+            const blob = await res.blob();
+
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = fileName;
+            a.click();
+            URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error(error);
+            alert('下载失败，请稍后重试');
         }
-        const blob = new Blob([bytes], { type: 'application/pdf' });
-
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `${resume.fileName}.pdf`;
-        a.click();
-        URL.revokeObjectURL(url);
     }
 
-    const d = {
-        resume: { data: resume, isLoad: resumeLoading },
-        handleDownload
-    };
-
-    return d;
+    return { handleDownload };
 }

@@ -51,16 +51,25 @@
         box-sizing: border-box;
         cursor: pointer;
 
-        button {
+        // 撑开二级标题的高度，保证动画效果正常
+        .link {
+            display: block;
             padding: $padding-default;
         }
     }
 }
 
-.btn {
-    @include btns-default;
+.link {
+    @include hyperlink-default;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
     background-color: transparent;
     text-align: left;
-    display: block;
-    width: 100%;
+
+    color: inherit;
 }

@@ -2,7 +2,7 @@
     position: fixed; // 不能用sticky，不然滚动时会跟着动，而且右侧的主体部分会留空白 ✅
     top: $height-default;
 
-    width: $sidebar-max-width * 1.2;
+    width: $sidebar-max-width;
     height: calc(100vh - $height-default); // 固定高度
     background-color: $aside-background-color;
 

@@ -9,19 +9,18 @@ import Loading from '../../components/feedback/Loading';
 import RenderInitialContent from './RenderInitialContent';
 
 import { useMdDataApi } from '../../api/useMdDataApi.js';
+import RenderNoneContent from './RenderNoneContent';
 
 export default function RenderMainContent() {
     const [visibleCount, setVisibleCount] = useState(10);
 
-    const { routeId } = useParams();
-    const [searchParams] = useSearchParams();
-    const { sidebarActive } = useAppSelector(state => state.dropdownSidebar);
+    const { routeId, secondRouteId } = useParams();
 
-    const hash = searchParams.get('hash') || '';
-    const { data: fileData, isLoad } = useMdDataApi(
-        routeId,
-        hash.toLowerCase()
-    );
+    const hash = secondRouteId.toLowerCase() || '';
+
+    const { data: fileData, isLoad } = useMdDataApi(routeId, hash);
+
+    const { sidebarActive } = useAppSelector(state => state.dropdownSidebar);
 
     // 简化 useMemo
     const fileTitleContent = useMemo(
@@ -91,10 +90,10 @@ export default function RenderMainContent() {
                 fileTitleContent
                     .slice(0, visibleCount)
                     .map(file => (
-                        <RenderArticles articles={file} key={file.key} />
+                        <RenderArticles key={file.key} articles={file} />
                     ))
             ) : (
-                <RenderInitialContent />
+                <RenderNoneContent />
             )}
 
             {/* Intersection Observer 触发点 */}
