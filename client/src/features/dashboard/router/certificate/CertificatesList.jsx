@@ -5,8 +5,10 @@ import { useLineCubicBezier } from '../../../../hooks/useLineCubicBezier.jsx';
 
 import ExtendCloseBtn from '../../../../components/icons/ExtendCloseBtn';
 import ExtendBtn from '../../../../components/icons/ExtendBtn';
+// import { useLazyGetCertificatesImagesQuery } from '../../../../store/reducer/data.webpApiSlice';
+import { webpImagesApi } from '../../../../api/useWebpApi';
 
-export default function CertificatesList({ styleLayout, datas }) {
+export default function CertificatesList({ style, datas }) {
     const containerRef = useRef(null);
     const firstCategoryRef = useRef(null);
     const secondCategoryRef = useRef({});
@@ -25,25 +27,41 @@ export default function CertificatesList({ styleLayout, datas }) {
 
     const handleToggle = key => {
         setOpenedCategory(prev => (prev === key ? null : key)); // 点击同一个就关闭
-        // secondCategoryRef.current = {};
     };
 
     const collectSecondList = (el, ind) => {
         if (!openedCategory) return;
 
         const key = `second-${openedCategory}`;
+
         if (!secondCategoryRef.current[key]) {
             secondCategoryRef.current[key] = [];
         }
         secondCategoryRef.current[key][ind] = el;
     };
 
+    // 处理二级列表的点击 → 控制 carousel 图片滑动
+    const handleSecondListBtnClick = async key => {
+        const dataLow = await webpImagesApi(key, 'low');
+        if (!dataLow) {
+            console.error('Failed to fetch low images for key:', key);
+            return;
+        }
+        console.log('dataLow:', dataLow);
+        handleCarouselItem(dataLow); // 先用小图渲染
+
+        // 再请求大图，替换
+        const dataHigh = await webpImagesApi(key, 'high');
+        if (!dataHigh) {
+            console.error('Failed to fetch high images for key:', key);
+            return;
+        }
+        handleCarouselItem(dataHigh); // 大图加载完后替换
+    };
+
     return (
         <>
-            <div
-                className={`${classes.menu} ${styleLayout}`}
-                ref={containerRef}
-            >
+            <div className={`${classes.menu} ${style}`} ref={containerRef}>
                 {/* 线段 */}
                 <svg className={classes.svg}>
                     {lines.map((line, ind) => (
@@ -91,7 +109,6 @@ export default function CertificatesList({ styleLayout, datas }) {
                         {datas
                             .find(el => el?.key === openedCategory)
                             ?.details.map((cert, index) => {
-                                console.log(cert);
                                 return (
                                     <li
                                         key={cert?.key}
@@ -99,9 +116,11 @@ export default function CertificatesList({ styleLayout, datas }) {
                                         ref={el => collectSecondList(el, index)}
                                     >
                                         <button
-                                            onClick={() =>
-                                                handleCarouselItem(cert)
-                                            }
+                                            onClick={() => {
+                                                handleSecondListBtnClick(
+                                                    cert?.key
+                                                );
+                                            }}
                                         >
                                             {cert?.title}
                                         </button>

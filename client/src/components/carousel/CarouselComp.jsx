@@ -58,20 +58,21 @@ export default function CarouselComp({ className }) {
                         {slideItems.map((item, ind) => (
                             <div key={`item-${ind}`} className={classes.image}>
                                 <ImagesLoad
-                                    lowquality={item?.src?.low}
-                                    highquality={item?.src?.high}
+                                    src={item?.src}
                                     alt={item?.title}
                                     className=""
                                 />
                             </div>
                         ))}
                     </div>
+
                     <button
                         className={classes.arrowPrev}
                         onClick={handlePrevImage}
                     >
                         <ArrowPrevPage />
                     </button>
+
                     <button
                         className={classes.arrowNext}
                         onClick={handleNextImage}

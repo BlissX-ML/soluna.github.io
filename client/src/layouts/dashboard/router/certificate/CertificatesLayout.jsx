@@ -3,21 +3,35 @@ import BarChart from '../../../../components/charts/bar/BarChart';
 
 import CertificatesList from '../../../../features/dashboard/router/certificate/CertificatesList';
 
-import { CERTIFICATE_CHART } from '../../../../_data/dashboard/certificates/certificate-chart';
 import { OBTAINED_CERTIFICATE } from '../../../../_data/dashboard/certificates/obtained-certificate';
 import CarouselComp from '../../../../components/carousel/CarouselComp';
+import { useWebpChartApi } from '../../../../api/useWebpApi';
+import Loading from '../../../../components/feedback/Loading';
 
 export default function CertificatesLayout() {
+    const { data: chartData, isLoad } = useWebpChartApi();
+
     return (
         <main className={classes.container}>
-            <CertificatesList
-                datas={OBTAINED_CERTIFICATE}
-                styleLayout={classes.lists}
-            />
+            {isLoad ? (
+                <Loading />
+            ) : (
+                <>
+                    <div className={classes.left}>
+                        <CertificatesList
+                            datas={OBTAINED_CERTIFICATE}
+                            style={classes.lists}
+                        />
 
-            <CarouselComp className={classes.slide} />
+                        <BarChart
+                            className={classes.chart}
+                            resources={chartData}
+                        />
+                    </div>
 
-            <BarChart className={classes.chart} resources={CERTIFICATE_CHART} />
+                    <CarouselComp className={classes.slide} />
+                </>
+            )}
         </main>
     );
 }

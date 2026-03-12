@@ -6,6 +6,7 @@ export async function getOssMdFiles(prefix) {
     const client = await getOssClient();
 
     try {
+        // delimiter:'/' → OSS 只列当前层级，不递归进子文件夹
         const result = await client.list({ prefix, delimiter: '/' });
         const objects = result.objects || [];
 

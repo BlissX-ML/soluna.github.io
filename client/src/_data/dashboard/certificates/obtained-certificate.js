@@ -1,7 +1,3 @@
-import { AWARDS_IMAGES } from './awards-images-urls';
-
-const awards = new Map(AWARDS_IMAGES.map(els => [els?.key, els?.detail]));
-
 export const OBTAINED_CERTIFICATE = [
     {
         category: 'language-certificate',
@@ -11,14 +7,12 @@ export const OBTAINED_CERTIFICATE = [
             {
                 category: 'english',
                 key: 'english',
-                title: '英语相关证书',
-                details: awards.get('english')
+                title: '英语相关证书'
             },
             {
                 category: 'japanese',
                 key: 'japanese',
-                title: '日语相关证书',
-                details: awards.get('japanese')
+                title: '日语相关证书'
             }
         ]
     },
@@ -28,16 +22,14 @@ export const OBTAINED_CERTIFICATE = [
         title: '线上网课证书',
         details: [
             {
-                category: 'coursera-meta-front-end',
-                key: 'coursera-meta-front-end',
-                title: '<Coursera> meta Front-end Developer 系列课程',
-                details: awards.get('coursera-meta-front-end')
+                category: 'meta-frontend',
+                key: 'meta-frontend',
+                title: 'Meta Front-end Developer 系列课程'
             },
             {
                 category: 'learn-typescript',
                 key: 'learn-typescript',
-                title: '<Coursera> Learn Typescript',
-                details: awards.get('learn-typescript')
+                title: 'Learn Typescript'
             }
         ]
     }

@@ -2,11 +2,11 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
-import cors from 'cors';
 import { fileURLToPath } from 'url';
 import mdRoutes from './routes/mdRoutes.js';
 import pdfRouter from './routes/pdfRouter.js';
 import csvRouter from './routes/csvRoutes.js';
+import imagesRouter from './routes/imagesRoutes.js';
 
 dotenv.config({ path: '.env' }); // 加载 .env 文件
 
@@ -29,6 +29,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use('/api/data/md', mdRoutes);
 app.use('/api/data/csv', csvRouter);
 app.use('/api/data/pdf', pdfRouter);
+app.use('/api/data/images', imagesRouter);
 
 // 2. 托管前端打包出来的静态文件
 const clientDistPath = path.join(__dirname, '../client/dist');

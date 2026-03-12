@@ -14,30 +14,30 @@ export const useCarouselStates = create(set => ({
     },
 
     // 修改滑动的图片列表,通过点击了二级标题，更换数据
-    handleCarouselItem: key => {
-        const elements = key?.details;
+    handleCarouselItem: elements => {
+        console.log('handleCarouselItem 收到:', elements);
 
         // 首尾克隆，防止轮播图不丝滑
-        if (elements.length > 0 && Array.isArray(elements)) {
-            if (elements.length === 1) {
-                set(state => ({
-                    ...state,
-                    slideItems: elements,
-                    curImageInd: 0
-                }));
-                return;
-            }
+        if (!elements?.length || !Array.isArray(elements)) return;
 
+        if (elements.length === 1) {
             set(state => ({
                 ...state,
-                slideItems: [
-                    elements[elements.length - 1],
-                    ...elements,
-                    elements[0]
-                ],
-                curImageInd: 1
+                slideItems: elements,
+                curImageInd: 0
             }));
+            return;
         }
+
+        set(state => ({
+            ...state,
+            slideItems: [
+                elements[elements.length - 1],
+                ...elements,
+                elements[0]
+            ],
+            curImageInd: 1
+        }));
     },
 
     handlePrevImage: () => {

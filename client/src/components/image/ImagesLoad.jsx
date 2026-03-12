@@ -1,22 +1,17 @@
 import { useEffect, useState } from 'react';
 
-export default function ImagesLoad({
-    lowquality,
-    highquality,
-    alt,
-    className
-}) {
-    const [src, setSrc] = useState(lowquality);
+export default function ImagesLoad({ src, alt, className }) {
+    const [displaySrc, setDisplaySrc] = useState(src);
 
     useEffect(() => {
         const img = new Image();
-        img.src = highquality;
-        img.onload = () => setSrc(highquality);
-    }, [highquality]);
+        img.src = src;
+        img.onload = () => setDisplaySrc(src);
+    }, [src]);
 
     return (
         <img
-            src={src}
+            src={displaySrc}
             alt={alt}
             className={className}
             style={{ transition: 'filter 0.3s' }}

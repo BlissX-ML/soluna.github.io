@@ -16,7 +16,6 @@ export function usePdfDataApis() {
                     disposition.split('filename*=')[1].trim()
                 );
             }
-            console.log(disposition);
 
             // 返回 blob
             const blob = await res.blob();

@@ -17,3 +17,11 @@ export const csvApiSlice = createApi({
     tagTypes: ['csv-data'],
     endpoints: builder => ({})
 });
+
+// webpApiSlice.js
+export const webpApiSlice = createApi({
+    reducerPath: 'webpApi', // 必须唯一
+    baseQuery,
+    tagTypes: ['webp-data'],
+    endpoints: builder => ({})
+});
