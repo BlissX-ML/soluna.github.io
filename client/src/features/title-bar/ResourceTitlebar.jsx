@@ -9,7 +9,7 @@ export default function ResourceTitlebar({ categories }) {
         useResourceStates();
 
     return (
-        <main className={classes['container']}>
+        <section className={classes['container']}>
             <div className={classes['desc-container']}>
                 <h1>学习资源分享</h1>
                 <p>集中整理常用的学习网站，实现快速访问与高效跳转</p>
@@ -40,6 +40,6 @@ export default function ResourceTitlebar({ categories }) {
                     </button>
                 ))}
             </div>
-        </main>
+        </section>
     );
 }

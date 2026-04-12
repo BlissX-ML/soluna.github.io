@@ -9,14 +9,14 @@ export default function RenderInitialContent() {
 
     return (
         <>
-            <main
+            <section
                 className={`${classes.container} ${sidebarActive ? '' : classes.close}`}
             >
                 <div className={classes.content}>
                     <NoContent />
                     <p>请选择左侧目录</p>
                 </div>
-            </main>
+            </section>
         </>
     );
 }

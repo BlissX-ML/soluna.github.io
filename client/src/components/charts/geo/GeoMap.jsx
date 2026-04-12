@@ -135,10 +135,10 @@ export default function GeoChinaMap({ className, tipClassName }) {
     }, []);
 
     return (
-        <main
+        <section
             id="china-geo-map"
             className={className}
             ref={containerRef}
-        ></main>
+        ></section>
     );
 }

@@ -5,9 +5,9 @@ import DashboardCardsLayout from '../../layouts/dashboard/main-router/DashboardC
 
 export default function Dashboard() {
     return (
-        <section id="main-content" className={classes['dashboard-container']}>
+        <main id="main-content" className={classes['dashboard-container']}>
             <DashboardTitlebar />
             <DashboardCardsLayout />
-        </section>
+        </main>
     );
 }

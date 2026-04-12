@@ -19,7 +19,7 @@ export default function ResourcesPage() {
             <ResourceTitlebar categories={CATEGORIES} />
 
             {/* 下面放具体的链接的位置 */}
-            <main className={classes['resource-container']}>
+            <section className={classes['resource-container']}>
                 {filteredResources.length === 0 ? (
                     <Nothing />
                 ) : (
@@ -30,7 +30,7 @@ export default function ResourcesPage() {
                         />
                     ))
                 )}
-            </main>
+            </section>
         </>
     );
 }

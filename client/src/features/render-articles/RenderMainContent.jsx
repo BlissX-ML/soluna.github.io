@@ -81,7 +81,7 @@ export default function RenderMainContent() {
     }, [hash, visibleCount]);
 
     return (
-        <main
+        <section
             className={`${classes.container} ${sidebarActive ? '' : classes.close}`}
         >
             {isLoad && <Loading />}
@@ -97,6 +97,6 @@ export default function RenderMainContent() {
 
             {/* Intersection Observer 触发点 */}
             <div id="load-more-sentinel" />
-        </main>
+        </section>
     );
 }

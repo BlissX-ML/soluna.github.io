@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from "react";
-import PlanLayout from "../../layouts/plans-page/PlanLayout.jsx";
-import classes from "./plan-page.module.scss";
+import { useEffect, useRef, useState } from 'react';
+import classes from './plan-page.module.scss';
 import {
     formatToday,
-    startDateWatcher,
-} from "../../_utils/browser/plan-page-lib.js";
-import AddNewTodos from "./add-todos.jsx";
+    startDateWatcher
+} from '../../_utils/browser/plan-page-lib.js';
+import AddNewTodos from './add-todos.jsx';
 
 export default function Plan() {
     const [displayLabels, setDisplayLabels] = useState(false); // 【显示标签】的按钮
@@ -18,12 +17,12 @@ export default function Plan() {
 
     //控制标签的显示与否
     function handleLabelChange() {
-        setDisplayLabels((prev) => !prev);
+        setDisplayLabels(prev => !prev);
     }
 
     // 控制是否要关闭已完成的todos
     function handleJustDisplayTodos() {
-        setJustDisplayTodos((prev) => !prev);
+        setJustDisplayTodos(prev => !prev);
     }
 
     function handleAddNewTodos() {
@@ -36,16 +35,16 @@ export default function Plan() {
     }, []);
 
     return (
-        <section id="main-content" className={classes["plan-page"]}>
+        <main id="main-content" className={classes['plan-page']}>
             {/* <PlanPage /> */}
 
             {/* 当日计划部分 */}
-            <main className={classes["current-todos"]}>
-                <div className={classes["todos"]}>
-                    <div className={classes["date-check"]}>
-                        <p className={classes["year-month-day"]}>{today}</p>
+            <section className={classes['current-todos']}>
+                <div className={classes['todos']}>
+                    <div className={classes['date-check']}>
+                        <p className={classes['year-month-day']}>{today}</p>
 
-                        <div className={classes["checkbox-select"]}>
+                        <div className={classes['checkbox-select']}>
                             <p>
                                 <input
                                     type="checkbox"
@@ -68,9 +67,9 @@ export default function Plan() {
                         </div>
                     </div>
 
-                    <div className={classes["plans-todos"]}>
+                    <div className={classes['plans-todos']}>
                         <p
-                            className={`${classes["plan"]} ${justDisplayTodos ? classes["just-mode"] : ""}`}
+                            className={`${classes['plan']} ${justDisplayTodos ? classes['just-mode'] : ''}`}
                         >
                             <input type="checkbox" id="words" name="words" />
                             <label htmlFor="words">墨墨背单词</label>
@@ -78,7 +77,7 @@ export default function Plan() {
 
                         {/* 选择显示标签的时候才会显示 */}
                         {displayLabels && (
-                            <p className={classes["tags"]}>
+                            <p className={classes['tags']}>
                                 <span>语言</span>
                                 <span>英语</span>
                             </p>
@@ -86,24 +85,24 @@ export default function Plan() {
                     </div>
 
                     <button
-                        className={classes["add-todos"]}
+                        className={classes['add-todos']}
                         onClick={handleAddNewTodos}
                     >
                         <span>+</span>
                     </button>
                 </div>
 
-                <div className={classes["chart"]}>
+                <div className={classes['chart']}>
                     <span>显示计划的完成度</span>
                 </div>
-            </main>
+            </section>
 
             {/* 只有在添加todos的时候才会展示出来 */}
             {addNewTodos && <AddNewTodos onAddControl={setAddNewTodos} />}
 
             {/* 未来计划目标 + 已完成内容部分 */}
-            <main className={classes["past-future"]}>
-                <div className={classes["todos-list"]}>
+            <section className={classes['past-future']}>
+                <div className={classes['todos-list']}>
                     <div className={classes.select}>
                         <label htmlFor="state-types">显示状态：</label>
                         <select name="states" id="state-types">
@@ -117,11 +116,11 @@ export default function Plan() {
                     <div className={classes.content}>cd</div>
                 </div>
 
-                <div className={classes["todos-display"]}>2</div>
-            </main>
+                <div className={classes['todos-display']}>2</div>
+            </section>
 
             {/* 完成计划的可视化 */}
-            <main className={classes["visilize"]}>2</main>
-        </section>
+            <main className={classes['visilize']}>2</main>
+        </main>
     );
 }

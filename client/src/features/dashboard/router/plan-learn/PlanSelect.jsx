@@ -35,11 +35,11 @@ export default function PlanSelect({ planLearnData }) {
     }, [closeOpen]);
 
     return (
-        <main className={classes.select} ref={selectRef}>
+        <section className={classes.select} ref={selectRef}>
             <DashboardDropdown
                 title={selectedPlan?.title} // 获取最初渲染的可选项的 title
                 planLearnData={planLearnData}
             />
-        </main>
+        </section>
     );
 }

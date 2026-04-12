@@ -20,12 +20,12 @@ export default function DashboardEachCards({ resources }) {
     return (
         <>
             {resources.map((el, ind) => (
-                <main key={el?.key} className={classes.singleContent}>
+                <section key={el?.key} className={classes.singleContent}>
                     <DashboardRedirectCard
                         resources={el}
                         handleClick={() => handleClick(el?.key, ind)}
                     />
-                </main>
+                </section>
             ))}
         </>
     );

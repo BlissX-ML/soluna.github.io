@@ -4,6 +4,8 @@ import { colors, hasVisitedColors } from '../../_data/footprint/colors';
 import { VISITED_CITIES } from '../../_data/footprint/visit-cities';
 
 const hasVisited = new Map();
+const geoCache = new Map();
+
 VISITED_CITIES.forEach(el => {
     if (!hasVisited.has('provinces')) hasVisited.set('provinces', []);
     hasVisited.get('provinces').push(el?.title);
@@ -14,6 +16,38 @@ VISITED_CITIES.forEach(el => {
         hasVisited.get('cities').push(cities?.title);
     }
 });
+
+// 定义一个等待时间，如果规定时间内没有拿到数据就直接中止
+async function fetchWithTimeout(url, wait = 5000) {
+    if (geoCache.has(url)) return geoCache.get(url); // 内存缓存优先
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), wait);
+
+    try {
+        const res = await fetch(url, {
+            signal: controller.signal,
+            cache: 'default'
+        });
+
+        const data = await res.json();
+        geoCache.set(url, data);
+        return data;
+    } finally {
+        clearTimeout(timer);
+    }
+}
+
+async function fetchGeoData(urls) {
+    for (const url of urls) {
+        try {
+            return await fetchWithTimeout(url);
+        } catch (error) {
+            console.warn(`${url} 这个数据集又不好使了。。。`);
+        }
+    }
+    throw new Error('地图数据集，又又又出问题了。。。');
+}
 
 export const getPathGenarator = (width, height, data) => {
     const projection = d3.geoMercator().fitExtent(
@@ -29,7 +63,12 @@ export const getPathGenarator = (width, height, data) => {
 };
 
 export async function getChinaData() {
-    const data = await d3.json('https://geojson.cn/api/china/1.6.3/china.json');
+    const urls = [
+        'https://file.geojson.cn/china/1.6.3/china.json',
+        'http://file.geojson.cn/china/1.6.3/china.json'
+    ];
+
+    const data = await fetchGeoData(urls);
 
     data?.features.forEach((feature, ind) => {
         feature.geometry = turf.rewind(feature.geometry, {
@@ -43,7 +82,12 @@ export async function getChinaData() {
 }
 
 export async function getProvinceData(id) {
-    const data = await d3.json(`https://geojson.cn/api/china/1.6.3/${id}.json`);
+    const urls = [
+        `https://file.geojson.cn/china/1.6.3/${id}.json`,
+        `http://file.geojson.cn/china/1.6.3/${id}.json`
+    ];
+
+    const data = await fetchGeoData(urls);
 
     data?.features.forEach((feature, ind) => {
         feature.geometry = turf.rewind(feature.geometry, {

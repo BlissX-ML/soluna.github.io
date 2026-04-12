@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { todosDateScale } from "../../_utils/browser/plan-page-lib";
-import classes from "./add-todos.module.scss";
+import { useState } from 'react';
+import { todosDateScale } from '../../_utils/browser/plan-page-lib';
+import classes from './add-todos.module.scss';
 
 export default function AddNewTodos({ onAddControl }) {
     const { today, max } = todosDateScale();
     const [date, setDate] = useState(today);
 
     return (
-        <main className={classes["add-todos-content"]}>
+        <section className={classes['add-todos-content']}>
             <form>
                 <input
                     type="text"
@@ -30,7 +30,7 @@ export default function AddNewTodos({ onAddControl }) {
                     value={date}
                     min={today}
                     max={max}
-                    onChange={(e) => setDate(e.target.value)}
+                    onChange={e => setDate(e.target.value)}
                     placeholder="请选择日期"
                 />
 
@@ -44,6 +44,6 @@ export default function AddNewTodos({ onAddControl }) {
                     <button>添加新任务</button>
                 </p>
             </form>
-        </main>
+        </section>
     );
 }

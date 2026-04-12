@@ -3,8 +3,8 @@ import classes from './Resources.module.scss';
 import ResourcesPage from '../../layouts/resources-page/ResourcesPage';
 export default function Resources() {
     return (
-        <section id="main-content" className={classes['page-container']}>
+        <main id="main-content" className={classes['page-container']}>
             <ResourcesPage />
-        </section>
+        </main>
     );
 }

@@ -6,12 +6,12 @@ import SidebarNavigation from '../../features/shared-dropdown-sidebar/SidebarNav
 
 export default function RepositorySidebarNavigate() {
     return (
-        <section id="main-content" className={classes.container}>
+        <main id="main-content" className={classes.container}>
             <SidebarNavigation
                 catalogs={REPOSITORY_SIDEBAR}
                 startURL="/repository"
             />
             <Outlet />
-        </section>
+        </main>
     );
 }
